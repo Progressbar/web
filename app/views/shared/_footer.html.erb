@@ -1,0 +1,76 @@
+<section id="follow-us">
+  <header>
+    <h3><%= t('follow_us.title') %></h3>
+  </header>
+  <div class="content">
+    <p>
+      <a  class="no-underline" href="#"><img alt="Twitter icon" src="/images/s.gif" class="sprites sprite-icon-twitter-32" /> Twitter</a>
+      <!--											<a href="#" class="button ">Recommend</a>-->
+    </p>
+    <p>
+      <a class="no-underline"  href="#"><img alt="Facebook icon" src="/images/s.gif" class="sprites sprite-icon-facebook-32" /> Facebook</a>
+      <!--											<a href="#" class="button ">Like</a>-->
+    </p>
+    <p>
+      <%= t('follow_us.find_bug') %>
+    </p>
+    <p>
+      <a class="no-underline" href="#" >
+        <img alt="Github icon" src="/images/s.gif" class="sprites sprite-icon-github-32" /> 
+        <span class="button greenno large"><%= t('follow_us.send_patch') %></span>
+      </a>
+    </p>
+    <p>
+      <%= t('follow_us.send_email') %>
+    </p>
+    <p>
+      <a class="no-underline" href="mailto:webmaster@progressbar.sk"><img src="/images/s.gif" alt="E-mail icon" class="sprites sprite-icon-email-32" />
+        <span class="button">webmaster@progressbar.sk</span>
+      </a>
+    </p>
+  </div>
+</section>
+<section id="mailing-list">
+  <header>
+    <h3><%= t('mailing_list.title') %></h3>
+  </header>
+  <div class="content">
+    <form method="POST" action="/mailing-list">
+      <p>
+        <input type="checkbox" name="type" value="general" id="type-general"/>
+        <label for="type-general"><%= t('mailing_list.general_type') %></label><br />
+        <input type="checkbox" name="type" value="events" checked="checked" id="type-events"/>
+        <label for="type-events"><%= t('mailing_list.events_type') %></label>
+      </p>
+      <p><input type="email" name="email" placeholder="<%= t('mailing_list.put_email') %>" class="text email" required="required" /><input class="submit" type="submit" value="<%= t('mailing_list.sign_in') %>"/></p>
+      <p class="msg info">
+        <img alt="info icon" src="/images/s.gif" class="ui-icon ui-icon-info" />
+        <%= t('mailing_list.info_privacy') %>        
+        <br /><br />
+        <%= t('mailing_list.info_logout') %>        
+      </p>
+    </form>
+  </div>
+</section>
+<div id="copy">
+  <%= t('.copyright', :year => Time.now.year,
+    :site_name => RefinerySetting.find_or_set(:site_name, "Company Name")) %>,
+<!--  <%= mail_to RefinerySetting.find_or_set(:site_contact_email, 'info@progressbar.sk') %>, -->
+  <% page_colophon = Page.find(18) %>
+  <%= link_to(page_colophon.title, page_colophon.url) %>
+</div>
+<nav id='bottom-menu' class='menu clearfix'>
+<% page_calendar = Page.find('calendar') %>
+<% page_blog = Page.find('blog') %>
+<% page_sponsors = Page.find('sponsors') %>
+<% page_wiki = Page.find('wiki') %>
+<% page_contact = Page.find('kontakt') %>
+<% page_join = Page.find('pridaj-sa') %>
+<%= link_to(page_calendar.title, page_calendar.url) %><span class="delim">&nbsp;|&nbsp;</span>
+<%= link_to(page_blog.title, page_blog.url) %><span class="delim">&nbsp;|&nbsp;</span>
+<%= link_to(page_sponsors.title, page_sponsors.url) %><span class="delim">&nbsp;|&nbsp;</span>
+<%= link_to(page_wiki.title, page_wiki.url) %><span class="delim">&nbsp;|&nbsp;</span>
+<%= link_to(page_contact.title, page_contact.url) %><span class="delim">&nbsp;|&nbsp;</span>
+<%= link_to(page_join.title, page_join.url) %><span class="delim">&nbsp;|&nbsp;</span>
+<a href="#"><%= t('top') %>  &uarr;</a>
+</nav>
