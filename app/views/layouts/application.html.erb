@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+  <%= render :partial => "/shared/head" %>
+  <body>
+    <div id="outer-wrapper">
+      <div id="container">
+        <div id="header-wrapper">
+          <div id="header">
+            <%= render :partial => "/shared/header" %>
+            <div class="reset">&nbsp;</div>
+          </div>
+        </div>
+        <div id="content-wrapper" class="page-id-<%= @page.id %>">
+          <%= yield %>
+          <div class="reset">&nbsp;</div>
+        </div>
+        <div id="footer-wrapper">
+          <div id="footer">
+            <%= render :partial => "/shared/footer" %>
+            <div class="reset">&nbsp;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= javascript_include_tag 'jquery-1.6.1.min' %>
+    <%= javascript_include_tag 'jquery-ui/js/jquery-ui-1.8.13.custom.min' unless is_homepage?() %>    
+    <%= javascript_include_tag 'application' %>
+  </body>
+</html>

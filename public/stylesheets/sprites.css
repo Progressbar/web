@@ -1,0 +1,291 @@
+
+.sprites {
+	background-image: url(/images/design/icons/social-sprites2-32.png);
+	background-color: transparent;
+	background-repeat: no-repeat;
+}
+
+img.sprites {
+	vertical-align: middle;
+}
+
+.sprite-icon-github-32 {
+	height               : 32px;
+	width                : 32px;
+	background-position  : -0px -32px;
+}
+
+a:hover .sprite-icon-github-32, .sprite-icon-github-32:hover {
+	background-position  : -0px 0px;
+}
+
+.sprite-icon-slideshare-32 {
+	height               : 32px;
+	width                : 32px;
+	background-position  : -96px -32px;
+}
+
+a:hover .sprite-icon-slideshare-32, .sprite-icon-slideshare-32:hover {
+	background-position  : -96px 0px;
+}
+
+.sprite-icon-apple-32 {
+	height               : 32px;
+	width                : 32px;
+	background-position  : -128px -32px;
+}
+
+a:hover .sprite-icon-apple-32, .sprite-icon-apple-32:hover {
+	background-position  : -128px 0px;
+}
+
+.sprite-icon-googletalk-32 {
+	height               : 32px;
+	width                : 32px;
+	background-position  : -160px -32px;
+}
+
+a:hover .sprite-icon-googletalk-32, .sprite-icon-googletalk-32:hover {
+	background-position  : -160px 0px;
+}
+
+.sprite-icon-windows-32 {
+	height               : 32px;
+	width                : 32px;
+	background-position  : -192px -32px;
+}
+
+a:hover .sprite-icon-windows-32, .sprite-icon-windows-32:hover {
+	background-position  : -192px 0px;
+}
+
+.sprite-icon-skype-32 {
+	height               : 32px;
+	width                : 32px;
+	background-position  : -224px -32px;
+}
+
+a:hover .sprite-icon-skype-32, .sprite-icon-skype-32:hover {
+	background-position  : -224px 0px;
+}
+
+.sprite-icon-technorati-32 {
+	height               : 32px;
+	width                : 32px;
+	background-position  : -256px -32px;
+}
+
+a:hover .sprite-icon-technorati-32, .sprite-icon-technorati-32:hover {
+	background-position  : -256px 0px;
+}
+
+.sprite-icon-lastfm-32 {
+	height               : 32px;
+	width                : 32px;
+	background-position  : -288px -32px;
+}
+
+a:hover .sprite-icon-lastfm-32, .sprite-icon-lastfm-32:hover {
+	background-position  : -288px 0px;
+}
+
+.sprite-icon-google-32 {
+	height               : 32px;
+	width                : 32px;
+	background-position  : -320px -32px;
+}
+
+a:hover .sprite-icon-google-32, .sprite-icon-google-32:hover {
+	background-position  : -320px 0px;
+}
+
+.sprite-icon-yelp-32 {
+	height               : 32px;
+	width                : 32px;
+	background-position  : -352px -32px;
+}
+
+a:hover .sprite-icon-yelp-32, .sprite-icon-yelp-32:hover {
+	background-position  : -352px 0px;
+}
+
+/* temporary == yelp @todo */
+.sprite-icon-ical-32 {
+	height               : 32px;
+	width                : 32px;
+	background-position  : -352px -32px;
+}
+
+a:hover .sprite-icon-ical-32, .sprite-icon-ical-32:hover {
+	background-position  : -352px 0px;
+}
+
+.sprite-icon-dopplr-32 {
+	height               : 32px;
+	width                : 32px;
+	background-position  : -384px -32px;
+}
+
+a:hover .sprite-icon-dopplr-32, .sprite-icon-dopplr-32:hover {
+	background-position  : -384px 0px;
+}
+
+.sprite-icon-rss-32 {
+	height               : 32px;
+	width                : 32px;
+	background-position  : -416px -32px;
+}
+
+a:hover .sprite-icon-rss-32, .sprite-icon-rss-32:hover {
+	background-position  : -416px 0px;
+}
+
+.sprite-icon-evernote-32 {
+	height               : 32px;
+	width                : 32px;
+	background-position  : -448px -32px;
+}
+
+a:hover .sprite-icon-evernote-32, .sprite-icon-evernote-32:hover {
+	background-position  : -448px 0px;
+}
+
+.sprite-icon-sharethis-32 {
+	height               : 32px;
+	width                : 32px;
+	background-position  : -480px -32px;
+}
+
+a:hover .sprite-icon-sharethis-32, .sprite-icon-sharethis-32:hover {
+	background-position  : -480px 0px;
+}
+
+.sprite-icon-picasa-32 {
+	height               : 32px;
+	width                : 32px;
+	background-position  : -512px -32px;
+}
+
+a:hover .sprite-icon-picasa-32, .sprite-icon-picasa-32:hover {
+	background-position  : -512px 0px;
+}
+
+.sprite-icon-yahoo-32 {
+	height               : 32px;
+	width                : 32px;
+	background-position  : -544px -32px;
+}
+
+a:hover .sprite-icon-yahoo-32, .sprite-icon-yahoo-32:hover {
+	background-position  : -544px 0px;
+}
+
+.sprite-icon-youtube-32 {
+	height               : 32px;
+	width                : 32px;
+	background-position  : -576px -32px;
+}
+
+a:hover .sprite-icon-youtube-32, .sprite-icon-youtube-32:hover {
+	background-position  : -576px 0px;
+}
+
+.sprite-icon-paypal-32 {
+	height               : 32px;
+	width                : 32px;
+	background-position  : -608px -32px;
+}
+
+a:hover .sprite-icon-paypal-32, .sprite-icon-paypal-32:hover {
+	background-position  : -608px 0px;
+}
+
+.sprite-icon-vimeo-32 {
+	height               : 32px;
+	width                : 32px;
+	background-position  : -640px -32px;
+}
+
+a:hover .sprite-icon-vimeo-32, .sprite-icon-vimeo-32:hover {
+	background-position  : -640px 0px;
+}
+
+.sprite-icon-openid-32 {
+	height               : 32px;
+	width                : 32px;
+	background-position  : -672px -32px;
+}
+
+a:hover .sprite-icon-openid-32, .sprite-icon-openid-32:hover {
+	background-position  : -672px 0px;
+}
+
+.sprite-icon-ilike-32 {
+	height               : 32px;
+	width                : 32px;
+	background-position  : -704px -32px;
+}
+
+a:hover .sprite-icon-ilike-32, .sprite-icon-ilike-32:hover {
+	background-position  : -704px 0px;
+}
+
+.sprite-icon-email-32 {
+	height               : 32px;
+	width                : 32px;
+	background-position  : -736px -32px;
+}
+
+a:hover .sprite-icon-email-32, .sprite-icon-email-32:hover {
+	background-position  : -736px 0px;
+}
+
+.sprite-icon-flickr-32 {
+	height               : 32px;
+	width                : 32px;
+	background-position  : -768px -32px;
+}
+
+a:hover .sprite-icon-flickr-32, .sprite-icon-flickr-32:hover {
+	background-position  : -768px 0px;
+}
+
+.sprite-icon-twitter-32 {
+	height               : 32px;
+	width                : 32px;
+	background-position  : -800px -32px;
+}
+
+a:hover .sprite-icon-twitter-32, .sprite-icon-twitter-32:hover {
+	background-position  : -800px 0px;
+}
+
+.sprite-icon-digg-32 {
+	height               : 32px;
+	width                : 32px;
+	background-position  : -832px -32px;
+}
+
+a:hover .sprite-icon-digg-32, .sprite-icon-digg-32:hover {
+	background-position  : -832px 0px;
+}
+
+.sprite-icon-facebook-32 {
+	height               : 32px;
+	width                : 32px;
+	background-position  : -864px -32px;
+}
+
+a:hover .sprite-icon-facebook-32, .sprite-icon-facebook-32:hover {
+	background-position  : -864px 0px;
+}
+
+.sprite-icon-delicious-32 {
+	height               : 32px;
+	width                : 32px;
+	background-position  : -896px -32px;
+}
+
+a:hover .sprite-icon-delicious-32, .sprite-icon-delicious-32:hover {
+	background-position  : -896px 0px;
+}
