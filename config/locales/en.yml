@@ -1,0 +1,16 @@
+en:
+  mailing_list:
+    title: 'E-mailová konferencia'
+    info_privacy: 'E-mailová adresa bude uchovávaná len pre potreby konferencie a nebude poskytnutá tretím stranám.'
+    info_logout: 'Pre odhlásenie z e-mailovej konferencie stačí, ak zadáte znova váš e-mail a budú vám zaslané inštrukcie pre zrušenie odberu.'
+  follow_us:
+    title: 'Sledujte nás'
+    find_bug: 'Našiel si chybu, alebo Ti chýba nejaká funkčnosť?'
+    send_patch: 'Zadaj úlohu, alebo pošli opravu!'
+    send_email: 'Svoje pripomienky a nápady nám móžete poslať i na e-mail:'
+  calendar:
+    title: 'Kalendár'
+    full_schedule: 'Celý rozvrh'
+  blogs:
+    title: 'Blogy'
+    archive_posts: 'Archív príspevkov'
