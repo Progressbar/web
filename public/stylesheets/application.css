@@ -240,6 +240,20 @@ body {
 	width: 50%;
 }
 
+#blogs p {
+	margin-bottom: 0px;
+}
+
+#blogs .content {
+	margin-bottom: 20px;
+}
+
+#blogs .content div {
+	clear: both;
+	min-height: 100px;
+	margin-bottom: 20px;
+}
+
 #footer-wrapper {
 	clear: both;
 	padding-top: 20px;
