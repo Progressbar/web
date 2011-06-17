@@ -155,7 +155,7 @@ body {
 #nav-holder {
 	float: right;
 	margin-top: 24px;
-	width: 57%;
+	width: 58%;
 }
 
 #lang {
@@ -170,8 +170,7 @@ body {
 }
 
 #menu ul {
-	position: relative;
-	right: -7px;
+	float: right;
 }
 
 #menu li {
@@ -183,13 +182,13 @@ body {
 	display: inline-block;
 	text-decoration: none;
 	padding: 3px 17px;
+	padding-right: 0px;
 	font-size: 115.4%;
 }
-
-
+/*
 #menu a:last-child {
 	padding-right: 0px;
-}
+}*/
 
 #menu li:hover ul {
 	display: block;
@@ -598,7 +597,7 @@ form {
 input.text {
 	height: 24px;
 	padding: 2px 5px;
-	min-width: 260px;
+	min-width: 300px;
 	font-size: 15px;
 	border: solid 1px #91bd09;
 	margin-right: 10px;
@@ -636,4 +635,27 @@ form .field label {
 
 #calendar p {
 	margin-bottom: 10px;
+}
+
+#menu li li {
+	float: none;
+}
+
+#menu li li a {
+	display: block;
+	padding-right: 20px;
+}
+
+#menu li ul {
+	float: none;
+	z-index: 100;
+	white-space: nowrap;
+	display: none;
+	position: absolute;
+	background: #000;
+	padding: 2px 0px 5px 0px;
+}
+
+#menu li:hover ul {
+	display: block;
 }
