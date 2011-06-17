@@ -1,26 +1,3 @@
-<% content_for :body_content_right do %>
-
-  <% @news_items = NewsItem.where(:id => ::NewsItem::Translation.where(:locale => I18n.locale).last(RefinerySetting.find_or_set(:snippet_items_per_page, 5)).collect(&:news_item_id)) %>
-  <% if @news_items.any? %>
-    <div class="box" id="latest-news">
-      <h3><%= t('news_and_events') %></h3>
-      <ul class="list-of-links">
-        <% @news_items.each do |item| %>
-          <li>
-            <%= truncate  item.body, :length => 240,
-              :omission => " ... #{link_to t('.read_more'), news_item_url(item)}",
-              :preserve_html_tags => true %>
-          </li>
-        <% end %>
-      </ul>
-      <p>
-        <%= link_to :action => 'index', :controller => 'news_items' do -%>
-          <%= t('more_news_and_events') %> <span class="float-right">&raquo;</span>
-        <% end %>
-      </p>
-    </div>
-  <% end %>
-<% end %>
 <section id="body_content"  class="no_body_content_left">
   <section id="promo">
     <div id="promo-content">
@@ -90,46 +67,36 @@
     <div class="reset">&#160;</div>
   </section>
     <% page_calendar = Page.find('calendar') %>
+    <%
+      
+      @calendar_items = Event.where(['end_at >= ? OR start_at >= ?', Time.now, Time.now])
+    
+    %>
+  
   <section id="calendar">
     <header>
-      <h3><h3><%= link_to(t('calendar.title'), page_calendar.url) %>
+      <h3><%= link_to(t('calendar.title'), page_calendar.url) %>
       </h3>
     </header>
     <div class="content">
+      <% if @calendar_items.any? %>
+        <% @calendar_items.each do |event| %>
       <p>
-        <span class="datetime">6.5.2011 	19:23 – 22:48</span>
-        <span class="title">kyberia fo*ks into dekriminalizacia session</span>
-
+        <span class="datetime"><%= event.start_at %></span>
+        <% event.categories.each do |ev_cat|  %>
+          <span class="category"><%= ev_cat.name %></span>
+        <% end if event.categories.any? %>
+        <span class="title"><%= event.title %></span>
       </p>
-      <p>
-        <span class="datetime">8.5.2011 	19:00 – 0:00</span>
-        <span class="title">HABITAT: live zvukové vysielanie / Progressbar + online</span>
-      </p>
-      <p>
-        <span class="datetime">17.5.2011 	18:00 – 19:00</span>
-
-        <span class="title">Nepal</span>
-      </p>
-      <p>
-        <span class="datetime">19.5.2011 	20:00 – 23:00</span>
-        <span class="title">Stretnutie MMM</span>
-      </p>
-      <p>
-
-        <span class="datetime">20.5.2011 	18:00 – 22:00</span>
-        <span class="title">wikipédia stretnutie</span>
-      </p>
-      <p>
-        <span class="datetime">20.5.2011 	18:00 – 22:00</span>
-        <span class="title">wikipédia stretnutie</span>
-      </p>
+        <% end %>
+      <% end %>
     </div>
     <footer>
       <div class="float-left">
         <a href="#sorry-not-working-now"><img alt="ICal icon" src="/images/s.gif" class="sprites sprite-icon-ical-32" /> ICal</a>
       </div>
       <div class="float-right">
-        <a href="#sorry-not-working-now"><%= t('calendar.full_schedule') %></a>
+        <%= link_to(t('calendar.full_schedule'), page_calendar.url) %>
       </div>
       <div class="reset">&#160;</div>
     </footer>
