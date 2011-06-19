@@ -1,3 +1,9 @@
+PATH
+  remote: vendor/
+  specs:
+    refinerycms-calendar (1.0.4)
+      refinerycms-core (>= 0.9.9.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -31,7 +37,7 @@ GEM
     acts-as-taggable-on (2.0.6)
     acts_as_indexed (0.7.2)
     arel (2.0.10)
-    awesome_nested_set (2.0.0)
+    awesome_nested_set (2.0.1)
       activerecord (>= 3.0.0)
     babosa (0.3.5)
     bcrypt-ruby (2.1.4)
@@ -100,8 +106,6 @@ GEM
       filters_spam (~> 0.2)
       refinerycms-core (~> 1.0.0)
       seo_meta (~> 1.1.0)
-    refinerycms-calendar (1.0.4)
-      refinerycms-core (>= 0.9.9.1)
     refinerycms-core (1.0.0)
       acts_as_indexed (~> 0.7)
       awesome_nested_set (~> 2.0)
@@ -150,7 +154,7 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     truncate_html (0.5.1)
-    tzinfo (0.3.27)
+    tzinfo (0.3.28)
     warden (1.0.4)
       rack (>= 1.0)
     will_paginate (3.0.pre2)
@@ -162,7 +166,7 @@ DEPENDENCIES
   rails (= 3.0.7)
   refinerycms (~> 1.0.0)
   refinerycms-blog (~> 1.5)
-  refinerycms-calendar (~> 1.0)
+  refinerycms-calendar!
   refinerycms-i18n (~> 1.0.0)
   refinerycms-inquiries (~> 1.0)
   refinerycms-news (~> 1.2)

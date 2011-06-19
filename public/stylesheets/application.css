@@ -28,7 +28,7 @@ table { border-collapse:collapse; border-spacing:0; }
 hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
 input, select { vertical-align:middle; }
 
-body { font:13px/1.231 sans-serif; *font-size:small; }
+body { font:13px/1.231 sans-serif; }
 select, input, textarea, button { font:99% sans-serif; }
 pre, code, kbd, samp { font-family: monospace, sans-serif; }
 
@@ -65,8 +65,6 @@ input:invalid, textarea:invalid { border-radius: 1px;  -moz-box-shadow: 0px 0px 
 .no-boxshadow input:invalid,
 .no-boxshadow textarea:invalid { background-color: #f0dddd; }
 
-::-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; }
-::selection { background:#FF5E99; color:#fff; text-shadow: none; }
 a:link { -webkit-tap-highlight-color: #FF5E99; }
 
 button {  width: auto; overflow: visible; }
@@ -243,8 +241,9 @@ body {
 	margin-bottom: 0px;
 }
 
-#blogs .content {
+#calendar .content, #blogs .content {
 	margin-bottom: 20px;
+	min-height: 340px;
 }
 
 #blogs .content div {
@@ -272,17 +271,21 @@ body {
 	float: left;
 }
 
-#follow-us .button {
-	margin-left: 60px;
+#follow-us .action-button {
+	margin-left: 80px;
+/*	background: none;*/
+/*	color: #999999;*/
 }
 
 #follow-us a {
 	display: inline-block;
-	min-width: 120px;
+	min-width: 130px;
 }
 
-#follow-us a .button {
-	margin-left: 65px;
+#follow-us a .action-button {
+	margin-left: 110px;
+/*	background: none;*/
+/*	color: #999999;*/
 }
 
 #follow-us .sprites {
@@ -571,10 +574,6 @@ td div:hover {
 	box-shadow: 0 0 5px 1px red;
 }
 
-#content-wrapper section .content {
-	min-height: 347px;
-}
-
 #content-wrapper section footer {
 	vertical-align: middle;
 	line-height: 32px;
@@ -597,7 +596,7 @@ form {
 input.text {
 	height: 24px;
 	padding: 2px 5px;
-	min-width: 300px;
+	min-width: 310px;
 	font-size: 15px;
 	border: solid 1px #91bd09;
 	margin-right: 10px;
@@ -658,4 +657,30 @@ form .field label {
 
 #menu li:hover ul {
 	display: block;
+}
+
+#address {
+	float: right;
+}
+
+#address .url, #address .email, #address .adr {
+	float: left;
+	text-indent: -1337em;
+} 
+
+.geo {
+	display: block;
+	clear: both;
+	background: none repeat scroll 0 0 #070707;
+    border: 1px solid #0f0f0f;
+    font-size: 15px;
+	padding: 20px;
+	margin-top: 20px;
+    
+}
+
+.geo abbr {
+	padding: 0 10px;
+	
+	border-bottom: none;
 }

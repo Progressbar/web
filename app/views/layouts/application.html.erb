@@ -10,7 +10,7 @@
             <div class="reset">&nbsp;</div>
           </div>
         </div>
-        <div id="content-wrapper" class="page-id-<%= @page.id %>">
+        <div id="content-wrapper" <%= ' class="page-id-#{@page.id}" ' if @page %>>
           <%= yield %>
           <div class="reset">&nbsp;</div>
         </div>
@@ -25,5 +25,6 @@
     <%= javascript_include_tag 'jquery-1.6.1.min' %>
     <%= javascript_include_tag 'jquery-ui/js/jquery-ui-1.8.13.custom.min' unless is_homepage?() %>    
     <%= javascript_include_tag 'application' %>
+    <%#*<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>%>
   </body>
 </html>

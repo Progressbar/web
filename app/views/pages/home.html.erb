@@ -5,7 +5,7 @@
         <span class="promo-text-bg-1">&#160;</span>
         <div class="promo-text-1">
           <h2>Vitajte na stránkach</h2>
-          <p>prvého slovenského hackerspace <br /><strong>progressbar.sk</strong>
+          <p>prvého slovenského <a href="http://en.wikipedia.org/wiki/Hackerspace">hackerspace</a> <br /><strong>progressbar.sk</strong>
           </p>
         </div>
         <img alt="promo ilustration" class="promo-img" src="/images/content/promo/1<%= ['a', 'b'].sample %>.jpg" />
@@ -66,16 +66,10 @@
 
     <div class="reset">&#160;</div>
   </section>
-    <% page_calendar = Page.find('calendar') %>
-    <%
-      
-      @calendar_items = Event.where(['end_at >= ? OR start_at >= ?', Time.now, Time.now])
-    
-    %>
-  
+  <% @page_calendar = Page.find('calendar') %>
   <section id="calendar">
     <header>
-      <h3><%= link_to(t('calendar.title'), page_calendar.url) %>
+      <h3><%= link_to(t('calendar.title'), @page_calendar.url) %>
       </h3>
     </header>
     <div class="content">
@@ -93,24 +87,17 @@
     </div>
     <footer>
       <div class="float-left">
-        <a href="#sorry-not-working-now"><img alt="ICal icon" src="/images/s.gif" class="sprites sprite-icon-ical-32" /> ICal</a>
+        <a href="/events.rss"><img alt="rss icon" src="/images/s.gif" class="sprites sprite-icon-rss-32" /> Calendar RSS</a>
       </div>
       <div class="float-right">
-        <%= link_to(t('calendar.full_schedule'), page_calendar.url) %>
+        <%= link_to(t('calendar.full_schedule'), @page_calendar.url) %>
       </div>
       <div class="reset">&#160;</div>
     </footer>
   </section>
   <section id="blogs">
-    <% 
-
-      page_blog = Page.find('blog')
-      @blog_posts = BlogPost.live.paginate({
-        :page => 1,
-        :per_page => 3
-      }) %>
     <header>
-      <h3><%= link_to(t('blogs.title'), page_blog.url) %>
+      <h3><%= link_to(t('blogs.title'), @page_blog.url) %>
       </h3>
     </header>
      <div class="content">
@@ -138,10 +125,10 @@
     </div>
     <footer>
       <div class="float-left">
-        <a href="/blog/feed.rss"><img alt="RSS icon" src="/images/s.gif" class="sprites sprite-icon-rss-32" /> RSS</a>
+        <a href="/blog/feed.rss"><img alt="RSS icon" src="/images/s.gif" class="sprites sprite-icon-rss-32" /> Blog RSS</a>
       </div>
       <div class="float-right">
-        <%= link_to(t('blogs.archive_posts'), page_blog.url) %>
+        <%= link_to(t('blogs.archive_posts'), @page_blog.url) %>
       </div>
       <div class="reset">&#160;</div>
     </footer>
