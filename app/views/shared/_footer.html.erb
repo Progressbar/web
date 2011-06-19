@@ -4,28 +4,41 @@
   </header>
   <div class="content">
     <p>
-      <a  class="no-underline" href="#"><img alt="Twitter icon" src="/images/s.gif" class="sprites sprite-icon-twitter-32" /> Twitter</a>
-      <!--											<a href="#" class="button ">Recommend</a>-->
+      <a  class="no-underline" href="<%= RefinerySetting.find_or_set(:site_twitter, 'http://twitter.com/progressbarsk') %>"><img alt="Twitter icon" src="/images/s.gif" class="sprites sprite-icon-twitter-32" /> Twitter</a>
+
+      <a href="http://twitter.com/share" class="action-button twitter-share-button" data-count="horizontal" data-via="progressbarsk" data-related="brmlab:Prague Hackerspace Brmlab;hysterka:1337"><%= t('follow_us.twitter_recommend') %></a>
     </p>
     <p>
-      <a class="no-underline"  href="#"><img alt="Facebook icon" src="/images/s.gif" class="sprites sprite-icon-facebook-32" /> Facebook</a>
-      <!--											<a href="#" class="button ">Like</a>-->
+      <a class="no-underline" href="<%= RefinerySetting.find_or_set(:site_facebook, 'http://www.facebook.com/progressbar') %>"><img alt="Facebook icon" src="/images/s.gif" class="sprites sprite-icon-facebook-32" /> Facebook</a>
+      <a href="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.progressbar.sk&amp;layout=standard&amp;show_faces=false&amp;width=200&amp;action=like&amp;font=arial&amp;colorscheme=dark&amp;height=40" class="action-button"><%= t('follow_us.facebook_like') %></a>
+    </p>
+    <%#*<p>%>
+      <%#*<a class="no-underline" href="#"><img alt="Facebook icon" src="/images/s.gif" class="sprites sprite-icon-facebook-32" /> Soup</a>%>
+      
+    <%#*</p>%>
+    <p>
+      <a class="no-underline" href="https://foursquare.com/venue/<%= RefinerySetting.find_or_set(:site_foursquare_id, '7713190') %>"><img alt="Facebook icon" src="/images/s.gif" class="sprites sprite-icon-facebook-32" /> FourSquare</a>
+      
+      <a class="no-underline action-button" href="http://foursquare.com/remote_todo?vid=<%= RefinerySetting.find_or_set(:site_foursquare_id, '7713190') %>" onclick="window.open('http://foursquare.com/remote_todo?vid=<%= RefinerySetting.find_or_set(:site_foursquare_id, '7713190') %>', '_blank', 'toolbar=0,status=0,height=380,width=650,scrollbars=no,resizable=no'); return false;">
+        <%= t('follow_us.foursquare_todo') %></a>
     </p>
     <p>
       <%= t('follow_us.find_bug') %>
     </p>
     <p>
-      <a class="no-underline" href="#" >
-        <img alt="Github icon" src="/images/s.gif" class="sprites sprite-icon-github-32" /> 
-        <span class="button greenno large"><%= t('follow_us.send_patch') %></span>
+      <a class="no-underline" href="<%= RefinerySetting.find_or_set(:site_github, 'https://github.com/Progressbar') %>" >
+        <img alt="Github icon" src="/images/s.gif" class="sprites sprite-icon-github-32" title="<%= t('follow_us.visit_github') %>" />
+        Github 
+        <span class="action-button"><%= t('follow_us.send_patch') %></span>
       </a>
     </p>
     <p>
       <%= t('follow_us.send_email') %>
     </p>
     <p>
-      <a class="no-underline" href="mailto:webmaster@progressbar.sk"><img src="/images/s.gif" alt="E-mail icon" class="sprites sprite-icon-email-32" />
-        <span class="button">webmaster@progressbar.sk</span>
+      <a class="no-underline" href="mailto:<%= RefinerySetting.find_or_set(:site_webmaster_email, 'webmaster@progressbar.sk') %>" title="<%= t('follow_us.send_email') %>" ><img src="/images/s.gif" alt="E-mail icon" class="sprites sprite-icon-email-32" />
+        E-mail
+        <span class="action-button"><%= RefinerySetting.find_or_set(:site_webmaster_email, 'webmaster@progressbar.sk') %></span>
       </a>
     </p>
   </div>
@@ -45,32 +58,56 @@
       <p><input type="email" name="email" placeholder="<%= t('mailing_list.put_email') %>" class="text email" required="required" /><input class="submit" type="submit" value="<%= t('mailing_list.sign_in') %>"/></p>
       <p class="msg info">
         <img alt="info icon" src="/images/s.gif" class="ui-icon ui-icon-info" />
-        <%= t('mailing_list.info_privacy') %>        
+        <%= t('mailing_list.info_privacy') %>
         <br /><br />
-        <%= t('mailing_list.info_logout') %>        
+        <%= t('mailing_list.info_logout') %>
       </p>
     </form>
   </div>
 </section>
+<section id="address" >
+  <header>
+    <h3 class="hidden"><%= t('address.title') %></h3>
+  </header>
+  <div class="content">
+    <address class="vcard">
+        <a class="url fn org " href="http://www.progressbar.sk/">Progressbar Hackerspace</a>
+        <a class="email " href="<%= RefinerySetting.find_or_set(:site_contact_email, 'info@progressbar.sk') %>"><%= RefinerySetting.find_or_set(:site_contact_email, 'info@progressbar.sk') %></a>
+        <span class="adr">
+          <span class="street-address">Cukrová 14</span>,
+          <span>
+            <span class="locality">Bratislava</span>,
+            <span class="postal-code">94107</span>,
+          </span>
+          <span class="country-name">Slovakia</span>
+        </span>
+      <span class="geo">
+        GPS: 
+        <abbr class="latitude" title="48.14853">N 48° 8' 54.707"</abbr>
+        <abbr class="longitude" title="17.119582">E 17° 7' 10.495"</abbr>
+      </span>
+    </address>
+
+  </div>
+</section>
 <div id="copy">
   <%= t('.copyright', :year => Time.now.year,
-    :site_name => RefinerySetting.find_or_set(:site_name, "Company Name")) %>,
-<!--  <%= mail_to RefinerySetting.find_or_set(:site_contact_email, 'info@progressbar.sk') %>, -->
+    :site_name => RefinerySetting.find_or_set(:site_name, 'Company Name')) %>,
   <% page_colophon = Page.find(18) %>
   <%= link_to(page_colophon.title, page_colophon.url) %>
 </div>
 <nav id='bottom-menu' class='menu clearfix'>
-<% page_calendar = Page.find('calendar') %>
-<% page_blog = Page.find('blog') %>
-<% page_sponsors = Page.find('sponsors') %>
-<% page_wiki = Page.find('wiki') %>
-<% page_contact = Page.find('kontakt') %>
-<% page_join = Page.find('pridaj-sa') %>
-<%= link_to(page_calendar.title, page_calendar.url) %><span class="delim">&nbsp;|&nbsp;</span>
-<%= link_to(page_blog.title, page_blog.url) %><span class="delim">&nbsp;|&nbsp;</span>
-<%= link_to(page_sponsors.title, page_sponsors.url) %><span class="delim">&nbsp;|&nbsp;</span>
-<%= link_to(page_wiki.title, page_wiki.url) %><span class="delim">&nbsp;|&nbsp;</span>
-<%= link_to(page_contact.title, page_contact.url) %><span class="delim">&nbsp;|&nbsp;</span>
-<%= link_to(page_join.title, page_join.url) %><span class="delim">&nbsp;|&nbsp;</span>
-<a href="#"><%= t('top') %>  &uarr;</a>
+  <% page_calendar = Page.find('calendar') %>
+  <% page_blog = Page.find('blog') %>
+  <% page_sponsors = Page.find('sponsors') %>
+  <% page_wiki = Page.find('wiki') %>
+  <% page_contact = Page.find('kontakt') %>
+  <% page_join = Page.find('pridaj-sa') %>
+  <%= link_to(page_calendar.title, page_calendar.url) %> <span class="delim">&nbsp;|&nbsp;</span>
+  <%= link_to(page_blog.title, page_blog.url) %> <span class="delim">&nbsp;|&nbsp;</span>
+  <%= link_to(page_sponsors.title, page_sponsors.url) %> <span class="delim">&nbsp;|&nbsp;</span>
+  <%= link_to(page_wiki.title, page_wiki.url) %> <span class="delim">&nbsp;|&nbsp;</span>
+  <%= link_to(page_contact.title, page_contact.url) %> <span class="delim">&nbsp;|&nbsp;</span>
+  <%= link_to(page_join.title, page_join.url) %> <span class="delim">&nbsp;|&nbsp;</span>
+  <a href="#"><%= t('top') %>  &uarr;</a>
 </nav>

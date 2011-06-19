@@ -53,7 +53,7 @@ gem "refinerycms-news",         '~> 1.2'
 gem 'refinerycms-blog',         '~> 1.5'
 # gem 'refinerycms-page-images',  '~> 1.0'
 
-gem 'refinerycms-calendar', '~> 1.0'
+gem 'refinerycms-calendar', :path => 'vendor/'
 gem 'refinerycms-snippets', '~> 0.4'
 #gem 'refinerycms-memberships', :git => 'git://github.com/rbriank/refinerycms_membership.git'
 #gem 'refinerycms-memberships', '~> 1.0'
