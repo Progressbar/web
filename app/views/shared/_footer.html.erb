@@ -9,13 +9,8 @@
       <a href="http://twitter.com/share" class="action-button twitter-share-button" data-count="horizontal" data-via="progressbarsk" data-related="brmlab:Prague Hackerspace Brmlab;hysterka:1337"><%= t('follow_us.twitter_recommend') %></a>
     </p>
     <p>
-      <a class="no-underline" href="<%= RefinerySetting.find_or_set(:site_facebook, 'http://www.facebook.com/progressbar') %>"><img alt="Facebook icon" src="/images/s.gif" class="sprites sprite-icon-facebook-32" /> Facebook</a>
-      <a href="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.progressbar.sk&amp;layout=standard&amp;show_faces=false&amp;width=200&amp;action=like&amp;font=arial&amp;colorscheme=dark&amp;height=40" class="action-button"><%= t('follow_us.facebook_like') %></a>
+      <a class="no-underline" href="<%= RefinerySetting.find_or_set(:site_facebook, 'http://www.facebook.com/progressbar') %>"><img alt="Facebook icon" src="/images/s.gif" class="sprites sprite-icon-facebook-32" /> Facebook</a>      
     </p>
-    <%#*<p>%>
-      <%#*<a class="no-underline" href="#"><img alt="Facebook icon" src="/images/s.gif" class="sprites sprite-icon-facebook-32" /> Soup</a>%>
-      
-    <%#*</p>%>
     <p>
       <a class="no-underline" href="https://foursquare.com/venue/<%= RefinerySetting.find_or_set(:site_foursquare_id, '7713190') %>"><img alt="Facebook icon" src="/images/s.gif" class="sprites sprite-icon-facebook-32" /> FourSquare</a>
       

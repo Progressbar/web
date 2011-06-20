@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="<%= I18n.locale %>">
   <%= render :partial => "/shared/head" %>
-  <body>
+  <body class="no-js">
     <div id="outer-wrapper">
       <div id="container">
         <div id="header-wrapper">
@@ -10,7 +10,7 @@
             <div class="reset">&nbsp;</div>
           </div>
         </div>
-        <div id="content-wrapper" <%= ' class="page-id-#{@page.id}" ' if @page %>>
+        <div id="content-wrapper" <%= " class='page-id-#{@page.id}' " if @page %>>
           <%= yield %>
           <div class="reset">&nbsp;</div>
         </div>

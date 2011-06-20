@@ -1,3 +1,5 @@
+$(document.body).removeClass('no-js');
+
 $(function() {
 	if ($('#promo').length > 0) {
 		var promo = $('#promo'),

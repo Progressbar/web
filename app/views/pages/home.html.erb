@@ -75,13 +75,20 @@
     <div class="content">
       <% if @calendar_items.any? %>
         <% @calendar_items.each do |event| %>
-      <p>
-        <span class="datetime"><%= event.start_at %></span>
-        <% event.categories.each do |ev_cat|  %>
-          <span class="category"><%= ev_cat.name %></span>
-        <% end if event.categories.any? %>
-        <span class="title"><%= event.title %></span>
-      </p>
+        <p>
+            <span class="datetime"><%= event.start_at %></span>
+            <% if event.categories.any?  %>
+            <span class="categories">
+              <% event.categories.each do |ev_cat|  %>
+                <span class="category <%= to_slug(ev_cat.name) %>"><%= ev_cat.name %></span><% unless event.categories.last() == ev_cat %>, <% end %>
+                
+              <% end %>
+              </span>
+            <% end %>
+          <a href="#">
+            <span class="title"><%= event.title %></span>
+          </a>
+        </p>
         <% end %>
       <% end %>
     </div>
