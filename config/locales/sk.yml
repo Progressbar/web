@@ -10,17 +10,18 @@ sk:
   follow_us:
     title: 'Sledujte nás'
     find_bug: 'Našiel si chybu, alebo Ti chýba nejaká funkčnosť?'
-    send_patch: 'Daj nám vedieť, alebo pošli opravu!'
+    send_patch: 'Napíš nám, alebo pošli opravu!'
     send_email: 'Svoje pripomienky a nápady nám móžete poslať i na e-mail:'
-    twitter_recommend: 'Odporuč nás.'
+    twitter_recommend: 'Daj o nás vedieť.'
+    twitter_recommend2: 'Odporuč nás.'
     facebook_like: 'Lajkuj.'
     foursquare_todo: 'Pridaj do zoznamu.'
   calendar:
     title: 'Kalendár'
-    full_schedule: 'Celý rozvrh'
+    full_schedule: 'Celý rozvrh ›'
   blogs:
     title: 'Blogy'
-    archive_posts: 'Staršie príspevky'
+    archive_posts: 'Staršie príspevky ›'
   address:
     title: 'Adresa'
   top: 'Hore'

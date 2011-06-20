@@ -55,7 +55,7 @@ pre {  padding: 18px;  white-space: pre;  white-space: pre-wrap;  white-space: p
 textarea { overflow: auto; }
 .ie6 legend, .ie7 legend { margin-left: -7px; }
 input[type="radio"] { vertical-align: text-bottom; }
-input[type="checkbox"] { vertical-align: bottom; }
+input[type="checkbox"] { vertical-align: middle; }
 .ie7 input[type="checkbox"] { vertical-align: baseline; }
 .ie6 input { vertical-align: text-bottom; }
 label, input[type=button], input[type=submit], button { cursor: pointer; }
@@ -118,17 +118,22 @@ body {
 	color: #fff;
 }
 
-#header, #content-wrapper, #footer {
+#header, #content, #footer {
 	width: 960px;
 	margin: 0px auto;
 	text-align: left;
+}
+
+#header-wrapper {
+	padding-bottom: 10px;
+	border-bottom: solid 1px #222;
 }
 
 #header {
 	background-image: url(/images/progressbar.png);
 	background-repeat: no-repeat;
 	background-position: top left;
-	height: 140px;
+/*	height: 140px;*/
 }
 
 #header #hgroup {
@@ -203,7 +208,26 @@ body {
 
 #content-wrapper {
 	padding-bottom: 40px;
+	padding-top: 30px;
 	clear: both;
+	background: #070707;
+	min-height: 25em;
+
+background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.1, #070707),
+    color-stop(0.5, #111),
+    color-stop(0.9, #0F0F0F)
+);
+background-image: -moz-linear-gradient(
+    center bottom,
+    #070707 10%,
+    #111 50%,
+    #0F0F0F 90%
+);
+
 }
 
 #body_content_left section {
@@ -253,8 +277,9 @@ body {
 #footer-wrapper {
 	clear: both;
 	background-color: #0e0e0e;
-	padding-top: 40px;
-	padding-bottom: 40px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	border-top: solid 1px #222;
 }
 
 #footer {
@@ -272,12 +297,12 @@ body {
 }
 
 #follow-us .action-button {
-	margin-left: 80px;
+	margin-left: 50px;
 }
 
 #follow-us a {
 	display: inline-block;
-	min-width: 130px;
+	min-width: 160px;
 }
 
 #follow-us a .action-button {
@@ -305,7 +330,7 @@ body {
 
 #promo {
 	position: relative;
-	margin-bottom: 10px;
+	clear: both;
 }
 
 #promo-content {
@@ -315,10 +340,12 @@ body {
 
 #promo-action {
 	float: left;
+	height: 95px;
 }
 
 #promo-nav {
 	float: right;
+	height: 95px;
 }
 
 #promo-nav .delim {
@@ -326,16 +353,13 @@ body {
 }
 
 #promo-nav a {
-	/*    background: none repeat scroll 0 0 #111111;*/
     display: block;
     float: left;
     margin-left: 2px;
     min-width: 50px;
     padding: 0px 20px;
 	height: 90px;
-	/*	line-height: 140px;*/
 	text-decoration: none;
-	/*	color: #999;*/
     text-align: center;
 }
 
@@ -454,7 +478,7 @@ h2 {
 h3 {
 	font-size: 15px;
 	font-weight: normal;
-	margin-bottom: 20px;
+	margin-bottom: 25px;
 }
 
 h4 {
@@ -482,7 +506,6 @@ h4 {
 	clear: both;
 	display: block;
 }
-
 #blog_posts .blog_post .posted_at {
 	margin: 0px;
 	display: inline;
@@ -560,7 +583,7 @@ td div:hover {
 
 
 #promo-action .button {
-	margin-top: 26px;
+	margin-top: 30px;
 	margin-left: 18px;
 	outline-style: none;
 	padding: 13px 22px;
@@ -601,26 +624,34 @@ td div:hover {
 	left: 0px;
 	top: 1px;
 }
-form {
-	/*	background: #fff;*/
-}
-input.text {
+
+input.text,
+input[type=text],
+input[type=email],
+input[type=password] {
 	height: 24px;
 	padding: 2px 5px;
 	min-width: 310px;
 	font-size: 15px;
 	border: solid 1px #91bd09;
 	margin-right: 10px;
+	background: #fff;
 }
 
-input.text:focus {
+textarea {
+	width: 98%;
+}
+
+input.text:focus,
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+textarea:focus {
 	background: #FFFFB7;
 }
 
-input.submit {
+input.submit, input[type=submit] {
 	padding: 4px 10px;
-	/*
-	font-size: 15px;*/
 }
 
 p a:link {
@@ -633,10 +664,12 @@ p a:link {
 
 form .field {
 	margin-bottom: 10px;
+	padding-bottom: 5px;
 }
 
 form .field label {
 	display: block;
+	padding-bottom: 5px;
 }
 
 #new_inquiry {

@@ -6,7 +6,7 @@
     <p>
       <a  class="no-underline" href="<%= RefinerySetting.find_or_set(:site_twitter, 'http://twitter.com/progressbarsk') %>"><img alt="Twitter icon" src="/images/s.gif" class="sprites sprite-icon-twitter-32" /> Twitter</a>
 
-      <a href="http://twitter.com/share" class="action-button twitter-share-button" data-count="horizontal" data-via="progressbarsk" data-related="brmlab:Prague Hackerspace Brmlab;hysterka:1337"><%= t('follow_us.twitter_recommend') %></a>
+      <!-- <a href="http://twitter.com/share" class="action-button twitter-share-button" data-count="horizontal" data-via="progressbarsk" data-related="brmlab:Prague Hackerspace Brmlab;hysterka:1337"><%= t('follow_us.twitter_recommend') %></a> -->
     </p>
     <p>
       <a class="no-underline" href="<%= RefinerySetting.find_or_set(:site_facebook, 'http://www.facebook.com/progressbar') %>"><img alt="Facebook icon" src="/images/s.gif" class="sprites sprite-icon-facebook-32" /> Facebook</a>      
@@ -14,8 +14,7 @@
     <p>
       <a class="no-underline" href="https://foursquare.com/venue/<%= RefinerySetting.find_or_set(:site_foursquare_id, '7713190') %>"><img alt="Facebook icon" src="/images/s.gif" class="sprites sprite-icon-facebook-32" /> FourSquare</a>
       
-      <a class="no-underline action-button" href="http://foursquare.com/remote_todo?vid=<%= RefinerySetting.find_or_set(:site_foursquare_id, '7713190') %>" onclick="window.open('http://foursquare.com/remote_todo?vid=<%= RefinerySetting.find_or_set(:site_foursquare_id, '7713190') %>', '_blank', 'toolbar=0,status=0,height=380,width=650,scrollbars=no,resizable=no'); return false;">
-        <%= t('follow_us.foursquare_todo') %></a>
+      <!--<a class="no-underline action-button" href="http://foursquare.com/remote_todo?vid=<%= RefinerySetting.find_or_set(:site_foursquare_id, '7713190') %>" onclick="window.open('http://foursquare.com/remote_todo?vid=<%= RefinerySetting.find_or_set(:site_foursquare_id, '7713190') %>', '_blank', 'toolbar=0,status=0,height=380,width=650,scrollbars=no,resizable=no'); return false;"><%= t('follow_us.foursquare_todo') %></a> -->
     </p>
     <p>
       <%= t('follow_us.find_bug') %>
