@@ -144,7 +144,7 @@ body {
 
 #logo {
 	display: block;
-	height: 100%;
+	height: 135px;
 	width: 100%;
 }
 
@@ -188,10 +188,6 @@ body {
 	padding-right: 0px;
 	font-size: 115.4%;
 }
-/*
-#menu a:last-child {
-	padding-right: 0px;
-}*/
 
 #menu li:hover ul {
 	display: block;
@@ -210,24 +206,22 @@ body {
 	padding-bottom: 40px;
 	padding-top: 30px;
 	clear: both;
-	background: #070707;
+	background-color: #070707;
 	min-height: 25em;
-
-background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(0.1, #070707),
-    color-stop(0.5, #111),
-    color-stop(0.9, #0F0F0F)
-);
-background-image: -moz-linear-gradient(
-    center bottom,
-    #070707 10%,
-    #111 50%,
-    #0F0F0F 90%
-);
-
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.1, #070707),
+		color-stop(0.5, #111),
+		color-stop(0.9, #0F0F0F)
+	);
+	background-image: -moz-linear-gradient(
+		center bottom,
+		#070707 10%,
+		#111 50%,
+		#0F0F0F 90%
+	);
 }
 
 #body_content_left section {
@@ -241,7 +235,7 @@ background-image: -moz-linear-gradient(
 
 #body_content_right {
 	float: right;
-	padding-top: 20px;
+/*	padding-top: 20px;*/
 	width: 320px;
 }
 
@@ -472,7 +466,7 @@ background-image: -moz-linear-gradient(
 
 h2 {
 	font-size: 20px;
-	margin-bottom: 20px;
+	margin-bottom: 25px;
 }
 
 h3 {
@@ -584,7 +578,7 @@ td div:hover {
 
 #promo-action .button {
 	margin-top: 30px;
-	margin-left: 18px;
+	margin-left: 36px;
 	outline-style: none;
 	padding: 13px 22px;
 	font-weight: lighter;
@@ -598,7 +592,7 @@ td div:hover {
 }
 
 #promo-action #support {
-	left: 48px;
+	left: 36px;
 	font-weight: normal;
 }
 
@@ -633,13 +627,14 @@ input[type=password] {
 	padding: 2px 5px;
 	min-width: 310px;
 	font-size: 15px;
-	border: solid 1px #91bd09;
+	border: solid 1px #efefef;
 	margin-right: 10px;
-	background: #fff;
+	background: #cfcfcf;
 }
 
 textarea {
 	width: 98%;
+	background: #eee;
 }
 
 input.text:focus,
@@ -647,7 +642,7 @@ input[type=text]:focus,
 input[type=email]:focus,
 input[type=password]:focus,
 textarea:focus {
-	background: #FFFFB7;
+	background: #ffc;
 }
 
 input.submit, input[type=submit] {
@@ -728,4 +723,10 @@ form .field label {
 	padding: 0 10px;
 	
 	border-bottom: none;
+}
+
+
+aside {
+	padding-bottom: 20px;
+	margin-bottom: 20px;
 }
