@@ -5,6 +5,10 @@
 	background-repeat: no-repeat;
 }
 
+a .sprites {
+	margin-right: 6px;
+}
+
 img.sprites {
 	vertical-align: middle;
 }
