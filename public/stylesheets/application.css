@@ -118,7 +118,7 @@ body {
 	color: #fff;
 }
 
-#container {
+#header, #content-wrapper, #footer {
 	width: 960px;
 	margin: 0px auto;
 	text-align: left;
@@ -202,11 +202,9 @@ body {
 }
 
 #content-wrapper {
-	padding-bottom: 20px;
+	padding-bottom: 40px;
 	clear: both;
-	/*	border-bottom: solid 1px;*/
 }
-
 
 #body_content_left section {
 	margin-bottom: 20px;
@@ -254,7 +252,9 @@ body {
 
 #footer-wrapper {
 	clear: both;
-	padding-top: 20px;
+	background-color: #0e0e0e;
+	padding-top: 40px;
+	padding-bottom: 40px;
 }
 
 #footer {
@@ -273,8 +273,6 @@ body {
 
 #follow-us .action-button {
 	margin-left: 80px;
-/*	background: none;*/
-/*	color: #999999;*/
 }
 
 #follow-us a {
@@ -284,8 +282,6 @@ body {
 
 #follow-us a .action-button {
 	margin-left: 110px;
-/*	background: none;*/
-/*	color: #999999;*/
 }
 
 #follow-us .sprites {
@@ -295,8 +291,7 @@ body {
 #copy {
 	clear: both;
 	float: left;
-	line-height: 50px;
-	height: 50px;
+	padding-top: 20px;
 }
 
 #mailing-list {
@@ -305,8 +300,7 @@ body {
 
 #bottom-menu {
 	float: right;
-	line-height: 50px;
-	height: 50px;
+	padding-top: 20px;
 }
 
 #promo {
@@ -470,6 +464,23 @@ h4 {
 .datetime, details {
 	display: block;
 	font-family: monospace, serif;
+}
+
+#calendar .categories {
+	float: right;
+}
+
+#calendar .content {
+	padding-right: 20px;
+}
+
+#calendar .datetime {
+	float: left;
+}
+
+#calendar .title {
+	clear: both;
+	display: block;
 }
 
 #blog_posts .blog_post .posted_at {
@@ -671,11 +682,12 @@ form .field label {
 .geo {
 	display: block;
 	clear: both;
-	background: none repeat scroll 0 0 #070707;
-    border: 1px solid #0f0f0f;
+	background: #1f1f1f;
+/*    border: 1px solid #0f0f0f;*/
     font-size: 15px;
 	padding: 20px;
 	margin-top: 20px;
+	-moz-box-shadow: 1px 1px 0 #555, 1px 1px 1px #030303 inset;
     
 }
 
