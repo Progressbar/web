@@ -101,7 +101,7 @@ GEM
       friendly_id_globalize3 (~> 3.2.1)
       refinerycms-core (= 1.0.0)
     refinerycms-base (1.0.0)
-    refinerycms-blog (1.5.2)
+    refinerycms-blog (1.6.0)
       acts-as-taggable-on
       filters_spam (~> 0.2)
       refinerycms-core (~> 1.0.0)
