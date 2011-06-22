@@ -480,8 +480,13 @@ h4 {
 }
 
 .datetime, details {
-	display: block;
 	font-family: monospace, serif;
+}
+
+#calendar h3 em {
+/*	padding: 0px 5px;*/
+	padding-right: 18px;
+	font-size: smallg;
 }
 
 #calendar .categories {
@@ -493,7 +498,7 @@ h4 {
 }
 
 #calendar .datetime {
-	float: left;
+/*	float: left;*/
 }
 
 #calendar .title {
@@ -545,6 +550,7 @@ td div:hover {
 	text-decoration: none;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
+	border-radius: 5px;
 	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
 	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
 	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);

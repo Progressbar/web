@@ -8,6 +8,22 @@ module ApplicationHelper
 		return params[:locale].to_s === lang
 		
   end
+	
+  def event_start_datetime(event_dt, day_dt)
+		if event_dt.start_at.day != day_dt.day || event_dt.start_at.day != event_dt.end_at.day
+      return event_dt.start_at.strftime("%d.%m %I:%M")
+    end
+		
+    return event_dt.start_at.strftime("%I:%M")
+  end
+	
+  def event_end_datetime(event_dt, day_dt)
+		if event_dt.end_at.day != day_dt.day || event_dt.end_at.day != event_dt.start_at.day
+      return event_dt.end_at.strftime("%d.%m %I:%M")
+    end
+		
+    return event_dt.end_at.strftime("%I:%M")
+  end
   
   # Generate a slug for the string +value+.
   #
