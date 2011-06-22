@@ -1,28 +1,42 @@
-<section id="body_content"  class="no_body_content_left">
+<section id="body_content" class="no_body_content_left">
   <section id="calendar">
     <header>
-      <h3><%= link_to(t('calendar.title'), @page_calendar.url) %>
+      <h3><%= link_to(t('calendar.title'), @page_calendar.url, :class => 'float-left') %> <span class="delim">&nbsp;-&nbsp;</span><em title="Dnes je: <%= Time.now.strftime("%d.%m.%Y") %>"><%= Time.now.strftime("%U") %> <%= t('calendar.week') %></em>
+        <span class="reset">&nbsp;</span>
       </h3>
     </header>
     <div class="content">
-      <% if @calendar_items.any? %>
-        <% @calendar_items.each do |event| %>
-        <p>
-            <span class="datetime"><%= event.start_at %></span>
-            <% if event.categories.any?  %>
-            <span class="categories">
-              <% event.categories.each do |ev_cat|  %>
-                <span class="category <%= to_slug(ev_cat.name.downcase) %>"><%= link_to ev_cat.name.downcase, category_events_path(ev_cat) %></span><% unless event.categories.last() == ev_cat %>, <% end %>
-                
-              <% end %>
-              </span>
-            <% end %>
-          <a href="#">
-            <span class="title"><%= event.title %></span>
-          </a>
-        </p>
-        <% end %>
+        <ul>
+      <% @events_in_week.each do |day| %>
+
+            <li><%= t("calendar.#{day['day'].strftime("%A").to_s.downcase}") %><br />
+                <p>
+                <% if day['events'].any? %>
+                  <% day['events'].each do |event| %>
+                    <span class="datetime"><%= event_start_datetime(event, day['day']) %></span> <span class="delim">&nbsp;-&nbsp;</span>
+                    <span class="datetime"><%= event_end_datetime(event, day['day']) %></span>
+                    <% if event.categories.any?  %>
+                    <span class="categories">
+                      <% event.categories.each do |ev_cat|  %>
+                        <span class="category <%= to_slug(ev_cat.name.downcase) %>"><%= link_to ev_cat.name.downcase, category_events_path(ev_cat) %></span><% unless event.categories.last() == ev_cat %>, <% end %>
+                      <% end %>
+                      </span>
+                    <% end %>
+                    <a href="#"><span class="title"><%= event.title %></span></a>
+                  <% end %>
+                <% else %>
+                    <abbr title="<%= t('calendar.explain_no_official_event') %>"><%= t('calendar.no_official_event') %></abbr>
+                  <% if day['day'].day > Time.now.day %>
+                    <%= mail_to 'info@progressbark.s', t('calendar.organize_action'), :title => t('calendar.organize_action_explanation'), :class => 'float-right', :subject => t('calendar.organize_action_email_subject', :day => day['day'].strftime("%d.%m.%Y")), :body => t('calendar.organize_action_email_body', :day => day['day'].strftime("%d.%m.%Y")) %>
+                  <% end %>
+                <% end %>
+                <span class="reset">&nbsp;</span>
+                </p>
+            </li>
+
+
       <% end %>
+        </ul>
     </div>
     <footer>
       <div class="float-left">
@@ -53,11 +67,11 @@
                   :preserve_html_tags => false %>
               <% end %>
             </h4>
-            
+
               <%= truncate post.body,
                 :length => 160,
                 :preserve_html_tags => true %>
-            
+
           </div>
         <% end %>
       <% end %>
