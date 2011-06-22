@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110612105037) do
+ActiveRecord::Schema.define(:version => 20110621182825) do
 
   create_table "blog_categories", :force => true do |t|
     t.string   "title"
@@ -118,6 +118,29 @@ ActiveRecord::Schema.define(:version => 20110612105037) do
     t.datetime "updated_at"
   end
 
+  create_table "members", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.boolean  "trend_email_subscribed",                :default => true
+    t.string   "avatar_uid"
+    t.string   "avatar_name"
+    t.string   "email",                                 :default => "",   :null => false
+    t.string   "encrypted_password",     :limit => 128, :default => "",   :null => false
+    t.string   "reset_password_token"
+    t.string   "remember_token"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",                         :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "members", ["email"], :name => "index_members_on_email", :unique => true
+  add_index "members", ["reset_password_token"], :name => "index_members_on_reset_password_token", :unique => true
+
   create_table "news_item_translations", :force => true do |t|
     t.integer  "news_item_id"
     t.string   "locale"
@@ -191,6 +214,7 @@ ActiveRecord::Schema.define(:version => 20110612105037) do
     t.integer  "lft"
     t.integer  "rgt"
     t.integer  "depth"
+    t.boolean  "need_login",          :default => false
   end
 
   add_index "pages", ["depth"], :name => "index_pages_on_depth"
@@ -198,6 +222,11 @@ ActiveRecord::Schema.define(:version => 20110612105037) do
   add_index "pages", ["lft"], :name => "index_pages_on_lft"
   add_index "pages", ["parent_id"], :name => "index_pages_on_parent_id"
   add_index "pages", ["rgt"], :name => "index_pages_on_rgt"
+
+  create_table "pages_roles", :id => false, :force => true do |t|
+    t.integer "page_id"
+    t.integer "role_id"
+  end
 
   create_table "refinery_settings", :force => true do |t|
     t.string   "name"
@@ -331,6 +360,19 @@ ActiveRecord::Schema.define(:version => 20110612105037) do
     t.string   "remember_token"
     t.string   "reset_password_token"
     t.datetime "remember_created_at"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "title"
+    t.string   "phone"
+    t.string   "fax"
+    t.string   "website"
+    t.string   "organization"
+    t.string   "street_address"
+    t.string   "city"
+    t.integer  "province"
+    t.string   "postal_code"
+    t.datetime "member_until"
+    t.string   "membership_level"
   end
 
   add_index "users", ["id"], :name => "index_users_on_id"
