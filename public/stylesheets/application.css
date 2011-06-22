@@ -484,9 +484,8 @@ h4 {
 }
 
 #calendar h3 em {
-/*	padding: 0px 5px;*/
 	padding-right: 18px;
-	font-size: smallg;
+	font-size: small;
 }
 
 #calendar .categories {
