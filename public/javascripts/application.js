@@ -52,7 +52,7 @@ $(function() {
 						clearTimeout(promo_timer);
 						promo_auto_animate = false;
 					}
-				}, 3000);
+				}, 4000);
 
 				return false;
 			}

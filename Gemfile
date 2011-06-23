@@ -5,7 +5,11 @@ gem 'rails', '3.0.9'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+#gem 'sqlite3'
+#gem 'mysql2', '~> 0.2.3'
+#gem 'mysql2'
+
+gem 'mysql2', '~> 0.2.7'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -56,9 +60,9 @@ gem 'refinerycms-blog',         '~> 1.5'
 gem 'refinerycms-calendar', :path => 'vendor/'
 gem 'refinerycms-snippets', '~> 0.4'
 #gem 'refinerycms-memberships', :git => 'git://github.com/rbriank/refinerycms_membership.git'
-#gem 'refinerycms-memberships', '~> 1.0'
+##gem 'refinerycms-memberships', '~> 1.0'
 #gem 'refinerycms-members', :path => 'vendor/'
-gem 'refinerycms-memberships', :path => 'vendor/'
+#gem 'refinerycms-memberships', :path => 'vendor/'
 
 # Add i18n support (optional, you can remove this if you really want to).
 gem 'refinerycms-i18n',         '~> 1.0.0'
