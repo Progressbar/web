@@ -1,4 +1,83 @@
-/*
-  Override default refinery formatting below.
-  Formatting applies to backend WYSIWYG editors and all frontend.
-*/
+.discount {
+/*	display: block;
+	border: solid 1px #fff;
+	padding: 7px 10px;
+	-moz-transform: rotate(45deg);
+	width: 100px; 
+	position: relative;
+	right: -20px;
+	top: -20px;
+	float: right;
+	background: #000;
+	line-height: 1.2em;*/
+	
+}
+
+.join-box {
+	width: 300px;
+/*	border: solid 1px;*/
+	float: left;
+	margin-bottom: 50px;
+}
+
+.join-box header,
+.join-box .content,
+.join-box .footer {
+	clear: both;
+}
+
+#supporter-promo {
+	float: right;
+	width: 300px;
+}
+
+.price {
+	height: 40px;
+	display: block;
+	line-height: 40px;
+	text-align: center;
+}
+
+#content h4, #content ul {
+	margin-bottom: 20px;
+}
+
+#content form {
+	margin-bottom: 20px;
+}
+
+legend {
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+form table {
+	width: 100%;
+	vertical-align: middle;
+}
+
+form th {
+/*	width: 20%;*/
+	padding: 5px 0;
+}
+
+form td {
+/*	width: 80%;*/
+	padding: 5px 0;
+}
+
+#content th label {
+	display: block
+}
+
+td textarea {
+	widows: 99%;
+	height: 8em;
+	border: solid 1px;
+}
+
+
+#registration-form {
+	padding: 20px 0;
+	border-bottom: solid 1px #111;
+}
