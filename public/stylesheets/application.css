@@ -133,7 +133,7 @@ body {
 	background-image: url(/images/progressbar.png);
 	background-repeat: no-repeat;
 	background-position: top left;
-/*	height: 140px;*/
+	/*	height: 140px;*/
 }
 
 #header #hgroup {
@@ -215,13 +215,13 @@ body {
 		color-stop(0.1, #070707),
 		color-stop(0.5, #111),
 		color-stop(0.9, #0F0F0F)
-	);
+		);
 	background-image: -moz-linear-gradient(
 		center bottom,
 		#070707 10%,
 		#111 50%,
 		#0F0F0F 90%
-	);
+		);
 }
 
 #body_content_left section {
@@ -235,7 +235,7 @@ body {
 
 #body_content_right {
 	float: right;
-/*	padding-top: 20px;*/
+	/*	padding-top: 20px;*/
 	width: 320px;
 }
 
@@ -450,15 +450,15 @@ body {
 .promo-text-bg-4 {
 	background: #000;
 	height: 180px;
-	width: 580px;
+	width: 585px;
 	opacity: 0.75;
-	left: 147px;
+	left: 180px;
 	bottom: 45px;
 }
 
 .promo-text-4 {
 	bottom: 50px;
-	left: 168px;
+	left: 200px;
 	width: 570px;
 	font-size: 15px;
 }
@@ -497,7 +497,7 @@ h4 {
 }
 
 #calendar .datetime {
-/*	float: left;*/
+	/*	float: left;*/
 }
 
 #calendar .title {
@@ -531,7 +531,7 @@ a.il {
 #body_content_title, #blog_post header h1 {
 	/*	display: none;*/
 	padding-top: 20px;
-	font-size: 2em;
+	font-size: 1.85em;
 	margin-bottom: 20px;
 }
 
@@ -632,14 +632,15 @@ input[type=password] {
 	padding: 2px 5px;
 	min-width: 310px;
 	font-size: 15px;
-	border: solid 1px #efefef;
+	border: solid 1px;
+/*	border: solid 1px #efefef;*/
 	margin-right: 10px;
-	background: #cfcfcf;
+	background: #222;
 }
 
 textarea {
 	width: 98%;
-	background: #eee;
+	background: #222;
 }
 
 input.text:focus,
@@ -710,23 +711,23 @@ form .field label {
 #address .url, #address .email, #address .adr {
 	float: left;
 	text-indent: -1337em;
-} 
+}
 
 .geo {
 	display: block;
 	clear: both;
 	background: #1f1f1f;
-/*    border: 1px solid #0f0f0f;*/
+	/*    border: 1px solid #0f0f0f;*/
     font-size: 15px;
 	padding: 20px;
 	margin-top: 20px;
 	-moz-box-shadow: 1px 1px 0 #555, 1px 1px 1px #030303 inset;
-    
+
 }
 
 .geo abbr {
 	padding: 0 10px;
-	
+
 	border-bottom: none;
 }
 

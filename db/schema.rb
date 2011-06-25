@@ -199,6 +199,11 @@ ActiveRecord::Schema.define(:version => 20110612105037) do
   add_index "pages", ["parent_id"], :name => "index_pages_on_parent_id"
   add_index "pages", ["rgt"], :name => "index_pages_on_rgt"
 
+  create_table "pages_roles", :id => false, :force => true do |t|
+    t.integer "page_id"
+    t.integer "role_id"
+  end
+
   create_table "refinery_settings", :force => true do |t|
     t.string   "name"
     t.text     "value"
@@ -259,7 +264,6 @@ ActiveRecord::Schema.define(:version => 20110612105037) do
   end
 
   add_index "slugs", ["locale"], :name => "index_slugs_on_locale"
-  add_index "slugs", ["name", "sluggable_type", "scope", "sequence"], :name => "index_slugs_on_n_s_s_and_s", :unique => true
   add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
 
   create_table "snippet_page", :force => true do |t|
@@ -300,7 +304,6 @@ ActiveRecord::Schema.define(:version => 20110612105037) do
   end
 
   add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
-  add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
 
   create_table "tags", :force => true do |t|
     t.string "name"
