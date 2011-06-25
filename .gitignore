@@ -4,6 +4,7 @@ log/*.log
 tmp/
 # Rails
 .bundle
+config/database.yml
 db/*.sqlite3
 db/*.sqlite3-journal
 *.log
