@@ -60,4 +60,14 @@ $(function() {
 			promoAnimateTimer();
 		}
 	}
+	
+	$('a.scroll').bind('click', function () {
+		var a = $(this),
+			scroll_to = $(a.attr('href'));
+		if (scroll_to.length > 0) {
+			$.scrollTo(scroll_to, 1000);
+		}
+		
+		return false;
+	});
 });
