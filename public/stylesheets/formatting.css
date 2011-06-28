@@ -57,7 +57,6 @@ form table {
 }
 
 form th {
-/*	width: 20%;*/
 	padding: 5px 0;
 }
 
@@ -76,8 +75,42 @@ td textarea {
 	border: solid 1px;
 }
 
-
 #registration-form {
 	padding: 20px 0;
 	border-bottom: solid 1px #111;
+}
+
+.support-box {
+	width: 300px;
+	float: left;
+	margin-bottom: 50px;
+	margin-right: 20px;
+/*	background: #fff;*/
+}
+
+.support-box .banner {
+	height: 200px;
+	width: 100%;
+	font-size: 15px;
+	font-style: italic;
+}
+
+.banner p {
+	padding: 20px;
+}
+
+#sponzoring-box .banner {
+	background: #1B2110;
+}
+
+#shop-box .banner {
+	background: #2E3539;
+}
+
+#propagation-box .banner {
+	background: #3A2C34;
+}
+
+#sponzoring, #shop, #propagation {
+	height: 25em;
 }
