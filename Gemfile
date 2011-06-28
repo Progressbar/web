@@ -11,6 +11,8 @@ gem 'rails', '3.0.9'
 
 gem 'mysql2', '~> 0.2.7'
 
+gem 'icalendar'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
