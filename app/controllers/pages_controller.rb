@@ -36,6 +36,7 @@ class PagesController < ApplicationController
                         {'day' => tue, 'events' => tue_ev}, 
                         {'day' => wed, 'events' => wed_ev}, 
                         {'day' => thu, 'events' => thu_ev}, 
+                        {'day' => fri, 'events' => fri_ev}, 
                         {'day' => sat, 'events' => sat_ev}, 
                         {'day' => sun, 'events' => sun_ev} ]
   end
