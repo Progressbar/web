@@ -70,4 +70,8 @@ $(function() {
 		
 		return false;
 	});
+	
+	$('.tabs').tabs();
+	
+	$("a.lightbox").fancybox({'titlePosition': 'inside'})
 });

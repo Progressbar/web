@@ -38,7 +38,7 @@
 	text-align: center;
 }
 
-#content h4, #content ul {
+#content ul {
 	margin-bottom: 20px;
 }
 
@@ -113,4 +113,12 @@ td textarea {
 
 #sponzoring, #shop, #propagation {
 	height: 25em;
+}
+
+.clear {
+	clear: both;
+}
+
+form {
+	max-width: 640px;
 }

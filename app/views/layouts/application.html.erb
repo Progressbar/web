@@ -41,7 +41,9 @@
       </div>
     </div>
     <%= javascript_include_tag 'jquery-1.6.1.min' %>
-<%#= javascript_include_tag 'jquery-ui/js/jquery-ui-1.8.13.custom.min' unless is_homepage?() %>
+    <%#= javascript_include_tag 'jquery-ui/js/jquery-ui-1.8.13.custom.min' unless is_homepage?() %>
+    <%= javascript_include_tag 'jquery-ui/js/jquery-ui-1.8.13.custom.min' %>
+    <%= javascript_include_tag 'jquery.fancybox-1.3.4' %>
     <%= javascript_include_tag 'jquery.scrollTo-1.4.2-min' %>
     <%= javascript_include_tag 'application' %>
     <% if Rails.env.production? %>
