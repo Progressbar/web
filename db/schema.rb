@@ -10,12 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110612105037) do
+ActiveRecord::Schema.define(:version => 20110709124334) do
 
   create_table "blog_categories", :force => true do |t|
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "cached_slug"
   end
 
   add_index "blog_categories", ["id"], :name => "index_blog_categories_on_id"
@@ -48,6 +49,9 @@ ActiveRecord::Schema.define(:version => 20110612105037) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "cached_slug"
+    t.string   "custom_url"
+    t.text     "custom_teaser"
   end
 
   add_index "blog_posts", ["id"], :name => "index_blog_posts_on_id"
@@ -74,7 +78,7 @@ ActiveRecord::Schema.define(:version => 20110612105037) do
     t.datetime "end_at"
     t.string   "venue_name"
     t.string   "venue_address"
-    t.decimal  "ticket_price",  :precision => 8, :scale => 2
+    t.decimal  "ticket_price",    :precision => 8, :scale => 2
     t.string   "ticket_link"
     t.text     "description"
     t.boolean  "featured"
@@ -82,6 +86,12 @@ ActiveRecord::Schema.define(:version => 20110612105037) do
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "duration_hour"
+    t.integer  "duration_minute"
+    t.boolean  "all_day"
+    t.boolean  "repeating"
+    t.text     "recurrence"
   end
 
   add_index "events", ["id"], :name => "index_events_on_id"
@@ -314,9 +324,9 @@ ActiveRecord::Schema.define(:version => 20110612105037) do
   add_index "user_plugins", ["user_id", "name"], :name => "index_unique_user_plugins", :unique => true
 
   create_table "users", :force => true do |t|
-    t.string   "username",             :null => false
-    t.string   "email",                :null => false
-    t.string   "encrypted_password",   :null => false
+    t.string   "username",               :null => false
+    t.string   "email",                  :null => false
+    t.string   "encrypted_password",     :null => false
     t.string   "persistence_token"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -329,6 +339,22 @@ ActiveRecord::Schema.define(:version => 20110612105037) do
     t.string   "remember_token"
     t.string   "reset_password_token"
     t.datetime "remember_created_at"
+    t.integer  "progressbar_uid"
+    t.string   "progressbar_screenname"
+    t.string   "progressbar_openid"
+    t.string   "progressbar_language"
+    t.text     "progressbar_comment"
+    t.string   "progressbar_firstname"
+    t.string   "progressbar_lastname"
+    t.string   "progressbar_midlename"
+    t.string   "progressbar_job"
+    t.string   "progressbar_active"
+    t.string   "progressbar_digest"
+    t.string   "progressbar_facebook"
+    t.string   "progressbar_twitter"
+    t.string   "progressbar_jabber"
+    t.string   "progressbar_icq"
+    t.string   "progressbar_mobile"
   end
 
   add_index "users", ["id"], :name => "index_users_on_id"
