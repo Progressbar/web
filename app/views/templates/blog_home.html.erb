@@ -1,15 +1,17 @@
 <section id="blogs">
   <header>
-    <h3><%= link_to(t('blogs.title'), @page_blog.url) %>
-    </h3>
+    <h2><%= link_to(t('blogs.title'), @page_blog.url) %>
+    </h2>
   </header>
   <div class="content">
     <% if @blog_posts.any? %>
       <% @blog_posts.each do |post| %>
         <div>
+          <!-- 
           <%= link_to blog_post_url(post), :class => 'il' do -%>
-            <img alt="ilustration" src="/images/content/blogs/<%= post.id %>_t.jpg" />
+            <img alt="ilustration" src="/images/content/blogs/<%= post.id %>_t.jpg" /> 
           <% end %>
+          -->
           <h4>
             <%= link_to blog_post_url(post) do -%>
               <%= truncate post.title,
