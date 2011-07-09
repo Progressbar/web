@@ -46,6 +46,7 @@ group :development, :test do
   # Then, run 'rails generate refinerycms_testing' which will copy its support files.
   # Finally, run 'rake' to run the tests.
   # gem 'refinerycms-testing',    '~> 1.0.0'
+  gem 'annotate'
 end
 
 # END REFINERY CMS ============================================================
@@ -56,7 +57,8 @@ end
 # Specify additional Refinery CMS Engines here (all optional):
 gem 'refinerycms-inquiries',    '~> 1.0'
 gem "refinerycms-news",         '~> 1.2'
-gem 'refinerycms-blog',         '~> 1.5'
+#gem 'refinerycms-blog',         '~> 1.6.2'
+gem 'refinerycms-blog', :git => 'git://github.com/resolve/refinerycms-blog.git'
 # gem 'refinerycms-page-images',  '~> 1.0'
 
 gem 'refinerycms-calendar', :path => 'vendor/'
