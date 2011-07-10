@@ -1,3 +1,5 @@
+//=require pjax
+
 $(document.body).removeClass('no-js');
 
 $(function() {
@@ -73,5 +75,12 @@ $(function() {
 	
 	$('.tabs').tabs();
 	
-	$("a.lightbox").fancybox({'titlePosition': 'inside'})
+	$('a.lightbox').fancybox({'titlePosition': 'inside'});
+	
+//	$('#menu a').pjax('#content');
+
+	
+//	$.ajax('http://localhost:3000/oficiality/sponzori?_pjax=true', function (r) {
+//		console.log(r);
+//	})
 });
