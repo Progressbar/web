@@ -17,49 +17,49 @@ begin
   
 #  # clean env
 #### User.delete_all()
-#  puts User.delete_all('progressbar_uid IS NOT NULL OR last_sign_in_at IS NULL')
-#  
-#  liferay_users = LiferayUser.all
-#  liferay_users.each do |lu|
-#    fb = tw = icq = mob = jab = ''
-#    if lu.contact
-#      fb = lu.contact.facebookSn.gsub(/http:\/\/(www\.)?facebook\.com\//, '')
-#      tw = lu.contact.twitterSn.gsub(/http:\/\/(www\.)?twitter\.com\//, '')
-#      icq = lu.contact.icqSn
-#      mob = lu.contact.smsSn
-#      jab = lu.contact.jabberSn      
-#    end
-#    pass = (0...20).map{ ('a'..'z').to_a[rand(26)] }.join
-#    uname = "#{lu.firstName} #{lu.lastName}"
-#    uname = lu.emailAddress if uname.nil? or uname.empty?
-#
-#    u = User.create(:username => uname, :email => lu.emailAddress,:password => pass, :password_confirmation => pass)
-#    
-#    if u.valid?
-#      u.progressbar_uid = lu.userId
-#      u.progressbar_screenname = lu.screenName
-#      u.progressbar_openid = lu.openId
-#      u.progressbar_language = lu.languageId
-#      u.progressbar_comment = lu.comments
-#      u.progressbar_firstname = lu.firstName
-#      u.progressbar_lastname = lu.lastName
-#      u.progressbar_midlename = lu.middleName
-#      u.progressbar_job = lu.jobTitle
-#      u.progressbar_active = lu.active_
-#      u.progressbar_digest = lu.digest
-#      u.progressbar_facebook = fb
-#      u.progressbar_twitter = tw
-#      u.progressbar_jabber = jab
-#      u.progressbar_icq = icq
-#      u.progressbar_mobile = mob
-#    
-#      u.save
-#    else
-#      puts "#{lu.firstName} #{lu.lastName} -- #{lu.userId} -- #{lu.emailAddress} -- #{u.errors.to_s}" 
-#    end
-#  end
-#  
-#  puts 'users import finish'
+  puts User.delete_all('progressbar_uid IS NOT NULL OR last_sign_in_at IS NULL')
+  
+  liferay_users = LiferayUser.all
+  liferay_users.each do |lu|
+    fb = tw = icq = mob = jab = ''
+    if lu.contact
+      fb = lu.contact.facebookSn.gsub(/http:\/\/(www\.)?facebook\.com\//, '')
+      tw = lu.contact.twitterSn.gsub(/http:\/\/(www\.)?twitter\.com\//, '')
+      icq = lu.contact.icqSn
+      mob = lu.contact.smsSn
+      jab = lu.contact.jabberSn      
+    end
+    pass = (0...20).map{ ('a'..'z').to_a[rand(26)] }.join
+    uname = "#{lu.firstName} #{lu.lastName}"
+    uname = lu.emailAddress if uname.nil? or uname.empty?
+
+    u = User.create(:username => uname, :email => lu.emailAddress,:password => pass, :password_confirmation => pass)
+    
+    if u.valid?
+      u.progressbar_uid = lu.userId
+      u.progressbar_screenname = lu.screenName
+      u.progressbar_openid = lu.openId
+      u.progressbar_language = lu.languageId
+      u.progressbar_comment = lu.comments
+      u.progressbar_firstname = lu.firstName
+      u.progressbar_lastname = lu.lastName
+      u.progressbar_midlename = lu.middleName
+      u.progressbar_job = lu.jobTitle
+      u.progressbar_active = lu.active_
+      u.progressbar_digest = lu.digest
+      u.progressbar_facebook = fb
+      u.progressbar_twitter = tw
+      u.progressbar_jabber = jab
+      u.progressbar_icq = icq
+      u.progressbar_mobile = mob
+    
+      u.save
+    else
+      puts "#{lu.firstName} #{lu.lastName} -- #{lu.userId} -- #{lu.emailAddress} -- #{u.errors.to_s}" 
+    end
+  end
+  
+  puts 'users import finish'
 
 #problematic blog posts
 #26955 -- 0 -- Postrehy z Luxemburgska (fotoblog) -- titlehas already been taken
@@ -87,94 +87,94 @@ begin
 #          relative images in post: 27149 -- Postrehy z Luxemburgska (fotoblog) -- src="/image/image_gallery?uuid=de5c733d-84e8-4ca2-99a4-da4dfba21b04&amp;groupId=10842&amp;t=1288621168961"
 #          relative images in post: 26353 -- Moja prvá "vyhackovaná" vec -- src="/image/image_gallery?uuid=3dafe28e-dc09-4b2c-8043-1f68d7cda964&amp;groupId=12151&amp;t=1287750729484"          
 #
-#  puts BlogPost.delete_all()
-#  
-#  liferay_blogs = LiferayBlog.all(:order => 'entryId DESC')
-#  puts "blogs to import: #{liferay_blogs.count}"
-#  
-#  liferay_blogs.each do |lb|
-#    content = ActionController::Base.helpers.sanitize(lb.content.to_s, 
-#      :tags => %w(h1 h2 h3 h4 h5 p div a strong table thead tbody tr th td img br em), 
-#      :attributes => %w(id class href title src width height))
-#    
-#    content = content.gsub(/&lt;!--(.+)-->/, '')
-#    u = User.where('progressbar_uid = ?', lb.userId).first
-#
-#    if u
-#      b = BlogPost.create(
-#        :title => lb.title,
-#        :body => content,
-#        :user_id => u.id
-#      )
-#      
-#      if b.valid?
-#        if content =~ /src="(\.?\/([^"]+))"/
-#          puts "relative images in post: #{lb.entryId} -- #{lb.title} -- #{content.match(/src="\.?\/([^"]+)"/).to_s}"
-#        end
-#        
-#        b.draft = 0
-#        b.published_at = lb.displayDate
-#        b.created_at = lb.createDate
-#        b.save
-#
-#      else
-#        puts "#{lb.entryId} -- #{lb.status} -- #{lb.title} -- #{b.errors.to_s}"
-#      end
-#    else
-#      puts "user not found: #{lb.entryId} -- #{lb.status} -- #{lb.title}"
-#    end
-#    
-#  end
-#  
-#  puts 'blogs import finish'
+  puts BlogPost.delete_all()
+  
+  liferay_blogs = LiferayBlog.all(:order => 'entryId DESC')
+  puts "blogs to import: #{liferay_blogs.count}"
+  
+  liferay_blogs.each do |lb|
+    content = ActionController::Base.helpers.sanitize(lb.content.to_s, 
+      :tags => %w(h1 h2 h3 h4 h5 p div a strong table thead tbody tr th td img br em), 
+      :attributes => %w(id class href title src width height))
+    
+    content = content.gsub(/&lt;!--(.+)-->/, '')
+    u = User.where('progressbar_uid = ?', lb.userId).first
+
+    if u
+      b = BlogPost.create(
+        :title => lb.title,
+        :body => content,
+        :user_id => u.id
+      )
+      
+      if b.valid?
+        if content =~ /src="(\.?\/([^"]+))"/
+          puts "relative images in post: #{lb.entryId} -- #{lb.title} -- #{content.match(/src="\.?\/([^"]+)"/).to_s}"
+        end
+        
+        b.draft = 0
+        b.published_at = lb.displayDate
+        b.created_at = lb.createDate
+        b.save
+
+      else
+        puts "#{lb.entryId} -- #{lb.status} -- #{lb.title} -- #{b.errors.to_s}"
+      end
+    else
+      puts "user not found: #{lb.entryId} -- #{lb.status} -- #{lb.title}"
+    end
+    
+  end
+  
+  puts 'blogs import finish'
    
     
   # events import
-#  Event.delete_all()
-#  EventCategory.delete_all()
-#
-#  liferay_events = LiferayEvent.all()
-#  liferay_events.each do |le|
-#    description = ActionController::Base.helpers.sanitize(le.description.to_s, 
-#      :tags => %w(h1 h2 h3 h4 h5 p div a strong table thead tbody tr th td img br em), 
-#      :attributes => %w(id class href title src width height))
-#    
-#    description = description.gsub(/&lt;!--(.+)-->/, '')
-#    u = User.where('progressbar_uid = ?', le.userId).first
-#
-#    if u
-#      b = Event.create(
-#        :title => le.title,
-#        :description => description,
-#        :start_at => le.startDate,
-#        :end_at => le.endDate
-#      )
-#      
-#      if b.valid?
-#        if description =~ /src="(\.?\/([^"]+))"/
-#          puts "relative images in post: #{le.eventId} -- #{le.title} -- #{description.match(/src="\.?\/([^"]+)"/).to_s}"
-#        end
-#        
-#        b.user_id = u.id
-#        b.created_at = le.createDate
-#        b.duration_hour = le.durationHour
-#        b.duration_minute = le.durationMinute
-#        b.all_day = le.allDay
-#        b.repeating = le.repeating
-#        b.recurrence = le.recurrence
-#        
-#        b.categories = [EventCategory.find_or_create_by_name(le.type_)] unless le.type_.nil?
-#        
-#        
-#        b.save
-#
-#      else
-#        puts "#{le.eventId} -- #{le.userName} -- #{le.title} -- #{b.errors.to_s}"
-#      end
-#    end
-#  end
-#  
-#puts 'events import finish'
+  Event.delete_all()
+  EventCategory.delete_all()
+
+  liferay_events = LiferayEvent.all()
+  liferay_events.each do |le|
+    description = ActionController::Base.helpers.sanitize(le.description.to_s, 
+      :tags => %w(h1 h2 h3 h4 h5 p div a strong table thead tbody tr th td img br em), 
+      :attributes => %w(id class href title src width height))
+    
+    description = description.gsub(/&lt;!--(.+)-->/, '')
+    u = User.where('progressbar_uid = ?', le.userId).first
+
+    if u
+      b = Event.create(
+        :title => le.title,
+        :description => description,
+        :start_at => le.startDate,
+        :end_at => le.endDate
+      )
+      
+      if b.valid?
+        if description =~ /src="(\.?\/([^"]+))"/
+          puts "relative images in post: #{le.eventId} -- #{le.title} -- #{description.match(/src="\.?\/([^"]+)"/).to_s}"
+        end
+        
+        b.user_id = u.id
+        b.created_at = le.createDate
+        b.duration_hour = le.durationHour
+        b.duration_minute = le.durationMinute
+        b.all_day = le.allDay
+        b.repeating = le.repeating
+        b.recurrence = le.recurrence
+        
+        b.categories = [EventCategory.find_or_create_by_name(le.type_)] unless le.type_.nil?
+        
+        
+        b.save
+
+      else
+        puts "#{le.eventId} -- #{le.userName} -- #{le.title} -- #{b.errors.to_s}"
+      end
+    end
+  end
+  
+puts 'events import finish'
   
 #  
 #rescue NameError

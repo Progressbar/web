@@ -27,8 +27,9 @@
                 <%= link_to event.title, event, :class => 'url title summary' %>
               <% end %>
             <% else %>  
-              
+              <% unless day['day'] < Date.yesterday %>
               <abbr title="<%= t('calendar.explain_no_official_event') %>"><%= t('calendar.no_official_event') %></abbr>
+              <% end %>
               <% if day['day'] > Time.now %>
                   <%= mail_to 'info@progressbark.s', t('calendar.organize_action'), :title => t('calendar.organize_action_explanation'), :class => 'float-right', :subject => t('calendar.organize_action_email_subject', :day => day['day'].strftime("%d.%m.%Y")), :body => t('calendar.organize_action_email_body', :day => day['day'].strftime("%d.%m.%Y")) %>
               <% end %>
