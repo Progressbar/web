@@ -36,7 +36,7 @@ hr {
 input, select { vertical-align:middle; }
 
 body { font:13px/1.231 'Segoe UI', Arial, sans-serif; }
-select, input, textarea, button { font:99% sans-serif; }
+
 pre, code, kbd, samp { font-family: monospace, sans-serif; }
 
 body, select, input, textarea { color: #444; }
@@ -54,13 +54,9 @@ ol { list-style-type: decimal; }
 
 ol.articles {
 	list-style-type: upper-roman;
-	list-style-position: inside;
+/*	list-style-position: inside;*/
 	padding: 0px;
-	margin-left: 0px;
-}
-
-.articles li {
-	padding-left: 10px;
+	margin-left: 32px;
 }
 
 nav ul, nav li { margin: 0; }
@@ -127,7 +123,7 @@ p {
 }
 
 article {
-	margin-bottom: 20px;
+	margin-bottom: 32px;
 }
 
 body {
@@ -147,9 +143,6 @@ body {
 }
 
 #header {
-	background-image: url(/images/progressbar.png);
-	background-repeat: no-repeat;
-	background-position: top left;
 	/*	height: 140px;*/
 }
 
@@ -161,8 +154,15 @@ body {
 
 #logo {
 	display: block;
-/*	height: 145px;*/
+	background-image: url(/images/progressbar.png);
+	background-repeat: no-repeat;
+	background-position: top left;
+	height: 145px;
 	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	position: relative;
+	left: -16px;
 }
 
 #logo a, #logo strong {
@@ -228,8 +228,8 @@ body {
 
 #content-wrapper {
 	position: relative;
-	padding-bottom: 40px;
-	padding-top: 30px;
+	padding-bottom: 32px;
+	padding-top: 32px;
 	clear: both;
 /*	background-color: #090909;*/
 	background-color: #111;
@@ -256,18 +256,20 @@ body {
 }
 
 #body_content_left section {
-	margin-bottom: 20px;
+	margin-bottom: 32px;
 }
 
 #body_content_left, .left-section {
 	float: left;
-	width: 640px;
+/*	width: 640px;*/
+	width: 628px;
 }
 
 #body_content_right, .right-section {
 	float: right;
 	/*	padding-top: 20px;*/
-	width: 320px;
+/*	width: 320px;*/
+	width: 300px;
 }
 
 .no_body_content_right #body_content_left {
@@ -276,12 +278,12 @@ body {
 
 #calendar {
 	float: left;
-	width: 50%;
+	width: 464px;
 }
 
 #blogs {
 	float: right;
-	width: 50%;
+	width:464px;
 }
 
 #blogs p {
@@ -289,21 +291,21 @@ body {
 }
 
 #calendar .content, #blogs .content {
-	margin-bottom: 20px;
+	margin-bottom: 32px;
 	min-height: 360px;
 }
 
 #blogs .content div {
 	clear: both;
-	min-height: 100px;
-	margin-bottom: 20px;
+	min-height: 64px;
+	margin-bottom: 16px;
 }
 
 #footer-wrapper {
 	clear: both;
 /*	background-color: #0e0e0e;*/
-	padding-top: 30px;
-	padding-bottom: 30px;
+	padding-top: 32px;
+	padding-bottom: 32px;
 	border-top: solid 1px #222;
 }
 
@@ -316,7 +318,7 @@ body {
 }
 
 #footer section {
-	width: 50%;
+	width: 464px;
 }
 
 #follow-us {
@@ -354,6 +356,22 @@ body {
 #promo {
 	position: relative;
 	clear: both;
+	
+	padding: 16px;
+	padding-bottom: 0px;
+	margin-bottom: 30px;
+	-moz-border-radius: 10px;
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: -moz-linear-gradient(center top , #333 0%, #222 100%) repeat scroll 0 0 padding-box transparent;
+    border-color: rgba(0, 0, 0, 0.4);
+    border-style: solid;
+    border-width: 1px 1px 2px;
+    box-shadow: 0 0 1px rgba(153, 156, 203, 0.4) inset;
+    color: rgba(84, 82, 112, 0.5);
 }
 
 #promo-content {
@@ -405,10 +423,17 @@ body {
 }
 
 .promo-item {
-	padding-top: 10px;
+	padding: 5px;
+	overflow: hidden;
 	background: #000;
 	position: relative;
-	height: 100%;
+	height: 430px;
+	border: solid 1px #222;
+}
+
+.promo-item img {
+	width: 916px;
+	
 }
 
 .promo-text-1, .promo-text-bg-1,
@@ -492,7 +517,7 @@ body {
 }
 
 h1, h2, h3 {
-	margin-bottom: 25px;
+	margin-bottom: 32px;
 	padding-top: 5px;
 }
 
@@ -518,7 +543,6 @@ h4 {
 }
 
 #calendar h3 em {
-	padding-right: 18px;
 	font-size: small;
 }
 
@@ -527,7 +551,6 @@ h4 {
 }
 
 #calendar .content {
-	padding-right: 20px;
 }
 
 #calendar .datetime {
@@ -563,10 +586,12 @@ a.il {
 }
 
 td div:hover {
-	background: #333;
+/*	background: #333;*/
 }
 
-.button, .button:visited, .button:link {
+.button, .button:visited, .button:link,
+.pagination a, .pagination em, .pagination span
+{
 	background: #222 url(/images/design/button-overlay.png) repeat-x;
 	display: inline-block;
 	padding: 5px 10px 6px;
@@ -583,7 +608,19 @@ td div:hover {
 	cursor: pointer;
 }
 
-.button:hover { background-color: #111; color: #fff; }
+.pagination em {
+	background-color: #cdcdcd;
+	cursor: default;
+	color: #222;
+	text-shadow: 0px -1px 1px #fff;
+}
+
+.pagination span {
+	background: transparent;
+	cursor: default;
+}
+
+.pagination a:hover, .button:hover { background-color: #111; color: #fff; }
 .button:active { top: 1px; }
 .small.button, .small.button:visited { font-size: 11px; }
 .button, .button:visited,
@@ -607,9 +644,8 @@ td div:hover {
 
 #promo-action .button {
 	margin-top: 30px;
-	margin-left: 36px;
 	outline-style: none;
-	padding: 13px 22px;
+	padding: 12px 20px;
 	font-weight: lighter;
 }
 
@@ -635,7 +671,6 @@ td div:hover {
 	vertical-align: middle;
 	line-height: 32px;
 /*	padding: 0px 18px;*/
-	padding-right: 20px;
 }
 
 .msg {
@@ -655,17 +690,21 @@ input[type=email],
 input[type=password] {
 	height: 24px;
 	padding: 2px 5px;
-	min-width: 310px;
-	font-size: 15px;
-	border: solid 1px;
-	margin-right: 10px;
-	background: #222;
+	min-width: 300px;
+	font-size: 13px;
+	border: solid 1px #575757;
+	margin-right: 7px;
+	background: #333;
+	color: #fff;
 }
 
 textarea {
 	width: 98%;
+	font-size: 13px;
+	color: #fff;
+	border: solid 1px #575757;
 	background: #222;
-	padding: 2px 5px;
+	padding: 5px 5px;
 }
 
 input.text:focus,
@@ -674,6 +713,7 @@ input[type=email]:focus,
 input[type=password]:focus,
 textarea:focus {
 	background: #ffc;
+	color: #222;
 	outline:none;
     transition: 0.25s;
     -webkit-transition: 0.25s;
@@ -707,7 +747,7 @@ form .field label {
 }
 
 #calendar li {
-	margin-bottom: 10px;
+	margin-bottom: 16px;
 }
 
 #menu li li {
@@ -737,19 +777,19 @@ section#address {
 	width: 100%;
 	clear:both;
 	padding: 20px 0px;
-	margin-bottom: 20px;
+	margin-bottom: 32px;
 	text-align: center;
 }
 
 aside {
-	padding-bottom: 20px;
-	margin-bottom: 20px;
+	padding-bottom: 16px;
+	margin-bottom: 32px;
 }
 
 #like {
 	position: absolute;
-	left: 20px;
-	top: 20px;
+	left: 24px;
+	top: 32px;
 	width: 80px;
 }
 
@@ -810,4 +850,24 @@ span.day {
 
 .inquiries .ui-widget-content a {
 	color: #999;
+}
+
+#prevnext_nav {
+	text-align: center;
+}
+
+#prevnext_nav .prev {
+	float: left;
+}
+
+#prevnext_nav .next {
+	float: right;
+}
+
+#body_content_right li {
+	margin-bottom: 8px;
+}
+
+.ui-slider {
+	background: #000;
 }
