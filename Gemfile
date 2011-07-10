@@ -11,8 +11,6 @@ gem 'rails', '3.0.9'
 
 gem 'mysql2', '~> 0.2.7'
 
-gem 'icalendar'
-
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -41,12 +39,14 @@ gem 'icalendar'
 
 gem 'refinerycms',              '~> 1.0.0'
 
+#gem 'pjax-rails'
+
 group :development, :test do
   # To use refinerycms-testing, uncomment it (if it's commented out) and run 'bundle install'
   # Then, run 'rails generate refinerycms_testing' which will copy its support files.
   # Finally, run 'rake' to run the tests.
   # gem 'refinerycms-testing',    '~> 1.0.0'
-  gem 'annotate'
+  # gem 'annotate'
 end
 
 # END REFINERY CMS ============================================================
@@ -61,8 +61,10 @@ gem "refinerycms-news",         '~> 1.2'
 gem 'refinerycms-blog', :git => 'git://github.com/resolve/refinerycms-blog.git'
 # gem 'refinerycms-page-images',  '~> 1.0'
 
+#gem 'refinerycms-calendar', :git => 'git://github.com/resolve/refinerycms-calendar.git'
 gem 'refinerycms-calendar', :path => 'vendor/'
 gem 'refinerycms-snippets', '~> 0.4'
+
 #gem 'refinerycms-memberships', :git => 'git://github.com/rbriank/refinerycms_membership.git'
 ##gem 'refinerycms-memberships', '~> 1.0'
 #gem 'refinerycms-members', :path => 'vendor/'
