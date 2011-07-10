@@ -9,9 +9,12 @@
     <p class="float-left">
       <a class="no-underline" href="<%= RefinerySetting.find_or_set(:site_facebook, 'http://www.facebook.com/progressbar') %>"><img alt="Facebook icon" src="/images/s.gif" class="sprites sprite-icon-facebook-32" /> Facebook</a>      
     </p>
+    <!--
     <p>
       <a class="no-underline" href="https://foursquare.com/venue/<%= RefinerySetting.find_or_set(:site_foursquare_id, '7713190') %>"><img alt="Facebook icon" src="/images/s.gif" class="sprites sprite-icon-facebook-32" /> FourSquare</a>
     </p>
+    -->
+    <div class="reset">&nbsp;</div>
     <p>
       <%= t('follow_us.find_bug') %>
     </p>
@@ -88,13 +91,13 @@
   <%= link_to(page_colophon.title, page_colophon.url) %>
 </div>
 <nav id='bottom-menu' class='menu clearfix'>
-  <% page_calendar = Page.find('calendar') %>
+  <%# page_calendar = Page.find('calendar') %>
   <% page_blog = Page.find('blog') %>
   <% page_sponsors = Page.find('sponsors') %>
   <% page_wiki = Page.find('wiki') %>
   <% page_contact = Page.find('kontakt') %>
   <% page_join = Page.find('pridaj-sa') %>
-  <%= link_to(page_calendar.title, page_calendar.url) %> <span class="delim">&nbsp;|&nbsp;</span>
+  <%#= link_to(page_calendar.title, page_calendar.url) %> <span class="delim">&nbsp;|&nbsp;</span>
   <%= link_to(page_blog.title, page_blog.url) %> <span class="delim">&nbsp;|&nbsp;</span>
   <%= link_to(page_sponsors.title, page_sponsors.url) %> <span class="delim">&nbsp;|&nbsp;</span>
   <%= link_to(page_wiki.title, page_wiki.url) %> <span class="delim">&nbsp;|&nbsp;</span>
