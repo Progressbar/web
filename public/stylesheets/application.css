@@ -126,6 +126,10 @@ p {
 	line-height: 150%;
 }
 
+#content ul, #content ol {
+	line-height: 150%;
+}
+
 article {
 	margin-bottom: 20px;
 }
@@ -290,12 +294,12 @@ body {
 
 #calendar .content, #blogs .content {
 	margin-bottom: 20px;
-	min-height: 360px;
+	min-height: 300px;
 }
 
 #blogs .content div {
 	clear: both;
-	min-height: 100px;
+	min-height: 60px;
 	margin-bottom: 20px;
 }
 
@@ -810,4 +814,8 @@ span.day {
 
 .inquiries .ui-widget-content a {
 	color: #999;
+}
+
+#rss_feed_subscribe {
+	margin-bottom: 20px;
 }
