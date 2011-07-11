@@ -10,9 +10,29 @@ module Progressbar
   class Application < Rails::Application
     
     config.action_mailer.raise_delivery_errors = false
-    config.action_mailer.delivery_method = :sendmail
+    config.action_mailer.delivery_method = :smtp
     config.action_mailer.perform_deliveries = true
     config.action_mailer.default_url_options = { :host => 'localhost' }
+
+    config.action_mailer.smtp_settings = {
+      :enable_starttls_auto => true,
+      :address        => 'mail.digmia.com',
+      :port           => '25',
+      :user_name      => '',
+      :password       => ''
+    }
+    #mail.session.mail.pop3.host=mail.digmia.com
+    #mail.session.mail.pop3.password=
+    #mail.session.mail.pop3.port=110
+    #mail.session.mail.pop3.user=
+    #mail.session.mail.smtp.auth=false
+    #mail.session.mail.smtp.host=mail.digmia.com
+    #mail.session.mail.smtp.password=
+    #mail.session.mail.smtp.port=25
+    #mail.session.mail.smtp.user=
+    #mail.session.mail.store.protocol=pop3
+    #mail.session.mail.transport.protocol=smtp
+    #
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
