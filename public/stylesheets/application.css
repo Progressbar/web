@@ -165,8 +165,9 @@ body {
 
 #logo {
 	display: block;
-/*	height: 145px;*/
+	height: 145px;
 	width: 100%;
+	margin-bottom: 0px;
 }
 
 #logo a, #logo strong {
