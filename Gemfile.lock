@@ -13,6 +13,8 @@ PATH
   specs:
     refinerycms-calendar (1.1.0)
       refinerycms-core (>= 0.9.9.1)
+    refinerycms-search (0.9.8)
+      refinerycms (>= 0.9.8)
 
 GEM
   remote: http://rubygems.org/
@@ -149,8 +151,6 @@ GEM
       dragonfly (~> 0.9.0)
       rack-cache (>= 0.5.3)
       refinerycms-core (= 1.0.3)
-    refinerycms-search (0.9.8)
-      refinerycms (>= 0.9.8)
     refinerycms-settings (1.0.3)
       refinerycms-base (= 1.0.3)
     refinerycms-snippets (0.4.1)
@@ -180,5 +180,5 @@ DEPENDENCIES
   refinerycms-i18n (~> 1.0.0)
   refinerycms-inquiries (~> 1.0)
   refinerycms-news (~> 1.2)
-  refinerycms-search
+  refinerycms-search!
   refinerycms-snippets (~> 0.4)
