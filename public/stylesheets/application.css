@@ -567,10 +567,6 @@ a.il {
 	text-align: center;
 }
 
-td div:hover {
-	background: #333;
-}
-
 .button, .button:visited, .button:link {
 	background: #222 url(/images/design/button-overlay.png) repeat-x;
 	display: inline-block;
