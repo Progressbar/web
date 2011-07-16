@@ -820,3 +820,21 @@ span.day {
 #rss_feed_subscribe {
 	margin-bottom: 20px;
 }
+
+#search-form {
+	clear: both;
+	float: right;
+	position: relative;
+	margin-top: 20px;
+}
+
+#search-form input.search-button {
+	position: absolute;
+	right: 7px;
+	top: 7px;
+}
+
+#query {
+	margin-right: 0px;
+	min-width: 200px;
+}

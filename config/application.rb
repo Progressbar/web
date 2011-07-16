@@ -21,18 +21,6 @@ module Progressbar
       :user_name      => '',
       :password       => ''
     }
-    #mail.session.mail.pop3.host=mail.digmia.com
-    #mail.session.mail.pop3.password=
-    #mail.session.mail.pop3.port=110
-    #mail.session.mail.pop3.user=
-    #mail.session.mail.smtp.auth=false
-    #mail.session.mail.smtp.host=mail.digmia.com
-    #mail.session.mail.smtp.password=
-    #mail.session.mail.smtp.port=25
-    #mail.session.mail.smtp.user=
-    #mail.session.mail.store.protocol=pop3
-    #mail.session.mail.transport.protocol=smtp
-    #
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -64,6 +52,9 @@ module Progressbar
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
-    config.filter_parameters += [:password]
+    
+    config.to_prepare do
+      Refinery.searchable_models = [Page, BlogPost, Event]
+    end
   end
 end
