@@ -15,6 +15,13 @@
     <%#= link_to(memb_section.title, memb_section.url) %><!-- <span class="delim">&nbsp;|&nbsp;</span>-->
     <%= link_to_if(!is_lang?('sk'), 'Slovenčina', '/') %><span class="delim">&nbsp;|&nbsp;</span><%= link_to_if(!is_lang?('en'), 'English', url_for(:locale => 'en')) %>
   </nav>
+<% form_tag search_url, :id => 'search-form' do -%>
+<%= text_field_tag :query, {}, {:type => 'search',
+                   :placeholder => t('Search site for...'),
+                   :class => 'text search',
+                   :value => (params[:query] if params[:query])} %>
+<%= image_submit_tag('/images/design/search-dark.png', :class => 'search-button') %>
+<% end %>
   <%= render :partial => "/shared/menu",
     :locals => {
     :dom_id => 'menu',
