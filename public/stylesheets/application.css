@@ -236,7 +236,14 @@ body {
 }
 
 #menu .selected a, .selected strong {
-	/*	font-weight: bold;*/
+	color: #fff;
+}
+
+#menu .selected li a {
+	color: #999;
+}
+
+#menu .selected li a:hover {
 	color: #fff;
 }
 
