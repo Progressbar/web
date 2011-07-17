@@ -28,7 +28,6 @@ class PagesController < ApplicationController
     else
       error_404
     end
-    
   end
 
   private
