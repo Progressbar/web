@@ -65,7 +65,7 @@
   <div class="content">
     <address class="vcard">
         <a class="url fn org " href="http://www.progressbar.sk/">Progressbar Hackerspace</a>, 
-        <a class="email " href="<%= RefinerySetting.find_or_set(:site_contact_email, 'info@progressbar.sk') %>"><%= RefinerySetting.find_or_set(:site_contact_email, 'info@progressbar.sk') %></a>, 
+        <a class="email" href="mailto:<%= RefinerySetting.find_or_set(:site_contact_email, 'info@progressbar.sk') %>"><%= RefinerySetting.find_or_set(:site_contact_email, 'info@progressbar.sk') %></a>, 
         <span class="adr">
           <span class="street-address">Cukrová 14</span>,
           <span>
@@ -84,8 +84,11 @@
 
   </div>
 </section>
+<div id="license">
+  <%= raw t('license_note') %>
+</div>
 <div id="copy">
-  <%= t('.copyright', :year => Time.now.year,
+<%= t('.copyright', :year => Time.now.year,
     :site_name => RefinerySetting.find_or_set(:site_name, 'Company Name')) %>,
   <% page_colophon = Page.find(18) %>
   <%= link_to(page_colophon.title, page_colophon.url) %>

@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/resolve/refinerycms-blog.git
-  revision: 8aad45e5b04121a63760edec98fb2205a9111b48
+  revision: 4718d03a873a4a184a1528c6dfb9178f437c4caf
   specs:
     refinerycms-blog (1.6.2)
       acts-as-taggable-on
@@ -11,8 +11,10 @@ GIT
 PATH
   remote: vendor/
   specs:
-    refinerycms-calendar (1.0.4)
+    refinerycms-calendar (1.1.0)
       refinerycms-core (>= 0.9.9.1)
+    refinerycms-search (0.9.8)
+      refinerycms (>= 0.9.8)
 
 GEM
   remote: http://rubygems.org/
@@ -46,7 +48,6 @@ GEM
     activesupport (3.0.9)
     acts-as-taggable-on (2.0.6)
     acts_as_indexed (0.7.3)
-    annotate (2.4.0)
     arel (2.0.10)
     awesome_nested_set (2.0.1)
       activerecord (>= 3.0.0)
@@ -68,7 +69,6 @@ GEM
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
     i18n (0.5.0)
-    icalendar (1.1.6)
     mail (2.2.19)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
@@ -155,7 +155,7 @@ GEM
       refinerycms-base (= 1.0.3)
     refinerycms-snippets (0.4.1)
       refinerycms-pages (>= 0.9.9.1)
-    routing-filter (0.2.3)
+    routing-filter (0.2.4)
       actionpack
     seo_meta (1.1.1)
       refinerycms-generators (~> 1.0.1)
@@ -172,8 +172,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  annotate
-  icalendar
   mysql2 (~> 0.2.7)
   rails (= 3.0.9)
   refinerycms (~> 1.0.0)
@@ -182,4 +180,5 @@ DEPENDENCIES
   refinerycms-i18n (~> 1.0.0)
   refinerycms-inquiries (~> 1.0)
   refinerycms-news (~> 1.2)
+  refinerycms-search!
   refinerycms-snippets (~> 0.4)

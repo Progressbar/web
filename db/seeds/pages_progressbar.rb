@@ -1,5 +1,4 @@
 ::I18n.locale = :sk
-
 puts 'locale -> sk'
 
 p_stanovy = Page.find_by_title('Stanovy')
@@ -10,12 +9,41 @@ if p_stanovy
 end
 
 p_kontakt = Page.find_by_title('Kontakt')
+p_kontakt_interier = Page.find_by_title('Interiér')
+p_kontakt_fotonavigacia = Page.find_by_title('Foto navigácia')
 
 if p_kontakt
   p_kontakt.parts.first.update_attributes(:body => IO.read(Rails.root.join('db/templates/kontakt.html')))
   p_kontakt.parts.last.update_attributes(:body => '')
   puts 'page kontakt updated'
 end
+
+
+if p_kontakt_interier
+  p_kontakt_interier.update_attribute(:deletable, false)
+  p_kontakt_interier.update_attribute(:show_in_menu, true)
+#  p_kontakt_interier.update_attribute(:position, Page.last.position.to_i + 1)
+  
+  p_kontakt_interier.parts.first.update_attribute(:body, IO.read(Rails.root.join('db/templates/kontakt_interier.html')))
+  
+  puts 'page Kontakt Interiér was updated'
+else
+  p_kontakt_interier = Page.create(:title => 'Interiér', :deletable => false, :show_in_menu => true, :parent_id => p_kontakt.id, :position => Page.last.position.to_i + 1)
+  p_kontakt_interier.parts.create({
+      :title => 'Body',
+      :body => IO.read(Rails.root.join('db/templates/kontakt_interier.html')),
+      :position => 0
+    })
+  
+  p_kontakt_interier.parts.create({
+      :title => 'Side Body',
+      :body => '',
+      :position => 1
+    })
+  
+  puts 'page Kontakt Interiér was created'
+end
+
 
 p_organy = Page.find_by_title('Orgány združenia')
 
