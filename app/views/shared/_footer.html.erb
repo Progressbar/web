@@ -84,8 +84,10 @@
 
   </div>
 </section>
+<div id="license">
+  <%= raw t('license_note') %>
+</div>
 <div id="copy">
-  <%= raw t('license_note') %><br />
 <%= t('.copyright', :year => Time.now.year,
     :site_name => RefinerySetting.find_or_set(:site_name, 'Company Name')) %>,
   <% page_colophon = Page.find(18) %>
