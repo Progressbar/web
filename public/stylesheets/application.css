@@ -122,6 +122,10 @@ p {
 	line-height: 150%;
 }
 
+#content ul, #content ol {
+	line-height: 150%;
+}
+
 article {
 	margin-bottom: 32px;
 }
@@ -292,24 +296,21 @@ body {
 
 #calendar .content, #blogs .content {
 	margin-bottom: 32px;
-	min-height: 360px;
+	min-height: 300px;
 }
 
 #blogs .content div {
 	clear: both;
-	min-height: 64px;
+	min-height: 60px;
 	margin-bottom: 16px;
 }
 
 #footer-wrapper {
 	clear: both;
-/*	background-color: #0e0e0e;*/
 	padding-top: 32px;
 	padding-bottom: 32px;
 	border-top: solid 1px #222;
 }
-
-
 
 #footer {
 	width: 960px;
@@ -572,7 +573,6 @@ details {
 }
 
 h3 a, h4 a {
-/*	text-transform: uppercase;*/
 	display: block;
 	text-decoration: none;
 }
@@ -583,10 +583,6 @@ a.il {
 	margin-right: 15px;
 	float: left;
 	text-align: center;
-}
-
-td div:hover {
-/*	background: #333;*/
 }
 
 .button, .button:visited, .button:link,
@@ -870,4 +866,30 @@ span.day {
 
 .ui-slider {
 	background: #000;
+}
+
+#rss_feed_subscribe {
+	margin-bottom: 20px;
+}
+
+#search-form {
+	clear: both;
+	float: right;
+	position: relative;
+	margin-top: 20px;
+}
+
+#search-form input.search-button {
+	position: absolute;
+	right: 7px;
+	top: 7px;
+}
+
+#query {
+	margin-right: 0px;
+	min-width: 200px;
+}
+
+#cse {
+	overflow-x: hidden;
 }

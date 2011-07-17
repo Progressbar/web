@@ -10,9 +10,17 @@ module Progressbar
   class Application < Rails::Application
     
     config.action_mailer.raise_delivery_errors = false
-    config.action_mailer.delivery_method = :sendmail
+    config.action_mailer.delivery_method = :smtp
     config.action_mailer.perform_deliveries = true
     config.action_mailer.default_url_options = { :host => 'localhost' }
+
+    config.action_mailer.smtp_settings = {
+      :enable_starttls_auto => true,
+      :address        => 'mail.digmia.com',
+      :port           => '25',
+      :user_name      => '',
+      :password       => ''
+    }
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -44,6 +52,9 @@ module Progressbar
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
-    config.filter_parameters += [:password]
+    
+    config.to_prepare do
+      Refinery.searchable_models = [Page, BlogPost, Event]
+    end
   end
 end
