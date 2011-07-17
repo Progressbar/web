@@ -13,6 +13,8 @@ PATH
   specs:
     refinerycms-calendar (1.1.0)
       refinerycms-core (>= 0.9.9.1)
+    refinerycms-inquiries (1.0.1)
+      filters_spam (~> 0.2)
     refinerycms-search (0.9.8)
       refinerycms (>= 0.9.8)
 
@@ -137,8 +139,6 @@ GEM
       dragonfly (~> 0.9.0)
       rack-cache (>= 0.5.3)
       refinerycms-core (= 1.0.3)
-    refinerycms-inquiries (1.0.1)
-      filters_spam (~> 0.2)
     refinerycms-news (1.2.0)
       refinerycms-core (~> 1.0.0)
     refinerycms-pages (1.0.3)
@@ -178,7 +178,7 @@ DEPENDENCIES
   refinerycms-blog!
   refinerycms-calendar!
   refinerycms-i18n (~> 1.0.0)
-  refinerycms-inquiries (~> 1.0)
+  refinerycms-inquiries!
   refinerycms-news (~> 1.2)
   refinerycms-search!
   refinerycms-snippets (~> 0.4)

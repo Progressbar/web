@@ -39,7 +39,6 @@ body { font:13px/1.231 'Segoe UI', Arial, sans-serif; }
 select, input, textarea, button { font:99% sans-serif; }
 pre, code, kbd, samp { font-family: monospace, sans-serif; }
 
-body, select, input, textarea { color: #444; }
 h1,h2,h3,h4,h5,h6 { font-weight: bold; }
 html { overflow-y: scroll; }
 
@@ -70,7 +69,7 @@ td, td img { vertical-align: top; }
 sub { vertical-align: sub; font-size: smaller; }
 sup { vertical-align: super; font-size: smaller; }
 pre { padding: 18px; white-space: pre; white-space: pre-wrap; white-space: pre-line; word-wrap: break-word; }
-textarea { overflow: auto;  border: solid 1px; }
+textarea { overflow: auto;  border: solid 1px #444; }
 .ie6 legend, .ie7 legend { margin-left: -7px; }
 input[type="radio"] { vertical-align: text-bottom; }
 input[type="checkbox"] { vertical-align: middle; }
@@ -113,6 +112,16 @@ button { width: auto; overflow: visible; }
 	float: right;
 }
 
+.left-half {
+	float: left;
+	width: 49%;
+}
+
+.right-half {
+	float: right;
+	width: 49%;
+}
+
 .center {
 	text-align: center;
 }
@@ -124,6 +133,10 @@ button { width: auto; overflow: visible; }
 p {
 	margin-bottom: 20px;
 	line-height: 150%;
+}
+
+.placeholder .field .placeholder-fallback {
+	display: none;
 }
 
 #content ul, #content ol {
@@ -658,7 +671,7 @@ input[type=password] {
 	padding: 2px 5px;
 	min-width: 310px;
 	font-size: 15px;
-	border: solid 1px;
+	border: solid 1px #444;
 	margin-right: 10px;
 	background: #222;
 }
@@ -666,7 +679,9 @@ input[type=password] {
 textarea {
 	width: 98%;
 	background: #222;
-	padding: 2px 5px;
+	padding: 5px;
+	font-size: 15px;
+	border: solid 1px #444;
 }
 
 input.text:focus,
@@ -698,7 +713,7 @@ form .field {
 	padding-bottom: 5px;
 }
 
-form .field label {
+.field label {
 	display: block;
 	padding-bottom: 5px;
 }
@@ -838,3 +853,4 @@ span.day {
 #cse {
 	overflow-x: hidden;
 }
+
