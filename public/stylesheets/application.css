@@ -834,3 +834,7 @@ span.day {
 	margin-right: 0px;
 	min-width: 200px;
 }
+
+#cse {
+	overflow-x: hidden;
+}
