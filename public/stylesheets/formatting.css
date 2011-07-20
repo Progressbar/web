@@ -42,6 +42,10 @@
 	margin-bottom: 20px;
 }
 
+#content ul.ui-tabs-nav {
+	margin-bottom: 5px;
+}
+
 #content form {
 	margin-bottom: 20px;
 }
