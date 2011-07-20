@@ -2,7 +2,11 @@ module ApplicationHelper
   def is_homepage?()
     return params[:action] === 'home'
 		
-  end	
+  end
+  
+  def ajax_tab?()
+    return request.xhr? && params[:ajax_tab]
+  end
 	
   def is_lang?(lang)
 		return params[:locale].to_s === lang
