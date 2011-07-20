@@ -85,7 +85,10 @@ $(function() {
 	});
 	
 	$('.tabs').tabs({
+		cache: true,
+		
 		ajaxOptions: {
+			data : {'ajax_tab' : 1},
 			error: function( xhr, status, index, anchor ) {
 				$( anchor.hash ).html(
 					"Couldn't load this tab. We'll try to fix this as soon as possible."

@@ -18,6 +18,11 @@ PATH
     refinerycms-search (0.9.8)
       refinerycms (>= 0.9.8)
 
+PATH
+  remote: vendor/engines
+  specs:
+    refinerycms-fees (1.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -177,6 +182,7 @@ DEPENDENCIES
   refinerycms (~> 1.0.0)
   refinerycms-blog!
   refinerycms-calendar!
+  refinerycms-fees (= 1.0)!
   refinerycms-i18n (~> 1.0.0)
   refinerycms-inquiries!
   refinerycms-news (~> 1.2)
