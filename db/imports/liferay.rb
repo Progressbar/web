@@ -8,7 +8,6 @@ begin
     raise 'Missing progressbar import migration (try `git pull ..` and then `rake db:migrate`).' unless User.first.has_attribute?('progressbar_uid')
   end
 
-
 #  problematic users
 #  Marcel Hecko -- 30829 -- maco@maco.sk
 #  usernamehas already been taken
@@ -17,6 +16,7 @@ begin
   
 #  # clean env
 #### User.delete_all()
+#  puts User.delete_all('progressbar_uid IS NOT NULL')
   puts User.delete_all('progressbar_uid IS NOT NULL OR last_sign_in_at IS NULL')
   
   liferay_users = LiferayUser.all

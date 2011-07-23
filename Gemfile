@@ -55,7 +55,10 @@ end
 
 
 # Specify additional Refinery CMS Engines here (all optional):
-gem 'refinerycms-inquiries',    '~> 1.0'
+gem 'refinerycms-inquiries',  :path => 'vendor/'
+#gem 'refinerycms-registrations',  :path => 'vendor/'
+
+#gem 'refinerycms-inquiries',    '~> 1.0'
 gem "refinerycms-news",         '~> 1.2'
 gem 'refinerycms-search', :path => 'vendor/'
 #gem 'refinerycms-blog',         '~> 1.6.2'
@@ -75,3 +78,5 @@ gem 'refinerycms-snippets', '~> 0.4'
 gem 'refinerycms-i18n',         '~> 1.0.0'
 
 # END USER DEFINED
+
+gem 'refinerycms-fees', '1.0', :path => 'vendor/engines'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110709180006) do
+ActiveRecord::Schema.define(:version => 20110723075800) do
 
   create_table "blog_categories", :force => true do |t|
     t.string   "title"
@@ -95,6 +95,23 @@ ActiveRecord::Schema.define(:version => 20110709180006) do
   end
 
   add_index "events", ["id"], :name => "index_events_on_id"
+
+  create_table "fees", :force => true do |t|
+    t.string   "from_account",                                                  :null => false
+    t.integer  "vs",                                                            :null => false
+    t.decimal  "amount",       :precision => 8, :scale => 2,                    :null => false
+    t.string   "currency",                                   :default => "eur", :null => false
+    t.integer  "month",                                                         :null => false
+    t.integer  "year",                                                          :null => false
+    t.string   "stamp",                                                         :null => false
+    t.text     "message"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "fees", ["id"], :name => "index_fees_on_id"
+  add_index "fees", ["stamp"], :name => "index_fees_on_stamp"
 
   create_table "images", :force => true do |t|
     t.string   "image_mime_type"

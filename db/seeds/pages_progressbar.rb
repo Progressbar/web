@@ -10,7 +10,9 @@ end
 
 p_kontakt = Page.find_by_title('Kontakt')
 p_kontakt_interier = Page.find_by_title('Interiér')
-p_kontakt_fotonavigacia = Page.find_by_title('Foto navigácia')
+p_kontakt_fotonavigacia = Page.find_by_title('Fotonavigácia')
+p_kontakt_mapy = Page.find_by_title('Mapy')
+p_kontakt_qr = Page.find_by_title('QR')
 
 if p_kontakt
   p_kontakt.parts.first.update_attributes(:body => IO.read(Rails.root.join('db/templates/kontakt.html')))
@@ -21,9 +23,7 @@ end
 
 if p_kontakt_interier
   p_kontakt_interier.update_attribute(:deletable, false)
-  p_kontakt_interier.update_attribute(:show_in_menu, true)
-#  p_kontakt_interier.update_attribute(:position, Page.last.position.to_i + 1)
-  
+  p_kontakt_interier.update_attribute(:show_in_menu, true)  
   p_kontakt_interier.parts.first.update_attribute(:body, IO.read(Rails.root.join('db/templates/kontakt_interier.html')))
   
   puts 'page Kontakt Interiér was updated'
@@ -42,6 +42,78 @@ else
     })
   
   puts 'page Kontakt Interiér was created'
+end
+
+if p_kontakt_fotonavigacia
+  p_kontakt_fotonavigacia.update_attribute(:deletable, false)
+  p_kontakt_fotonavigacia.update_attribute(:show_in_menu, true)
+  
+  p_kontakt_fotonavigacia.parts.first.update_attribute(:body, IO.read(Rails.root.join('db/templates/kontakt_fotonavigacia.html')))
+  
+  puts 'page Kontakt Fotonavigácia was updated'
+else
+  p_kontakt_fotonavigacia = Page.create(:title => 'Fotonavigácia', :deletable => false, :show_in_menu => true, :parent_id => p_kontakt.id, :position => Page.last.position.to_i + 1)
+  p_kontakt_fotonavigacia.parts.create({
+      :title => 'Body',
+      :body => IO.read(Rails.root.join('db/templates/kontakt_fotonavigacia.html')),
+      :position => 0
+    })
+  
+  p_kontakt_fotonavigacia.parts.create({
+      :title => 'Side Body',
+      :body => '',
+      :position => 1
+    })
+  
+  puts 'page Kontakt Fotonavigácia was created'
+end
+
+if p_kontakt_qr
+  p_kontakt_qr.update_attribute(:deletable, false)
+  p_kontakt_qr.update_attribute(:show_in_menu, true)
+  
+  p_kontakt_qr.parts.first.update_attribute(:body, IO.read(Rails.root.join('db/templates/kontakt_qr.html')))
+  
+  puts 'page Kontakt QR was updated'
+else
+  p_kontakt_qr = Page.create(:title => 'QR', :deletable => false, :show_in_menu => true, :parent_id => p_kontakt.id, :position => Page.last.position.to_i + 1)
+  p_kontakt_qr.parts.create({
+      :title => 'Body',
+      :body => IO.read(Rails.root.join('db/templates/kontakt_qr.html')),
+      :position => 0
+    })
+  
+  p_kontakt_qr.parts.create({
+      :title => 'Side Body',
+      :body => '',
+      :position => 1
+    })
+  
+  puts 'page Kontakt QR was created'
+end
+
+if p_kontakt_mapy
+  p_kontakt_mapy.update_attribute(:deletable, false)
+  p_kontakt_mapy.update_attribute(:show_in_menu, true)
+  
+  p_kontakt_mapy.parts.first.update_attribute(:body, IO.read(Rails.root.join('db/templates/kontakt_mapy.html')))
+  
+  puts 'page Kontakt Mapy was updated'
+else
+  p_kontakt_mapy = Page.create(:title => 'Mapy', :deletable => false, :show_in_menu => true, :parent_id => p_kontakt.id, :position => Page.last.position.to_i + 1)
+  p_kontakt_mapy.parts.create({
+      :title => 'Body',
+      :body => IO.read(Rails.root.join('db/templates/kontakt_mapy.html')),
+      :position => 0
+    })
+  
+  p_kontakt_mapy.parts.create({
+      :title => 'Side Body',
+      :body => '',
+      :position => 1
+    })
+  
+  puts 'page Kontakt Mapy was created'
 end
 
 
