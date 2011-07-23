@@ -23,7 +23,12 @@ end
 
 if p_kontakt_interier
   p_kontakt_interier.update_attribute(:deletable, false)
+<<<<<<< HEAD
   p_kontakt_interier.update_attribute(:show_in_menu, true)  
+=======
+  p_kontakt_interier.update_attribute(:show_in_menu, true)
+  
+>>>>>>> master
   p_kontakt_interier.parts.first.update_attribute(:body, IO.read(Rails.root.join('db/templates/kontakt_interier.html')))
   
   puts 'page Kontakt Interiér was updated'
