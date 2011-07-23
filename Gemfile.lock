@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/resolve/refinerycms-blog.git
-  revision: 4718d03a873a4a184a1528c6dfb9178f437c4caf
+  revision: e5db679226bac7ef8ddd568c40f52addd52d7a8a
   specs:
     refinerycms-blog (1.6.2)
       acts-as-taggable-on
