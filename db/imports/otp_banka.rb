@@ -36,7 +36,7 @@ begin
     vs = 0
     msg = ''
     from_account = ''
-    hash = nil
+    stamp = ''
 
     if block.match(/^[0-9]{0,2}\/([0-9]{0,2}) Platba/)
       l1 = block.match(/^[0-9]{0,2}\/([0-9]{0,2}) Platba[^0-9]+([0-9]+\/[0-9]+)\s+(\S+)\s*$/)
@@ -53,7 +53,7 @@ begin
         msg << "; #{l3[1]}" if l3
 
         user = User.where(:progressbar_uid => vs)
-        hash = Digest::MD5.hexdigest("#{month} #{year} #{amount} #{msg} #{user_id} #{l2[0]}")
+        stamp = Digest::MD5.hexdigest("#{month} #{year} #{amount} #{msg} #{user_id} #{l2[0]}")
 
         if !user.empty?
           f = Fee.new(:from_account => from_account,
@@ -64,7 +64,7 @@ begin
             :month => month,
             :year => year,
             :user_id => user.first.id,
-            :hash => hash)
+            :stamp => stamp)
 
           if !f.valid?
             puts "#{vs.to_s} | #{user.first.username.to_s} | #{amount.to_s} | #{from_account.to_s} | #{msg.to_s} | #{f.errors.to_s}"
