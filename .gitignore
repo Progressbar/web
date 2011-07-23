@@ -6,6 +6,7 @@ tmp/
 .bundle
 config/database.yml
 db/*.sqlite3
+db/imports/data/
 db/*.sqlite3-journal
 *.log
 tmp
