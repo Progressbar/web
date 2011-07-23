@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110719231044) do
+ActiveRecord::Schema.define(:version => 20110723075800) do
 
   create_table "blog_categories", :force => true do |t|
     t.string   "title"
@@ -103,13 +103,15 @@ ActiveRecord::Schema.define(:version => 20110719231044) do
     t.string   "currency",                                   :default => "eur", :null => false
     t.integer  "month",                                                         :null => false
     t.integer  "year",                                                          :null => false
+    t.string   "stamp",                                                         :null => false
     t.text     "message"
-    t.integer  "user_id",                                                       :null => false
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "fees", ["id"], :name => "index_fees_on_id"
+  add_index "fees", ["stamp"], :name => "index_fees_on_stamp"
 
   create_table "images", :force => true do |t|
     t.string   "image_mime_type"

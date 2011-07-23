@@ -29,7 +29,7 @@ begin
 
   def parse_block(block)
     amount = 0
-    month = 1
+    month = 0
     currency = 'eur'
     year = 2011
     user_id = 0
