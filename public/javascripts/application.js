@@ -98,10 +98,7 @@ $(function() {
 	});
 	
 	$('a.lightbox').fancybox({'titlePosition': 'inside'});
-	
-//	$('#menu a').pjax('#content');
-
-	
+		
 //	$.ajax('http://localhost:3000/oficiality/sponzori?_pjax=true', function (r) {
 //		console.log(r);
 //	})
