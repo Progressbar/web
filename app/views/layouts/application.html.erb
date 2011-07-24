@@ -12,7 +12,14 @@
         </div>
         <div id="content-wrapper" <%= " class='page-id-#{@page.id}' " if @page %>>
           <div id="content" data-pjax-container="true">
+            <% flash.each do |m, k| %>
+              <div class="flash <%= m %>" >
+                <%= k %>
+              </div>
+            <% end %>
+            
             <%= yield %>
+            
             <% if Rails.env.production? %>
               <div id="like" >
                 <div class="l">

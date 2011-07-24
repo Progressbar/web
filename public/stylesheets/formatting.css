@@ -10,14 +10,10 @@
 	float: right;
 	background: #000;
 	line-height: 1.2em;*/
-	
 }
 
 .join-box {
-	width: 300px;
-/*	border: solid 1px;*/
 	float: left;
-	margin-bottom: 50px;
 }
 
 .join-box header,
@@ -28,14 +24,9 @@
 
 #supporter-promo {
 	float: right;
-	width: 300px;
 }
 
 .price {
-	height: 40px;
-	display: block;
-	line-height: 40px;
-	text-align: center;
 }
 
 #content ul {
@@ -71,17 +62,6 @@ form td {
 
 #content th label {
 	display: block
-}
-
-td textarea {
-	widows: 99%;
-	height: 8em;
-	border: solid 1px;
-}
-
-#registration-form {
-	padding: 20px 0;
-	border-bottom: solid 1px #111;
 }
 
 .support-box {
