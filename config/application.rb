@@ -9,6 +9,8 @@ Bundler.require(:default, Rails.env) if defined?(Bundler)
 module Progressbar
   class Application < Rails::Application
     
+    NOTIFICATION_CONTACT_EMAIL = 'keraml@gmail.com'
+    
     config.action_mailer.raise_delivery_errors = false
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.perform_deliveries = true

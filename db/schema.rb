@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110723075800) do
+ActiveRecord::Schema.define(:version => 20110723202007) do
 
   create_table "blog_categories", :force => true do |t|
     t.string   "title"
@@ -239,6 +239,17 @@ ActiveRecord::Schema.define(:version => 20110723075800) do
   end
 
   add_index "refinery_settings", ["name"], :name => "index_refinery_settings_on_name"
+
+  create_table "registrations", :force => true do |t|
+    t.string   "username"
+    t.string   "email"
+    t.text     "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "registrations", ["email"], :name => "index_registrations_on_email"
+  add_index "registrations", ["username"], :name => "index_registrations_on_username"
 
   create_table "resources", :force => true do |t|
     t.string   "file_mime_type"
