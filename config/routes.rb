@@ -1,4 +1,9 @@
 Progressbar::Application.routes.draw do
+  
+  resources :registrations
+#
+  get '/join' => 'pages#join'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

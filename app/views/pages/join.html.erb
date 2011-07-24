@@ -1,0 +1,63 @@
+<div class="join-box" id="member-promo">
+  <header class="header">
+    <h2>Člen
+    </h2>
+    <div class="price">
+			20€ / mesiac
+      <a href="#payments" class="discount">pre študentov 50% zľava </a>
+    </div>
+  </header>
+  <div class="content">
+    <ul>
+      <li>Možnosť využívať priestor a zariadenie hackerspacu</li>
+      <li>Zľavy na rôzne predmety a nákupy</li>
+      <li>Zľavy na medzinárodné konferencie</li>
+      <li>Spolurozhodovanie o chode Progressbaru</li>
+      <li>Prístup k neverejným materiálom a informáciám</li>
+      <li><a href="#member-description">..a mnoho viac</a>
+      </li>
+    </ul>
+  </div>
+  <footer class="footer">
+    <%= form_for Registration.new do |f| %>
+      <div class="field">
+        <%= f.label :username, t('your_name'), :class => 'placeholder-fallback required' %>
+        <%= f.text_field :username, :placeholder => t('your_name'), :required => 'required', :class => 'required text' %>
+      </div>
+      <div class="field">
+        <%= f.label :email, t('email'), :class => 'placeholder-fallback required' %>
+        <%= f.email_field :email, :placeholder => t('email'), :required => 'required', :class => 'required email text' %>
+      </div>
+      <div class="field">
+        <%= f.label :message, t('your_name'), :class => 'placeholder-fallback required' %>
+        <%= f.text_area :message, :placeholder => t('your_name'), :required => 'required', :class => 'required' %>
+      </div>
+      <%= f.submit t('create_registration') %>
+    <% end %>
+  </footer>
+</div>
+<div class="join-box" id="supporter-promo">
+  <header class="header">
+    <h2>Podporovateľ
+    </h2>
+    <div class="price">
+			dobrovoľne
+    </div>
+  </header>
+  <div class="content">
+    <ul>
+      <li>Žiadne záväzky a povinnosti</li>
+      <li>Ľubovolný typ, výška a forma podpory</li>
+      <li>Možnosť stať sa aktívnym členom</li>
+      <li>Voliteľný <a href="/oficiality/sponzori">zápis medzi sponzorov a podporovateľov</a></li>
+      <li>Dobrý pocit ;-) </li>
+    </ul>
+  </div>
+  <footer class="footer">
+    <p>
+		Číslo účtu: 2600121198/8330<br />
+      <abbr title="pre platby zo zahraničia">IBAN</abbr>: SK1583300000002600121198<br />
+		BIC/SWIFT: FIOZSKBAXXX</p>
+    <a href="#" class="button green large">Donate or send member fee</a>
+  </footer>
+</div>
