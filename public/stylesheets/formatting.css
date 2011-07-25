@@ -1,19 +1,19 @@
 .discount {
-/*	display: block;
-	border: solid 1px #fff;
-	padding: 7px 10px;
-	-moz-transform: rotate(45deg);
-	width: 100px; 
-	position: relative;
-	right: -20px;
-	top: -20px;
-	float: right;
-	background: #000;
-	line-height: 1.2em;*/
+
 }
 
 .join-box {
 	float: left;
+	font-size: 116%;
+}
+
+.join-box .content {
+	padding-top: 20px;
+	padding-bottom: 6px;
+}
+
+.join-box h2 {
+	margin-bottom: 16px;
 }
 
 .join-box header,
@@ -26,7 +26,34 @@
 	float: right;
 }
 
-.price {
+#supporter-promo header, #supporter-promo .content, #supporter-promo .footer p {
+	opacity: 0.3;
+}
+
+#supporter-promo:hover header, #supporter-promo:hover .content, #supporter-promo:hover .footer p {
+	opacity: 0.9;
+}
+
+#supporter-promo:hover {
+	opacity: 1;
+}
+
+#supporter-promo .footer {
+	padding-top: 64px;
+}
+
+#supporter-promo .note {
+	font-size: 12px;
+	margin-top: 16px;
+}
+
+.join-box .price {
+	font-size: 113%;
+}
+
+#member-description {
+	padding-top: 32px;
+	width: 640px;
 }
 
 #content ul {

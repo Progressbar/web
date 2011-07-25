@@ -5,7 +5,7 @@ gem 'rails', '3.0.9'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'sqlite3'
+gem 'sqlite3'
 #gem 'mysql2', '~> 0.2.3'
 #gem 'mysql2'
 
@@ -41,12 +41,16 @@ gem 'refinerycms',              '~> 1.0.0'
 
 #gem 'pjax-rails'
 
+gem 'nokogiri'
+
 group :development, :test do
   # To use refinerycms-testing, uncomment it (if it's commented out) and run 'bundle install'
   # Then, run 'rails generate refinerycms_testing' which will copy its support files.
   # Finally, run 'rake' to run the tests.
-  # gem 'refinerycms-testing',    '~> 1.0.0'
-  # gem 'annotate'
+  gem 'refinerycms-testing',    '~> 1.0.0'
+  gem 'htmlentities'
+  gem 'spork'
+  gem 'annotate'  
 end
 
 # END REFINERY CMS ============================================================
@@ -80,3 +84,5 @@ gem 'refinerycms-i18n',         '~> 1.0.0'
 # END USER DEFINED
 
 gem 'refinerycms-fees', '1.0', :path => 'vendor/engines'
+
+gem 'refinerycms-registrations', '1.0', :path => 'vendor/engines'
