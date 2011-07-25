@@ -699,6 +699,24 @@ a.il {
 	top: 1px;
 }
 
+.flash {
+	padding: 16px;
+	margin-bottom: 16px;
+}
+
+.flash.notice {
+	background: #789;
+}
+
+.flash.success {
+	background: #797;
+}
+
+.flash.error {
+	background: #d67;
+/*	background: #979;*/
+}
+
 input.text,
 input[type=text],
 input[type=email],
@@ -711,6 +729,7 @@ input[type=password] {
 	margin-right: 8px;
 	background: #222;
 	border-radius: 5px;
+	color: #999;
 }
 
 textarea {
@@ -722,6 +741,7 @@ textarea {
 	padding: 5px;
 	font-size: 15px;
 	border: solid 1px #444;
+	color: #999;
 }
 
 input.text:focus,

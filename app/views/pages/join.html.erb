@@ -1,10 +1,10 @@
-<div class="join-box" id="member-promo">
+<div class="join-box left-half" id="member-promo">
   <header class="header">
     <h2>Člen
     </h2>
     <div class="price">
-			20€ / mesiac
-      <a href="#payments" class="discount">pre študentov 50% zľava </a>
+      <strong>20 </strong>&euro; / mesiac
+      <a href="#payments" class="discount">pre študentov <strong>50% zľava</strong></a>
     </div>
   </header>
   <div class="content">
@@ -19,7 +19,14 @@
     </ul>
   </div>
   <footer class="footer">
-    <%= form_for Registration.new do |f| %>
+    <%= form_for @registration_form do |f| %>
+      <% unless @registration_form.errors.blank? %>
+    <div class="form-error">
+      <% @registration_form.errors.each do |elm, msg| %>
+        <p><%= t(elm.to_s) %> <%= msg %></p>
+       <% end %>
+    </div>
+      <% end %>
       <div class="field">
         <%= f.label :username, t('your_name'), :class => 'placeholder-fallback required' %>
         <%= f.text_field :username, :placeholder => t('your_name'), :required => 'required', :class => 'required text' %>
@@ -28,20 +35,20 @@
         <%= f.label :email, t('email'), :class => 'placeholder-fallback required' %>
         <%= f.email_field :email, :placeholder => t('email'), :required => 'required', :class => 'required email text' %>
       </div>
-      <div class="field">
-        <%= f.label :message, t('your_name'), :class => 'placeholder-fallback required' %>
-        <%= f.text_area :message, :placeholder => t('your_name'), :required => 'required', :class => 'required' %>
+      <div class="field" style="width: 85%;">
+        <%= f.label :personal_info, t('personal_info'), :class => 'placeholder-fallback required' %>
+        <%= f.text_area :personal_info, :placeholder => t('personal_info'), :required => 'required', :class => 'required', :value => '-t- p i'  %>
       </div>
       <%= f.submit t('create_registration') %>
     <% end %>
   </footer>
 </div>
-<div class="join-box" id="supporter-promo">
+<div class="join-box right-half" id="supporter-promo">
   <header class="header">
     <h2>Podporovateľ
     </h2>
     <div class="price">
-			dobrovoľne
+			Dobrovoľné
     </div>
   </header>
   <div class="content">
@@ -51,6 +58,7 @@
       <li>Možnosť stať sa aktívnym členom</li>
       <li>Voliteľný <a href="/oficiality/sponzori">zápis medzi sponzorov a podporovateľov</a></li>
       <li>Dobrý pocit ;-) </li>
+      <li><a href="/podporte-nas">Viac informácií</a></li>
     </ul>
   </div>
   <footer class="footer">
@@ -58,6 +66,13 @@
 		Číslo účtu: 2600121198/8330<br />
       <abbr title="pre platby zo zahraničia">IBAN</abbr>: SK1583300000002600121198<br />
 		BIC/SWIFT: FIOZSKBAXXX</p>
-    <a href="#" class="button green large">Donate or send member fee</a>
+    <%#*<a href="#" class="button green large">Podporte nás, alebo pošlite členské</a>%>
+    <p class="msg info note">
+		<img class="ui-icon ui-icon-info" src="/images/s.gif" alt="info icon">
+		V prípade členskej platby uvedte ako variabilný symbol svoje členské číslo.
+	</p>
   </footer>
 </div>
+<div class="reset">&nbsp;</div>
+
+<%= raw @page.parts.first.body %>
