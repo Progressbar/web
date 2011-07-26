@@ -74,9 +74,9 @@ input[type="checkbox"] { vertical-align: middle; }
 label, input[type=button], input[type=submit], button { cursor: pointer; }
 button, input, select, textarea { margin: 0; }
 input:valid, textarea:valid { }
-input:invalid, textarea:invalid { border-radius: 1px; -moz-box-shadow: 0px 0px 5px red; -webkit-box-shadow: 0px 0px 5px red; box-shadow: 0px 0px 5px red; }
-.no-boxshadow input:invalid,
-.no-boxshadow textarea:invalid { background-color: #f0dddd; }
+.validated input:invalid, .validated textarea:invalid { border-radius: 1px; -moz-box-shadow: 0px 0px 5px red; -webkit-box-shadow: 0px 0px 5px red; box-shadow: 0px 0px 5px red; }
+.no-boxshadow .validated input:invalid,
+.no-boxshadow .validated textarea:invalid { background-color: #f0dddd; }
 
 a:link { -webkit-tap-highlight-color: #FF5E99; }
 
@@ -709,12 +709,15 @@ a.il {
 }
 
 .flash.success {
-	background: #797;
+	background: #85C646;
 }
 
 .flash.error {
 	background: #d67;
-/*	background: #979;*/
+}
+
+.form-error {
+	color: #d67;
 }
 
 input.text,

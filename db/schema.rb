@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110724234644) do
+ActiveRecord::Schema.define(:version => 20110726140030) do
 
   create_table "blog_categories", :force => true do |t|
     t.string   "title"
@@ -246,6 +246,7 @@ ActiveRecord::Schema.define(:version => 20110724234644) do
     t.text     "personal_info",                    :null => false
     t.string   "state",         :default => "new", :null => false
     t.integer  "position"
+    t.boolean  "spam",          :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
