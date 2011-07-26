@@ -19,10 +19,10 @@
     </ul>
   </div>
   <footer class="footer">
-    <%= form_for @registration_form do |f| %>
-      <% unless @registration_form.errors.blank? %>
+    <%= form_for @registration do |f| %>
+      <% unless @registration.errors.blank? %>
     <div class="form-error">
-      <% @registration_form.errors.each do |elm, msg| %>
+      <% @registration.errors.each do |elm, msg| %>
         <p><%= t(elm.to_s) %> <%= msg %></p>
        <% end %>
     </div>
@@ -37,7 +37,7 @@
       </div>
       <div class="field" style="width: 85%;">
         <%= f.label :personal_info, t('personal_info'), :class => 'placeholder-fallback required' %>
-        <%= f.text_area :personal_info, :placeholder => t('personal_info'), :required => 'required', :class => 'required', :value => '-t- p i'  %>
+        <%= f.text_area :personal_info, :placeholder => t('personal_info'), :required => 'required', :class => 'required' %>
       </div>
       <%= f.submit t('create_registration') %>
     <% end %>
@@ -58,7 +58,7 @@
       <li>Možnosť stať sa aktívnym členom</li>
       <li>Voliteľný <a href="/oficiality/sponzori">zápis medzi sponzorov a podporovateľov</a></li>
       <li>Dobrý pocit ;-) </li>
-      <li><a href="/podporte-nas">Viac informácií</a></li>
+      <li><a href="/podporte-nas">Viac informácií a daľšie možnosti</a></li>
     </ul>
   </div>
   <footer class="footer">

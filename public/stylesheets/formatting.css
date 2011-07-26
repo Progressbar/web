@@ -26,20 +26,16 @@
 	float: right;
 }
 
-#supporter-promo header, #supporter-promo .content, #supporter-promo .footer p {
+#supporter-promo  {
 	opacity: 0.3;
 }
 
-#supporter-promo:hover header, #supporter-promo:hover .content, #supporter-promo:hover .footer p {
+#supporter-promo:hover {
 	opacity: 0.9;
 }
 
 #supporter-promo:hover {
 	opacity: 1;
-}
-
-#supporter-promo .footer {
-	padding-top: 64px;
 }
 
 #supporter-promo .note {
