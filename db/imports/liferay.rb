@@ -56,7 +56,7 @@ begin
       u.add_role(:member)
       u.add_role(:refinery)
       
-      u.plugins = ['refinerycms_blog', 'calendar', 'refinery_images', 'refinery_files']
+      u.plugins = ['refinerycms_blog', 'calendar', 'refinery_images', 'refinery_files', 'fees']
       
       u.save
     else
