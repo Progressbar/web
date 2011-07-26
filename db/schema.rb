@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110726140030) do
+ActiveRecord::Schema.define(:version => 20110726170351) do
 
   create_table "blog_categories", :force => true do |t|
     t.string   "title"
@@ -241,10 +241,10 @@ ActiveRecord::Schema.define(:version => 20110726140030) do
   add_index "refinery_settings", ["name"], :name => "index_refinery_settings_on_name"
 
   create_table "registrations", :force => true do |t|
-    t.string   "username",                         :null => false
-    t.string   "email",                            :null => false
-    t.text     "personal_info",                    :null => false
-    t.string   "state",         :default => "new", :null => false
+    t.string   "username",                                 :null => false
+    t.string   "email",                                    :null => false
+    t.text     "personal_info",                            :null => false
+    t.string   "state",         :default => "unmoderated", :null => false
     t.integer  "position"
     t.boolean  "spam",          :default => false
     t.datetime "created_at"
