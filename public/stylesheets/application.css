@@ -377,7 +377,7 @@ body {
 #promo {
 	position: relative;
 	clear: both;
-	
+/*	
 	padding: 16px;
 	padding-bottom: 0px;
 	margin-bottom: 30px;
@@ -392,7 +392,7 @@ body {
     border-style: solid;
     border-width: 1px 1px 2px;
     box-shadow: 0 0 1px rgba(153, 156, 203, 0.4) inset;
-    color: rgba(84, 82, 112, 0.5);
+    color: rgba(84, 82, 112, 0.5);*/
 }
 
 #promo-content {
@@ -444,16 +444,17 @@ body {
 }
 
 .promo-item {
-	padding: 5px;
+/*	padding: 5px;*/
 	overflow: hidden;
 	background: #000;
 	position: relative;
 	height: 430px;
-	border: solid 1px #222;
+/*	border: solid 1px #222;*/
 }
 
 .promo-item img {
-	width: 916px;
+	width: 960px;
+/*	width: 916px;*/
 	
 }
 
