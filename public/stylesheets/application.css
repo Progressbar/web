@@ -414,7 +414,7 @@ body {
 }
 
 #promo-content {
-	height: 450px;
+	height: 430px;
 	overflow: hidden;
 }
 
@@ -492,7 +492,7 @@ body {
 }
 
 .promo-text-1 {
-	bottom: 15px;
+	bottom: 0px;
 	left: 20px;
 	width: 50%;
 	font-size: 24px;
