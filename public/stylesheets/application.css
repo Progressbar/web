@@ -200,6 +200,10 @@ body {
 	position: relative;
 }
 
+#join-us {
+	margin-right: 32px;
+}
+
 #menu {
 	clear: both;
 	text-transform: uppercase;
