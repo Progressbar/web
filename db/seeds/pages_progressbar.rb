@@ -141,12 +141,12 @@ if p_podporte
   puts 'page podporte updated'
 end
 
-p_pridaj = Page.find_by_title('Pridaj sa')
-
-if p_pridaj
-  p_pridaj.parts.first.update_attributes(:body => IO.read(Rails.root.join('db/templates/pridaj.html')))
-  p_pridaj.parts.last.update_attributes(:body => '')
-  puts 'page Pridaj sa updated'
-end
+#p_pridaj = Page.find_by_title('Pridaj sa')
+#
+#if p_pridaj
+#  p_pridaj.parts.first.update_attributes(:body => IO.read(Rails.root.join('db/templates/pridaj.html')))
+#  p_pridaj.parts.last.update_attributes(:body => '')
+#  puts 'page Pridaj sa updated'
+#end
 
 puts 'progressbar pages seed finish'
