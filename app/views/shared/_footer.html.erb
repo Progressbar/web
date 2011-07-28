@@ -94,17 +94,11 @@
   <%= link_to(page_colophon.title, page_colophon.url) %>
 </div>
 <nav id='bottom-menu' class='menu clearfix'>
-  <%# page_calendar = Page.find('calendar') %>
   <% page_blog = Page.find('blog') %>
-  <% page_sponsors = Page.find('sponsors') %>
   <% page_wiki = Page.find('wiki') %>
   <% page_contact = Page.find('kontakt') %>
-  <% page_join = Page.find('pridaj-sa') %>
-  <%#= link_to(page_calendar.title, page_calendar.url) %> <span class="delim">&nbsp;|&nbsp;</span>
   <%= link_to(page_blog.title, page_blog.url) %> <span class="delim">&nbsp;|&nbsp;</span>
-  <%= link_to(page_sponsors.title, page_sponsors.url) %> <span class="delim">&nbsp;|&nbsp;</span>
   <%= link_to(page_wiki.title, page_wiki.url) %> <span class="delim">&nbsp;|&nbsp;</span>
   <%= link_to(page_contact.title, page_contact.url) %> <span class="delim">&nbsp;|&nbsp;</span>
-  <%= link_to(page_join.title, page_join.url) %> <span class="delim">&nbsp;|&nbsp;</span>
   <a href="#"><%= t('top') %>  &uarr;</a>
 </nav>
