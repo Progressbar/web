@@ -16,6 +16,8 @@
     <%= link_to_if(!is_lang?('sk'), 'Slovenčina', '/') %><span class="delim">&nbsp;|&nbsp;</span><%= link_to_if(!is_lang?('en'), 'English', url_for(:locale => 'en')) %>
   </nav>
 <% form_tag search_url, :method => 'GET', :id => 'search-form' do -%>
+
+<%= link_to t('.join-us'), url_for('/join-us'), :id => 'join-us', :class => 'button' unless is_homepage? %>
 <%= search_field_tag :query, {}, {:type => 'search',
                    :placeholder => t('Search site for...'),
                    :class => 'text search',
