@@ -304,6 +304,20 @@ body {
 	width: 100%;
 }
 
+#projects {
+	margin-bottom: 16px;
+}
+
+#projects .project-wrapper {
+	width: 215px;
+	float: left;
+	margin-right: 32px;
+}
+
+#projects div.project-wrapper.four {
+	margin-right: 0px;
+}
+
 #calendar {
 	float: left;
 	width: 464px;
