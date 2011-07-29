@@ -6,10 +6,27 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env) if defined?(Bundler)
 
+
 module Progressbar
   class Application < Rails::Application
     
     NOTIFICATION_CONTACT_EMAIL = 'keraml@gmail.com'
+  
+    PAGES = {
+      :HOME_PAGE_ID => 1,
+      :NOT_FOUND_PAGE_ID => 2,
+      :ABOUT_US_PAGE_ID => 3,
+      :BLOG_PAGE_ID => 4,
+      :CONTACT_PAGE_ID => 5,
+      :THANK_YOU_CONTACT_PAGE_ID => 6,
+      :PRIVACY_CONTACT_PAGE_ID => 7,
+      :EVENTS_PAGE_ID => 8,
+      :WIKI_PAGE_ID => 9,
+      :COLOPHON_PAGE_ID => 10,
+      :JOIN_US_PAGE_ID => 11,
+      :PROJECTS_PAGE_ID => 12,
+      :SPONSORS_PAGE_ID => 16,
+    }
     
     config.action_mailer.raise_delivery_errors = false
     config.action_mailer.delivery_method = :smtp

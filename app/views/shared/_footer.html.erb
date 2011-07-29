@@ -90,15 +90,11 @@
 <div id="copy">
 <%= t('.copyright', :year => Time.now.year,
     :site_name => RefinerySetting.find_or_set(:site_name, 'Company Name')) %>,
-  <% page_colophon = Page.find(18) %>
-  <%= link_to(page_colophon.title, page_colophon.url) %>
+  <%= link_to(@colophon_page.title, @colophon_page.url) %>
 </div>
 <nav id='bottom-menu' class='menu clearfix'>
-  <% page_blog = Page.find('blog') %>
-  <% page_wiki = Page.find('wiki') %>
-  <% page_contact = Page.find('kontakt') %>
-  <%= link_to(page_blog.title, page_blog.url) %> <span class="delim">&nbsp;|&nbsp;</span>
-  <%= link_to(page_wiki.title, page_wiki.url) %> <span class="delim">&nbsp;|&nbsp;</span>
-  <%= link_to(page_contact.title, page_contact.url) %> <span class="delim">&nbsp;|&nbsp;</span>
+  <%= link_to(@blog_page.title, @blog_page.url) %> <span class="delim">&nbsp;|&nbsp;</span>
+  <%= link_to(@wiki_page.title, @wiki_page.url) %> <span class="delim">&nbsp;|&nbsp;</span>
+  <%= link_to(@contact_page.title, @contact_page.url) %> <span class="delim">&nbsp;|&nbsp;</span>
   <a href="#"><%= t('top') %>  &uarr;</a>
 </nav>

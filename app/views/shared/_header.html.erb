@@ -11,8 +11,6 @@
 </div>
 <div id="nav-holder">
   <nav id="lang">
-    <%# memb_section = Page.find(17) %>
-    <%#= link_to(memb_section.title, memb_section.url) %><!-- <span class="delim">&nbsp;|&nbsp;</span>-->
     <%= link_to_if(!is_lang?('sk'), 'Slovenčina', '/') %><span class="delim">&nbsp;|&nbsp;</span><%= link_to_if(!is_lang?('en'), 'English', url_for(:locale => 'en')) %>
   </nav>
 <% form_tag search_url, :method => 'GET', :id => 'search-form' do -%>

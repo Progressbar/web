@@ -165,21 +165,20 @@ body {
 
 #header #hgroup {
 	float: left;
-	width: 42%;
+	width: 40%;
 	height: 100%;
 }
 
 #logo {
 	display: block;
-	background-image: url(/images/progressbar.png);
+	background-image: url(/images/progressbar_black.png);
 	background-repeat: no-repeat;
-	background-position: top left;
-	height: 145px;
-	width: 100%;
+	background-position: 0% 40%;
+	height: 140px;
+	width: 370px;
 	padding: 0px;
 	margin: 0px;
 	position: relative;
-	left: -16px;
 }
 
 #logo a, #logo strong {
@@ -191,8 +190,8 @@ body {
 
 #nav-holder {
 	float: right;
-	margin-top: 24px;
-	width: 58%;
+	margin-top: 20px;
+	width: 60%;
 }
 
 #lang {
