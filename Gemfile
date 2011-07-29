@@ -5,7 +5,7 @@ gem 'rails', '3.0.9'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+#gem 'sqlite3'
 #gem 'mysql2', '~> 0.2.3'
 #gem 'mysql2'
 
@@ -41,16 +41,16 @@ gem 'refinerycms',              '~> 1.0.0'
 
 #gem 'pjax-rails'
 
-gem 'nokogiri'
+#gem 'nokogiri'
 
 group :development, :test do
   # To use refinerycms-testing, uncomment it (if it's commented out) and run 'bundle install'
   # Then, run 'rails generate refinerycms_testing' which will copy its support files.
   # Finally, run 'rake' to run the tests.
-  gem 'refinerycms-testing',    '~> 1.0.0'
-  gem 'htmlentities'
-  gem 'spork'
-  gem 'annotate'  
+#  gem 'refinerycms-testing',    '~> 1.0.0'
+#  gem 'htmlentities'
+#  gem 'spork'
+#  gem 'annotate'  
 end
 
 # END REFINERY CMS ============================================================
@@ -63,7 +63,7 @@ gem 'refinerycms-inquiries',  :path => 'vendor/'
 #gem 'refinerycms-registrations',  :path => 'vendor/'
 
 #gem 'refinerycms-inquiries',    '~> 1.0'
-gem "refinerycms-news",         '~> 1.2'
+#gem "refinerycms-news",         '~> 1.2'
 gem 'refinerycms-search', :path => 'vendor/'
 #gem 'refinerycms-blog',         '~> 1.6.2'
 gem 'refinerycms-blog', :git => 'git://github.com/resolve/refinerycms-blog.git'
@@ -71,7 +71,7 @@ gem 'refinerycms-blog', :git => 'git://github.com/resolve/refinerycms-blog.git'
 
 #gem 'refinerycms-calendar', :git => 'git://github.com/resolve/refinerycms-calendar.git'
 gem 'refinerycms-calendar', :path => 'vendor/'
-gem 'refinerycms-snippets', '~> 0.4'
+#gem 'refinerycms-snippets', '~> 0.4'
 
 #gem 'refinerycms-memberships', :git => 'git://github.com/rbriank/refinerycms_membership.git'
 ##gem 'refinerycms-memberships', '~> 1.0'

@@ -1,5 +1,7 @@
 class CreateFees < ActiveRecord::Migration
   def self.up
+    drop_table :fees if ::Fee.table_exists?
+    
     create_table :fees do |t|
       t.string :from_account, :null => false
       t.integer :vs, :null => false
@@ -9,12 +11,12 @@ class CreateFees < ActiveRecord::Migration
       t.integer :year, :null => false
       t.string :stamp, :null => false
       t.text :message
-      
+
       t.references :user
-      
+
       t.timestamps
     end
-  
+
     add_index :fees, :id
     add_index :fees, :stamp
   end
@@ -23,6 +25,6 @@ class CreateFees < ActiveRecord::Migration
     UserPlugin.destroy_all({:name => "fees"})
 
     drop_table :fees
-    
+
   end
 end
