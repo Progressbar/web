@@ -7,9 +7,6 @@ class PagesController < ApplicationController
         :per_page => 3
       })
     
-    @page_blog = Page.find('blog')
-    @page_calendar = Page.find(25)
-    
     events_in_current_week()
  
     error_404 unless (@page = Page.where(:link_url => '/').first).present?

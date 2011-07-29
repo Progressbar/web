@@ -1,6 +1,6 @@
 <section id="calendar">
   <header>
-    <h2><%= link_to(t('calendar.title'), @page_calendar.url, :class => 'float-left') %>
+    <h2><%= link_to(t('calendar.title'), @events_page.url, :class => 'float-left') %>
       <!-- <span class="delim">&nbsp;-&nbsp;</span><em title="Dnes je: <%= Time.now.strftime("%d.%m.%Y") %>"><%= Time.now.strftime("%U") %> <%= t('calendar.week') %></em>-->
       <span class="reset">&nbsp;</span>
     </h2>
@@ -49,7 +49,7 @@
       <a href="<%= events_path(:format => :ics) %>"><img alt="ical icon" src="/images/s.gif" class="sprites sprite-icon-ical-32" /></a>
     </div>
     <div class="float-right">
-      <%= link_to(t('calendar.full_schedule'), @page_calendar.url) %>
+      <%= link_to(t('calendar.full_schedule'), @events_page.url) %>
     </div>
     <div class="reset">&#160;</div>
   </footer>
