@@ -81,4 +81,4 @@ capybara-*html
 .rvmrc
 .rvmrc.*
 
-#config/environments/
+config/environments/*
