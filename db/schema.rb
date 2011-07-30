@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110726214559) do
+ActiveRecord::Schema.define(:version => 20110730150730) do
 
   create_table "blog_categories", :force => true do |t|
     t.string   "title"
@@ -144,6 +144,17 @@ ActiveRecord::Schema.define(:version => 20110726214559) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "mailing_lists", :force => true do |t|
+    t.string   "email"
+    t.boolean  "general",    :default => false
+    t.boolean  "events",     :default => true
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "mailing_lists", ["id"], :name => "index_mailing_lists_on_id"
 
   create_table "page_part_translations", :force => true do |t|
     t.integer  "page_part_id"
