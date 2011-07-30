@@ -22,6 +22,7 @@ PATH
   remote: vendor/engines
   specs:
     refinerycms-fees (1.0)
+    refinerycms-mailing_lists (1.0)
     refinerycms-registrations (1.0)
 
 GEM
@@ -183,5 +184,6 @@ DEPENDENCIES
   refinerycms-fees (= 1.0)!
   refinerycms-i18n (~> 1.0.0)
   refinerycms-inquiries!
+  refinerycms-mailing_lists (= 1.0)!
   refinerycms-registrations (= 1.0)!
   refinerycms-search!
