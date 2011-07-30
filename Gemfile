@@ -6,8 +6,6 @@ gem 'rails', '3.0.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 #gem 'sqlite3'
-#gem 'mysql2', '~> 0.2.3'
-#gem 'mysql2'
 
 gem 'mysql2', '~> 0.2.7'
 
@@ -39,10 +37,6 @@ gem 'mysql2', '~> 0.2.7'
 
 gem 'refinerycms',              '~> 1.0.0'
 
-#gem 'pjax-rails'
-
-#gem 'nokogiri'
-
 group :development, :test do
   # To use refinerycms-testing, uncomment it (if it's commented out) and run 'bundle install'
   # Then, run 'rails generate refinerycms_testing' which will copy its support files.
@@ -56,33 +50,29 @@ end
 # END REFINERY CMS ============================================================
 
 # USER DEFINED
-
-
 # Specify additional Refinery CMS Engines here (all optional):
 gem 'refinerycms-inquiries',  :path => 'vendor/'
-#gem 'refinerycms-registrations',  :path => 'vendor/'
+# gem 'refinerycms-inquiries',  :git => 'git://github.com/progressbarsk/refinerycms-inquiries.git'
 
-#gem 'refinerycms-inquiries',    '~> 1.0'
-#gem "refinerycms-news",         '~> 1.2'
 gem 'refinerycms-search', :path => 'vendor/'
-#gem 'refinerycms-blog',         '~> 1.6.2'
+# gem 'refinerycms-search', :git => 'git://github.com/Progressbar/refinerycms-search.git'
+
 gem 'refinerycms-blog', :git => 'git://github.com/resolve/refinerycms-blog.git'
-# gem 'refinerycms-page-images',  '~> 1.0'
 
-#gem 'refinerycms-calendar', :git => 'git://github.com/resolve/refinerycms-calendar.git'
 gem 'refinerycms-calendar', :path => 'vendor/'
-#gem 'refinerycms-snippets', '~> 0.4'
-
-#gem 'refinerycms-memberships', :git => 'git://github.com/rbriank/refinerycms_membership.git'
-##gem 'refinerycms-memberships', '~> 1.0'
-#gem 'refinerycms-members', :path => 'vendor/'
-#gem 'refinerycms-memberships', :path => 'vendor/'
+# gem 'refinerycms-calendar', :git => 'git://github.com/progressbarsk/refinerycms-calendar.git'
 
 # Add i18n support (optional, you can remove this if you really want to).
 gem 'refinerycms-i18n',         '~> 1.0.0'
 
+gem 'refinerycms-fees', '1.0', :path => 'vendor/engines'
+gem 'refinerycms-registrations', '1.0', :path => 'vendor/engines'
+gem 'refinerycms-mailing_lists', '1.0', :path => 'vendor/engines'
+
+# gem 'refinerycms-fees', '1.0', :git => 'git://github.com/Progressbar/fees.git'
+# gem 'refinerycms-registrations', '1.0', :git => 'git://github.com/Progressbar/registrations.git'
+# gem 'refinerycms-mailing_lists', '1.0', :git => 'git://github.com/Progressbar/mailing_lists.git'
+
 # END USER DEFINED
 
-gem 'refinerycms-fees', '1.0', :path => 'vendor/engines'
 
-gem 'refinerycms-registrations', '1.0', :path => 'vendor/engines'

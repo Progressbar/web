@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
   before_filter :default_pages
+  before_filter :mailing_list
   
   layout proc{ |c| c.request.xhr? ? false : "application" }
 
@@ -21,4 +22,10 @@ class ApplicationController < ActionController::Base
     @sponsors_page = Page.find_by_id(ids[:SPONSORS_PAGE_ID])
 
   end  
+  
+  def mailing_list
+    p = params[:mailing_list] ? params[:mailing_list] : {}
+    p[:events] = true unless params[:mailing_list]
+    @mailing_list = MailingList.new(p)    
+  end
 end

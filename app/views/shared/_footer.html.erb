@@ -41,21 +41,7 @@
     <h3><%= t('mailing_list.title') %></h3>
   </header>
   <div class="content">
-    <form method="POST" action="/mailing-list">
-      <p>
-        <input type="checkbox" name="type" value="general" id="type-general"/>
-        <label for="type-general"><%= t('mailing_list.general_type') %></label><br />
-        <input type="checkbox" name="type" value="events" checked="checked" id="type-events"/>
-        <label for="type-events"><%= t('mailing_list.events_type') %></label>
-      </p>
-      <p><input type="email" name="email" placeholder="<%= t('mailing_list.put_email') %>" class="text email" required="required" /><input class="submit" type="submit" value="<%= t('mailing_list.sign_in') %>"/></p>
-      <p class="msg info">
-        <img alt="info icon" src="/images/s.gif" class="ui-icon ui-icon-info" />
-        <%= t('mailing_list.info_privacy') %>
-        <br /><br />
-        <%= t('mailing_list.info_logout') %>
-      </p>
-    </form>
+    <%= render :partial => "/mailing_lists/form" %>
   </div>
 </section>
 <section id="address" >
