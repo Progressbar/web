@@ -17,25 +17,23 @@
                 <%= k %>
               </div>
             <% end %>
-            
+
             <%= yield %>
-            
-            <% if Rails.env.production? %>
-              <div id="like" >
-                <div class="l">
-                  <g:plusone size="tall"></g:plusone>
-                </div>
-                <div class="l">
-                  <a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical"></a>
-                </div>
-                <div class="l">
-                  <script type="in/share" data-counter="top"></script>
-                </div>
-                <div class="l">
-                  <fb:like href="<%= request.url %>" layout="box_count" show_faces="false" font="Arial"></fb:like>
-                </div>
+
+            <div id="like" >
+              <div class="l">
+                <g:plusone size="tall"></g:plusone>
               </div>
-            <% end %>
+              <div class="l">
+                <a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical"></a>
+              </div>
+              <div class="l">
+                <script type="in/share" data-counter="top"></script>
+              </div>
+              <div class="l">
+                <fb:like href="<%= request.url %>" layout="box_count" show_faces="false" font="Arial"></fb:like>
+              </div>
+            </div>
             <div class="reset">&nbsp;</div>
           </div>
         </div>
@@ -48,11 +46,11 @@
       </div>
     </div>
     <%= javascript_include_tag 'jquery-1.6.1.min' %>
-    <%#= javascript_include_tag 'jquery-ui/js/jquery-ui-1.8.13.custom.min' unless is_homepage?() %>
+<%#= javascript_include_tag 'jquery-ui/js/jquery-ui-1.8.13.custom.min' unless is_homepage?() %>
     <%= javascript_include_tag 'jquery-ui/js/jquery-ui-1.8.13.custom.min' %>
     <%= javascript_include_tag 'jquery.fancybox-1.3.4' %>
     <%= javascript_include_tag 'jquery.scrollTo-1.4.2-min' %>
-    <%#= javascript_include_tag 'jquery.pjax' %>
+<%#= javascript_include_tag 'jquery.pjax' %>
     <%= javascript_include_tag 'application' %>
     <% if Rails.env.production? %>
       <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
