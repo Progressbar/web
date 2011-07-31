@@ -1,21 +1,20 @@
-<h1 id="body_content_title">Pridaj sa k nám a staň sa členom alebo podporovateľom združenia.</h1>
+<h1 id="body_content_title"><%= t('.join_us_title') %></h1>
 <div class="join-box left-half" id="member-promo">
   <header class="header">
-    <h2>Člen
-    </h2>
+    <h2><%= t('.member') %></h2>
     <div class="price">
-      <strong>20 </strong>&euro; / mesiac
-      <a href="#payments" class="discount">pre študentov <strong>50% zľava</strong></a>
+      <strong>20 </strong>&euro; / <%= t('.month') %>
+      <a href="#payments" class="discount"><%= raw t('.students_discounts') %></a>
     </div>
   </header>
   <div class="content">
     <ul>
-      <li>Možnosť využívať priestor a zariadenie hackerspacu</li>
-      <li>Zľavy na rôzne predmety a nákupy</li>
-      <li>Zľavy na medzinárodné konferencie</li>
-      <li>Spolurozhodovanie o chode Progressbaru</li>
-      <li>Prístup k neverejným materiálom a informáciám</li>
-      <li><a href="#member-description">..a mnoho viac</a>
+      <li><%= t('.opportunity_to_use_space_and_equipment') %></li>
+      <li><%= t('.discounts_on_various_items_and_purchases') %></li>
+      <li><%= t('.discounts_on_international_conferences') %></li>
+      <li><%= t('.involvement_in_the_running_progressbar') %></li>
+      <li><%= t('.access_to_nonpublic_material_information') %></li>
+      <li><a href="#member-description"><%= t('.and_much_more') %></a>
       </li>
     </ul>
   </div>
@@ -29,48 +28,48 @@
     </div>
       <% end %>
       <div class="field">
-        <%= f.label :username, t('your_name'), :class => 'placeholder-fallback required' %>
-        <%= f.text_field :username, :placeholder => t('your_name'), :required => 'required', :class => 'required text' %>
+        <%= f.label :username, t('.your_name'), :class => 'placeholder-fallback required' %>
+        <%= f.text_field :username, :placeholder => t('.your_name'), :required => 'required', :class => 'required text' %>
       </div>
       <div class="field">
-        <%= f.label :email, t('email'), :class => 'placeholder-fallback required' %>
-        <%= f.email_field :email, :placeholder => t('email'), :required => 'required', :class => 'required email text' %>
+        <%= f.label :email, t('.email'), :class => 'placeholder-fallback required' %>
+        <%= f.email_field :email, :placeholder => t('.email'), :required => 'required', :class => 'required email text' %>
       </div>
       <div class="field" style="width: 85%;">
-        <%= f.label :personal_info, t('personal_info'), :class => 'placeholder-fallback required' %>
-        <%= f.text_area :personal_info, :placeholder => t('personal_info'), :required => 'required', :class => 'required' %>
+        <%= f.label :personal_info, t('.personal_info'), :class => 'placeholder-fallback required' %>
+        <%= f.text_area :personal_info, :placeholder => t('.personal_info'), :required => 'required', :class => 'required' %>
       </div>
-      <%= f.submit t('create_registration') %>
+      <%= f.submit t('.create_registration') %>
     <% end %>
   </footer>
 </div>
 <div class="join-box right-half" id="supporter-promo">
   <header class="header">
-    <h2>Podporovateľ
+    <h2><%= t('.supporter') %>
     </h2>
     <div class="price">
-			Dobrovoľné
+			<%= t('.voluntary') %>
     </div>
   </header>
   <div class="content">
     <ul>
-      <li>Žiadne záväzky a povinnosti</li>
-      <li>Ľubovolný typ, výška a forma podpory</li>
-      <li>Možnosť stať sa aktívnym členom</li>
-      <li>Voliteľný <a href="/oficiality/sponzori">zápis medzi sponzorov a podporovateľov</a></li>
-      <li>Dobrý pocit ;-) </li>
-      <li><a href="/podporte-nas">Viac informácií a daľšie možnosti</a></li>
+      <li><%= t('.no_commitments_and_obligations') %></li>
+      <li><%= t('.any_type_height_and_form_of_aid') %></li>
+      <li><%= t('.opportunity_to_become_an_active_member') %></li>
+      <li><%= raw  t('.optional_registration_between_the_sponsors_and_supporters') %></li>
+      <li><%= t('.feel_good') %></li>
+      <li><%= raw t('.more_information_and_other_options') %></li>
     </ul>
   </div>
   <footer class="footer">
     <p>
-		Číslo účtu: 2600121198/8330<br />
-      <abbr title="pre platby zo zahraničia">IBAN</abbr>: SK1583300000002600121198<br />
+      <%= t('.account_number') %>
+		 2600121198/8330<br />
+      <abbr title="<%= t('.for_payments_from_abroad') %>">IBAN</abbr>: SK1583300000002600121198<br />
 		BIC/SWIFT: FIOZSKBAXXX</p>
-    <%#*<a href="#" class="button green large">Podporte nás, alebo pošlite členské</a>%>
     <p class="msg info note">
 		<img class="ui-icon ui-icon-info" src="/images/s.gif" alt="info icon">
-		V prípade členskej platby uvedte ako variabilný symbol svoje členské číslo.
+		<%= t('.for_membership_payment_enter_the_variable_as_a_symbol_of_their_membership_number') %>
 	</p>
   </footer>
 </div>
