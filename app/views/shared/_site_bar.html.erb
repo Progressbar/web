@@ -8,16 +8,9 @@
       <div id='editor_switch'>
         <%= site_bar_switch_link -%>
       </div>
-      <%= link_to image_tag("#{"http://refinerycms.com/images/" unless local_request?}refinery/logo-site-bar.png", :alt => "Refinery (tm) Content Manager"),
-                  'http://refinerycms.com',
-                  :target => '_blank',
-                  :id => 'site_bar_refinery_cms_logo' %>
-
-      <div id='site_bar_branding'>
-        <span id='user-info'>
-          
+       <div id='site_bar_branding'>
+        <span id='user-info'>        
             <%= current_user.username %> | <strong><%= current_user.progressbar_uid %></strong>
-          <%#= RefinerySetting.find_or_set(:site_name, 'Company Name') %>
         </span>
 
         <%= link_to t('.log_out', site_bar_translate_locale_args),
