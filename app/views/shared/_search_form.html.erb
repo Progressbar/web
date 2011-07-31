@@ -1,0 +1,8 @@
+<%= form_tag search_url, :method => 'GET', :id => 'search-form' do %>
+<%= search_field_tag :query, {}, {:type => 'search',
+                     :placeholder => t('.search_site_for'),
+                     :class => 'text search',
+                     :required => 'required',
+                     :value => (params[:query] if params[:query])} %>
+<%= image_submit_tag('/images/design/search-dark.png', :class => 'search-button', :alt => 'Submit button', :title => t('submit')) %>
+<% end %>

@@ -6,7 +6,7 @@ class PagesController < ApplicationController
         :page => 1,
         :per_page => 3
       })
-    
+
     events_in_current_week()
  
     error_404 unless (@page = Page.where(:link_url => '/').first).present?
