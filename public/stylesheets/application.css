@@ -668,8 +668,8 @@ a.il {
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+/*	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.3);*/
 	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
 	border-bottom: 1px solid rgba(0,0,0,0.25);
 	position: relative;
@@ -688,7 +688,7 @@ a.il {
 	cursor: default;
 }
 
-.pagination a:hover, .button:hover { background-color: #111; color: #fff; }
+/*.pagination a:hover, .button:hover { background-color: #111; color: #fff; }*/
 .button:active { top: 1px; }
 .small.button, .small.button:visited { font-size: 11px; }
 .button, .button:visited,
@@ -715,6 +715,7 @@ a.il {
 	outline-style: none;
 	padding: 12px 20px;
 	font-weight: lighter;
+	border: solid 1px transparent;
 }
 
 #promo-action .button:hover {
@@ -722,23 +723,28 @@ a.il {
 	-webkit-box-shadow: 0 0 5px 1px #2CA1E5;
 	box-shadow: 0 0 5px 1px #2CA1E5;*/
 	font-weight: normal;
+	border-top: solid 1px #111;
 }
 
-.button:active {
-	-moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.5) inset;
+a.button:active {
+	-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.8) inset;
+	border-color: #222;
 }
 
-
-#promo-action #support {
-	left: 36px;
-	font-weight: normal;
+#promo-action {
+	color: #555;
+	text-align: center;
+	width: 50%;
 }
 
-#promo-action #support:hover {
-/*	-moz-box-shadow: 0 0 5px 1px red;
-	-webkit-box-shadow: 0 0 5px 1px red;
-	box-shadow: 0 0 5px 1px red;*/
+#promo-action #join-us-btn {
+	margin-right: 3px;
 }
+
+#promo-action #support-us-btn {
+	margin-left: 3px;
+}
+
 
 #content-wrapper section footer {
 	vertical-align: middle;
