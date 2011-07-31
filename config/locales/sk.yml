@@ -40,12 +40,26 @@ sk:
   address:
     title: 'Adresa'
   top: 'Hore'
-  license_note: 'Except where otherwise noted, content on this site is licensed under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.'
+  license_note: 'Ak nie je uvedené inak, obsah na tejto stránke je pod licenciou <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share-Alike License v3.0</a> alebo neskoršej verzie.'
   shared:
     search_form:
       search_site_for: 'Hľadaj..'
     header:
       join_us: 'Pridaj sa'
+    promo:
+      welcome_on_site: 'Vitajte na stránkach'
+      first_slovak_hackerspace: 'prvého slovenského <a href="http://en.wikipedia.org/wiki/Hackerspace">hackerspace</a>'
+      we_are: '<strong>Sme</strong> prvým fyzickým priestorom v <strong>Bratislave</strong> pre stretávanie <strong>hackerov</strong>, <br />digitálnych <strong>umelcov</strong>, geekov, hardvérových <strong>mágov</strong> <br />a <strong>podobne</strong> zmýšľajúcich <strong>ľudí</strong>.'
+      we_are_located: 'Nachádzame sa v centre <strong>Bratislavy</strong> <br />na <strong>Cukrovej 14</strong>, blízko medickej záhrady <br />a autobusovej stanice <strong>Mlynské Nivy</strong>.'
+      interesting_lectures: 'Pravidelne sa u nás konajú zaujímavé prednášky, <br />workshopy a stretnutia rôznych komunít.'
+      we_try_to_by_open_and_free: 'Snažíme sa byť maximálne otvorení a vítame nových aktívnych členov, <br />prídite na jednu z našich stretávok alebo akcií. <br />Väčšina akcií Progressbaru je zadarmo.'
+      what: 'Čo'
+      why: 'Prečo'
+      where: 'Kde'
+      more: 'Viac'
+      join_to_us: 'Pridaj sa k nám'
+      or: alebo
+      support_us: 'nás podpor!'
   pages:
     join:
       member: Člen
