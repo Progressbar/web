@@ -4,10 +4,10 @@
   </header>
   <div class="content">
     <p class="float-left">
-      <a  class="no-underline" href="<%= RefinerySetting.find_or_set(:site_twitter, 'http://twitter.com/progressbarsk') %>"><img alt="Twitter icon" src="/images/s.gif" class="sprites sprite-icon-twitter-32" /> Twitter</a>
+      <a class="no-underline" href="<%= RefinerySetting.find_or_set(:site_twitter, 'http://twitter.com/progressbarsk') %>"><img alt="Twitter icon" src="/images/s.gif" class="sprites sprite-icon-twitter-32" /></a>
     </p>
     <p class="float-left">
-      <a class="no-underline" href="<%= RefinerySetting.find_or_set(:site_facebook, 'http://www.facebook.com/progressbar') %>"><img alt="Facebook icon" src="/images/s.gif" class="sprites sprite-icon-facebook-32" /> Facebook</a>      
+      <a class="no-underline" href="<%= RefinerySetting.find_or_set(:site_facebook, 'http://www.facebook.com/progressbar') %>"><img alt="Facebook icon" src="/images/s.gif" class="sprites sprite-icon-facebook-32" /></a>
     </p>
     <!--
     <p>
@@ -21,7 +21,6 @@
     <p>
       <a class="no-underline" href="<%= RefinerySetting.find_or_set(:site_github, 'https://github.com/Progressbar') %>" >
         <img alt="Github icon" src="/images/s.gif" class="sprites sprite-icon-github-32" title="<%= t('follow_us.visit_github') %>" />
-        Github 
         <span class="action-button"><%= t('follow_us.send_patch') %></span>
       </a>
     </p>
@@ -30,7 +29,6 @@
     </p>
     <p>
       <a class="no-underline" href="mailto:<%= RefinerySetting.find_or_set(:site_webmaster_email, 'webmaster@progressbar.sk') %>" title="<%= t('follow_us.send_email') %>" ><img src="/images/s.gif" alt="E-mail icon" class="sprites sprite-icon-email-32" />
-        E-mail
         <span class="action-button"><%= RefinerySetting.find_or_set(:site_webmaster_email, 'webmaster@progressbar.sk') %></span>
       </a>
     </p>
