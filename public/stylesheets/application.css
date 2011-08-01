@@ -149,6 +149,11 @@ body {
 	color: #fff;
 }
 
+.outer-cover {
+	width: 992px;
+	margin: auto;
+}
+
 #header, #content, #footer {
 	width: 960px;
 	margin: 0px auto;
@@ -794,12 +799,12 @@ input[type=password] {
 	border: solid 1px #333;
 	margin-right: 8px;
 	background: #111;
-	border-radius: 5px;
+	border-radius: 3px;
 	color: #999;
 }
 
 textarea {
-	border-radius: 5px;
+	border-radius: 3px;
 	width: 98%;
 	height: 7.25em;
 	background: #111;
