@@ -5,21 +5,23 @@
     <div id="outer-wrapper">
       <div id="container">
         <div id="header-wrapper">
-          <div id="header">
-            <%= render :partial => "/shared/header" %>
-            <div class="reset">&nbsp;</div>
+          <div class="outer-cover">
+            <div id="header">
+              <%= render :partial => "/shared/header" %>
+              <div class="reset">&nbsp;</div>
+            </div>
           </div>
         </div>
         <div id="content-wrapper" <%= " class='page-id-#{@page.id}' " if @page %>>
-          <div id="content" data-pjax-container="true">
-            <% flash.each do |m, k| %>
-              <div class="flash <%= m %>" >
-                <%= k %>
-              </div>
-            <% end %>
+          <div class="outer-cover">
+            <div id="content" data-pjax-container="true">
+              <% flash.each do |m, k| %>
+                <div class="flash <%= m %>" >
+                  <%= k %>
+                </div>
+              <% end %>
 
-            <%= yield %>
-
+              <%= yield %>
             <div id="like" >
               <a href="#">Share with friends</a>
               <div class="buttons-holder">
@@ -27,7 +29,7 @@
                   <g:plusone size="tall" count="false" ></g:plusone>
                 </span>
                 <span class="l">
-                  <a href="http://twitter.com/share" class="twitter-share-button" ></a>
+                  <a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical"></a>
                 </span>
                 <!--
                 <span class="l">
@@ -37,16 +39,19 @@
                   <fb:like href="<%= request.url %>" layout="box_count" show_faces="false" font="Arial"></fb:like>
                 </span>
                 -->
+
               </div>
+              <div class="reset">&nbsp;</div>
             </div>
-            <div class="reset">&nbsp;</div>
           </div>
         </div>
         <div id="footer-wrapper">
-          <div id="footer">
-            <%= render :partial => "/shared/footer" %>
-            <div class="reset">&nbsp;</div>
-          </div>
+          <div class="outer-cover">
+            <div id="footer">
+              <%= render :partial => "/shared/footer" %>
+              <div class="reset">&nbsp;</div>
+            </div>
+            </div>
         </div>
       </div>
     </div>
