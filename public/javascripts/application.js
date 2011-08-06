@@ -102,4 +102,33 @@ $(function() {
 //	$.ajax('http://localhost:3000/oficiality/sponzori?_pjax=true', function (r) {
 //		console.log(r);
 //	})
+
+	var like_btn = $('#like a');
+	like_btn.one('click', function () {
+		var p = this.parentNode;
+//			'http://connect.facebook.net/en_US/all.js#xfbml=1',
+//			'http://platform.linkedin.com/in.js',
+		var libs = [
+			'http://platform.twitter.com/widgets.js',
+			'https://apis.google.com/js/plusone.js'
+		];
+		var s = null;
+				
+		while (libs.length) {
+			s = document.createElement('script');
+			s.type = 'text/javascript';
+			s.async = true;
+			s.src = libs.shift();
+		
+			p.appendChild(s);		
+		}
+		
+		
+//		like_btn.remove();
+	});
+	
 });
+
+function jurko () {
+	alert('monika');
+}
