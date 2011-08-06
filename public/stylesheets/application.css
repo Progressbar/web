@@ -45,7 +45,7 @@ html { overflow-y: scroll; }
 a:hover, a:active { outline: none; }
 /*a:link { color: #CECECE; }*/
 a:link, a:visited { color: #999; text-decoration: none; }
-a:active { color: lightblue; position: relative; top: 1px; }
+/*a:active { color: lightblue; position: relative; top: 1px; }*/
 a:hover { color: #efefef; }
 
 ul, ol { margin-left: 20px; }
@@ -305,6 +305,7 @@ body {
 
 #projects {
 	margin-bottom: 16px;
+	min-height: 200px;
 }
 
 #projects .project-wrapper img {
@@ -348,6 +349,11 @@ body {
 #projects div.project-wrapper.four {
 	margin-right: 0px;
 }
+
+.project a {
+	height: 300px;
+}
+
 
 #calendar {
 	float: left;
@@ -878,13 +884,31 @@ aside {
 
 #like {
 	position: absolute;
-	left: 24px;
+	left: 32px;
 	top: 32px;
-	width: 80px;
+	text-align: center;
+	width: 200px;
+}
+
+#like .buttons-holder {
+	margin: 5px;
+}
+
+#like a {
+	font-size: 17px;
+	font-weight: lighter;
 }
 
 #like div.l {
-	margin-bottom: 20px;
+	margin: auto;
+	float: left;
+	min-height: 40px;
+	padding: 0px 8px;
+	margin-bottom: 8px;
+}
+
+#like.activated {
+	background: url(/images/ajax-loader.gif) no-repeat 50% 50%;
 }
 
 .vevent {
