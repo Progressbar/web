@@ -22,25 +22,7 @@
               <% end %>
 
               <%= yield %>
-            <div id="like" >
-              <a href="#">Share with friends</a>
-              <div class="buttons-holder">
-                <span class="l">
-                  <g:plusone size="tall" count="false" ></g:plusone>
-                </span>
-                <span class="l">
-                  <a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical"></a>
-                </span>
-                <!--
-                <span class="l">
-                  <script type="in/share" data-counter="top"></script>
-                </span>
-                <span class="l">
-                  <fb:like href="<%= request.url %>" layout="box_count" show_faces="false" font="Arial"></fb:like>
-                </span>
-                -->
-
-              </div>
+              
               <div class="reset">&nbsp;</div>
             </div>
           </div>
@@ -51,7 +33,7 @@
               <%= render :partial => "/shared/footer" %>
               <div class="reset">&nbsp;</div>
             </div>
-            </div>
+          </div>
         </div>
       </div>
     </div>
