@@ -1,56 +1,30 @@
 <section id="calendar">
   <header>
-    <h2><%= link_to(t('calendar.title'), @events_page.url, :class => 'float-left') %>
-      <!-- <span class="delim">&nbsp;-&nbsp;</span><em title="Dnes je: <%= Time.now.strftime("%d.%m.%Y") %>"><%= Time.now.strftime("%U") %> <%= t('calendar.week') %></em>-->
-      <span class="reset">&nbsp;</span>
+    <h2><%= link_to(t('events'), @events_page.url, :class => 'float-left') %>
     </h2>
   </header>
   <div class="content">
-    <ul>
-      <% @events_in_week.each do |day| %>
-
-        <li class="vevent">
-          
-            <span class="day"><%= t("calendar.#{day['day'].strftime("%A").to_s.downcase}") %></span><span class="delim">&nbsp;-&nbsp;</span>
-            <% if day['events'].any? %>
-              <% day['events'].each do |event| %>
-                <span class="datetime dtstart" title="<%= event.start_at.strftime("%d.%m.%Y %I:%M") %>"><%= event_start_datetime(event, day['day']) %></span> <span class="delim">&nbsp;-&nbsp;</span>
-                <span class="datetime dtend" title="<%= event.end_at.strftime("%d.%m.%Y %I:%M") %>"><%= event_end_datetime(event, day['day']) %></span>
-
-                <% if event.categories.any?  %>
-                  <span class="categories">
-                    <% event.categories.each do |ev_cat|  %>
-                      <span class="category <%= to_slug(ev_cat.name.downcase) %>"><%= link_to ev_cat.name.downcase, category_events_path(ev_cat) %></span><% unless event.categories.last() == ev_cat %>, <% end %>
-                    <% end %>
-                  </span>
-                <% end %>
-                <%= link_to event.title, event, :class => 'url title summary' %>
-              <% end %>
-            <% else %>  
-              <% unless day['day'] < Date.yesterday %>
-              <abbr title="<%= t('calendar.explain_no_official_event') %>"><%= t('calendar.no_official_event') %></abbr>
-              <% end %>
-              <% if day['day'] > Time.now %>
-                  <%= mail_to 'info@progressbark.s', t('calendar.organize_action'), :title => t('calendar.organize_action_explanation'), :class => 'float-right', :subject => t('calendar.organize_action_email_subject', :day => day['day'].strftime("%d.%m.%Y")), :body => t('calendar.organize_action_email_body', :day => day['day'].strftime("%d.%m.%Y")) %>
-              <% end %>
-            <% end %>
-            <span class="reset">&nbsp;</span>
-          
-        </li>
-      <% end %>
-    </ul>
+    <div class="event">
+      <h3><a href="http://events.ccc.de/camp/2011/">Chaos Communication Camp</a></h3>
+      <p>
+        International, five-day open-air event for hackers and associated life-forms. It provides a relaxed atmosphere for free exchange of technical, social, and political ideas. The Camp has everything you need: power, internet, food and fun.
+      </p>
+      <dl><dt> August 10th thru August 14th 2011
+        </dt>
+        <dt>Finowfurt near Berlin, Germany, Europe
+        </dt></dl>
+      </dd></dl>
+    </div>
   </div>
+    <!--
   <footer>
     <div class="float-left">
-      <!--
-      <a href="<%= events_path(:format => :rss) %>"><img alt="rss icon" src="/images/s.gif" class="sprites sprite-icon-rss-32" /> RSS</a>
-      <span class="delim">&nbsp;-&nbsp;</span>
-      -->
-      <a href="<%= events_path(:format => :ics) %>"><img alt="ical icon" src="/images/s.gif" class="sprites sprite-icon-ical-32" /></a>
+     <a href="<%= events_path(:format => :ics) %>"><img alt="ical icon" src="/images/s.gif" class="sprites sprite-icon-ical-32" /></a>
     </div>
     <div class="float-right">
       <%= link_to(t('calendar.full_schedule'), @events_page.url) %>
     </div>
     <div class="reset">&#160;</div>
   </footer>
+    -->
 </section>
