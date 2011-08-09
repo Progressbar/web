@@ -1,5 +1,6 @@
 sk:
   submit: 'Odoslať'
+  events: Udalosti
   mailing_list:
     title: 'E-mailová konferencia'
     general_type: 'Všeobecná diskusia (frekventovaná konferencia)'
