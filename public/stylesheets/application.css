@@ -232,7 +232,8 @@ body {
 }
 
 #menu li li a {
-	display: block;
+	display: list-item;
+	padding-left: 25px;
 	padding-right: 20px;
 	padding-top: 5px;
 	padding-bottom: 5px;
@@ -254,8 +255,11 @@ body {
 	color: #fff;
 }
 
-#menu li .selected, #menu li .selected a {
-
+#menu li .selected a,
+#menu li li a:hover {
+	padding-left: 12px;
+	list-style-position: inside;
+	list-style-type: square;
 }
 
 #content-wrapper {
@@ -896,9 +900,10 @@ aside {
 #like {
 	position: absolute;
 	left: 32px;
-	top: 32px;
+	bottom: 64px;
 	text-align: center;
-	width: 200px;
+/*	width: 140px;*/
+	border: solid 1px;
 }
 
 #like .buttons-holder {
@@ -906,16 +911,13 @@ aside {
 }
 
 #like a {
-	font-size: 17px;
-	font-weight: lighter;
+	font-size: 15px;
+	-moz-transform: rotate(-90deg);
 }
 
-#like div.l {
-	margin: auto;
-	float: left;
-	min-height: 40px;
-	padding: 0px 8px;
-	margin-bottom: 8px;
+#like iframe {
+	width: 64px;
+	height: 80px;
 }
 
 #like.activated {
