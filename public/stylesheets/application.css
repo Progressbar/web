@@ -30,8 +30,11 @@ table { border-collapse:collapse; border-spacing:0; }
 hr {
 	height: 1px;
 	display: block;
+	clear: both;
 	border: none;
-	background: -moz-linear-gradient(left, #0a0a0a, #1e1e1e, #070707);
+	background: #555;
+	background: -moz-linear-gradient(left, #222, #555, #222);
+	margin-bottom: 32px;
 }
 input, select { vertical-align:middle; }
 
@@ -379,8 +382,7 @@ body {
 }
 
 #calendar .content, #blogs .content {
-	margin-bottom: 32px;
-	min-height: 300px;
+	margin-bottom: 16px;
 }
 
 #blogs .content div {
