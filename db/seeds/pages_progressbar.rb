@@ -80,6 +80,23 @@ else
   puts 'page Stanovy was created'
 end
 
+if join_us_page && join_us_page.parts.first
+  join_us_page.parts.first.update_attributes(:body => IO.read(Rails.root.join('db/templates/pridaj.html')))
+  join_us_page.parts.last.update_attributes(:body => '')
+else
+  join_us_page.parts.create({
+      :title => 'Body',
+      :body => IO.read(Rails.root.join('db/templates/pridaj.html')),
+      :position => 0
+    })
+  
+  join_us_page.parts.create({
+      :title => 'Side Body',
+      :body => '',
+      :position => 1
+    })  
+end
+
 if p_media
   p_media.parts.first.update_attributes(:body => IO.read(Rails.root.join('db/templates/media.html')))
   p_media.parts.last.update_attributes(:body => '')
