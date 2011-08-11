@@ -281,7 +281,6 @@ body {
 
 #body_content_left, .left-section {
 	float: left;
-/*	width: 640px;*/
 	width: 628px;
 }
 
@@ -863,7 +862,6 @@ aside {
 	left: 32px;
 	bottom: 64px;
 	text-align: center;
-/*	width: 140px;*/
 	border: solid 1px;
 }
 
