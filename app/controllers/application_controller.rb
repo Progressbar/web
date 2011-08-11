@@ -1,8 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  before_filter :default_pages
-  before_filter :mailing_list
+  before_filter :default_pages, :mailing_list
   
   layout proc{ |c| c.request.xhr? ? false : "application" }
 
