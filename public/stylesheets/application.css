@@ -165,7 +165,7 @@ body {
 }
 
 #header-wrapper {
-	border-bottom: solid 1px #222;
+	border-bottom: solid 1px #444;
 }
 
 #header {
@@ -216,6 +216,8 @@ body {
 	clear: both;
 	text-transform: uppercase;
 	margin-top: 94px;
+	position: relative;
+	right: -16px;
 }
 
 #menu ul {
@@ -225,13 +227,16 @@ body {
 #menu li {
 	position: relative;
 	float: left;
+	padding-bottom: 1px;
 }
 
 #menu a {
 	display: inline-block;
+	background: #000;
 	text-decoration: none;
 	letter-spacing: 1px;
-	padding-left: 20px;
+	padding-left: 16px;
+	padding-right: 16px;
 	padding-bottom: 11px;
 }
 
@@ -243,12 +248,24 @@ body {
 	padding-bottom: 5px;
 }
 
+#menu li:hover {
+	background: -moz-linear-gradient(left center, #000, #575757, #000) repeat-y;
+}
+
 #menu li:hover ul {
 	display: block;
 }
 
+#menu .selected {
+	background: -moz-linear-gradient(left center, #000, #999, #000) repeat-y;
+}
+
 #menu .selected a, .selected strong {
 	color: #fff;
+}
+
+#menu .selected a {
+	
 }
 
 #menu .selected li a {
@@ -317,15 +334,7 @@ body {
 	-webkit-box-shadow: 0px 0px 5px #000 inset;
 	background: -moz-radial-gradient(rgba(0,0,0, 0.15), rgba(0,0,0,0.8) 98%) repeat scroll 0 0 transparent;
 	border-radius: 3px;
-}
-
-#projects .project:hover .img-bg {
-	opacity: 0.9;
-	border-left-color: #000;
-	border-top-color: #000;
-	-moz-box-shadow: 0px 0px 5px #000;
-	-webkit-box-shadow: 0px 0px 5px #000;
-	background: -moz-radial-gradient(rgba(0,0,0, 0.05), rgba(0,0,0, 0.7) 98%) repeat scroll 0 0 transparent;
+	border-bottom: solid 1px #474747;
 }
 
 #projects .project-wrapper {
@@ -425,6 +434,8 @@ body {
 #promo-content {
 	height: 450px;
 	overflow: hidden;
+	border-radius: 3px;
+	border-bottom: solid 1px #474747;
 }
 
 #promo .img-bg {
@@ -441,11 +452,6 @@ body {
 	border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
-}
-
-#promo-action {
-	float: left;
-	height: 100px;
 }
 
 #promo-nav {
@@ -684,26 +690,32 @@ a.il {
 .yellow.button, .yellow.button:visited { background-color: #ffb515; }
 .yellow.button:hover { background-color: #fc9200; }
 
+#promo-action {
+	color: #777;
+	float: left;
+	height: 100px;
+	text-align: center;
+	width: 50%;
+}
+
 #promo-action .button {
 	margin-top: 32px;
 	outline-style: none;
 	padding: 12px 20px;
 	font-weight: lighter;
+	
 }
 
 a.button:hover {
 	background: #999;
-	border: solid 1px #444;
+	border: solid 1px #373737;
 }
 
 a.button:active {
 	background: #000;
-}
-
-#promo-action {
-	color: #555;
-	text-align: center;
-	width: 50%;
+	border: solid 1px #111;
+	border-bottom-color: #555;
+	text-shadow: 0px -1px 0px #777;
 }
 
 #promo-action #join-us-btn {
