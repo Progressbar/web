@@ -1,5 +1,6 @@
 Progressbar::Application.routes.draw do
   
+  match '/pridaj-sa' => 'registrations#index'
   match '/join-us' => 'registrations#index'
   
   # The priority is based upon order of creation:
