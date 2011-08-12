@@ -54,8 +54,8 @@
       <%= t('.more') %></a>
   </nav>
   <div id="promo-action">
-    <a href="/join-us" class="button large" id="join-us-btn"><%= t('.join_to_us') %></a> <%= t('.or') %>
-    <a class="button greenno large" id="support-us-btn" href="/podporte-nas"><%= t('.support_us') %></a>
+    <a href="<%= url_for(@join_us_page.url) %>" class="button large" id="join-us-btn"><%= t('.join_to_us') %></a> <%= t('.or') %>
+    <a class="button greenno large" id="support-us-btn" href="<%= url_for(@join_us_page.url) %>"><%= t('.support_us') %></a>
   </div>
 
   <div class="reset">&#160;</div>
