@@ -218,6 +218,7 @@ body {
 	margin-top: 94px;
 	position: relative;
 	right: -16px;
+	bottom: -1px;
 }
 
 #menu ul {
@@ -237,7 +238,7 @@ body {
 	letter-spacing: 1px;
 	padding-left: 16px;
 	padding-right: 16px;
-	padding-bottom: 11px;
+	padding-bottom: 9px;
 }
 
 #menu li li a {
@@ -249,15 +250,23 @@ body {
 }
 
 #menu li:hover {
-	background: -moz-linear-gradient(left center, #000, #575757, #000) repeat-y;
+	background: -moz-linear-gradient(left center, #444, #999, #444) no-repeat bottom center;
 }
 
 #menu li:hover ul {
 	display: block;
 }
 
-#menu .selected {
-	background: -moz-linear-gradient(left center, #000, #999, #000) repeat-y;
+#menu li.selected {
+	background: -moz-linear-gradient(left center, #444, #ccc, #444) no-repeat bottom center;
+}
+
+#menu li .selected {
+	background: none;
+}
+
+menu li .selected:hover {
+	background: none;
 }
 
 #menu .selected a, .selected strong {
@@ -320,7 +329,7 @@ body {
 	border-radius: 3px;
 }
 
-#projects .project-wrapper .project {
+.project div.body {
 	position: relative;
 }
 
@@ -332,7 +341,7 @@ body {
 	height: 200px;
 	-moz-box-shadow: 0px 0px 5px #000 inset;
 	-webkit-box-shadow: 0px 0px 5px #000 inset;
-	background: -moz-radial-gradient(rgba(0,0,0, 0.15), rgba(0,0,0,0.8) 98%) repeat scroll 0 0 transparent;
+	background: -moz-radial-gradient(rgba(0,0,0, 0.1), rgba(0,0,0,0.7) 98%) repeat scroll 0 0 transparent;
 	border-radius: 3px;
 	border-bottom: solid 1px #474747;
 }
@@ -352,6 +361,9 @@ body {
 	height: 300px;
 }
 
+.project h4 {
+	margin-bottom: 8px;
+}
 
 #calendar {
 	float: left;
@@ -486,10 +498,14 @@ body {
 	font-size: 46px;
 	margin-bottom: 10px;
 	font-weight: lighter;
+	text-shadow: 0px -1px 0px #555;
+	color: #000;
 }
 
-#promo-nav a:hover .symbol {
+#promo-nav a:hover .symbol, #promo-nav a.active .symbol {
 	font-weight: normal;
+	color: #999;
+	text-shadow: 0px 1px 0px #fff;
 }
 
 .promo-item {
