@@ -33,6 +33,7 @@ hr {
 	border: none;
 	background: #555;
 	background: -moz-linear-gradient(left, #333, #575757, #333);
+	background: -webkit-gradient(linear, left top, right top, from(#333), to(#333), color-stop(0.5, #575757));
 	margin-bottom: 32px;
 }
 
@@ -251,6 +252,7 @@ body {
 
 #menu li:hover {
 	background: -moz-linear-gradient(left center, #444, #999, #444) no-repeat bottom center;
+	background: -webkit-gradient(linear, left top, right top, from(#444), to(#444), color-stop(0.5, #999));	
 }
 
 #menu li:hover ul {
@@ -259,6 +261,7 @@ body {
 
 #menu li.selected {
 	background: -moz-linear-gradient(left center, #444, #ccc, #444) no-repeat bottom center;
+	background: -webkit-gradient(linear, left top, right top, from(#444), to(#444), color-stop(0.5, #ccc));
 }
 
 #menu li .selected {
@@ -338,10 +341,11 @@ menu li .selected:hover {
 	top: 0px;
 	left: 0px;
 	width: 215px;
-	height: 200px;
+	height: 140px;
 	-moz-box-shadow: 0px 0px 5px #000 inset;
 	-webkit-box-shadow: 0px 0px 5px #000 inset;
-	background: -moz-radial-gradient(rgba(0,0,0, 0.1), rgba(0,0,0,0.7) 98%) repeat scroll 0 0 transparent;
+	background: -moz-radial-gradient(rgba(0,0,0, 0.05), rgba(0,0,0,0.5) 98%) repeat scroll 0 0 transparent;
+
 	border-radius: 3px;
 	border-bottom: solid 1px #474747;
 }
@@ -505,7 +509,7 @@ menu li .selected:hover {
 #promo-nav a:hover .symbol, #promo-nav a.active .symbol {
 	font-weight: normal;
 	color: #999;
-	text-shadow: 0px 1px 0px #fff;
+	text-shadow: 0px 1px 0px #ccc;
 }
 
 .promo-item {

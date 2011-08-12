@@ -44,6 +44,18 @@
 	font-size: 113%;
 }
 
+.join-box li {
+	list-style: none;
+	padding-left: 32px;
+	line-height: 1.5em;
+	margin-left: 0px;
+	background: url(/images/design/tick.png) no-repeat 0% 50%;
+}
+
+#content .join-box ul {
+	margin-left: 0px;
+}
+
 #member-description {
 	padding-top: 8px;
 	width: 640px;
