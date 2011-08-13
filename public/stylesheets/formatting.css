@@ -2,6 +2,18 @@
 	width: 532px;
 }
 
+.left-half, .right-half {
+	width: 100%;
+	float: none;
+	clear: both;
+}
+
+#body_content_left, .left-section, #body_content_right, .right-section {
+	float: none;
+	width: 100%;
+	clear: both;
+}
+
 #header #hgroup {
 	width: 100%;
 	margin-bottom: 8px;
@@ -67,7 +79,6 @@
 }
 
 #calendar {
-	border-bottom: solid 1px #555;
 	margin-bottom: 24px;
 	padding-bottom: 16px;
 }
@@ -83,12 +94,11 @@
 	clear: both;
 }
 
-#follow-us {
+#member-promo, #follow-us, #calendar {
 	padding-bottom: 8px;
 	margin-bottom: 16px;
 	border-bottom: solid 1px #555;
 }
-
 
 .promo-text-1, .promo-text-bg-1,
 .promo-text-2, .promo-text-bg-2,
@@ -107,4 +117,9 @@
 
 .promo-text-2 p {
 	font-size: 18px;
+}
+
+#member-description {
+	width: 100%;
+	padding: 0px;
 }
