@@ -39,11 +39,75 @@ hr {
 
 input, select { vertical-align:middle; }
 
-body { font:13px/1.231 'Segoe UI', Arial, sans-serif; }
+legend {
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+form table {
+	width: 100%;
+	vertical-align: middle;
+}
+
+form th {
+	padding: 5px 0;
+}
+
+form td {
+	padding: 5px 0;
+}
+
+
+body { 
+	font:13px/1.231 'Segoe UI', Arial, sans-serif;
+	text-align: center;
+	background: #000;
+	color: #fff;	
+}
+
+details {
+	margin-bottom: 10px;
+}
+
+aside {
+	padding-bottom: 16px;
+	margin-bottom: 32px;
+}
 
 pre, code, kbd, samp { font-family: monospace, sans-serif; }
 
 h1,h2,h3,h4,h5,h6 { font-weight: bold; }
+
+h1, h2, h3 {
+	margin-bottom: 32px;
+	padding-top: 5px;
+}
+
+h1 {
+	font-size: 24px;
+}
+
+h2 {
+	font-size: 20px;
+}
+
+h3 {
+	font-size: 15px;
+}
+
+h4 {
+	margin-bottom: 5px;
+}
+
+article {
+	margin-bottom: 32px;
+}
+
+p {
+	margin-bottom: 16px;
+	line-height: 150%;
+}
+
 html { overflow-y: scroll; }
 
 a:hover, a:active { outline: none; }
@@ -131,27 +195,12 @@ button { width: auto; overflow: visible; }
 	clear: both;
 }
 
-p {
-	margin-bottom: 20px;
-	line-height: 150%;
-}
-
 .placeholder .field .placeholder-fallback {
 	display: none;
 }
 
 #content ul, #content ol {
 	line-height: 150%;
-}
-
-article {
-	margin-bottom: 32px;
-}
-
-body {
-	text-align: center;
-	background: #000;
-	color: #fff;
 }
 
 .outer-cover {
@@ -167,10 +216,6 @@ body {
 
 #header-wrapper {
 	border-bottom: solid 1px #444;
-}
-
-#header {
-	/*	height: 140px;*/
 }
 
 #header #hgroup {
@@ -329,6 +374,8 @@ menu li .selected:hover {
 
 #projects .project-wrapper img {
 	margin-bottom: 4px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
 	border-radius: 3px;
 }
 
@@ -345,7 +392,8 @@ menu li .selected:hover {
 	-moz-box-shadow: 0px 0px 5px #000 inset;
 	-webkit-box-shadow: 0px 0px 5px #000 inset;
 	background: -moz-radial-gradient(rgba(0,0,0, 0.05), rgba(0,0,0,0.5) 98%) repeat scroll 0 0 transparent;
-
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	border-bottom: solid 1px #474747;
 }
@@ -450,6 +498,8 @@ menu li .selected:hover {
 #promo-content {
 	height: 450px;
 	overflow: hidden;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	border-bottom: solid 1px #474747;
 }
@@ -484,7 +534,7 @@ menu li .selected:hover {
 	float: left;
 	margin-left: 2px;
 	min-width: 50px;
-	padding: 0px 20px;
+	padding: 0px 12px;
 	height: 90px;
 	text-decoration: none;
 	text-align: center;
@@ -517,6 +567,8 @@ menu li .selected:hover {
 	background: #000;
 	position: relative;
 	height: 450px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
 	border-radius: 3px;
 }
 
@@ -601,26 +653,6 @@ menu li .selected:hover {
 	font-size: 15px;
 }
 
-h1, h2, h3 {
-	margin-bottom: 32px;
-	padding-top: 5px;
-}
-
-h1 {
-	font-size: 24px;
-}
-
-h2 {
-	font-size: 20px;
-}
-
-h3 {
-	font-size: 15px;
-}
-
-h4 {
-	margin-bottom: 5px;
-}
 
 .datetime, details {
 	font-family: monospace, serif;
@@ -643,10 +675,6 @@ h4 {
 #blog_posts .blog_post .posted_at {
 	margin: 0px;
 	display: inline;
-}
-
-details {
-	margin-bottom: 10px;
 }
 
 h3 a, h4 a {
@@ -697,19 +725,6 @@ a.il {
 										 line-height: 1; text-shadow: 0 -1px 1px rgba(0,0,0,0.25); }
 .large.button, .large.button:visited { font-size: 15px; padding: 10px 16px 11px; }
 
-.green.button, .green.button:visited { background-color: #91bd09; }
-.green.button:hover { background-color: #749a02; }
-.blue.button, .blue.button:visited { background-color: #2daebf; }
-.blue.button:hover { background-color: #007d9a; }
-.red.button, .red.button:visited { background-color: #e33100; }
-.red.button:hover { background-color: #872300; }
-.magenta.button, .magenta.button:visited { background-color: #a9014b; }
-.magenta.button:hover { background-color: #630030; }
-.orange.button, .orange.button:visited { background-color: #ff5c00; }
-.orange.button:hover { background-color: #d45500; }
-.yellow.button, .yellow.button:visited { background-color: #ffb515; }
-.yellow.button:hover { background-color: #fc9200; }
-
 #promo-action {
 	color: #777;
 	float: left;
@@ -723,7 +738,6 @@ a.il {
 	outline-style: none;
 	padding: 12px 20px;
 	font-weight: lighter;
-	
 }
 
 a.button:hover {
@@ -784,6 +798,10 @@ a.button:active {
 	color: #d67;
 }
 
+form {
+	max-width: 627px;
+}
+
 input.text,
 input[type=text],
 input[type=email],
@@ -795,11 +813,15 @@ input[type=password] {
 	border: solid 1px #333;
 	margin-right: 8px;
 	background: #111;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	color: #999;
 }
 
 textarea {
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	width: 98%;
 	height: 7.25em;
@@ -876,17 +898,12 @@ form .field {
 	display: block;
 }
 
-section#address {
+#address {
 	width: 100%;
 	clear:both;
 	padding: 20px 0px;
 	margin-bottom: 32px;
 	text-align: center;
-}
-
-aside {
-	padding-bottom: 16px;
-	margin-bottom: 32px;
 }
 
 #like {
@@ -929,10 +946,6 @@ aside {
 span.day {
 	display: inline-block;
 	min-width: 60px;
-}
-
-#contact-address {
-	
 }
 
 .tabs img {
@@ -1027,4 +1040,100 @@ span.day {
 
 .logo-preview.white {
 	background: #fff;
+}
+
+.join-box {
+	float: left;
+	font-size: 116%;
+}
+
+.join-box .content {
+	padding-top: 20px;
+	padding-bottom: 6px;
+}
+
+.join-box h2 {
+	margin-bottom: 16px;
+}
+
+.join-box header,
+.join-box .content,
+.join-box .footer {
+	clear: both;
+}
+
+#supporter-promo {
+	float: right;
+}
+
+#supporter-promo  {
+	opacity: 0.5;
+}
+
+#supporter-promo:hover {
+	opacity: 1;
+}
+
+#supporter-promo:hover {
+	opacity: 1;
+}
+
+#supporter-promo .note {
+	font-size: 12px;
+	margin-top: 16px;
+}
+
+.join-box .price {
+	font-size: 113%;
+}
+
+.join-box li {
+	list-style: none;
+	padding-left: 32px;
+	line-height: 1.5em;
+	margin-left: 0px;
+	background: url(/images/design/tick.png) no-repeat 0% 50%;
+}
+
+#content .join-box ul {
+	margin-left: 0px;
+}
+
+#member-description {
+	padding-top: 8px;
+	width: 640px;
+}
+
+#content ul {
+	margin-bottom: 20px;
+}
+
+#content ul.ui-tabs-nav {
+	margin-bottom: 5px;
+}
+
+#content form {
+	margin-bottom: 20px;
+}
+
+#content th label {
+	display: block
+}
+
+.support-box {
+	width: 300px;
+	float: left;
+	margin-bottom: 50px;
+	margin-right: 20px;
+}
+
+.support-box .banner {
+	height: 200px;
+	width: 100%;
+	font-size: 15px;
+	font-style: italic;
+}
+
+.banner p {
+	padding: 20px;
 }
