@@ -600,6 +600,10 @@ menu li .selected:hover {
 	width: 50%;
 }
 
+.promo-text-1 h2 {
+	font-size: 24px;
+}
+
 .promo-text-bg-2 {
 	height: 145px;
 	background: #000;
