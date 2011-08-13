@@ -1,9 +1,14 @@
 .outer-cover {
-	width: 640px;
+	width: 532px;
+}
+
+#header #hgroup {
+	width: 100%;
+	margin-bottom: 8px;
 }
 
 #header, #content, #footer {
-	width: 600px;
+	width: 494px;
 }
 
 #nav-holder {
@@ -14,6 +19,13 @@
 
 #search-form {
     clear: none;
+	float: left;
+	margin: 0px;
+	margin-bottom: 8px;
+}
+
+#menu {
+	right: 0px;
 }
 
 #menu ul {
@@ -25,9 +37,6 @@
 	float: left;
 }
 
-#lang {
-	margin-top: 32px;
-}
 
 #promo-nav {
 	width: 305px;
@@ -36,13 +45,13 @@
 }
 
 #promo-action {
-	width: 60%;
+	width: 80%;
 	margin: auto;
 	float: none;
 }
 
 #projects {
-	width: 84%;
+
 	margin: auto;
 }
 
@@ -78,4 +87,24 @@
 	padding-bottom: 8px;
 	margin-bottom: 16px;
 	border-bottom: solid 1px #555;
+}
+
+
+.promo-text-1, .promo-text-bg-1,
+.promo-text-2, .promo-text-bg-2,
+.promo-text-3, .promo-text-bg-3,
+.promo-text-4, .promo-text-bg-4
+{
+	width: 494px;
+	left: 0px;
+	margin: 0px;
+}
+
+.promo-text-1 h2, .promo-text-1 p, .promo-text-2 p,.promo-text-3 p, .promo-text-4 p {
+	margin-left: 16px;
+	margin-right: 16px;
+}
+
+.promo-text-2 p {
+	font-size: 18px;
 }
