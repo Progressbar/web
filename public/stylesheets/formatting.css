@@ -1,134 +1,81 @@
-
-.join-box {
-	float: left;
-	font-size: 116%;
-}
-
-.join-box .content {
-	padding-top: 20px;
-	padding-bottom: 6px;
-}
-
-.join-box h2 {
-	margin-bottom: 16px;
-}
-
-.join-box header,
-.join-box .content,
-.join-box .footer {
-	clear: both;
-}
-
-#supporter-promo {
-	float: right;
-}
-
-#supporter-promo  {
-	opacity: 0.5;
-}
-
-#supporter-promo:hover {
-	opacity: 1;
-}
-
-#supporter-promo:hover {
-	opacity: 1;
-}
-
-#supporter-promo .note {
-	font-size: 12px;
-	margin-top: 16px;
-}
-
-.join-box .price {
-	font-size: 113%;
-}
-
-.join-box li {
-	list-style: none;
-	padding-left: 32px;
-	line-height: 1.5em;
-	margin-left: 0px;
-	background: url(/images/design/tick.png) no-repeat 0% 50%;
-}
-
-#content .join-box ul {
-	margin-left: 0px;
-}
-
-#member-description {
-	padding-top: 8px;
+.outer-cover {
 	width: 640px;
 }
 
-#content ul {
-	margin-bottom: 20px;
+#header, #content, #footer {
+	width: 600px;
 }
 
-#content ul.ui-tabs-nav {
-	margin-bottom: 5px;
-}
-
-#content form {
-	margin-bottom: 20px;
-}
-
-legend {
-	font-size: 20px;
-	margin-bottom: 20px;
-}
-
-form table {
+#nav-holder {
 	width: 100%;
-	vertical-align: middle;
+	float: none;
+	margin: 0px;
 }
 
-form th {
-	padding: 5px 0;
+#search-form {
+    clear: none;
 }
 
-form td {
-	padding: 5px 0;
+#menu ul {
+	float: none;
+	
 }
 
-#content th label {
-	display: block
-}
-
-.support-box {
-	width: 300px;
+#menu li {
 	float: left;
-	margin-bottom: 50px;
-	margin-right: 20px;
 }
 
-.support-box .banner {
-	height: 200px;
-	width: 100%;
-	font-size: 15px;
-	font-style: italic;
+#lang {
+	margin-top: 32px;
 }
 
-.banner p {
-	padding: 20px;
+#promo-nav {
+	width: 305px;
+	float: none;
+	margin: auto;
 }
 
-#sponzoring-box .banner {
-	background: #1B2110;
+#promo-action {
+	width: 60%;
+	margin: auto;
+	float: none;
 }
 
-#shop-box .banner {
-	background: #2E3539;
+#projects {
+	width: 84%;
+	margin: auto;
 }
 
-#propagation-box .banner {
-	background: #3A2C34;
+#projects .project-wrapper {
+	margin-left: 16px;
+	margin-right: 16px;
 }
 
-#sponzoring, #shop, #propagation {
-	height: 25em;
+#calendar, #blogs {
+	margin: auto;
+	float: none;
+	text-align: left;
 }
 
-form {
-	max-width: 627px;
+#calendar {
+	border-bottom: solid 1px #555;
+	margin-bottom: 24px;
+	padding-bottom: 16px;
+}
+
+#footer section {
+/*	margin: auto;*/
+	float: none;
+}
+
+#follow-us, #mailing-list, #address {
+	float: none;
+	margin: auto;
+	clear: both;
+}
+
+#follow-us {
+	padding-bottom: 8px;
+	margin-bottom: 16px;
+	border-bottom: solid 1px #555;
 }
