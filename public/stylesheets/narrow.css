@@ -1,0 +1,125 @@
+.outer-cover {
+	width: 532px;
+}
+
+.left-half, .right-half {
+	width: 100%;
+	float: none;
+	clear: both;
+}
+
+#body_content_left, .left-section, #body_content_right, .right-section {
+	float: none;
+	width: 100%;
+	clear: both;
+}
+
+#header #hgroup {
+	width: 100%;
+	margin-bottom: 8px;
+}
+
+#header, #content, #footer {
+	width: 494px;
+}
+
+#nav-holder {
+	width: 100%;
+	float: none;
+	margin: 0px;
+}
+
+#search-form {
+    clear: none;
+	float: left;
+	margin: 0px;
+	margin-bottom: 8px;
+}
+
+#menu {
+	right: 0px;
+}
+
+#menu ul {
+	float: none;
+	
+}
+
+#menu li {
+	float: left;
+}
+
+
+#promo-nav {
+	width: 305px;
+	float: none;
+	margin: auto;
+}
+
+#promo-action {
+	width: 80%;
+	margin: auto;
+	float: none;
+}
+
+#projects {
+
+	margin: auto;
+}
+
+#projects .project-wrapper {
+	margin-left: 16px;
+	margin-right: 16px;
+}
+
+#calendar, #blogs {
+	margin: auto;
+	float: none;
+	text-align: left;
+}
+
+#calendar {
+	margin-bottom: 24px;
+	padding-bottom: 16px;
+}
+
+#footer section {
+/*	margin: auto;*/
+	float: none;
+}
+
+#follow-us, #mailing-list, #address {
+	float: none;
+	margin: auto;
+	clear: both;
+}
+
+#member-promo, #follow-us, #calendar {
+	padding-bottom: 8px;
+	margin-bottom: 16px;
+	border-bottom: solid 1px #555;
+}
+
+.promo-text-1, .promo-text-bg-1,
+.promo-text-2, .promo-text-bg-2,
+.promo-text-3, .promo-text-bg-3,
+.promo-text-4, .promo-text-bg-4
+{
+	width: 494px;
+	left: 0px;
+	margin: 0px;
+}
+
+.promo-text-1 h2, .promo-text-1 p, .promo-text-2 p,.promo-text-3 p, .promo-text-4 p {
+	margin-left: 16px;
+	margin-right: 16px;
+}
+
+.promo-text-2 p {
+	font-size: 18px;
+}
+
+#member-description {
+	width: 100%;
+	padding: 0px;
+}
