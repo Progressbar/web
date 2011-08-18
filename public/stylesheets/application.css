@@ -59,7 +59,7 @@ form td {
 
 
 body { 
-	font:13px/1.231 'Segoe UI', Arial, sans-serif;
+	font:13px/1.231 Arial, sans-serif;
 	text-align: center;
 	background: #000;
 	color: #fff;	
@@ -506,7 +506,7 @@ menu li .selected:hover {
 
 #promo .img-bg {
 	position: absolute;
-	z-index: 1;
+	z-index: -11;
 	top: 0px;
 	left: 0px;
 	width: 100%;
@@ -563,98 +563,70 @@ menu li .selected:hover {
 }
 
 .promo-item {
+	background: #000 url(/images/content/promo/promo-v2.jpg) no-repeat top left;
 	overflow: hidden;
-	background: #000;
 	position: relative;
+	width: 100%;
 	height: 450px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
 }
 
-.promo-item img {
-	width: 960px;
+.js .promo-item {
+	display: none;
+	position: absolute;
 }
 
-.promo-text-1, .promo-text-bg-1,
-.promo-text-2, .promo-text-bg-2,
-.promo-text-3, .promo-text-bg-3,
-.promo-text-4, .promo-text-bg-4 {
-	position: absolute;
-	font-size: 24px;
-	line-height: 1.5em;
+.active {
 	z-index: 2;
 }
 
-.promo-text-bg-1 {
-	height: 40%;
-	background: #000;
-	width: 460px;
+.promo-text {
+	padding: 16px;
+	font-size: 24px;
+	line-height: 1.5em;
+	position: absolute;
+	background: rgba(0,0,0,0.9);
 	bottom: 0px;
-	opacity: 0.9;
-}
-
-.promo-text-1 {
-	bottom: 0px;
-	left: 20px;
+	left: 0px;
 	width: 50%;
 }
 
-.promo-text-1 h2 {
-	font-size: 24px;
+.promo-text p {
+	margin-bottom: 0px;
 }
 
-.promo-text-bg-2 {
-	height: 145px;
-	background: #000;
-	width: 100%;
-	opacity: 0.9;
-}
-
-.promo-text-2 {
-	top: 16px;
-	left: 20px;
+.promo-item-2 .promo-text {
+	top: 0px;
+	left: 0px;
+	height: 4.75em;
 	width: 100%;	
 }
 
-.promo-text-bg-3 {
-	height: 145px;
-	background: #000;
-	width: 500px;
-	opacity: 0.9;
-	left: 40px;
-	bottom: 70px;
-}
-
-.promo-text-3 {
+.promo-item-3 .promo-text {
 	bottom: 70px;
 	left: 65px;
 	width: 540px;
 }
 
-.promo-text-3 a:link, .promo-text-3 a:active, .promo-text-3 a:visited {
-	color: #fff;
-	text-decoration: none;
-}
-
-.promo-text-3 a:hover {
-	text-decoration: underline;
-}
-
-.promo-text-bg-4 {
-	background: #000;
-	height: 180px;
-	width: 540px;
-	opacity: 0.9;
-	left: 200px;
-	bottom: 45px;
-}
-
-.promo-text-4 {
+.promo-item-4 .promo-text {
 	bottom: 50px;
 	left: 225px;
 	width: 560px;
-	font-size: 15px;
+	font-size: 17px;
+}
+
+#promo-why {
+	background-position: -960px 0px;
+}
+
+#promo-where {
+	background-position: -1920px 0px;
+}
+
+#promo-more {
+	background-position: -2880px 0px;
 }
 
 
@@ -1067,9 +1039,6 @@ span.day {
 
 #supporter-promo {
 	float: right;
-}
-
-#supporter-promo  {
 	opacity: 0.5;
 }
 
