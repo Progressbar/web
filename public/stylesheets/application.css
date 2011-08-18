@@ -888,30 +888,23 @@ section#address {
 	text-align: center;
 }
 
-#like {
-	position: absolute;
-	left: 32px;
-	bottom: 64px;
-	text-align: center;
-	border: solid 1px;
+#feedback {
+	
 }
 
-#like .buttons-holder {
-	margin: 5px;
-}
-
-#like a {
+#feedback a {
 	font-size: 15px;
-	-moz-transform: rotate(-90deg);
+	font-weight: bold;
+	padding: 3px 12px; 
+	background: #000;
+	border: solid 1px #222;
+	border-bottom-color: #444;
+	margin-right: 16px;
 }
 
 #like iframe {
 	width: 64px;
 	height: 80px;
-}
-
-#like.activated {
-	background: url(/images/ajax-loader.gif) no-repeat 50% 50%;
 }
 
 .vevent {

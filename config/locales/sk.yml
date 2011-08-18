@@ -94,3 +94,5 @@ sk:
       account_number: 'Číslo účtu:'
       for_payments_from_abroad: 'pre platby zo zahraničia'
       for_membership_payment_enter_the_variable_as_a_symbol_of_their_membership_number: 'V prípade členskej platby uvedte ako variabilný symbol svoje členské číslo.'
+  feedback: Spätná väzba
+  share_with_friends: Zdieľaj s priateľmi
