@@ -130,7 +130,3 @@ $(function() {
 	});
 	
 });
-
-function jurko () {
-	alert('monika');
-}
