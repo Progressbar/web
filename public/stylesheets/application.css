@@ -34,7 +34,7 @@ hr {
 	background: #555;
 	background: -moz-linear-gradient(left, #333, #575757, #333);
 	background: -webkit-gradient(linear, left top, right top, from(#333), to(#333), color-stop(0.5, #575757));
-	margin-bottom: 32px;
+	margin-bottom: 16px;
 }
 
 input, select { vertical-align:middle; }
@@ -80,7 +80,7 @@ h1,h2,h3,h4,h5,h6 { font-weight: bold; }
 
 h1, h2, h3 {
 	margin-bottom: 32px;
-	padding-top: 5px;
+	padding-top: 16px;
 }
 
 h1 {
@@ -418,6 +418,8 @@ menu li .selected:hover {
 }
 
 #calendar {
+	background: url(http://upload.wikimedia.org/wikipedia/commons/c/c0/Gnome-emblem-web.svg) no-repeat top right;
+	background-size: 64px 64px;
 	float: left;
 	width: 464px;
 }
@@ -425,6 +427,8 @@ menu li .selected:hover {
 #blogs {
 	float: right;
 	width:464px;
+	background: url(http://upload.wikimedia.org/wikipedia/commons/b/b4/Gnome-accessories-text-editor.svg) no-repeat top right;
+	background-size: 64px 64px;
 }
 
 #blogs p {
@@ -443,7 +447,7 @@ menu li .selected:hover {
 
 #footer-wrapper {
 	clear: both;
-	padding-top: 32px;
+	padding-top: 16px;
 	padding-bottom: 32px;
 	border-top: solid 1px #222;
 }
@@ -456,10 +460,12 @@ menu li .selected:hover {
 
 #footer section {
 	width: 464px;
+	background-size: 64px 64px;
 }
 
 #follow-us {
 	float: left;
+	background: url(http://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Gnome-system-users.svg/120px-Gnome-system-users.svg.png) no-repeat top right;
 }
 
 #follow-us .action-button {
@@ -483,6 +489,8 @@ menu li .selected:hover {
 
 #mailing-list {
 	float: right;
+	background: url(http://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Gnome-mail-mark-unread.svg/120px-Gnome-mail-mark-unread.svg.png) no-repeat top right;
+
 }
 
 #bottom-menu {
@@ -873,7 +881,7 @@ form .field {
 	display: block;
 }
 
-#address {
+section#address {
 	width: 100%;
 	clear:both;
 	padding: 20px 0px;
