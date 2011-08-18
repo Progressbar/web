@@ -38,6 +38,12 @@ sk:
   blogs:
     title: 'Blogy'
     archive_posts: 'Staršie príspevky ›'
+  inquiries:
+    new:
+      maps: Mapy
+      contact_form: Kontaktný formulár
+      foto_navigation: Foto navigácia
+      interior: Interiér
   address:
     title: 'Adresa'
   top: 'Hore'
