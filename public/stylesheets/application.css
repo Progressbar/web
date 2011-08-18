@@ -391,7 +391,7 @@ menu li .selected:hover {
 	height: 140px;
 	-moz-box-shadow: 0px 0px 5px #000 inset;
 	-webkit-box-shadow: 0px 0px 5px #000 inset;
-	background: -moz-radial-gradient(rgba(0,0,0, 0.05), rgba(0,0,0,0.5) 98%) repeat scroll 0 0 transparent;
+	background: -moz-radial-gradient(rgba(0,0,0, 0.01), rgba(0,0,0,0.4) 98%) repeat scroll 0 0 transparent;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
@@ -598,22 +598,21 @@ menu li .selected:hover {
 }
 
 .promo-item-2 .promo-text {
-	top: 0px;
+	bottom: 310px;
 	left: 0px;
-	height: 4.75em;
 	width: 100%;	
 }
 
 .promo-item-3 .promo-text {
 	bottom: 70px;
 	left: 65px;
-	width: 540px;
+	width: 460px;
 }
 
 .promo-item-4 .promo-text {
 	bottom: 50px;
 	left: 225px;
-	width: 560px;
+	width: 540px;
 	font-size: 17px;
 }
 
