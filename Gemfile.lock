@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/resolve/refinerycms-blog.git
-  revision: e5db679226bac7ef8ddd568c40f52addd52d7a8a
+  revision: 79c63a56e0d42128138584f3d71897a7269e1898
   specs:
     refinerycms-blog (1.6.2)
       acts-as-taggable-on
@@ -84,7 +84,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
-    mysql2 (0.2.11)
+    mysql2 (0.2.13)
     orm_adapter (0.0.5)
     polyglot (0.3.2)
     rack (1.2.3)
@@ -109,7 +109,7 @@ GEM
       rdoc (~> 3.4)
       thor (~> 0.14.4)
     rake (0.9.2)
-    rdoc (3.9.1)
+    rdoc (3.9.2)
     refinerycms (1.0.4)
       bundler (~> 1.0)
       refinerycms-authentication (= 1.0.4)

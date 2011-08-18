@@ -16,9 +16,10 @@ $(function() {
 	
 	if ($('#promo').length > 0) {
 		var promo = $('#promo'),
+			promo_cnt = $('#promo-content'),
 			promo_nav = $('#promo-nav'),
 			promo_items = promo.find('.promo-item'),
-			promo_active_item = promo_items.get(0),
+			promo_active_item = null,
 			promo_auto_animate = true,
 			promo_timer = null,
 			loc_hash = document.location.hash;
@@ -29,14 +30,15 @@ $(function() {
 				promo_items.each(function () {
 					var elm = $(this), 
 						elm_anchor = promo_nav.find('a[href|="#' + this.id + '"]');
+						
 					if (this.id != promo_active_item.id) {
 						elm.removeClass('active');
 						elm_anchor.removeClass('active');
-						elm.fadeOut('normal');
+						elm.fadeTo('fast', 0.3);
 					} else {
 						elm.addClass('active');
 						elm_anchor.addClass('active');
-						elm.fadeIn('slow');
+						elm.fadeTo('fast', 1);
 					}
 				});
 			}
@@ -51,7 +53,7 @@ $(function() {
 			function promoAnimateTimer () {
 				promo_timer = setTimeout(function () {
 					if (promo_auto_animate && promo_active_item !== promo_items.last()) {
-						var active_index = promo_items.index(promo_active_item);
+						var active_index = promo_active_item ? promo_items.index(promo_active_item) : -1;
 						promo_active_item = promo_items.get(active_index + 1);
 
 						if (promo_active_item) {
@@ -65,8 +67,8 @@ $(function() {
 						clearTimeout(promo_timer);
 						promo_auto_animate = false;
 					}
-				}, 4000);
-
+				}, promo_active_item ? 4000 : 100);
+				
 				return false;
 			}
 

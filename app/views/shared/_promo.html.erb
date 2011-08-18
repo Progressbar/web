@@ -1,37 +1,33 @@
 <section id="promo">
   <div id="promo-content">
     <div id="promo-what" class="promo-item promo-item-1">
-      <span class="promo-text-bg-1">&#160;</span>
-      <div class="promo-text-1">
+      <div class="promo-text">
         <h2><%= t('.welcome_on_site') %></h2>
         <p><%= raw t('.first_slovak_hackerspace') %><br /><strong>progressbar.sk</strong>
         </p>
       </div>
-      <img alt="promo ilustration" class="promo-img" src="/images/content/promo/1<%= ['a', 'b'].sample %>.jpg" />
+      
     </div>
     <div id="promo-why" class="promo-item promo-item-2">
-      <span class="promo-text-bg-2">&#160;</span>
-      <div class="promo-text-2">
+      <div class="promo-text">
         <p><%= raw t('.we_are') %></p>
       </div>
-      <img alt="promo ilustration" class="promo-img" src="/images/content/promo/2.jpg" />
+     
     </div>
     <div id="promo-where" class="promo-item promo-item-3">
-      <span class="promo-text-bg-3">&#160;</span>
-      <div class="promo-text-3">
+      <div class="promo-text">
         <p><%= raw t('.we_are_located') %>
         </p>
       </div>
-      <img alt="promo ilustration 3" class="promo-img" src="/images/content/promo/3.jpg" />
+     
     </div>
     <div id="promo-more" class="promo-item promo-item-4">
-      <span class="promo-text-bg-4">&#160;</span>
-      <div class="promo-text-4">
+      <div class="promo-text">
         <p><%= raw t('.interesting_lectures') %></p>
         <p><%= raw t('.we_try_to_by_open_and_free') %>
         </p>
       </div>
-      <img alt="promo ilustration" class="promo-img" src="/images/content/promo/4.jpg" />
+      
     </div>
     <span class="img-bg">&nbsp;</span>
   </div>
@@ -55,7 +51,7 @@
   </nav>
   <div id="promo-action">
     <a href="<%= url_for(@join_us_page.url) %>" class="button large" id="join-us-btn"><%= t('.join_to_us') %></a> <%= t('.or') %>
-    <a class="button greenno large" id="support-us-btn" href="<%= url_for(@join_us_page.url) %>"><%= t('.support_us') %></a>
+    <a class="button greenno large" id="support-us-btn" href="<%= url_for(@join_us_page.url) %>#supporter-promo"><%= t('.support_us') %></a>
   </div>
 
   <div class="reset">&#160;</div>
