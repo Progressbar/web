@@ -105,7 +105,7 @@ $(function() {
 //		console.log(r);
 //	})
 
-	var like_btn = $('#like a');
+	var like_btn = $('#like-btn');
 	like_btn.one('click', function () {
 		var p = this.parentNode;
 //			'http://connect.facebook.net/en_US/all.js#xfbml=1',

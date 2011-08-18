@@ -22,7 +22,12 @@
               <% end %>
 
               <%= yield %>
-              
+              <div id="feedback">
+                <a href="#" id="feedback-btn"><%= t('feedback') %></a>
+                
+                <a href="#" id="like-btn"><%= t('share_with_friends') %></a>              
+                
+              </div>
               <div class="reset">&nbsp;</div>
             </div>
           </div>
