@@ -96,3 +96,16 @@ sk:
       for_membership_payment_enter_the_variable_as_a_symbol_of_their_membership_number: 'V prípade členskej platby uvedte ako variabilný symbol svoje členské číslo.'
   feedback: Spätná väzba
   share_with_friends: Zdieľaj s priateľmi
+  projects:
+    owasp:
+      title: 'OWASP pravidelné stretnutia'
+      desc: 'Prezentácie o webovej bezpečnosti, pracovné stretnutia a predstavovanie OWASP projektov.'
+    arduino:
+      title: 'Arduino hacking'
+      desc: 'Arduino je open-source elektronika prototypovania platforma založená na flexibilné, ľahko použiteľný software a hardware.'
+    bitcoin:
+      title: 'Bitcoin - virtuálna mena'
+      desc: 'Vaše Bitcoin peniaze sú dostupné kdekoľvek na svete kde máte k dispozícií internetové pripojenie, na mieste nezáleží. '
+    makak:
+      title: 'Mačiatka a makaky'
+      desc: 'Neviem čo sem dať, ale keď budem vedieť bude to úplne strašne super, že úžasne najsam.'
