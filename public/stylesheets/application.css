@@ -387,7 +387,7 @@ menu li .selected:hover {
 	top: 0px;
 	left: 0px;
 	width: 215px;
-	height: 140px;
+	height: 133px;
 	-moz-box-shadow: 0px 0px 5px #000 inset;
 	-webkit-box-shadow: 0px 0px 5px #000 inset;
 	background: -moz-radial-gradient(rgba(0,0,0, 0.01), rgba(0,0,0,0.4) 98%) repeat scroll 0 0 transparent;
@@ -408,17 +408,13 @@ menu li .selected:hover {
 	margin-right: 0px;
 }
 
-.project a {
-	height: 300px;
-}
-
 .project h4 {
 	margin-bottom: 8px;
 }
 
 #calendar {
 	background: url(http://upload.wikimedia.org/wikipedia/commons/c/c0/Gnome-emblem-web.svg) no-repeat top right;
-	background-size: 64px 64px;
+	background-size: 42px 42px;
 	float: left;
 	width: 464px;
 }
@@ -427,7 +423,7 @@ menu li .selected:hover {
 	float: right;
 	width:464px;
 	background: url(http://upload.wikimedia.org/wikipedia/commons/b/b4/Gnome-accessories-text-editor.svg) no-repeat top right;
-	background-size: 64px 64px;
+	background-size: 42px 42px;
 }
 
 #blogs p {
@@ -459,7 +455,7 @@ menu li .selected:hover {
 
 #footer section {
 	width: 464px;
-	background-size: 64px 64px;
+	background-size: 42px 42px;
 }
 
 #follow-us {
@@ -487,7 +483,8 @@ menu li .selected:hover {
 }
 
 #mailing-list {
-	float: right;
+	float: right;	
+
 	background: url(http://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Gnome-mail-mark-unread.svg/120px-Gnome-mail-mark-unread.svg.png) no-repeat top right;
 
 }
@@ -888,6 +885,11 @@ section#address {
 	text-align: center;
 }
 
+#fancybox-content {
+	color: #333;
+}
+
+/*
 #feedback {
 	
 }
@@ -900,7 +902,7 @@ section#address {
 	border: solid 1px #222;
 	border-bottom-color: #444;
 	margin-right: 16px;
-}
+}*/
 
 #like iframe {
 	width: 64px;

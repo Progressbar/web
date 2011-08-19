@@ -23,11 +23,13 @@
 
               <%= yield %>
               <div id="feedback">
-                <a href="#" id="feedback-btn"><%= t('feedback') %></a>
+                <a href="#like" id="feedback-btn"><%= t('feedback') %></a>
                 
-                <a href="#" id="like-btn"><%= t('share_with_friends') %></a>              
+                <a href="#" id="like-btn"><%= t('share_with_friends') %></a>         
+                <div style="display:none;"><div id="like" style="color:red;">you like me , like me you, me like you</div></div>
                 
               </div>
+             
               <div class="reset">&nbsp;</div>
             </div>
           </div>
