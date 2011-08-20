@@ -594,7 +594,7 @@ menu li .selected:hover {
 	background: rgba(0,0,0,0.9);
 	bottom: 0px;
 	left: 0px;
-	width: 50%;
+	width: 47%;
 }
 
 .promo-text p {
@@ -880,18 +880,13 @@ form .field {
 section#address {
 	width: 100%;
 	clear:both;
-	padding: 20px 0px;
-	margin-bottom: 32px;
+	padding: 16px 0px;
+	margin-bottom: 16px;
 	text-align: center;
 }
 
 #fancybox-content {
 	color: #333;
-}
-
-/*
-#feedback {
-	
 }
 
 #feedback a {
@@ -902,11 +897,14 @@ section#address {
 	border: solid 1px #222;
 	border-bottom-color: #444;
 	margin-right: 16px;
-}*/
+}
 
-#like iframe {
-	width: 64px;
-	height: 80px;
+.share-btn {
+	margin: 8px;
+}
+
+#share {
+	padding: 16px 8px;
 }
 
 .vevent {
@@ -1040,11 +1038,22 @@ span.day {
 
 #supporter-promo {
 	float: right;
-	opacity: 0.5;
+	opacity: 0.6;
 }
+
 
 #supporter-promo:hover {
 	opacity: 1;
+}
+
+#supporter-promo .button {
+	padding: 10px 16px 10px 32px;
+	margin-left: 16px;
+	
+	background-image: url(/images/design/tick.png);
+	background-position: 4% 55%;
+	background-repeat: no-repeat;
+	font-size: 15px;
 }
 
 #supporter-promo:hover {
