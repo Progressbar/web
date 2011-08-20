@@ -90,10 +90,12 @@ sk:
       opportunity_to_become_an_active_member: 'Možnosť stať sa aktívnym členom'
       optional_registration_between_the_sponsors_and_supporters: 'Voliteľný <a href="/oficiality/sponzori">zápis medzi sponzorov a podporovateľov</a>'
       feel_good: 'Dobrý pocit ;-)'
-      more_information_and_other_options: '<a href="#">Viac informácií a daľšie možnosti</a>'
+      more_information_and_other_options: '<a href="#todo" class="todo">Viac informácií a daľšie možnosti</a>'
       account_number: 'Číslo účtu:'
       for_payments_from_abroad: 'pre platby zo zahraničia'
       for_membership_payment_enter_the_variable_as_a_symbol_of_their_membership_number: 'V prípade členskej platby uvedte ako variabilný symbol svoje členské číslo.'
+      do_you_like_new_web: 'Páči sa ti nový web?'
+      support_web_development: 'Podpor jeho vývoj!'
   feedback: Spätná väzba
   share_with_friends: Zdieľaj s priateľmi
   projects:

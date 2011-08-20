@@ -328,48 +328,70 @@ $(function() {
 	$('a.lightbox').fancybox({
 		'titlePosition': 'inside'
 	});
-		
-
-	var like_btn = $('#like-btn');
-	like_btn.one('click', function () {
-		var p = this.parentNode;
-		//			'http://connect.facebook.net/en_US/all.js#xfbml=1',
-		//			'http://platform.linkedin.com/in.js',
-		var libs = [
-		'http://platform.twitter.com/widgets.js',
-		'https://apis.google.com/js/plusone.js'
-		];
-		var s = null;
-				
-		while (libs.length) {
-			s = document.createElement('script');
-			s.type = 'text/javascript';
-			s.async = true;
-			s.src = libs.shift();
-		
-			p.appendChild(s);		
-		}
-		
+	
+	$("#feedback-btn").bind('click', function () {
+		$.fancybox(
+			'<iframe src="https://spreadsheets.google.com/spreadsheet/embeddedform?formkey=dHBPbTMwOHBvMzZVLVEzM09wanh0WEE6MQ" width="640" height="570" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>'
+			);
+		return false;
 	});
 	
-	$("#feedback-btn").fancybox({
-		'scrolling'		: 'no',
-		'titleShow'		: false,
-		'onClosed'		: function() {
-			console.log('close fanb');
+	var evil_libs_loaded = false;
+	
+	$("#share-btn").bind('click', function () {
+		$.fancybox(
+			'<div id="share">' +
+			'<span class="share-btn"><g:plusone size="tall"></g:plusone></span>' +
+			'<span class="share-btn"><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="progressbarsk">Tweet</a></span>' +
+			'<span class="share-btn"><script type="IN/Share" data-counter="top"></script></span>' +
+			'<span class="share-btn"><fb:like href="" send="false" layout="box_count" width="100" show_faces="false" action="like" font="arial"></fb:like></span>' +
+			'</div>' +
+			'<p>Ďakujeme, že o nás dávate vedieť. <br />Thank you gave to know about us.</p>',
+			{
+				'autoDimensions' : false,
+				'width'          : 350,
+				'height'         : 160
+			}			
+			);
+				
+		if (!evil_libs_loaded) {
+			var p = this.parentNode,
+				s = null;
+			var libs = [
+			'http://platform.twitter.com/widgets.js',
+			'http://platform.linkedin.com/in.js',
+			'http://connect.facebook.net/en_US/all.js#xfbml=1',
+			'https://apis.google.com/js/plusone.js'
+			];
+
+			while (libs.length) {
+				s = document.createElement('script');
+				s.type = 'text/javascript';
+				s.async = true;
+				s.src = libs.shift();
+		
+				p.appendChild(s);		
+			}
+			evil_libs_loaded = true;
 		}
+
+		return false;
 	});
+	
 	
 	$('a.todo').bind('click',
 		function () {
 			$.fancybox(
-				'<h2>TODO</h2><p>Obsah tejto stránky čaká na teba. ;-) </p>',
+				'<h2>TODO</h2><p>Obsah tejto stránky čaká na teba. ;-)<br />' +
+				'<a href="https://github.com/Progressbar/web">Prejsť na Github</a><br />' +
+				'<span class="note">Content for this section is not currently available.</span>' +
+				'</p>',
 				{
 					'autoDimensions' : false,
 					'width'          : 350,
 					'height'         : 'auto'
 				}
-			);		
+				);		
 		});
 		
 	
