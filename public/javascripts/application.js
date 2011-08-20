@@ -339,29 +339,32 @@ $(function() {
 	var evil_libs_loaded = false;
 	
 	$("#share-btn").bind('click', function () {
-		$.fancybox(
-			'<div id="share"><p>' +
+		if ($('#share').length == 0) {
+			$('<div style="display:none;"><div id="share">' +
 			'<span class="share-btn"><g:plusone size="tall"></g:plusone></span>' +
 			'<span class="share-btn"><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="progressbarsk">Tweet</a></span>' +
 			'<span class="share-btn"><script type="IN/Share" data-counter="top"></script></span>' +
-			'<span class="share-btn"><fb:like href="" send="false" layout="box_count" width="100" show_faces="false" action="like" font="arial"></fb:like></span>' +
-			'</p><p>Ďakujeme, že o nás dávate vedieť. <br />Thank you gave to know about us.</p>' +
-			'</div>',
+			'<span class="share-btn"><fb:like href="" send="false" layout="box_count" width="60" height="64" show_faces="false" action="like" font="arial"></fb:like></span>' +
+			'<p>Ďakujeme, že o nás dávate vedieť. <br />Thank you gave to know about us.</p>' +
+			'</div></div>').appendTo(body);
+		}
+		$.fancybox(
+			$('#share').html(),
 			{
 				'autoDimensions' : false,
 				'width'          : 350,
 				'height'         : 170
 			}			
-			);
+		);
 				
 		if (!evil_libs_loaded) {
 			var p = this.parentNode,
 				s = null;
 			var libs = [
-			'http://platform.twitter.com/widgets.js',
-			'http://platform.linkedin.com/in.js',
-			'http://connect.facebook.net/en_US/all.js#xfbml=1',
-			'https://apis.google.com/js/plusone.js'
+				'http://platform.twitter.com/widgets.js',
+				'http://platform.linkedin.com/in.js',
+				'http://connect.facebook.net/en_US/all.js#xfbml=1',
+				'https://apis.google.com/js/plusone.js'
 			];
 
 			while (libs.length) {
@@ -394,7 +397,7 @@ $(function() {
 				);		
 		});
 		
-	$('#order a').fancybox();
+	$('#order a').not('.todo').fancybox();
 	
 //	$('#order a').bind('click',
 //		function () {
