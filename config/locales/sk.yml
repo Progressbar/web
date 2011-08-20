@@ -18,6 +18,7 @@ sk:
     twitter_recommend2: 'Odporuč nás.'
     facebook_like: 'Lajkuj.'
     foursquare_todo: 'Pridaj do zoznamu.'
+  you_might_be_interested: 'Mohlo by vás zaujímať'
   calendar:
     title: 'Kalendár'
     full_schedule: 'Celý rozvrh ›'
@@ -104,7 +105,7 @@ sk:
       desc: 'Prezentácie o webovej bezpečnosti, pracovné stretnutia a predstavovanie OWASP projektov.'
     arduino:
       title: 'Arduino hacking'
-      desc: 'Arduino je open-source elektronika prototypovania platforma založená na ľahko použiteľnom software a hardware.'
+      desc: 'Arduino je open-source elektronická prototypová platforma založená na ľahko použiteľnom software a hardware.'
     bitcoin:
       title: 'Bitcoin - virtuálna mena'
       desc: 'Bitcoin peniaze sú dostupné kdekoľvek na svete kde máte k dispozícií internetové pripojenie.'

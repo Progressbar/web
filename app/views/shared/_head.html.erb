@@ -7,9 +7,10 @@
   <%= csrf_meta_tag if RefinerySetting.find_or_set(:authenticity_token_on_frontend, true)-%>
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
   <%= yield :meta %>
-  <%= stylesheet_link_tag stylesheets_for_head(stylesheets||=%w(sprites application fancybox jquery-ui/css/vader/jquery-ui-1.8.13.custom.css), theme ||= nil) %>
+  <%= stylesheet_link_tag stylesheets_for_head(stylesheets||=%w(sprites fancybox jquery-ui/css/vader/jquery-ui-1.8.13.custom.css application), theme ||= nil), :cache => 'styles' %>
   <%= yield :stylesheets %>
   <%= render :partial => '/shared/google_analytics' %>
+  
   <link rel="alternate" type="application/rss+xml" title="ProgressbarSk Calendar RSS" href="/events.rss" />
   <link rel="alternate" type="application/rss+xml" title="ProgressbarSk Blog RSS" href="/blog/feed.rss" />
   <link rel="stylesheet" type="text/css" media="only screen and (max-width: 930px), only screen and (max-device-width: 930px)" href="/stylesheets/narrow.css" />
