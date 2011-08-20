@@ -104,10 +104,10 @@ sk:
       desc: 'Prezentácie o webovej bezpečnosti, pracovné stretnutia a predstavovanie OWASP projektov.'
     arduino:
       title: 'Arduino hacking'
-      desc: 'Arduino je open-source elektronika prototypovania platforma založená na flexibilné, ľahko použiteľný software a hardware.'
+      desc: 'Arduino je open-source elektronika prototypovania platforma založená na ľahko použiteľnom software a hardware.'
     bitcoin:
       title: 'Bitcoin - virtuálna mena'
-      desc: 'Vaše Bitcoin peniaze sú dostupné kdekoľvek na svete kde máte k dispozícií internetové pripojenie, na mieste nezáleží. '
+      desc: 'Bitcoin peniaze sú dostupné kdekoľvek na svete kde máte k dispozícií internetové pripojenie.'
     makak:
       title: 'Mačiatka a makaky'
       desc: 'Neviem čo sem dať, ale keď budem vedieť bude to úplne strašne super, že úžasne najsam.'
