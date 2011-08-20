@@ -412,6 +412,10 @@ menu li .selected:hover {
 	margin-bottom: 8px;
 }
 
+.project {
+	margin-bottom: 0px;
+}
+
 #calendar {
 	background: url(http://upload.wikimedia.org/wikipedia/commons/c/c0/Gnome-emblem-web.svg) no-repeat top right;
 	background-size: 42px 42px;
@@ -469,7 +473,7 @@ menu li .selected:hover {
 
 #follow-us a {
 	display: inline-block;
-	min-width: 160px;
+	margin-right: 16px;
 }
 
 #follow-us a .action-button {
@@ -484,9 +488,12 @@ menu li .selected:hover {
 
 #mailing-list {
 	float: right;	
-
 	background: url(http://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Gnome-mail-mark-unread.svg/120px-Gnome-mail-mark-unread.svg.png) no-repeat top right;
 
+}
+
+#order {
+	clear: left;
 }
 
 #bottom-menu {
@@ -887,6 +894,11 @@ section#address {
 
 #fancybox-content {
 	color: #333;
+	text-align: left;
+}
+
+#feedback {
+	padding-top: 16px;
 }
 
 #feedback a {
