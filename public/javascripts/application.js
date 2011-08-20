@@ -340,17 +340,17 @@ $(function() {
 	
 	$("#share-btn").bind('click', function () {
 		$.fancybox(
-			'<div id="share">' +
+			'<div id="share"><p>' +
 			'<span class="share-btn"><g:plusone size="tall"></g:plusone></span>' +
 			'<span class="share-btn"><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="progressbarsk">Tweet</a></span>' +
 			'<span class="share-btn"><script type="IN/Share" data-counter="top"></script></span>' +
 			'<span class="share-btn"><fb:like href="" send="false" layout="box_count" width="100" show_faces="false" action="like" font="arial"></fb:like></span>' +
-			'</div>' +
-			'<p>Ďakujeme, že o nás dávate vedieť. <br />Thank you gave to know about us.</p>',
+			'</p><p>Ďakujeme, že o nás dávate vedieť. <br />Thank you gave to know about us.</p>' +
+			'</div>',
 			{
 				'autoDimensions' : false,
 				'width'          : 350,
-				'height'         : 160
+				'height'         : 170
 			}			
 			);
 				
@@ -394,5 +394,22 @@ $(function() {
 				);		
 		});
 		
+	$('#order a').fancybox();
+	
+//	$('#order a').bind('click',
+//		function () {
+//			$.fancybox(
+//				'<h2>TODO</h2><p>Obsah tejto stránky čaká na teba. ;-)<br />' +
+//				'<a href="https://github.com/Progressbar/web">Prejsť na Github</a><br />' +
+//				'<span class="note">Content for this section is not currently available.</span>' +
+//				'</p>',
+//				{
+//					'autoDimensions' : false,
+//					'width'          : 350,
+//					'height'         : 'auto'
+//				}
+//			);	
+//			return false;	
+//		});
 	
 });

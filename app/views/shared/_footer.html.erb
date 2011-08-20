@@ -9,21 +9,17 @@
     <p class="float-left">
       <a class="no-underline" href="<%= RefinerySetting.find_or_set(:site_facebook, 'http://www.facebook.com/progressbar') %>"><img alt="Facebook icon" src="/images/s.gif" class="sprites sprite-icon-facebook-32" /></a>
     </p>
-    <!--
-    <p>
-      <a class="no-underline" href="https://foursquare.com/venue/<%= RefinerySetting.find_or_set(:site_foursquare_id, '7713190') %>"><img alt="Facebook icon" src="/images/s.gif" class="sprites sprite-icon-facebook-32" /> FourSquare</a>
+    <p class="float-left">
+      <a class="no-underline" href="https://foursquare.com/venue/<%= RefinerySetting.find_or_set(:site_foursquare_id, '7713190') %>"><img alt="Facebook icon" src="/images/s.gif" class="sprites sprite-icon-facebook-32" /></a>
     </p>
-    -->
-    <div class="reset">&nbsp;</div>
-    <p>
-      <%= t('follow_us.find_bug') %>
-    </p>
-    <p>
+    
+    <p class="float-left">
       <a class="no-underline" href="<%= RefinerySetting.find_or_set(:site_github, 'https://github.com/Progressbar') %>" >
         <img alt="Github icon" src="/images/s.gif" class="sprites sprite-icon-github-32" title="<%= t('follow_us.visit_github') %>" />
-        <span class="action-button"><%= t('follow_us.send_patch') %></span>
       </a>
     </p>
+    <div class="reset">&nbsp;</div>
+    <!--
     <p>
       <%= t('follow_us.send_email') %>
     </p>
@@ -32,6 +28,7 @@
         <span class="action-button"><%= RefinerySetting.find_or_set(:site_webmaster_email, 'webmaster@progressbar.sk') %></span>
       </a>
     </p>
+    -->
   </div>
 </section>
 <section id="mailing-list">
@@ -40,6 +37,21 @@
   </header>
   <div class="content">
     <%= render :partial => "/mailing_lists/form" %>
+  </div>
+</section>
+<section id="order">
+  <header>
+    <h3><%= t('Mohlo by vás zaujímať') %></h3>
+  </header>
+  <div class="content">
+    <p>
+      <a class="button" href="/sponsored/web-aplikacie" >Web aplikácie</a> &nbsp;
+      <a class="button" href="/sponsored/penetracne-testy" >Penetračné testy</a> &nbsp;
+      <a class="button" href="#" class="todo">Web hosting</a> &nbsp;
+      <a class="button" href="#" class="todo">Outsourcing</a>
+    </p>
+    <p class="msg info note"><img class="ui-icon ui-icon-info" src="/images/s.gif" alt="info icon">Objednaním niektorej zo služieb priamo podporíte prevádzku hackerspacu.</p>
+    
   </div>
 </section>
 <section id="address" >
