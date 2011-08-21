@@ -1699,7 +1699,7 @@ menu li .selected:hover {
 
 #follow-us {
 	float: left;
-	background: url(http://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Gnome-system-users.svg/120px-Gnome-system-users.svg.png) no-repeat 100% -2%;
+	background: url(/images/design/follow_32.png) no-repeat 100% -2%;
 }
 
 #follow-us .action-button {
@@ -1723,7 +1723,7 @@ menu li .selected:hover {
 
 #mailing-list {
 	float: right;	
-	background: url(http://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Gnome-mail-mark-unread.svg/120px-Gnome-mail-mark-unread.svg.png) no-repeat 100% -2%;
+	background: url(/images/design/mailinglist_32.png) no-repeat 100% -2%;
 
 }
 
