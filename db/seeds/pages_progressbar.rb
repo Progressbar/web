@@ -98,7 +98,7 @@ unless p_media
   p_media = p_oficiality.children.create(:title => 'Media', :deletable => false, :show_in_menu => true, :position => Page.last.position.to_i + 1)
   p_media.parts.create({
       :title => 'Body',
-      :body => '',
+      :body => IO.read(Rails.root.join('db/templates/media_en.html')),
       :position => 0
     })
   
@@ -107,15 +107,18 @@ unless p_media
       :body => '',
       :position => 1
     })
-  
   puts "p_media #{p_media.id}"
+else  
+ 
+p_media.parts.first.update_attributes(:body => IO.read(Rails.root.join('db/templates/media_en.html')))
+
 end
 
 unless sponsors_page
   sponsors_page = p_oficiality.children.create(:title => 'Sponsors', :deletable => false, :show_in_menu => true, :position => Page.last.position.to_i + 1)
   sponsors_page.parts.create({
       :title => 'Body',
-      :body => '',
+      :body => IO.read(Rails.root.join('db/templates/sponzori.html')),
       :position => 0
     })
   
@@ -127,6 +130,9 @@ unless sponsors_page
   
   puts "sponsors_page #{sponsors_page.id}"
 end
+
+contact_page.parts.first.update_attributes(:body => IO.read(Rails.root.join('db/templates/kontakt_en.html')))
+contact_page.parts.last.update_attributes(:body => '')
 
 ::I18n.locale = :sk
 puts 'locale -> sk'
