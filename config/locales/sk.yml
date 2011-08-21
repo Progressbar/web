@@ -100,6 +100,7 @@ sk:
   feedback: Spätná väzba
   share_with_friends: Zdieľaj s priateľmi
   projects:
+    title: 'Aktívne sa venujeme a podielame napriklad na projektoch:'
     owasp:
       title: 'OWASP pravidelné stretnutia'
       desc: 'Prezentácie o webovej bezpečnosti, pracovné stretnutia a predstavovanie OWASP projektov.'

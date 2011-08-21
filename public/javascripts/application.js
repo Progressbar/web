@@ -341,12 +341,12 @@ $(function() {
 	$("#share-btn").bind('click', function () {
 		if ($('#share').length == 0) {
 			$('<div style="display:none;"><div id="share">' +
-			'<span class="share-btn"><g:plusone size="tall"></g:plusone></span>' +
-			'<span class="share-btn"><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="progressbarsk">Tweet</a></span>' +
-			'<span class="share-btn"><script type="IN/Share" data-counter="top"></script></span>' +
-			'<span class="share-btn"><fb:like href="" send="false" layout="box_count" width="60" height="64" show_faces="false" action="like" font="arial"></fb:like></span>' +
-			'<p>Ďakujeme, že o nás dávate vedieť. <br />Thank you gave to know about us.</p>' +
-			'</div></div>').appendTo(body);
+				'<span class="share-btn"><g:plusone size="tall"></g:plusone></span>' +
+				'<span class="share-btn"><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="progressbarsk">Tweet</a></span>' +
+				'<span class="share-btn"><script type="IN/Share" data-counter="top"></script></span>' +
+				'<span class="share-btn"><fb:like href="" send="false" layout="box_count" width="60" height="64" show_faces="false" action="like" font="arial"></fb:like></span>' +
+				'<p>Ďakujeme, že o nás dávate vedieť. <br />Thank you gave to know about us.</p>' +
+				'</div></div>').appendTo(body);
 		}
 		$.fancybox(
 			$('#share').html(),
@@ -355,16 +355,16 @@ $(function() {
 				'width'          : 350,
 				'height'         : 170
 			}			
-		);
+			);
 				
 		if (!evil_libs_loaded) {
 			var p = this.parentNode,
-				s = null;
+			s = null;
 			var libs = [
-				'http://platform.twitter.com/widgets.js',
-				'http://platform.linkedin.com/in.js',
-				'http://connect.facebook.net/en_US/all.js#xfbml=1',
-				'https://apis.google.com/js/plusone.js'
+			'http://platform.twitter.com/widgets.js',
+			'http://platform.linkedin.com/in.js',
+			'http://connect.facebook.net/en_US/all.js#xfbml=1',
+			'https://apis.google.com/js/plusone.js'
 			];
 
 			while (libs.length) {
@@ -398,21 +398,16 @@ $(function() {
 		});
 		
 	$('#order a').not('.todo').fancybox();
-	
-//	$('#order a').bind('click',
-//		function () {
-//			$.fancybox(
-//				'<h2>TODO</h2><p>Obsah tejto stránky čaká na teba. ;-)<br />' +
-//				'<a href="https://github.com/Progressbar/web">Prejsť na Github</a><br />' +
-//				'<span class="note">Content for this section is not currently available.</span>' +
-//				'</p>',
-//				{
-//					'autoDimensions' : false,
-//					'width'          : 350,
-//					'height'         : 'auto'
-//				}
-//			);	
-//			return false;	
-//		});
-	
+
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-25240234-1']);
+	_gaq.push(['_setDomainName', 'progressbar.sk']);
+	_gaq.push(['_setAllowHash', false]);
+	_gaq.push(['_trackPageview']);
+
+	var ga = document.createElement('script');
+	ga.type = 'text/javascript';
+	ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	document.head.appendChild(ga);
 });
