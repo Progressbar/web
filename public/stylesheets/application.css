@@ -573,7 +573,7 @@ menu li .selected:hover {
 }
 
 .promo-item {
-	background: #000 url(/images/content/promo/promo-v2.jpg) no-repeat top left;
+	background: #000;
 	overflow: hidden;
 	position: relative;
 	width: 100%;
@@ -581,6 +581,12 @@ menu li .selected:hover {
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
+}
+
+@media only screen and (min-device-width: 920px) {
+	.promo-item {
+		background: #000 url(/images/content/promo/promo-v2.jpg) no-repeat top left;
+	}
 }
 
 .js .promo-item {
@@ -1055,17 +1061,17 @@ span.day {
 	clear: both;
 }
 
-#supporter-promo {
+#supporter {
 	float: right;
 	opacity: 0.6;
 }
 
 
-#supporter-promo:hover {
+#supporter:hover {
 	opacity: 1;
 }
 
-#supporter-promo .button {
+#supporter .button {
 	padding: 10px 16px 10px 32px;
 	margin-left: 16px;
 	
@@ -1075,11 +1081,11 @@ span.day {
 	font-size: 15px;
 }
 
-#supporter-promo:hover {
+#supporter:hover {
 	opacity: 1;
 }
 
-#supporter-promo .note {
+#supporter .note {
 	font-size: 12px;
 	margin-top: 16px;
 }
