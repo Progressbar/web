@@ -45,7 +45,7 @@ unless join_us_page
   join_us_page = Page.create(:title => 'Join Us', :deletable => false, :show_in_menu => false, :position => Page.last.position.to_i + 1)
   join_us_page.parts.create({
       :title => 'Body',
-      :body => IO.read(Rails.root.join('db/templates/pridaj.html')),
+      :body => '&nbsp;',
       :position => 0
     })
   
