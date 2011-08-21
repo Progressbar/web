@@ -53,7 +53,6 @@
 	float: left;
 }
 
-
 #promo-nav {
 	width: 305px;
 	float: none;
@@ -70,6 +69,10 @@
 #promo-action .button {
 	margin-top: 0px;
 	margin-bottom: 16px;
+}
+
+#promo .promo-item {
+	background: #000 url(/images/content/promo/4s.jpeg) no-repeat top left;
 }
 
 #projects {
@@ -124,9 +127,11 @@
 
 #promo .promo-text {
     font-size: 15px;
-    position: static;
+    
 	padding: 16px;
-	width: 100%;
+	width: auto;
+	bottom: 0px;
+	left: 0px;
 }
 
 #promo .promo-item-4 .promo-text {

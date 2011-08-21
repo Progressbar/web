@@ -417,7 +417,7 @@ menu li .selected:hover {
 }
 
 #calendar {
-	background: url(http://upload.wikimedia.org/wikipedia/commons/c/c0/Gnome-emblem-web.svg) no-repeat top right;
+	background: url(/images/design/events_42.png) no-repeat top right;
 	background-size: 42px 42px;
 	float: left;
 	width: 464px;
@@ -426,7 +426,7 @@ menu li .selected:hover {
 #blogs {
 	float: right;
 	width:464px;
-	background: url(http://upload.wikimedia.org/wikipedia/commons/b/b4/Gnome-accessories-text-editor.svg) no-repeat top right;
+	background: url(/images/design/blog_42.png) no-repeat top right;
 	background-size: 42px 42px;
 }
 
@@ -459,12 +459,11 @@ menu li .selected:hover {
 
 #footer section {
 	width: 464px;
-	background-size: 42px 42px;
 }
 
 #follow-us {
 	float: left;
-	background: url(http://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Gnome-system-users.svg/120px-Gnome-system-users.svg.png) no-repeat 100% -2%;
+	background: url(/images/design/follow_32.png) no-repeat 100% 0%;
 }
 
 #follow-us .action-button {
@@ -488,7 +487,7 @@ menu li .selected:hover {
 
 #mailing-list {
 	float: right;	
-	background: url(http://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Gnome-mail-mark-unread.svg/120px-Gnome-mail-mark-unread.svg.png) no-repeat 100% -2%;
+	background: url(/images/design/mailinglist_32.png) no-repeat 100% 0%;
 
 }
 
