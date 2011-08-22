@@ -3,12 +3,6 @@ sk:
   events: Udalosti
   mailing_list:
     title: 'E-mailová konferencia'
-    general_type: 'Všeobecná diskusia (frekventovaná konferencia)'
-    events_type: 'Informácie o organizovaných Progressbar akciách'
-    put_email: 'Zadajte e-mail'
-    sign_in: 'Prihlásiť k odberu'
-    info_privacy: 'E-mailová adresa bude uchovávaná len pre potreby konferencie a nebude poskytnutá tretím stranám.'
-    info_logout: 'Pre odhlásenie z e-mailovej konferencie zadajte znovu váš e-mail.'
   follow_us:
     title: 'Sledujte nás'
     find_bug: 'Našiel si chybu, alebo Ti chýba nejaká funkčnosť?'
