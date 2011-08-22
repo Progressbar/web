@@ -9,11 +9,10 @@ begin
   end
 
 #  problematic users
-#  Marcel Hecko -- 30829 -- maco@maco.sk
-#  usernamehas already been taken
-#  Lubo Nagajda -- 36499 -- l.nagajda@gmail.com
-#  usernamehas already been taken
-  
+#Marcel Hecko -- 30829 -- maco@maco.sk -- usernamehas already been taken
+#Lubo Nagajda -- 36499 -- l.nagajda@gmail.com -- usernamehas already been taken
+#Ivan Trančík -- 37007 -- ivan.trancik@gmail.com -- usernamehas already been taken
+
 #  # clean env
 #### User.delete_all()
   puts User.delete_all('progressbar_uid IS NOT NULL')
