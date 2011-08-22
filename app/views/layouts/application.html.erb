@@ -26,7 +26,7 @@
               <div class="reset">&nbsp;</div>
               
               <div id="feedback">
-                <a href="https://docs.google.com/spreadsheet/viewform?hl=en_GB&formkey=dHBPbTMwOHBvMzZVLVEzM09wanh0WEE6MQ" id="feedback-btn"><%= t('feedback') %></a>
+                <a href="https://docs.google.com/spreadsheet/viewform?hl=en_GB&amp;formkey=dHBPbTMwOHBvMzZVLVEzM09wanh0WEE6MQ" id="feedback-btn"><%= t('feedback') %></a>
                 <a href="#" id="share-btn"><%= t('share_with_friends') %></a>         
               </div>
              
@@ -44,7 +44,6 @@
         </div>
       </div>
     </div>
-    <%= javascript_include_tag 'jquery' %>
-    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag %w(jquery application), :cache => Rails.env.production? %> 
   </body>
 </html>

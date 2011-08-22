@@ -258,11 +258,11 @@ $(function() {
 					if (this.id != promo_active_item.id) {
 						elm.removeClass('active');
 						elm_anchor.removeClass('active');
-						elm.fadeTo('fast', 0.3);
+						elm.fadeTo('normal', 0.3);
 					} else {
 						elm.addClass('active');
 						elm_anchor.addClass('active');
-						elm.fadeTo('fast', 1);
+						elm.fadeTo('normal', 1);
 					}
 				});
 			}
@@ -345,7 +345,7 @@ $(function() {
 				'<span class="share-btn"><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="progressbarsk">Tweet</a></span>' +
 				'<span class="share-btn"><script type="IN/Share" data-counter="top"></script></span>' +
 				'<span class="share-btn"><fb:like href="" send="false" layout="box_count" width="60" height="64" show_faces="false" action="like" font="arial"></fb:like></span>' +
-				'<p>Ďakujeme, že o nás dávate vedieť. <br />Thank you gave to know about us.</p>' +
+				'<p style="padding-left: 8px; padding-top: 8px;">Ďakujeme, že o nás dávate vedieť. <br />Thank you gave to know about us.</p>' +
 				'</div></div>').appendTo(body);
 		}
 		$.fancybox(
@@ -353,7 +353,7 @@ $(function() {
 			{
 				'autoDimensions' : false,
 				'width'          : 350,
-				'height'         : 170
+				'height'         : 150
 			}			
 			);
 				
