@@ -7,12 +7,11 @@
   <%= csrf_meta_tag if RefinerySetting.find_or_set(:authenticity_token_on_frontend, true)-%>
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
   <%= yield :meta %>
-  <%= stylesheet_link_tag stylesheets_for_head(stylesheets||=%w(sprites fancybox jquery-ui/css/vader/jquery-ui-1.8.13.custom.css application narrow), theme ||= nil), :cache => false %>
-  <%#= stylesheet_link_tag stylesheets_for_head(stylesheets||=%w(sprites fancybox jquery-ui/css/vader/jquery-ui-1.8.13.custom.css application), theme ||= nil), :cache => 'styles' %>
+  <%= stylesheet_link_tag stylesheets_for_head(stylesheets||=%w(sprites fancybox jquery-ui/css/vader/jquery-ui-1.8.13.custom.css application narrow), theme ||= nil), :cache => Rails.env.production? %>
   <%= yield :stylesheets %>
   
   <link rel="alternate" type="application/rss+xml" title="ProgressbarSk Calendar RSS" href="/events.rss" />
   <link rel="alternate" type="application/rss+xml" title="ProgressbarSk Blog RSS" href="/blog/feed.rss" />
-  <%#= javascript_include_tag 'modernizr-min' %>
+  
   <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
