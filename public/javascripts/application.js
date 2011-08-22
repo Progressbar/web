@@ -248,7 +248,6 @@ $(function() {
 		promo_timer = null,
 		loc_hash = document.location.hash;
 		
-		// @todo
 		if (promo.find(loc_hash).length === 0) {		
 			function promoAnimate() {
 				promo_items.each(function () {
@@ -310,20 +309,24 @@ $(function() {
 		return false;
 	});
 	
-	$('.tabs').tabs({
-		cache: true,
-		
-		ajaxOptions: {
-			data : {
-				'ajax_tab' : 1
-			},
-			error: function( xhr, status, index, anchor ) {
-				$( anchor.hash ).html(
-					"Couldn't load this tab. We'll try to fix this as soon as possible."
-					);
+	
+	var tabs = $('.tabs');
+	if(tabs.length > 0) {
+		tabs.tabs({
+			cache: true,
+
+			ajaxOptions: {
+				data : {
+					'ajax_tab' : 1
+				},
+				error: function( xhr, status, index, anchor ) {
+					$( anchor.hash ).html(
+						"Couldn't load this tab. We'll try to fix this as soon as possible."
+						);
+				}
 			}
-		}
-	});
+		});
+	}
 	
 	$('a.lightbox').fancybox({
 		'titlePosition': 'inside'
