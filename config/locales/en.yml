@@ -3,12 +3,6 @@ en:
   events: Events
   mailing_list:
     title: Mailing list
-    general_type: 'General discussion'
-    events_type: 'If you want to be informed about Progressbar events'
-    put_email: 'Put your e-mail'
-    sign_in: 'Sign in'
-    info_privacy: 'E-mail address will be kept only for the purpose of the conference and will not be provided to third parties.'
-    info_logout: 'To unsubscribe from the mailing re-enter your e-mail.'
   follow_us:
     title: 'Follow us'
     twitter_recommend: 'Recommend us on twitter'
