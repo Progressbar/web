@@ -7,11 +7,6 @@
     <% if @blog_posts.any? %>
       <% @blog_posts.each do |post| %>
         <div>
-          <!-- 
-          <%= link_to blog_post_url(post), :class => 'il' do -%>
-            <img alt="ilustration" src="/images/content/blogs/<%= post.id %>_t.jpg" /> 
-          <% end %>
-          -->
           <h4>
             <%= link_to blog_post_url(post) do -%>
               <%= truncate post.title,
@@ -23,7 +18,6 @@
           <%= truncate post.body,
             :length => 160,
             :preserve_html_tags => true %>
-
         </div>
       <% end %>
     <% end %>

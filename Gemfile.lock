@@ -1,16 +1,11 @@
-GIT
-  remote: git://github.com/resolve/refinerycms-blog.git
-  revision: 79c63a56e0d42128138584f3d71897a7269e1898
+PATH
+  remote: vendor/
   specs:
     refinerycms-blog (1.6.2)
       acts-as-taggable-on
       filters_spam (~> 0.2)
       refinerycms-core (~> 1.0.3)
       seo_meta (~> 1.1.0)
-
-PATH
-  remote: vendor/
-  specs:
     refinerycms-calendar (1.1.0)
       refinerycms-core (>= 0.9.9.1)
     refinerycms-inquiries (1.0.1)

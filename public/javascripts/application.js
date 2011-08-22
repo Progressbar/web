@@ -397,20 +397,10 @@ $(function() {
 					'width'          : 350,
 					'height'         : 'auto'
 				}
-				);		
+			);	
+			return false;
 		});
 		
 	$('#order a').not('.todo').fancybox();
 
-	var _gaq = _gaq || [];
-	_gaq.push(['_setAccount', 'UA-25240234-1']);
-	_gaq.push(['_setDomainName', 'progressbar.sk']);
-	_gaq.push(['_setAllowHash', false]);
-	_gaq.push(['_trackPageview']);
-
-	var ga = document.createElement('script');
-	ga.type = 'text/javascript';
-	ga.async = true;
-	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	document.head.appendChild(ga);
 });
