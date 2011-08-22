@@ -57,7 +57,9 @@ gem 'refinerycms-inquiries',  :path => 'vendor/'
 gem 'refinerycms-search', :path => 'vendor/'
 # gem 'refinerycms-search', :git => 'git://github.com/Progressbar/refinerycms-search.git'
 
-gem 'refinerycms-blog', :git => 'git://github.com/resolve/refinerycms-blog.git'
+gem 'refinerycms-blog', :path => 'vendor/'
+# 'git@github.com:Progressbar/refinerycms-blog.git'
+# gem 'refinerycms-blog', :git => 'git://github.com/resolve/refinerycms-blog.git'
 
 gem 'refinerycms-calendar', :path => 'vendor/'
 # gem 'refinerycms-calendar', :git => 'git://github.com/progressbarsk/refinerycms-calendar.git'
