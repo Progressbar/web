@@ -1,6 +1,6 @@
 
 .sprites {
-	background-image: url(/images/design/icons/sprites3-32.png);
+	background-image: url(/images/design/icons/sprites4-32.png);
 	background-color: transparent;
 	background-repeat: no-repeat;
 }
@@ -13,43 +13,43 @@ img.sprites {
 	vertical-align: middle;
 }
 
- .sprite-icon-github-32 { 
+ .sprite-icon-foursquare-32 { 
     height               : 32px; 
     width                : 32px; 
     background-position  : -0px -32px; 
  } 
  
- .sprite-icon-github-32:hover { 
+ .sprite-icon-foursquare-32:hover { 
     background-position  : -0px 0px; 
  } 
  
- .sprite-icon-soup-32 { 
+ .sprite-icon-github-32 { 
     height               : 32px; 
     width                : 32px; 
     background-position  : -32px -32px; 
  } 
  
- .sprite-icon-soup-32:hover { 
+ .sprite-icon-github-32:hover { 
     background-position  : -32px 0px; 
  } 
  
- .sprite-icon-ics-32 { 
+ .sprite-icon-soup-32 { 
     height               : 32px; 
     width                : 32px; 
     background-position  : -64px -32px; 
  } 
  
- .sprite-icon-ics-32:hover { 
+ .sprite-icon-soup-32:hover { 
     background-position  : -64px 0px; 
  } 
  
- .sprite-icon-foursquare-32 { 
+ .sprite-icon-ics-32 { 
     height               : 32px; 
     width                : 32px; 
     background-position  : -96px -32px; 
  } 
  
- .sprite-icon-foursquare-32:hover { 
+ .sprite-icon-ics-32:hover { 
     background-position  : -96px 0px; 
  } 
  
@@ -83,53 +83,53 @@ img.sprites {
     background-position  : -192px 0px; 
  } 
  
- .sprite-icon-vimeo-32 { 
+ .sprite-icon-twitter-32 { 
     height               : 32px; 
     width                : 32px; 
     background-position  : -224px -32px; 
  } 
  
- .sprite-icon-vimeo-32:hover { 
+ .sprite-icon-twitter-32:hover { 
     background-position  : -224px 0px; 
- } 
- 
- .sprite-icon-email-32 { 
-    height               : 32px; 
-    width                : 32px; 
-    background-position  : -256px -32px; 
- } 
- 
- .sprite-icon-email-32:hover { 
-    background-position  : -256px 0px; 
  } 
  
  .sprite-icon-flickr-32 { 
     height               : 32px; 
     width                : 32px; 
-    background-position  : -288px -32px; 
+    background-position  : -256px -32px; 
  } 
  
  .sprite-icon-flickr-32:hover { 
-    background-position  : -288px 0px; 
+    background-position  : -256px 0px; 
  } 
  
- .sprite-icon-twitter-32 { 
+ .sprite-icon-kyberia-32 { 
+    height               : 32px; 
+    width                : 32px; 
+    background-position  : -288px -32px; 
+ } 
+ 
+ .sprite-icon-kyberia-32:hover { 
+    background-position  : -288px 0px; 
+ }
+ 
+ .sprite-icon-facebook-32 { 
     height               : 32px; 
     width                : 32px; 
     background-position  : -320px -32px; 
  } 
  
- .sprite-icon-twitter-32:hover { 
+ .sprite-icon-facebook-32:hover { 
     background-position  : -320px 0px; 
  } 
  
- .sprite-icon-facebook-32 { 
+ .sprite-icon-email-32 { 
     height               : 32px; 
     width                : 32px; 
     background-position  : -352px -32px; 
  } 
  
- .sprite-icon-facebook-32:hover { 
+ .sprite-icon-email-32:hover { 
     background-position  : -352px 0px; 
  } 
  
