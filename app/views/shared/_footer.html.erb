@@ -31,23 +31,24 @@
     <%= render :partial => "/mailing_lists/form" %>
   </div>
 </section>
-<% if  I18n.locale == :sk %>
-  <section id="order">
-    <header>
-      <h3><%= t('you_might_be_interested') %></h3>
-    </header>
-    <div class="content">
-      <p>
-        <a class="button" href="/sponsored/web-development" >Web aplikácie</a>&nbsp;
-        <a class="button" href="/sponsored/penetracne-testy" >Penetračné testy</a> &nbsp;
-        <a class="button todo" href="#todo">Web hosting</a>&nbsp;
-        <a class="button todo" href="#todo">Správa serverov</a>
-      </p>
-      <p class="msg info note"><img class="ui-icon ui-icon-info" src="/images/s.gif" alt="info icon">Objednaním niektorej zo služieb priamo podporíte prevádzku hackerspacu.</p>
+<%# if  I18n.locale == :sk %>
 
-    </div>
-  </section>
-<% end %>
+  <%#*<section id="order">%>
+    <%#*<header>%>
+      <%#*<h3><%= t('you_might_be_interested') </h3>%>
+    <%#*</header>%>
+    <%#*<div class="content">%>
+      <%#*<p>%>
+        <%#*<a class="button" href="/sponsored/web-development" >Web aplikácie</a>&nbsp;%>
+        <%#*<a class="button" href="/sponsored/penetracne-testy" >Penetračné testy</a> &nbsp;%>
+        <%#*<a class="button todo" href="#todo">Web hosting</a>&nbsp;%>
+        <%#*<a class="button todo" href="#todo">Správa serverov</a>%>
+      <%#*</p>%>
+      <%#*<p class="msg info note"><img class="ui-icon ui-icon-info" src="/images/s.gif" alt="info icon">Objednaním niektorej zo služieb priamo podporíte prevádzku hackerspacu.</p>%>
+
+    <%#*</div>%>
+  <%#*</section>%>
+<%# end %>
 <section id="address" >
   <header>
     <h3 class="hidden"><%= t('address.title') %></h3>
