@@ -3,6 +3,10 @@ sk:
   events: Udalosti
   mailing_list:
     title: 'E-mailová konferencia'
+  events_mailinglist_subscription_success: 'Prihlásenie do e-mailovej konferencie prebehlo úspešne a na Váš e-mail boli zaslaný aktivačné údaje.'
+  events_mailinglist_subscription_error: 'Prihlásenie do e-mailovej konferencie zlyhalo, prosím skuste to neskôr alebo nám o tom dajte vediet na info@progressbar.sk.'
+  general_mailinglist_subscription_success: 'Prihlásenie do e-mailovej konferencie prebehlo úspešne a na Váš e-mail boli zaslaný aktivačné údaje.'
+  general_mailinglist_subscription_error: 'Prihlásenie do e-mailovej konferencie zlyhalo, prosím skuste to neskôr alebo nám o tom dajte vediet na info@progressbar.sk.'
   follow_us:
     title: 'Sledujte nás'
     find_bug: 'Našiel si chybu, alebo Ti chýba nejaká funkčnosť?'
