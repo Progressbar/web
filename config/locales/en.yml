@@ -3,6 +3,10 @@ en:
   events: Events
   mailing_list:
     title: Mailing list
+  events_mailinglist_subscription_success: 'Login to mailing list was successful. Activation information has been sent to your e-mail.'
+  events_mailinglist_subscription_error: 'Sorry, login to mailing list failed, please try again later or let us know to info@progressbar.sk .'
+  general_mailinglist_subscription_success: 'Login to e-mail conference was successful. Activation information has been sent to your e-mail.'
+  general_mailinglist_subscription_error: 'Sorry, login to mailing list failed, please try again later or let us know to info@progressbar.sk .'
   follow_us:
     title: 'Follow us'
     twitter_recommend: 'Recommend us on twitter'
