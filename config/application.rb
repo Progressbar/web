@@ -100,6 +100,15 @@ module Progressbar
       r301 '/blog/-/blogs/jozef-skulavik-network-security', '/blog/jozef-skulavik-network-security'
       r301 '/blog/-/blogs/tik-art-radio-days-6th-till-11th-of-september-2011', '/blog/tik-art-radio-days-6th-till-11th-of-september-2011'
       r301 '/blog/-/blogs/kryptoanarchia-po-19-tich-rokoch-od-vydania-kryptoanarchistickeho-manifesta', '/blog/kryptoanarchia-po-19-tich-rokoch-od-vydania-kryptoanarchistickeho-manifesta'
+      r301 '/blog/-/blogs/voltage-control-analogovy-audiovizualny-syntetizator-workshop', '/blog/voltage-control-analogovy-audiovizualny-syntetizator-workshop'
+      r301 '/blog/-/blogs/paranoja-liferay-a-lt', '/blog/paranoja-liferay-a-lt'
+      r301 '/blog/-/blogs/another-presentation-for-progressbar-opening-party-close-look-dive-into-mobile-phone-hardware', '/blog/another-presentation-for-progressbar-opening-party-close-look-dive-into-mobile-phone-hardware'
+      r301 '/blog/-/blogs/ako-bolo-vcera-na-prednaske-mitcha-altmana', '/blog/ako-bolo-vcera-na-prednaske-mitcha-altmana'
+      r301 '/blog/-/blogs/the-inanna-project-an-experiment-in-art-technology-and-the-transformative-power-of-free-hardware-and-software', '/blog/the-inanna-project-an-experiment-in-art-technology-and-the-transformative-power-of-free-hardware-and-software'
+      r301 '/blog/-/blogs/postrehy-z-luxemburgska-fotoblog', '/blog/postrehy-z-luxemburgska-fotoblog'
+      r301 '/blog/-/blogs/worklab-presentation-of-tik-time-inventors-kabinet', '/blog/worklab-presentation-of-tik-time-inventors-kabinet'
+      r301 '/blog/-/blogs/metamorfozy-2010-globalna-klimaticka-zmena', '/blog/metamorfozy-2010-globalna-klimaticka-zmena'
+      
 
       r301 '/en/blog/-/blogs/vysledky-na-poli-svetovej-dominancie-v-real-time-generovanych-animaciach-za-poslednu-patrocnicu', '/en/blog/vysledky-na-poli-svetovej-dominancie-v-real-time-generovanych-animaciach-za-poslednu-patrocnicu'
       r301 '/en/blog/-/blogs/progressbar-opening-party', '/en/blog/progressbar-opening-party'
@@ -113,6 +122,14 @@ module Progressbar
       r301 '/en/blog/-/blogs/jozef-skulavik-network-security', '/en/blog/jozef-skulavik-network-security'
       r301 '/en/blog/-/blogs/tik-art-radio-days-6th-till-11th-of-september-2011', '/en/blog/tik-art-radio-days-6th-till-11th-of-september-2011'
       r301 '/en/blog/-/blogs/kryptoanarchia-po-19-tich-rokoch-od-vydania-kryptoanarchistickeho-manifesta', '/en/blog/kryptoanarchia-po-19-tich-rokoch-od-vydania-kryptoanarchistickeho-manifesta'
+      r301 '/en/blog/-/blogs/voltage-control-analogovy-audiovizualny-syntetizator-workshop', '/en/blog/voltage-control-analogovy-audiovizualny-syntetizator-workshop'
+      r301 '/en/blog/-/blogs/paranoja-liferay-a-lt', '/en/blog/paranoja-liferay-a-lt'
+      r301 '/en/blog/-/blogs/another-presentation-for-progressbar-opening-party-close-look-dive-into-mobile-phone-hardware', '/en/blog/another-presentation-for-progressbar-opening-party-close-look-dive-into-mobile-phone-hardware'
+      r301 '/en/blog/-/blogs/ako-bolo-vcera-na-prednaske-mitcha-altmana', '/en/blog/ako-bolo-vcera-na-prednaske-mitcha-altmana'      
+      r301 '/en/blog/-/blogs/the-inanna-project-an-experiment-in-art-technology-and-the-transformative-power-of-free-hardware-and-software', '/en/blog/the-inanna-project-an-experiment-in-art-technology-and-the-transformative-power-of-free-hardware-and-software'
+      r301 '/en/blog/-/blogs/postrehy-z-luxemburgska-fotoblog', '/en/blog/postrehy-z-luxemburgska-fotoblog'
+      r301 '/en/blog/-/blogs/worklab-presentation-of-tik-time-inventors-kabinet', '/en/blog/worklab-presentation-of-tik-time-inventors-kabinet'
+      r301 '/en/blog/-/blogs/metamorfozy-2010-globalna-klimaticka-zmena', '/en/blog/metamorfozy-2010-globalna-klimaticka-zmena'
 
       r301 '/sk/blog/-/blogs/vysledky-na-poli-svetovej-dominancie-v-real-time-generovanych-animaciach-za-poslednu-patrocnicu', '/blog/vysledky-na-poli-svetovej-dominancie-v-real-time-generovanych-animaciach-za-poslednu-patrocnicu'
       r301 '/sk/blog/-/blogs/progressbar-opening-party', '/blog/progressbar-opening-party'
@@ -126,6 +143,15 @@ module Progressbar
       r301 '/sk/blog/-/blogs/jozef-skulavik-network-security', '/blog/jozef-skulavik-network-security'
       r301 '/sk/blog/-/blogs/tik-art-radio-days-6th-till-11th-of-september-2011', '/blog/tik-art-radio-days-6th-till-11th-of-september-2011'
       r301 '/sk/blog/-/blogs/kryptoanarchia-po-19-tich-rokoch-od-vydania-kryptoanarchistickeho-manifesta', '/blog/kryptoanarchia-po-19-tich-rokoch-od-vydania-kryptoanarchistickeho-manifesta'
+      r301 '/sk/blog/-/blogs/voltage-control-analogovy-audiovizualny-syntetizator-workshop', '/blog/voltage-control-analogovy-audiovizualny-syntetizator-workshop'
+      r301 '/sk/blog/-/blogs/paranoja-liferay-a-lt', '/blog/paranoja-liferay-a-lt'
+      r301 '/sk/blog/-/blogs/another-presentation-for-progressbar-opening-party-close-look-dive-into-mobile-phone-hardware', '/blog/another-presentation-for-progressbar-opening-party-close-look-dive-into-mobile-phone-hardware'      
+      r301 '/sk/blog/-/blogs/ako-bolo-vcera-na-prednaske-mitcha-altmana', '/blog/ako-bolo-vcera-na-prednaske-mitcha-altmana'      
+      r301 '/skluc/blog/-/blogs/the-inanna-project-an-experiment-in-art-technology-and-the-transformative-power-of-free-hardware-and-software', '/blog/the-inanna-project-an-experiment-in-art-technology-and-the-transformative-power-of-free-hardware-and-software'      
+      r301 '/sk/blog/-/blogs/postrehy-z-luxemburgska-fotoblog', '/blog/postrehy-z-luxemburgska-fotoblog'
+      r301 '/sk/blog/-/blogs/worklab-presentation-of-tik-time-inventors-kabinet', '/blog/worklab-presentation-of-tik-time-inventors-kabinet'
+      r301 '/sk/blog/-/blogs/metamorfozy-2010-globalna-klimaticka-zmena', '/blog/metamorfozy-2010-globalna-klimaticka-zmena'
+      
     end
   end
 end
