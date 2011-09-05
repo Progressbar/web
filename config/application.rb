@@ -9,9 +9,9 @@ Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 module Progressbar
   class Application < Rails::Application
-    
+
     NOTIFICATION_CONTACT_EMAIL = 'keraml@gmail.com'
-  
+
     PAGES = {
       :HOME_PAGE_ID => 1,
       :NOT_FOUND_PAGE_ID => 2,
@@ -27,7 +27,7 @@ module Progressbar
       :PROJECTS_PAGE_ID => 12,
       :SPONSORS_PAGE_ID => 16,
     }
-    
+
     config.action_mailer.raise_delivery_errors = false
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.perform_deliveries = true
@@ -71,9 +71,61 @@ module Progressbar
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
-    
+
     config.to_prepare do
       Refinery.searchable_models = [Page, BlogPost, Event]
+    end
+
+    # redirect old stuff
+    require 'rack/rewrite'
+
+    config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
+      r301 '/sk', '/'
+      r301 '/sponsors', '/oficiality/sponzori'
+      r301 '/sk/sponsors', '/oficiality/sponzori'
+      r301 '/en/sponsors', '/en/legal-stuff/sponsors'
+      r301 '/statut', '/en/legal-stuff/statutes'
+      r301 '/sk/statut', '/en/oficiality/stanovy'
+      r301 '/join-us', '/pridaj-sa'
+
+      r301 '/blog/-/blogs/vysledky-na-poli-svetovej-dominancie-v-real-time-generovanych-animaciach-za-poslednu-patrocnicu', '/blog/vysledky-na-poli-svetovej-dominancie-v-real-time-generovanych-animaciach-za-poslednu-patrocnicu'
+      r301 '/blog/-/blogs/progressbar-opening-party', '/blog/progressbar-opening-party'
+      r301 '/blog/-/blogs/moderne-sposoby-anonymizacie-prednaska-a-diskusia-o-bitcoin', '/blog/moderne-sposoby-anonymizacie-prednaska-a-diskusia-o-bitcoin'
+      r301 '/blog/-/blogs/obhliadka-priestorov-na-tovarenskej-ulici-c-14', '/blog/obhliadka-priestorov-na-tovarenskej-ulici-c-14'
+      r301 '/blog/-/blogs/owasp-potrebuje-tvoju-pomoc', '/blog/owasp-potrebuje-tvoju-pomoc'
+      r301 '/blog/-/blogs/bratislava-shackinuniversity', '/blog/bratislavashackinuniversity'
+      r301 '/blog/-/blogs/habitat-live-zvukove-vysielanie-progressbar-online', '/blog/habitat-live-zvukove-vysielanie-progressbar-online'
+      r301 '/blog/-/blogs/startuju-owasp-webappsec-stretnutia-kryptograficke-kluce-ich-distribucia-a-doveryhodnost', '/blog/startuju-owasp-webappsec-stretnutia-kryptograficke-kluce-ich-distribucia-a-doveryhodnost'
+      r301 '/blog/-/blogs/martin-rublik-kryptograficke-kluce-ich-distribucia-a-doveryhodnost', '/blog/martin-rublik-kryptograficke-kluce-ich-distribucia-a-doveryhodnost'
+      r301 '/blog/-/blogs/jozef-skulavik-network-security', '/blog/jozef-skulavik-network-security'
+      r301 '/blog/-/blogs/tik-art-radio-days-6th-till-11th-of-september-2011', '/blog/tik-art-radio-days-6th-till-11th-of-september-2011'
+      r301 '/blog/-/blogs/kryptoanarchia-po-19-tich-rokoch-od-vydania-kryptoanarchistickeho-manifesta', '/blog/kryptoanarchia-po-19-tich-rokoch-od-vydania-kryptoanarchistickeho-manifesta'
+
+      r301 '/en/blog/-/blogs/vysledky-na-poli-svetovej-dominancie-v-real-time-generovanych-animaciach-za-poslednu-patrocnicu', '/en/blog/vysledky-na-poli-svetovej-dominancie-v-real-time-generovanych-animaciach-za-poslednu-patrocnicu'
+      r301 '/en/blog/-/blogs/progressbar-opening-party', '/en/blog/progressbar-opening-party'
+      r301 '/en/blog/-/blogs/moderne-sposoby-anonymizacie-prednaska-a-diskusia-o-bitcoin', '/en/blog/moderne-sposoby-anonymizacie-prednaska-a-diskusia-o-bitcoin'
+      r301 '/en/blog/-/blogs/obhliadka-priestorov-na-tovarenskej-ulici-c-14', '/en/blog/obhliadka-priestorov-na-tovarenskej-ulici-c-14'
+      r301 '/en/blog/-/blogs/owasp-potrebuje-tvoju-pomoc', '/en/blog/owasp-potrebuje-tvoju-pomoc'
+      r301 '/en/blog/-/blogs/bratislava-shackinuniversity', '/en/blog/bratislavashackinuniversity'
+      r301 '/en/blog/-/blogs/habitat-live-zvukove-vysielanie-progressbar-online', '/en/blog/habitat-live-zvukove-vysielanie-progressbar-online'
+      r301 '/en/blog/-/blogs/startuju-owasp-webappsec-stretnutia-kryptograficke-kluce-ich-distribucia-a-doveryhodnost', '/en/blog/startuju-owasp-webappsec-stretnutia-kryptograficke-kluce-ich-distribucia-a-doveryhodnost'
+      r301 '/en/blog/-/blogs/martin-rublik-kryptograficke-kluce-ich-distribucia-a-doveryhodnost', '/en/blog/martin-rublik-kryptograficke-kluce-ich-distribucia-a-doveryhodnost'
+      r301 '/en/blog/-/blogs/jozef-skulavik-network-security', '/en/blog/jozef-skulavik-network-security'
+      r301 '/en/blog/-/blogs/tik-art-radio-days-6th-till-11th-of-september-2011', '/en/blog/tik-art-radio-days-6th-till-11th-of-september-2011'
+      r301 '/en/blog/-/blogs/kryptoanarchia-po-19-tich-rokoch-od-vydania-kryptoanarchistickeho-manifesta', '/en/blog/kryptoanarchia-po-19-tich-rokoch-od-vydania-kryptoanarchistickeho-manifesta'
+
+      r301 '/sk/blog/-/blogs/vysledky-na-poli-svetovej-dominancie-v-real-time-generovanych-animaciach-za-poslednu-patrocnicu', '/blog/vysledky-na-poli-svetovej-dominancie-v-real-time-generovanych-animaciach-za-poslednu-patrocnicu'
+      r301 '/sk/blog/-/blogs/progressbar-opening-party', '/blog/progressbar-opening-party'
+      r301 '/sk/blog/-/blogs/moderne-sposoby-anonymizacie-prednaska-a-diskusia-o-bitcoin', '/blog/moderne-sposoby-anonymizacie-prednaska-a-diskusia-o-bitcoin'
+      r301 '/sk/blog/-/blogs/obhliadka-priestorov-na-tovarenskej-ulici-c-14', '/blog/obhliadka-priestorov-na-tovarenskej-ulici-c-14'
+      r301 '/sk/blog/-/blogs/owasp-potrebuje-tvoju-pomoc', '/blog/owasp-potrebuje-tvoju-pomoc'
+      r301 '/sk/blog/-/blogs/bratislava-shackinuniversity', '/blog/bratislavashackinuniversity'
+      r301 '/sk/blog/-/blogs/habitat-live-zvukove-vysielanie-progressbar-online', '/blog/habitat-live-zvukove-vysielanie-progressbar-online'
+      r301 '/sk/blog/-/blogs/startuju-owasp-webappsec-stretnutia-kryptograficke-kluce-ich-distribucia-a-doveryhodnost', '/blog/startuju-owasp-webappsec-stretnutia-kryptograficke-kluce-ich-distribucia-a-doveryhodnost'
+      r301 '/sk/blog/-/blogs/martin-rublik-kryptograficke-kluce-ich-distribucia-a-doveryhodnost', '/blog/martin-rublik-kryptograficke-kluce-ich-distribucia-a-doveryhodnost'
+      r301 '/sk/blog/-/blogs/jozef-skulavik-network-security', '/blog/jozef-skulavik-network-security'
+      r301 '/sk/blog/-/blogs/tik-art-radio-days-6th-till-11th-of-september-2011', '/blog/tik-art-radio-days-6th-till-11th-of-september-2011'
+      r301 '/sk/blog/-/blogs/kryptoanarchia-po-19-tich-rokoch-od-vydania-kryptoanarchistickeho-manifesta', '/blog/kryptoanarchia-po-19-tich-rokoch-od-vydania-kryptoanarchistickeho-manifesta'
     end
   end
 end
