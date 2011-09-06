@@ -472,18 +472,8 @@ $(function() {
                 var rt = true;
 
                 if ( typeof(special_date) != 'undefined' ) {
-                    switch ( special_date[1] ) {
-                        case 'all' :
-                            cls = 'disabled-full-day';
-                            rt = false;
-
-                            break;
-
-                        default:
-                            rt = false;
-
-                            break;
-                    }
+                    cls = 'special-date';
+                    rt = false;
                 } else if (date.getMonth() <= current_date.getMonth()) {
                     if (date < current_date) {
                         rt = false;
