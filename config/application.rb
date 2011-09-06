@@ -87,6 +87,9 @@ module Progressbar
       r301 '/statut', '/en/legal-stuff/statutes'
       r301 '/sk/statut', '/en/oficiality/stanovy'
       r301 '/join-us', '/pridaj-sa'
+      r301 '/location', '/contact'
+      r301 '/sk/location', '/contact'
+      r301 '/en/location', '/en/contact'
 
       r301 '/blog/-/blogs/vysledky-na-poli-svetovej-dominancie-v-real-time-generovanych-animaciach-za-poslednu-patrocnicu', '/blog/vysledky-na-poli-svetovej-dominancie-v-real-time-generovanych-animaciach-za-poslednu-patrocnicu'
       r301 '/blog/-/blogs/progressbar-opening-party', '/blog/progressbar-opening-party'
@@ -108,7 +111,7 @@ module Progressbar
       r301 '/blog/-/blogs/postrehy-z-luxemburgska-fotoblog', '/blog/postrehy-z-luxemburgska-fotoblog'
       r301 '/blog/-/blogs/worklab-presentation-of-tik-time-inventors-kabinet', '/blog/worklab-presentation-of-tik-time-inventors-kabinet'
       r301 '/blog/-/blogs/metamorfozy-2010-globalna-klimaticka-zmena', '/blog/metamorfozy-2010-globalna-klimaticka-zmena'
-      
+      r301 '/blog/-/blogs/bypassing-web-application-firewalls-wafs', '/blog/bypassing-web-application-firewalls-wafs'      
 
       r301 '/en/blog/-/blogs/vysledky-na-poli-svetovej-dominancie-v-real-time-generovanych-animaciach-za-poslednu-patrocnicu', '/en/blog/vysledky-na-poli-svetovej-dominancie-v-real-time-generovanych-animaciach-za-poslednu-patrocnicu'
       r301 '/en/blog/-/blogs/progressbar-opening-party', '/en/blog/progressbar-opening-party'
@@ -130,6 +133,7 @@ module Progressbar
       r301 '/en/blog/-/blogs/postrehy-z-luxemburgska-fotoblog', '/en/blog/postrehy-z-luxemburgska-fotoblog'
       r301 '/en/blog/-/blogs/worklab-presentation-of-tik-time-inventors-kabinet', '/en/blog/worklab-presentation-of-tik-time-inventors-kabinet'
       r301 '/en/blog/-/blogs/metamorfozy-2010-globalna-klimaticka-zmena', '/en/blog/metamorfozy-2010-globalna-klimaticka-zmena'
+      r301 '/en/blog/-/blogs/bypassing-web-application-firewalls-wafs', '/en/blog/bypassing-web-application-firewalls-wafs'
 
       r301 '/sk/blog/-/blogs/vysledky-na-poli-svetovej-dominancie-v-real-time-generovanych-animaciach-za-poslednu-patrocnicu', '/blog/vysledky-na-poli-svetovej-dominancie-v-real-time-generovanych-animaciach-za-poslednu-patrocnicu'
       r301 '/sk/blog/-/blogs/progressbar-opening-party', '/blog/progressbar-opening-party'
@@ -151,7 +155,7 @@ module Progressbar
       r301 '/sk/blog/-/blogs/postrehy-z-luxemburgska-fotoblog', '/blog/postrehy-z-luxemburgska-fotoblog'
       r301 '/sk/blog/-/blogs/worklab-presentation-of-tik-time-inventors-kabinet', '/blog/worklab-presentation-of-tik-time-inventors-kabinet'
       r301 '/sk/blog/-/blogs/metamorfozy-2010-globalna-klimaticka-zmena', '/blog/metamorfozy-2010-globalna-klimaticka-zmena'
-      
+      r301 '/sk/blog/-/blogs/bypassing-web-application-firewalls-wafs', '/blog/bypassing-web-application-firewalls-wafs'      
     end
   end
 end
