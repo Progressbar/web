@@ -48,15 +48,14 @@
   </div>
   <div class="project-wrapper four">
     <article class="project">
-      <h4><a class="todo" href="#todo"><%= t('projects.makak.title') %></a></h4>
+      <h4><a class="lightbox" href="<%= url_for @videoarchive_page %>"><%= t('projects.videoarchive.title') %></a></h4>
       <div class="body">
-        <a class="todo" href="#todo">
-          <img src="/images/content/projects/maciatko.jpeg" alt="lorem ipsum ilustration" width="215" height="133" />
+        <a class="lightbox" href="<%= url_for @videoarchive_page %>">
+          <img src="/images/content/projects/maciatko.jpeg" alt="Video archive ilustration" width="215" height="133" />
           <span class="img-bg"></span>
         </a>
         <p>
-          <%= t('projects.makak.desc') %>
-
+          <%= t('projects.videoarchive.desc') %>
         </p>
       </div>
     </article>

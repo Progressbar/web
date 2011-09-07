@@ -19,6 +19,7 @@ class ApplicationController < ActionController::Base
     @join_us_page = Page.find_by_id(ids[:JOIN_US_PAGE_ID])
     @projects_page = Page.find_by_id(ids[:PROJECTS_PAGE_ID])
     @sponsors_page = Page.find_by_id(ids[:SPONSORS_PAGE_ID])
+    @videoarchive_page = Page.find_by_id(ids[:VIDEOARCHIVE_PAGE_ID])
 
   end  
   
