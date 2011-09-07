@@ -543,5 +543,5 @@ $(function() {
         return kCalendar.init();
     };
 
-    var myCalendar = kCalendar();
+//    var myCalendar = kCalendar();
 });
