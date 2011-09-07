@@ -26,6 +26,7 @@ module Progressbar
       :JOIN_US_PAGE_ID => 11,
       :PROJECTS_PAGE_ID => 12,
       :SPONSORS_PAGE_ID => 16,
+      :VIDEOARCHIVE_PAGE_ID => 23,
     }
 
     config.action_mailer.raise_delivery_errors = false

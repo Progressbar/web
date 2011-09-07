@@ -104,6 +104,6 @@ en:
     bitcoin:
       title: 'Bitcoin - virtual currency'
       desc: 'Bitcoin bitcoi bitco bitc bit bi b.'
-    makak:
-      title: 'Mačiatka a makaky'
-      desc: 'Neviem čo sem dať, ale keď budem vedieť bude to úplne strašne super, že úžasne najsam.'
+    videoarchive:
+      title: 'Video Archive'
+      desc: 'Video / audio records from some previous events in Progressbar.'

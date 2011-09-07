@@ -108,6 +108,6 @@ sk:
     bitcoin:
       title: 'Bitcoin - virtuálna mena'
       desc: 'Bitcoin peniaze sú dostupné kdekoľvek na svete kde máte k dispozícií internetové pripojenie.'
-    makak:
-      title: 'Mačiatka a makaky'
-      desc: 'Neviem čo sem dať, ale keď budem vedieť bude to úplne strašne super, že úžasne najsam.'
+    videoarchive:
+      title: 'Záznamy z prednášok'
+      desc: 'Video / audio záznamy z niektorých predchádzajúcich akcií v Progressbare'
