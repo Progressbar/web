@@ -94,6 +94,7 @@ module Progressbar
       r301 '/blog/-/blogs', '/blog'
       r301 '/en/blog/-/blogs', '/en/blog'
       r301 '/sk/blog/-/blogs', '/blog'
+      r301 '/en/samy-kamkar-in-bratislava', '/samy-kamkar-in-bratislava'
 
       r301 '/blog/-/blogs/vysledky-na-poli-svetovej-dominancie-v-real-time-generovanych-animaciach-za-poslednu-patrocnicu', '/blog/vysledky-na-poli-svetovej-dominancie-v-real-time-generovanych-animaciach-za-poslednu-patrocnicu'
       r301 '/blog/-/blogs/progressbar-opening-party', '/blog/progressbar-opening-party'
@@ -118,6 +119,7 @@ module Progressbar
       r301 '/blog/-/blogs/bypassing-web-application-firewalls-wafs', '/blog/bypassing-web-application-firewalls-wafs'
       r301 '/blog/-/blogs/uvod-do-organizacie-casu-metodou-gtd', '/blog/uvod-do-organizacie-casu-metodou-gtd'
       r301 '/blog/-/blogs/rubyslava-stretnutie-fanusikov-ruby', '/blog/rubyslava-stretnutie-fanusikov-ruby'
+      r301 '/blog/-/blogs/jakub-benko-of-brains-and-people', '/blog/jakub-benko-of-brains-and-people'
 
       r301 '/en/blog/-/blogs/vysledky-na-poli-svetovej-dominancie-v-real-time-generovanych-animaciach-za-poslednu-patrocnicu', '/en/blog/vysledky-na-poli-svetovej-dominancie-v-real-time-generovanych-animaciach-za-poslednu-patrocnicu'
       r301 '/en/blog/-/blogs/progressbar-opening-party', '/en/blog/progressbar-opening-party'
@@ -142,7 +144,8 @@ module Progressbar
       r301 '/en/blog/-/blogs/bypassing-web-application-firewalls-wafs', '/en/blog/bypassing-web-application-firewalls-wafs'
       r301 '/en/blog/-/blogs/uvod-do-organizacie-casu-metodou-gtd', '/en/blog/uvod-do-organizacie-casu-metodou-gtd'
       r301 '/en/blog/-/blogs/rubyslava-stretnutie-fanusikov-ruby', '/en/blog/rubyslava-stretnutie-fanusikov-ruby'
-
+      r301 '/en/blog/-/blogs/jakub-benko-of-brains-and-people', '/en/blog/jakub-benko-of-brains-and-people'
+      
       r301 '/sk/blog/-/blogs/vysledky-na-poli-svetovej-dominancie-v-real-time-generovanych-animaciach-za-poslednu-patrocnicu', '/blog/vysledky-na-poli-svetovej-dominancie-v-real-time-generovanych-animaciach-za-poslednu-patrocnicu'
       r301 '/sk/blog/-/blogs/progressbar-opening-party', '/blog/progressbar-opening-party'
       r301 '/sk/blog/-/blogs/moderne-sposoby-anonymizacie-prednaska-a-diskusia-o-bitcoin', '/blog/moderne-sposoby-anonymizacie-prednaska-a-diskusia-o-bitcoin'
@@ -166,6 +169,7 @@ module Progressbar
       r301 '/sk/blog/-/blogs/bypassing-web-application-firewalls-wafs', '/blog/bypassing-web-application-firewalls-wafs'
       r301 '/sk/blog/-/blogs/uvod-do-organizacie-casu-metodou-gtd', '/blog/uvod-do-organizacie-casu-metodou-gtd'
       r301 '/sk/blog/-/blogs/rubyslava-stretnutie-fanusikov-ruby', '/blog/rubyslava-stretnutie-fanusikov-ruby'
+      r301 '/sk/blog/-/blogs/jakub-benko-of-brains-and-people', '/blog/jakub-benko-of-brains-and-people'      
     end
   end
 end
