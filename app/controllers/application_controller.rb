@@ -28,4 +28,8 @@ class ApplicationController < ActionController::Base
     p[:events] = true unless params[:mailing_list]
     @mailing_list = MailingList.new(p)    
   end
+  
+  def canonical?
+    ::Refinery.i18n_enabled? && ::Refinery::I18n.default_frontend_locale != ::Refinery::I18n.current_frontend_locale
+  end
 end
