@@ -349,8 +349,12 @@ $(function() {
                 return this;
             }
         }
-
-        return kCalendar.init(holder);
+        
+        if (holder.length > 0) {
+            return kCalendar.init(holder);
+        }
+        
+        return false
     };  
 
     var myCalendar = kCalendar($('#jquery-ui-calendar-holder'));
