@@ -1146,7 +1146,7 @@ span.day {
 }
 
 .ui-datepicker-week-end {
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 .ui-datepicker-event .ui-state-default {
@@ -1155,8 +1155,4 @@ span.day {
 
 .ui-datepicker-event  .ui-state-active{
     background: #000;
-}
-
-.ui-datepicker-past {
-    opacity: 0.7;
 }
