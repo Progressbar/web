@@ -45,7 +45,7 @@
       </div>
     </div>
     
-    <%= javascript_include_tag %w(jquery-1.6.2.min jquery.fancybox-1.3.4.pack jquery.mousewheel-3.0.4.pack jquery.scrollTo-1.4.2-min), :cache => Rails.env.production? %>
+    <%= javascript_include_tag %w(jquery-1.6.3.min jquery.fancybox-1.3.4.pack jquery.mousewheel-3.0.4.pack jquery.scrollTo-1.4.2-min), :cache => Rails.env.production? %>
     <%= javascript_include_tag 'jquery-ui-1.8.16.custom.min' unless is_homepage? %> 
     <%= javascript_include_tag 'application' %> 
 <% unless local_request? or refinery_user? -%>
