@@ -1,16 +1,17 @@
-/* Modernizr 2.0.6 (Custom Build) | MIT & BSD
- * Build: http://www.modernizr.com/download/#-applicationcache-hashchange-history-input-cssclasses-hasevent
- */
-window.Modernizr=function(a,b,c){function z(){e.input=function(a){for(var b=0,c=a.length;b<c;b++)p[a[b]]=a[b]in l;return p}("autocomplete autofocus list placeholder max min multiple pattern required step".split(" "))}function y(a,b){return!!~(""+a).indexOf(b)}function x(a,b){return typeof a===b}function w(a,b){return v(prefixes.join(a+";")+(b||""))}function v(a){k.cssText=a}var d="2.0.6",e={},f=!0,g=b.documentElement,h=b.head||b.getElementsByTagName("head")[0],i="modernizr",j=b.createElement(i),k=j.style,l=b.createElement("input"),m=Object.prototype.toString,n={},o={},p={},q=[],r=function(){function d(d,e){e=e||b.createElement(a[d]||"div"),d="on"+d;var f=d in e;f||(e.setAttribute||(e=b.createElement("div")),e.setAttribute&&e.removeAttribute&&(e.setAttribute(d,""),f=x(e[d],"function"),x(e[d],c)||(e[d]=c),e.removeAttribute(d))),e=null;return f}var a={select:"input",change:"input",submit:"form",reset:"form",error:"img",load:"img",abort:"img"};return d}(),s,t={}.hasOwnProperty,u;!x(t,c)&&!x(t.call,c)?u=function(a,b){return t.call(a,b)}:u=function(a,b){return b in a&&x(a.constructor.prototype[b],c)},n.hashchange=function(){return r("hashchange",a)&&(b.documentMode===c||b.documentMode>7)},n.history=function(){return!!a.history&&!!history.pushState},n.applicationcache=function(){return!!a.applicationCache};for(var A in n)u(n,A)&&(s=A.toLowerCase(),e[s]=n[A](),q.push((e[s]?"":"no-")+s));e.input||z(),v(""),j=l=null,e._version=d,e.hasEvent=r,g.className=g.className.replace(/\bno-js\b/,"")+(f?" js "+q.join(" "):"");return e}(this,this.document);
-
 $.strPad = function(i,l,s) {
     var o = i.toString();
-    if (!s) { s = '0'; }
+    if (!s) {
+        s = '0';
+    }
     while (o.length < l) {
-            o = s + o;
+        o = s + o;
     }
     return o;
 };
+
+Date.prototype.getDayOfYear = function() {
+    return Math.ceil((this - new Date(this.getFullYear(),0,1)) / 86400000);
+} 
 
 $(function() {
     var body = $(document.body);
@@ -233,6 +234,7 @@ $(function() {
                         // ;( sad json format date - possible future problems
                         ev_start = new Date(ev_start.getFullYear(), ev_start.getMonth(), ev_start.getDate(), ev_start.getHours() - 2, ev_start.getMinutes());
                         ev_end = new Date(ev_end.getFullYear(), ev_end.getMonth(), ev_end.getDate(), ev_end.getHours() - 2, ev_end.getMinutes());
+
                         var holder = $('<div style="clear:both;">').appendTo(dialog);
 
                         $('<a>', {
@@ -258,7 +260,7 @@ $(function() {
                         'draggable' : true,
                         'resizable' : false,
                         'position' : dialog_pos,
-                        'title' : 'Program: ' + dateText
+                        'title' : 'Program: ' + date.toDateString()
                     });
                     calendar.active = dateText;
                 }
@@ -280,19 +282,24 @@ $(function() {
                     success: function (response) {
                         if (response) {
                             var data = {},
+                            tmp_start_date = null,
+                            tmp_end_date = null,
                             tmp_key = null,
                             tmp_date = null;
                             try  {
                                 for (i = 0; i < response.length; i++) {
-                                    tmp_date = new Date(response[i]['event']['start_at']);
-                                    tmp_key = tmp_date.getDate().toString() + tmp_date.getMonth().toString() + tmp_date.getFullYear().toString();
-                                    data[tmp_key] =  data[tmp_key] || [];
-                                    data[tmp_key].push(response[i]['event']);
-                                    tmp_date = new Date(response[i]['event']['end_at']);
-                                    tmp_key = tmp_date.getDate().toString() + tmp_date.getMonth().toString() + tmp_date.getFullYear().toString();
-                                    data[tmp_key] =  data[tmp_key] || [];
-                                    if (data[tmp_key].indexOf(response[i]['event']) === -1) {
-                                        data[tmp_key].push(response[i]['event']);
+                                    tmp_start_date = new Date(response[i]['event']['start_at']);
+                                    tmp_end_date = new Date(response[i]['event']['end_at']);
+                                    
+                                    var diff_days = tmp_end_date.getDayOfYear() - tmp_start_date.getDayOfYear();
+                                    
+                                    for (var j = 0; j <= diff_days;j++) {
+                                        tmp_date = new Date(tmp_start_date.getFullYear(), tmp_start_date.getMonth(), tmp_start_date.getDate() + j);
+                                        tmp_key = tmp_date.getDate().toString() + tmp_date.getMonth().toString() + tmp_date.getFullYear().toString();
+                                        data[tmp_key] =  data[tmp_key] || [];
+                                        if (data[tmp_key].indexOf(response[i]['event']) === -1) {
+                                            data[tmp_key].push(response[i]['event']);
+                                        }
                                     }
                                 }
 
@@ -319,7 +326,7 @@ $(function() {
 
                 this.datepicker = $('<div id="jquery-ui-calendar" />').prependTo(holder);
                 this.dialog = $('<div id="jquery-ui-calendar-dialog" style="display:none;text-align: left;" />').prependTo(holder);
-//
+                //
                 this.datepicker.dialog = this.dialog;
 
                 this.current_date = new Date();
