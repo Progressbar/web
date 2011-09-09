@@ -1134,8 +1134,38 @@ span.day {
     width: 40%;
 }
 
+.individual_event {
+    padding: 8px 0px;
+    margin-bottom: 8px;
+}
+
+.individual_event h1 {
+    margin: 0 0 8px;
+    padding: 0;
+}
+
+.individual_event .event_image {
+    float: left;
+    margin: 0 16px 8px 0;
+}
+
+#prevnext_nav {
+    clear: both;
+    display: block;
+    height: 100px;
+}
+
+.event h3 {
+    margin-bottom: 8px;
+}
+
+#body_content_left .event section {
+    margin-bottom: 8px;
+}
+
 @media only screen and (min-device-width: 920px) {
     .promo-item {
         background: #000 url(/images/content/promo/promo-v2.jpg) no-repeat top left;
     }
 }
+
