@@ -665,6 +665,10 @@ a.il {
     cursor: pointer;
 }
 
+.button.disabled {
+    background: none;
+}
+
 .pagination em {
     background-color: #cdcdcd;
     cursor: default;
@@ -1161,6 +1165,10 @@ span.day {
 
 #body_content_left .event section {
     margin-bottom: 8px;
+}
+
+#share_this_event {
+    margin-bottom: 32px;
 }
 
 @media only screen and (min-device-width: 920px) {
