@@ -11,7 +11,7 @@ $.strPad = function(i,l,s) {
 
 Date.prototype.getDayOfYear = function() {
     return Math.ceil((this - new Date(this.getFullYear(),0,1)) / 86400000);
-} 
+}
 
 $(function() {
     var body = $(document.body);
@@ -188,7 +188,7 @@ $(function() {
 
     var kCalendar = function (holder) {
         var calendar_data = 'test';
-            
+
         var kCalendar = {
             datepicker : '',
             dialog : '',
@@ -222,7 +222,7 @@ $(function() {
                 picker_pos = picker.offset(),
                 dialog_pos = [picker_pos.left - picker.width() - 15, picker_pos.top - $(window).scrollTop()],
                 body = '';
-                
+
                 if (calendar_data[tmp_key]) {
                     day = calendar_data[tmp_key];
                     dialog.html('');
@@ -243,10 +243,12 @@ $(function() {
                             'text' : ev.title.length > 25 ? $.trim(ev.title.substring(0, 25)) + '..' : ev.title
                         }).appendTo(holder);
 
-                        $('<span>', {
-                            'class' : 'float-right',
-                            'text' : ev_start.getHours() + ':' + $.strPad(ev_start.getMinutes(), 2, 0) + ' - ' + ev_end.getHours() + ':' + $.strPad(ev_end.getMinutes(), 2, 0)
-                        }).appendTo(holder);
+                        if (ev_start.getDayOfYear() === ev_end.getDayOfYear()) {
+                            $('<span>', {
+                                'class' : 'float-right',
+                                'text' : ev_start.getHours() + ':' + $.strPad(ev_start.getMinutes(), 2, 0) + ' - ' + ev_end.getHours() + ':' + $.strPad(ev_end.getMinutes(), 2, 0)
+                            }).appendTo(holder);
+                        }
                     }
                 }
 
@@ -274,7 +276,7 @@ $(function() {
 
             loadData : function (year, month) {
                 var that = this;
-                
+
                 $.ajax({
                     url: '/events/archive/' + year + '/' + month,
                     dataType: 'json',
@@ -290,9 +292,9 @@ $(function() {
                                 for (i = 0; i < response.length; i++) {
                                     tmp_start_date = new Date(response[i]['event']['start_at']);
                                     tmp_end_date = new Date(response[i]['event']['end_at']);
-                                    
+
                                     var diff_days = tmp_end_date.getDayOfYear() - tmp_start_date.getDayOfYear();
-                                    
+
                                     for (var j = 0; j <= diff_days;j++) {
                                         tmp_date = new Date(tmp_start_date.getFullYear(), tmp_start_date.getMonth(), tmp_start_date.getDate() + j);
                                         tmp_key = tmp_date.getDate().toString() + tmp_date.getMonth().toString() + tmp_date.getFullYear().toString();
@@ -311,15 +313,15 @@ $(function() {
                                 }
                             } catch (err) {
                                 if (!!console) {
-                                    console.log(err);                                    
+                                    console.log(err);
                                 }
                             }
                         }
                     }
                 });
             },
-            
-            
+
+
 
             init: function(holder) {
                 var that = this;
@@ -352,17 +354,13 @@ $(function() {
                 }
 
                 this.loadData(this.year, this.month );
-                
+
                 return this;
             }
         }
-        
-        if (holder.length > 0) {
-            return kCalendar.init(holder);
-        }
-        
-        return false
-    };  
+
+        return holder.length > 0 ? kCalendar.init(holder) : false;
+    };
 
     var myCalendar = kCalendar($('#jquery-ui-calendar-holder'));
 });
