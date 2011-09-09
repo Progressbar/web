@@ -228,13 +228,6 @@ $(function() {
                     dialog.html('');
                     for (i = 0; i < day.length; i++) {
                         var ev = day[i];
-                        var ev_start = new Date(ev.start_at);
-                        var ev_end = new Date(ev.end_at);
-
-                        // ;( sad json format date - possible future problems
-                        ev_start = new Date(ev_start.getFullYear(), ev_start.getMonth(), ev_start.getDate(), ev_start.getHours() - 2, ev_start.getMinutes());
-                        ev_end = new Date(ev_end.getFullYear(), ev_end.getMonth(), ev_end.getDate(), ev_end.getHours() - 2, ev_end.getMinutes());
-
                         var holder = $('<div style="clear:both;">').appendTo(dialog);
 
                         $('<a>', {
@@ -243,10 +236,10 @@ $(function() {
                             'text' : ev.title.length > 25 ? $.trim(ev.title.substring(0, 25)) + '..' : ev.title
                         }).appendTo(holder);
 
-                        if (ev_start.getDayOfYear() === ev_end.getDayOfYear()) {
+                        if (ev.start_at.getDayOfYear() === ev.end_at.getDayOfYear()) {
                             $('<span>', {
                                 'class' : 'float-right',
-                                'text' : ev_start.getHours() + ':' + $.strPad(ev_start.getMinutes(), 2, 0) + ' - ' + ev_end.getHours() + ':' + $.strPad(ev_end.getMinutes(), 2, 0)
+                                'text' : ev.start_at.getHours() + ':' + $.strPad(ev.start_at.getMinutes(), 2, 0) + ' - ' + ev.end_at.getHours() + ':' + $.strPad(ev.end_at.getMinutes(), 2, 0)
                             }).appendTo(holder);
                         }
                     }
@@ -284,6 +277,7 @@ $(function() {
                     success: function (response) {
                         if (response) {
                             var data = {},
+                            tmp_date = null,
                             tmp_start_date = null,
                             tmp_end_date = null,
                             tmp_key = null,
@@ -291,8 +285,12 @@ $(function() {
                             try  {
                                 for (i = 0; i < response.length; i++) {
                                     tmp_start_date = new Date(response[i]['event']['start_at']);
+                                    tmp_start_date = new Date(tmp_start_date.getFullYear(), tmp_start_date.getMonth(), tmp_start_date.getDate(), tmp_start_date.getHours() - 2, tmp_start_date.getMinutes());
+                                    response[i]['event']['start_at'] = tmp_start_date;
                                     tmp_end_date = new Date(response[i]['event']['end_at']);
-
+                                    tmp_end_date = new Date(tmp_end_date.getFullYear(), tmp_end_date.getMonth(), tmp_end_date.getDate(), tmp_end_date.getHours() - 2, tmp_end_date.getMinutes());
+                                    response[i]['event']['end_at'] = tmp_end_date;
+                                    
                                     var diff_days = tmp_end_date.getDayOfYear() - tmp_start_date.getDayOfYear();
 
                                     for (var j = 0; j <= diff_days;j++) {
