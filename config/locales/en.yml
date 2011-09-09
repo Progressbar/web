@@ -92,7 +92,7 @@ en:
       do_you_like_new_web: 'Do you like new web?'
       support_web_development: 'Support web development!'
   feedback: Feedback
-  share_with_friends: Share with friends
+  share_with_friends: Share this page
   projects:
     title: 'Some ours active projects:'
     owasp:

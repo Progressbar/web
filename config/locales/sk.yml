@@ -96,7 +96,7 @@ sk:
       do_you_like_new_web: 'Páči sa ti nový web?'
       support_web_development: 'Podpor jeho vývoj!'
   feedback: Spätná väzba
-  share_with_friends: Zdieľaj s priateľmi
+  share_with_friends: Zdieľaj túto stránku
   projects:
     title: 'Aktívne sa venujeme a podielame napriklad na projektoch:'
     owasp:
