@@ -1165,16 +1165,20 @@ span.day {
 }
 
 #body_content_left .event section {
-    margin-bottom: 8px;
+    margin-bottom: 16px;
 }
 
-.start_end p {
+.start_end {
     line-height: 2.4em;
     font-style: italic;
 }
 
 #share_this_event {
     margin-bottom: 32px;
+}
+
+.archives {
+    clear: both;
 }
 
 .archives ul {
