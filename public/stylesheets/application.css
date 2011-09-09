@@ -1156,19 +1156,30 @@ span.day {
 #prevnext_nav {
     clear: both;
     display: block;
-    height: 100px;
+    margin-bottom: 32px;
 }
 
 .event h3 {
     margin-bottom: 8px;
+    padding-top: 4px;
 }
 
 #body_content_left .event section {
     margin-bottom: 8px;
 }
 
+.start_end p {
+    line-height: 2.4em;
+    font-style: italic;
+}
+
 #share_this_event {
     margin-bottom: 32px;
+}
+
+.archives ul {
+    width: 30%;
+    float: left;
 }
 
 @media only screen and (min-device-width: 920px) {
