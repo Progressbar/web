@@ -72,7 +72,7 @@ $(function() {
                         clearTimeout(promo_timer);
                         promo_auto_animate = false;
                     }
-                }, promo_active_item ? 4000 : 100);
+                }, promo_active_item ? 4000 : 10);
 
                 return false;
             }
