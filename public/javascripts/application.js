@@ -123,28 +123,9 @@ $(function() {
     });
 
     var evil_libs_loaded = false;
-
-    $("#share-btn").bind('click', function () {
-        if ($('#share').length == 0) {
-            $('<div style="display:none;"><div id="share">' +
-                '<span class="share-btn"><g:plusone size="tall"></g:plusone></span>' +
-                '<span class="share-btn"><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="progressbarsk">Tweet</a></span>' +
-                '<span class="share-btn"><script type="IN/Share" data-counter="top"></script></span>' +
-                '<span class="share-btn"><fb:like href="" send="false" layout="box_count" width="60" height="64" show_faces="false" action="like" font="arial"></fb:like></span>' +
-                '<p style="padding-left: 8px; padding-top: 8px;">Ďakujeme, že o nás dávate vedieť. <br />Thank you gave to know about us.</p>' +
-                '</div></div>').appendTo(body);
-        }
-        $.fancybox(
-            $('#share').html(),
-            {
-                'autoDimensions' : false,
-                'width'          : 350,
-                'height'         : 150
-            }
-            );
-
+    function load_evils () {
         if (!evil_libs_loaded) {
-            var p = this.parentNode,
+            var p = document.body,
             s = null;
             var libs = [
             'http://platform.twitter.com/widgets.js',
@@ -161,8 +142,32 @@ $(function() {
 
                 p.appendChild(s);
             }
+            
             evil_libs_loaded = true;
+        }        
+    }
+    
+    if ($('#share_this_event').length > 0) {
+        load_evils();
+    }
+    
+    $("#share-btn").bind('click', function () {
+        if ($('#share').length == 0) {
+            $('<div style="display:none;"><div id="share">' +
+                '<span class="share-btn"><g:plusone size="tall"></g:plusone></span>' +
+                '<span class="share-btn"><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="progressbarsk">Tweet</a></span>' +
+                '<span class="share-btn"><script type="IN/Share" data-counter="top"></script></span>' +
+                '<span class="share-btn"><fb:like href="" send="false" layout="box_count" width="60" height="64" show_faces="false" action="like" font="arial"></fb:like></span>' +
+                '<p style="padding-left: 8px; padding-top: 8px;">Ďakujeme, že o nás dávate vedieť. <br />Thank you gave to know about us.</p>' +
+                '</div></div>').appendTo(body);
         }
+        $.fancybox($('#share').html(),  {
+                'autoDimensions' : false,
+                'width'          : 350,
+                'height'         : 150
+        });
+        
+        load_evils();
 
         return false;
     });
@@ -277,7 +282,6 @@ $(function() {
                     success: function (response) {
                         if (response) {
                             var data = {},
-                            tmp_date = null,
                             tmp_start_date = null,
                             tmp_end_date = null,
                             tmp_key = null,
