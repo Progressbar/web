@@ -1,6 +1,6 @@
 class NewsletterMailer < ActionMailer::Base
   
-  default :from => 'info@progressbar.sk', :to => 'keraml@gmail.com'
+  default :from => 'info@progressbar.sk', :to => 'general-discussion@lists.progressbar.sk'
   
   def new()
     mail(
