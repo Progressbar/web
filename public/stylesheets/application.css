@@ -895,7 +895,6 @@ section#address {
     display: inline-block;
     min-width: 40px;
     min-height: 30px;
-    background: url(/images/activity.gif) no-repeat 20% 0%;
 }
 
 #share {
@@ -1191,4 +1190,3 @@ span.day {
         background: #000 url(/images/content/promo/promo-v2.jpg) no-repeat top left;
     }
 }
-
