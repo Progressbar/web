@@ -26,7 +26,7 @@ class PagesController < ApplicationController
       error_404
     end
   end
-
+  
   private
 
   def events_in_current_week ()

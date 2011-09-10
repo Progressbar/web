@@ -1,5 +1,5 @@
 class Notifier < ActionMailer::Base
-  NOTIFICATION_CONTACT_EMAIL = 'keraml@gmail.com'
+  NOTIFICATION_CONTACT_EMAIL = 'info@progressbar.sk'
   
   def registration_notification(registration)
     @sender = registration
@@ -7,5 +7,5 @@ class Notifier < ActionMailer::Base
          :from => registration[:email],
          :subject => "New registration #{registration[:username]}")
   end
-
+  
 end
