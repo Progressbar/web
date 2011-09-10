@@ -128,9 +128,9 @@ $(function() {
             var p = document.body,
             s = null;
             var libs = [
-            'http://platform.twitter.com/widgets.js',
-            'http://platform.linkedin.com/in.js',
-            'http://connect.facebook.net/en_US/all.js#xfbml=1',
+            'https://platform.twitter.com/widgets.js',
+            'https://platform.linkedin.com/in.js',
+            'https://connect.facebook.net/en_US/all.js#xfbml=1',
             'https://apis.google.com/js/plusone.js'
             ];
 
