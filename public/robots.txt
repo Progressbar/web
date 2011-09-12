@@ -16,3 +16,6 @@ Disallow: /en/admin/
 Disallow: /en/member/
 Disallow: /en/search
 Disallow: /en/users/
+
+Disallow: /events/category/
+Disallow: /en/events/category/
