@@ -1,3 +1,4 @@
+<% if @event %>
 <section id="calendar">
   <header>
     <h2><%= link_to(t('events'), @events_page.url) %>
@@ -5,13 +6,14 @@
   </header>
   <div class="content">
     <div class="event">
-      <h3><a href="https://www.progressbar.sk/blog/tik-art-radio-days-6th-till-11th-of-september-2011">TIK Art Radio Days</a></h3>
+      <h3><%= link_to @event.title, @event %></h3>
       <p>
-        TIK Radiodays is part of TimeInventorsKabinet, a project dealing with alternative time control systems, investigating into time relations within biological and circumstantial ecologies. Within the frame of this project wind-time was established, that we take as a base for measuring a new time.
+        <%= simple_format(truncate strip_tags(@event.description), :length => 200) %>
       </p>
-      <p>6th till 11th of September 2011</p>
-      
-      <a href="http://col-me.info/artradio" title="Oficial project website">col-me.info/artradio</a>
+      <section class="start_end">
+        <span class="start"><%= @event.start_at.strftime('%b %e, %Y %l:%M %p') %></span><span class="delim">&nbsp;|&nbsp;</span><span class="end"><%= @event.end_at.strftime('%b %e, %Y %l:%M %p') %></span>
+      </section>
     </div>
   </div>
 </section>
+<% end %>
