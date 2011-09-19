@@ -6,9 +6,10 @@ class PagesController < ApplicationController
         :page => 1,
         :per_page => 3
       })
-
-    events_in_current_week()
- 
+    
+    event = Event.where('start_at >= ?', Time.now).order('featured ASC').limit(1)
+    @event = event.empty? ? Event.last : event.last
+    
     error_404 unless (@page = Page.where(:link_url => '/').first).present?
   end
   
