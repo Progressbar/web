@@ -10,10 +10,10 @@
       <section class="start_end">
         <span class="start"><%= @event.start_at.strftime('%b %e, %Y %l:%M %p') %></span><span class="delim">&nbsp;|&nbsp;</span><span class="end"><%= @event.end_at.strftime('%b %e, %Y %l:%M %p') %></span>
       </section>
-      <p>
+      <div class="description">
         <%= simple_format(truncate strip_tags(@event.description), :length => 256) %>
-        &nbsp;<%= link_to('viac', @events_page.url) %>
-      </p>
+        <%= link_to('Prejsť na detail.', @events_page.url) %>
+      </div>
     </div>
   </div>
 </section>
