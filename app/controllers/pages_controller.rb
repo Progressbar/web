@@ -8,7 +8,7 @@ class PagesController < ApplicationController
       })
     
     event = Event.where('start_at >= ?', Time.now).order('featured ASC').limit(1)
-    @event = event.empty? ? Event.last : event.last
+    @event = event.empty? ? Event.last : event.first
     
     error_404 unless (@page = Page.where(:link_url => '/').first).present?
   end
