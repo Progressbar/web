@@ -1139,7 +1139,8 @@ span.day {
 
 .individual_event {
     padding: 8px 0px;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
+    clear: both;
 }
 
 .individual_event h1 {
@@ -1150,6 +1151,8 @@ span.day {
 .individual_event .event_image {
     float: left;
     margin: 0 16px 8px 0;
+    min-height: 150px;
+    min-width: 150px;
 }
 
 #prevnext_nav {
