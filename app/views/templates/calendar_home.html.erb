@@ -7,12 +7,13 @@
   <div class="content">
     <div class="event">
       <h3><%= link_to @event.title, @event %></h3>
-      <p>
-        <%= simple_format(truncate strip_tags(@event.description), :length => 200) %>
-      </p>
       <section class="start_end">
         <span class="start"><%= @event.start_at.strftime('%b %e, %Y %l:%M %p') %></span><span class="delim">&nbsp;|&nbsp;</span><span class="end"><%= @event.end_at.strftime('%b %e, %Y %l:%M %p') %></span>
       </section>
+      <p>
+        <%= simple_format(truncate strip_tags(@event.description), :length => 256) %>
+        &nbsp;<%= link_to('viac', @events_page.url) %>
+      </p>
     </div>
   </div>
 </section>
