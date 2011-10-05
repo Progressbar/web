@@ -1172,6 +1172,9 @@ span.day {
     padding-top: 4px;
 }
 
+.event .desc {
+    min-height: 90px;
+}
 
 .start_end {
     line-height: 2.4em;
@@ -1179,6 +1182,7 @@ span.day {
 }
 
 #share_this_event {
+    padding-top: 16px;
     margin-bottom: 32px;
     clear: both;
 }
