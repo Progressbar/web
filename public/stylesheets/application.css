@@ -952,6 +952,9 @@ span.day {
 }
 
 #prevnext_nav {
+    clear: both;
+    display: block;
+    margin-bottom: 32px;
     text-align: center;
 }
 
@@ -1139,6 +1142,7 @@ span.day {
 
 .individual_event {
     padding: 8px;
+    margin-bottom: 16px;
 }
 
 .individual_event h1 {
@@ -1146,29 +1150,28 @@ span.day {
     padding: 0;
 }
 
+.events .individual_event:last-child {
+    margin-bottom: 0px;
+}
+
 .individual_event .event_image {
     float: left;
-    margin: 0 16px 0 0;
+    margin: 0 8px 0 0;
     min-height: 150px;
     min-width: 150px;
 }
 
 #featured_events {
     border: solid 1px #404040;
-    margin-bottom: 16px;
-    background: #121212;
-}
-
-#prevnext_nav {
-    clear: both;
-    display: block;
     margin-bottom: 32px;
+    background: #121212;
 }
 
 .event h3 {
     margin-bottom: 8px;
     padding-top: 4px;
 }
+
 
 .start_end {
     line-height: 2.4em;
