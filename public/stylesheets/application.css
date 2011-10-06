@@ -871,35 +871,12 @@ section#address {
     color: #333;
     text-align: left;
 }
+
 #fancybox-content a:hover {
     background: #333;
     text-decoration: none;
 }
 
-#feedback {
-    padding-top: 16px;
-}
-
-#feedback a {
-    font-size: 15px;
-    font-weight: bold;
-    padding: 3px 12px;
-    background: #000;
-    border: solid 1px #222;
-    border-bottom-color: #444;
-    margin-right: 16px;
-}
-
-.share-btn {
-    margin: 8px;
-    display: inline-block;
-    min-width: 40px;
-    min-height: 30px;
-}
-
-#share {
-    padding: 8px;
-}
 
 .vevent {
     list-style: none;
@@ -1179,6 +1156,18 @@ span.day {
 .start_end {
     line-height: 2.4em;
     font-style: italic;
+}
+
+.share-btn {
+    margin-right: 16px;
+    display: inline-block;
+    vertical-align: top;
+    min-width: 40px;
+    min-height: 30px;
+}
+
+#feedback {
+    padding-top: 32px;
 }
 
 #share_this_event {
