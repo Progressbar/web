@@ -88,7 +88,7 @@
 <div id="copy">
   <%= t('.copyright', :year => Time.now.year,
     :site_name => RefinerySetting.find_or_set(:site_name, 'Company Name')) %>,
-  <%= link_to(@colophon_page.title, @colophon_page.url, :class => 'todo') %>
+  <%= link_to(@colophon_page.title, @colophon_page.url) %>
 </div>
 <nav id='bottom-menu' class='menu clearfix'>
   <%= link_to(@blog_page.title, @blog_page.url) %> <span class="delim">&nbsp;|&nbsp;</span>
