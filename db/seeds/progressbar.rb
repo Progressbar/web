@@ -15,7 +15,7 @@ RefinerySetting.set(:approximate_ascii, {:value => true, :restricted => true, :s
 RefinerySetting.set(:strip_non_ascii, {:value => true, :restricted => true, :scoping => 'blog'})
 
 RefinerySetting.set(:use_resource_caching, {:value => true, :restricted => true})
-RefinerySetting.set(:cache_pages_backend, {:value => :sk, :restricted => true})
+RefinerySetting.set(:cache_pages_backend, {:value => true, :restricted => true})
 RefinerySetting.set(:frontend_refinery_stylesheets_enabled, {:value => false, :restricted => true})
 
 #<RefinerySetting id: 16, name: "cache_pages_backend",
