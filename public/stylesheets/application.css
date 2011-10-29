@@ -146,6 +146,43 @@ button { width: auto; overflow: visible; }
     float: right;
 }
 
+/* editor styles */
+.image-align-left {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.image-align-right {
+    float: right;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.font-size-small {
+    font-size: 0.75em;
+}
+
+.font-size-large {
+    font-size: 1.25em;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.text-align-left {
+    text-align: left;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.text-align-justify {
+    text-align: justify;
+}
+
 .left-half {
     float: left;
     width: 49%;
@@ -417,6 +454,10 @@ menu li .selected:hover {
     clear: both;
     min-height: 60px;
     margin-bottom: 16px;
+}
+
+#blogs img, #blog_posts img {
+    max-height: 120px;
 }
 
 #footer-wrapper {
