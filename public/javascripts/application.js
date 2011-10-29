@@ -137,7 +137,7 @@ $(function() {
             while (libs.length) {
                 s = document.createElement('script');
                 s.type = 'text/javascript';
-                s.async = true;
+//                s.async = true;
                 s.src = libs.shift();
 
                 p.appendChild(s);
