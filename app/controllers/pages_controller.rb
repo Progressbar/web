@@ -29,7 +29,7 @@ class PagesController < ApplicationController
   end
   
   def actions
-    @page = Page.find('akcie-a-organizacia')
+    @page = Page.find('akcie-a-organizacia2')
     @inquiry = Inquiry.new
   end
   
