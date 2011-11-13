@@ -2,6 +2,7 @@ Progressbar::Application.routes.draw do
   
   match '/pridaj-sa' => 'registrations#index'
   match '/join-us' => 'registrations#index'
+  match '/akcie-a-organizacia' => 'pages#actions'
   
   resources :newsletter
   

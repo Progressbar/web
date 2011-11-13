@@ -81,6 +81,15 @@ p {
     line-height: 150%;
 }
 
+dt {
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 108%;
+}
+dd {
+    padding: 8px 16px;
+}
+
 html { overflow-y: scroll; }
 
 a:hover, a:active { outline: none; }
@@ -164,7 +173,7 @@ button { width: auto; overflow: visible; }
 }
 
 .font-size-large {
-    font-size: 1.25em;
+    font-size: 1.235em;
 }
 
 .text-align-center {
