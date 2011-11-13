@@ -28,6 +28,11 @@ class PagesController < ApplicationController
     end
   end
   
+  def actions
+    @page = Page.find('akcie-a-organizacia')
+    @inquiry = Inquiry.new
+  end
+  
   private
 
   def events_in_current_week ()
