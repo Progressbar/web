@@ -1,6 +1,6 @@
 sk:
   submit: 'Odoslať'
-  events: Udalosti
+  events: Najbližšia akcia
   mailing_list:
     title: 'E-mailová konferencia'
   events_mailinglist_subscription_success: 'Prihlásenie do e-mailovej konferencie prebehlo úspešne a na Váš e-mail boli zaslané aktivačné údaje.'
