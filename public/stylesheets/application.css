@@ -450,6 +450,10 @@ menu li .selected:hover {
     float: left;
 }
 
+#calendar .event {
+    padding-bottom: 8px;
+}
+
 #blogs {
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACHUlEQVRYw+2XuW4aQRjHXeQBXOTwI7hM4WKVKH4KyhSIU9w3LOI+xb2c4YbCJaWLjZRIKfIIKfYB8gguUlB8+X8SIMvC8VoMFJFH+mlmvh2+37fDSKM9O3tp/2tbLpfni8XCzfD4pHJIP8zn86+z2Yw2/ADXJ5FPp9NPk8nkG6D7jMfj7yji41HliqKcj0YjbTgc0j742WAwuDhqEf1+X4GE/sGvbDb7SqiU36rX69W3ibvdrgLoMbD2s1B5u93WAHU6ndW2CMwVju2j1WpdCZHXarULJNMA3WNXBM6E8uAZcUyYvNFoaID2sCui2Wwq2ziPhcmBBugx6vX6rohqtaowQuRIJAG1UqnQU2DdkIsVduA4WalU0gDppVwu+4XIi8WiVCgUVEB6yefzQ/wNh+8AkkhABaSXXC73BTvwTog8lUqp6XSa9JLJZAb43duD5YlEQkomkyp6egaDcDh8uDwajUrxeFwF9Az64I0QuSzLaiwWI71gfS8UCr0WcuIjkcgtIL1gy1fCbjhOhDe527AG9AQroddrMBiUAoEAgRu/329Av97M97ESfrf7fD7Z6/WSx+Mx8hy9AbE1xx4gXs7N5XKpbrebnE7n+20MYwNia44zWHMcOSd1OBx3gAvQ7Hb7FcYWcAv+bOLHkXODQIKU9rAGP202m3w0OTcWWK1W2vDbYrFMgcFoNJ7mw8JkMslmszkM4eXLt92p2l/HQMLN/cbZkAAAAABJRU5ErkJggg==');
     float: right;
@@ -1239,7 +1243,7 @@ span.day {
 }
 
 #new-action {
-    padding: 8px 0px;
+    padding: 16px 0px;
 }
 
 #new-action .note {
