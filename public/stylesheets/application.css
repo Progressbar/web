@@ -214,6 +214,10 @@ button { width: auto; overflow: visible; }
     clear: both;
 }
 
+.note {
+    font-size: 12px;
+}
+
 .placeholder .field .placeholder-fallback {
     display: none;
 }
@@ -1083,7 +1087,6 @@ span.day {
 }
 
 #supporter .note {
-    font-size: 12px;
     margin-top: 16px;
 }
 
@@ -1235,6 +1238,13 @@ span.day {
     float: left;
 }
 
+#new-action {
+    padding: 8px 0px;
+}
+
+#new-action .note {
+    margin-top: 8px;
+}
 
 @media only screen and (min-device-width: 920px) {
     .promo-item {

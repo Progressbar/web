@@ -1,7 +1,7 @@
 begin
   ::I18n.locale = :sk
   
-  p_akcie_title = 'Akcie a organizácia2'
+  p_akcie_title = 'Akcie a organizácia'
   p_akcie = Page.find_by_title(p_akcie_title)
   
   unless p_akcie
