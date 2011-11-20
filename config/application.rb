@@ -81,6 +81,7 @@ module Progressbar
     require 'rack/rewrite'
 
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
+      r301 '/oficiality/akcie-a-organizacia', '/akcie-a-organizacia'
       r301 '/sk', '/'
       r301 '/sponsors', '/oficiality/sponzori'
       r301 '/sk/sponsors', '/oficiality/sponzori'
