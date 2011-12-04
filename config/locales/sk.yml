@@ -51,7 +51,9 @@ sk:
     search_form:
       search_site_for: 'Hľadaj..'
     header:
-      join_us: 'Pridaj sa'
+      registration: 'Registrácia'
+      new_event: 'Nová udalosť'
+      for_members: 'Pre členov'
     promo:
       welcome_on_site: 'Vitajte na stránkach'
       first_slovak_hackerspace: 'prvého slovenského <a href="http://en.wikipedia.org/wiki/Hackerspace">hackerspace</a>'

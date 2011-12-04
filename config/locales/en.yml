@@ -47,7 +47,9 @@ en:
     search_form:
       search_site_for: 'Search..'
     header:
-      join_us: 'Join us'
+      registration: 'Registration'
+      new_event: 'New event'
+      for_members: 'For members'
     promo:
       welcome_on_site: 'Welcome on site'
       first_slovak_hackerspace: 'first slovak <a href="http://en.wikipedia.org/wiki/Hackerspace">hackerspace</a>'
