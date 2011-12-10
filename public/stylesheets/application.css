@@ -1208,11 +1208,13 @@ span.day {
 
 .event .desc {
     min-height: 90px;
+    margin-left: 160px;
 }
 
-.start_end {
+.event .start_end {
     line-height: 2.4em;
     font-style: italic;
+    margin-left: 160px;
 }
 
 .share-btn {
@@ -1231,6 +1233,7 @@ span.day {
     padding-top: 16px;
     margin-bottom: 32px;
     clear: both;
+    margin-left: 160px;
 }
 
 .archives {
