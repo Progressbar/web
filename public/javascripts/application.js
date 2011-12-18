@@ -104,8 +104,8 @@ $(function() {
                 },
                 error: function( xhr, status, index, anchor ) {
                     $( anchor.hash ).html(
-                    "Couldn't load this tab. We'll try to fix this as soon as possible."
-                );
+                        "Couldn't load this tab. We'll try to fix this as soon as possible."
+                        );
                 }
             }
         });
@@ -117,38 +117,50 @@ $(function() {
 
     $("#feedback-btn").bind('click', function () {
         $.fancybox(
-        '<iframe src="https://spreadsheets.google.com/spreadsheet/embeddedform?formkey=dHBPbTMwOHBvMzZVLVEzM09wanh0WEE6MQ" width="640" height="570" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>'
-    );
+            '<iframe src="https://spreadsheets.google.com/spreadsheet/embeddedform?formkey=dHBPbTMwOHBvMzZVLVEzM09wanh0WEE6MQ" width="640" height="570" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>'
+        );
         return false;
     });
-
     var evil_libs_loaded = false;
     function load_evils () {
         if (!evil_libs_loaded) {
             var p = document.getElementsByTagName('link')[0],
-            s = null;
-            var libs = [
-                
-//                'https://platform.twitter.com/widgets.js',
-//                'https://platform.linkedin.com/in.js',
-//                'https://apis.google.com/js/plusone.js'
-                   '/javascripts/evil.js',                   
-                'https://connect.facebook.net/en_US/all.js#xfbml=1'
-            ];
+                s = null,
+                good_libs = [
+                    'https://platform.twitter.com/widgets.js',
+                    'https://apis.google.com/js/plusone.js'
+                    //                   '/javascripts/evil.js'
+                ],
+                // sposobuju problemy s certifikatom pri pristupe cez https
+                bad_libs = [
+                    'https://platform.linkedin.com/in.js',
+                    'https://connect.facebook.net/en_US/all.js#xfbml=1'
+                ];
 
-            while (libs.length) {
+            while (good_libs.length) {
                 s = document.createElement('script');
                 s.type = 'text/javascript';
                 s.async = 1;
-                s.src = libs.shift();
+                s.src = good_libs.shift();
 
                 p.appendChild(s);
+            }
+
+            if (document.location.protocol === 'http:') {
+                while (bad_libs.length) {
+                    s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = 1;
+                    s.src = bad_libs.shift();
+
+                    p.appendChild(s);
+                }
             }
 
             evil_libs_loaded = true;
         }
     }
-    
+
 
     $('#feedback').html('<div id="share">' +
         '<span class="share-btn"><g:plusone size="tall"></g:plusone></span>' +
@@ -159,24 +171,24 @@ $(function() {
 
 
     load_evils();
-    
+
 
 
     $('a.todo').bind('click',
-    function () {
-        $.fancybox(
-        '<h2>TODO</h2><p>Obsah tejto stránky čaká na teba. ;-)<br />' +
-            '<a href="https://github.com/Progressbar/web">Prejsť na Github</a><br />' +
-            '<span class="note">Content for this section is not currently available.</span>' +
-            '</p>',
-        {
-            'autoDimensions' : false,
-            'width'          : 350,
-            'height'         : 'auto'
-        }
-    );
-        return false;
-    });
+        function () {
+            $.fancybox(
+                '<h2>TODO</h2><p>Obsah tejto stránky čaká na teba. ;-)<br />' +
+                '<a href="https://github.com/Progressbar/web">Prejsť na Github</a><br />' +
+                '<span class="note">Content for this section is not currently available.</span>' +
+                '</p>',
+                {
+                    'autoDimensions' : false,
+                    'width'          : 350,
+                    'height'         : 'auto'
+                }
+                );
+            return false;
+        });
 
     $('#order a').not('.todo').fancybox();
 
