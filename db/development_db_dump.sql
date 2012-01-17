@@ -851,6 +851,6 @@ CREATE TABLE `users` (
 
 TRUNCATE `users`;
 INSERT INTO `users` (`id`, `username`, `email`, `encrypted_password`, `persistence_token`, `created_at`, `updated_at`, `perishable_token`, `current_sign_in_at`, `last_sign_in_at`, `current_sign_in_ip`, `last_sign_in_ip`, `sign_in_count`, `remember_token`, `reset_password_token`, `remember_created_at`) VALUES
-(1,	'ProgressBarSk',	'core@progressbar.sk',	'$2a$10$SIhrPN1iuz4GQ8VEQpKKIuJOUpNQ18Q8JDDN0lKU8WbArG8endsEy',	NULL,	'2011-06-07 17:48:02',	'2011-06-25 13:23:57',	NULL,	'2011-06-25 13:23:57',	'2011-06-22 17:29:02',	'127.0.0.1',	'127.0.0.1',	16,	'l76VtYwvVmvp85plAixY',	NULL,	'2011-06-19 23:13:57');
+(1,	'adminko',	'nieco@niekde.sk',	'$2a$10$SIhrPN1iuz4GQ8VEQpKKIuJOUpNQ18Q8JDDN0lKU8WbArG8endsEy',	NULL,	'2011-06-07 17:48:02',	'2011-06-25 13:23:57',	NULL,	'2011-06-25 13:23:57',	'2011-06-22 17:29:02',	'127.0.0.1',	'127.0.0.1',	16,	'l76VtYwvVmvp85plAixY',	NULL,	'2011-06-19 23:13:57');
 
 -- 2011-06-25 15:41:39
