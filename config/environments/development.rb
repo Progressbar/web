@@ -1,13 +1,3 @@
-ActionMailer::Base.smtp_settings = {
-  :tls => true,
-  :address => "smtp.gmail.com",
-  :port => "587",
-  :domain => "localhost",
-  :authentication => :plain,
-  :user_name => "keraml@gmail.com",
-  :password => "marek_radecki"
-}
-
 Progressbar::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
