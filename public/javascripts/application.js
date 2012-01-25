@@ -290,10 +290,10 @@ $(function() {
                             try  {
                                 for (i = 0; i < response.length; i++) {
                                     tmp_start_date = new Date(response[i]['event']['start_at']);
-//                                    tmp_start_date = new Date(tmp_start_date.getFullYear(), tmp_start_date.getMonth(), tmp_start_date.getDate(), tmp_start_date.getHours() - 2, tmp_start_date.getMinutes());
+                                    tmp_start_date = new Date(tmp_start_date.getFullYear(), tmp_start_date.getMonth(), tmp_start_date.getDate(), tmp_start_date.getHours() - 1, tmp_start_date.getMinutes());
                                     response[i]['event']['start_at'] = tmp_start_date;
                                     tmp_end_date = new Date(response[i]['event']['end_at']);
-//                                    tmp_end_date = new Date(tmp_end_date.getFullYear(), tmp_end_date.getMonth(), tmp_end_date.getDate(), tmp_end_date.getHours() - 2, tmp_end_date.getMinutes());
+                                    tmp_end_date = new Date(tmp_end_date.getFullYear(), tmp_end_date.getMonth(), tmp_end_date.getDate(), tmp_end_date.getHours() - 1, tmp_end_date.getMinutes());
                                     response[i]['event']['end_at'] = tmp_end_date;
 
                                     var diff_days = tmp_end_date.getDayOfYear() - tmp_start_date.getDayOfYear();
