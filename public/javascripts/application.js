@@ -92,7 +92,6 @@ $(function() {
         return false;
     });
 
-
     var tabs = $('.tabs');
     if(tabs.length > 0) {
         tabs.tabs({
@@ -118,25 +117,22 @@ $(function() {
     $("#feedback-btn").bind('click', function () {
         $.fancybox(
             '<iframe src="https://spreadsheets.google.com/spreadsheet/embeddedform?formkey=dHBPbTMwOHBvMzZVLVEzM09wanh0WEE6MQ" width="640" height="570" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>'
-        );
+            );
         return false;
     });
+
     var evil_libs_loaded = false;
     function load_evils () {
         if (!evil_libs_loaded) {
             var p = document.getElementsByTagName('link')[0],
-                s = null,
-                good_libs = [
-                    'https://platform.twitter.com/widgets.js',
-                    'https://apis.google.com/js/plusone.js'
-                    //                   '/javascripts/evil.js'
-                ],
-                // sposobuju problemy s certifikatom pri pristupe cez https
-                bad_libs = [
-                    'https://platform.linkedin.com/in.js',
-                    'https://connect.facebook.net/en_US/all.js#xfbml=1'
-                ];
-
+            s = null,
+            good_libs = [
+            'https://platform.twitter.com/widgets.js',
+            'https://apis.google.com/js/plusone.js',
+            'https://platform.linkedin.com/in.js',
+            'https://connect.facebook.net/en_US/all.js#xfbml=1'
+            ];
+            
             while (good_libs.length) {
                 s = document.createElement('script');
                 s.type = 'text/javascript';
@@ -146,21 +142,9 @@ $(function() {
                 p.appendChild(s);
             }
 
-            if (document.location.protocol === 'http:') {
-                while (bad_libs.length) {
-                    s = document.createElement('script');
-                    s.type = 'text/javascript';
-                    s.async = 1;
-                    s.src = bad_libs.shift();
-
-                    p.appendChild(s);
-                }
-            }
-
             evil_libs_loaded = true;
         }
     }
-
 
     $('#feedback').html('<div id="share">' +
         '<span class="share-btn"><g:plusone size="tall"></g:plusone></span>' +
@@ -169,10 +153,7 @@ $(function() {
         '<span class="share-btn"><fb:like href="" send="false" layout="box_count" width="60" height="64" show_faces="false" action="recommend" colorscheme="dark" font="arial"></fb:like></span>' +
         '</div>');
 
-
     load_evils();
-
-
 
     $('a.todo').bind('click',
         function () {
@@ -193,7 +174,7 @@ $(function() {
     $('#order a').not('.todo').fancybox();
 
     var kCalendar = function (holder) {
-        var calendar_data = 'test';
+        var calendar_data = [];
 
         var kCalendar = {
             datepicker : '',
@@ -283,10 +264,12 @@ $(function() {
                     success: function (response) {
                         if (response) {
                             var data = {},
-                            tmp_start_date = null,
-                            tmp_end_date = null,
-                            tmp_key = null,
-                            tmp_date = null;
+                            diff_days,
+                            tmp_start_date,
+                            tmp_end_date,
+                            tmp_key,
+                            tmp_date;
+
                             try  {
                                 for (i = 0; i < response.length; i++) {
                                     tmp_start_date = new Date(response[i]['event']['start_at']);
@@ -296,7 +279,7 @@ $(function() {
                                     tmp_end_date = new Date(tmp_end_date.getFullYear(), tmp_end_date.getMonth(), tmp_end_date.getDate(), tmp_end_date.getHours() - 1, tmp_end_date.getMinutes());
                                     response[i]['event']['end_at'] = tmp_end_date;
 
-                                    var diff_days = tmp_end_date.getDayOfYear() - tmp_start_date.getDayOfYear();
+                                    diff_days = tmp_end_date.getDayOfYear() - tmp_start_date.getDayOfYear();
 
                                     for (var j = 0; j <= diff_days;j++) {
                                         tmp_date = new Date(tmp_start_date.getFullYear(), tmp_start_date.getMonth(), tmp_start_date.getDate() + j);
@@ -323,8 +306,6 @@ $(function() {
                     }
                 });
             },
-
-
 
             init: function(holder) {
                 var that = this;
