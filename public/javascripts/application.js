@@ -222,13 +222,14 @@ $(function() {
                             'class' : 'float-left',
                             'text' : ev.title.length > 25 ? $.trim(ev.title.substring(0, 25)) + '..' : ev.title
                         }).appendTo(holder);
-
-                        if (ev.start_at.getDayOfYear() === ev.end_at.getDayOfYear()) {
-                            $('<span>', {
-                                'class' : 'float-right',
-                                'text' : ev.start_at.getHours() + ':' + $.strPad(ev.start_at.getMinutes(), 2, 0) + ' - ' + ev.end_at.getHours() + ':' + $.strPad(ev.end_at.getMinutes(), 2, 0)
-                            }).appendTo(holder);
-                        }
+                        
+// zakomentovane kym nebude cas aplikovat patch pre aktualne data a odtestovat poriadne nastavnie casovych pasiem
+//                        if (ev.start_at.getDayOfYear() === ev.end_at.getDayOfYear()) {
+//                            $('<span>', {
+//                                'class' : 'float-right',
+//                                'text' : ev.start_at.getHours() + ':' + $.strPad(ev.start_at.getMinutes(), 2, 0) + ' - ' + ev.end_at.getHours() + ':' + $.strPad(ev.end_at.getMinutes(), 2, 0)
+//                            }).appendTo(holder);
+//                        }
                     }
                 }
 
@@ -273,10 +274,10 @@ $(function() {
                             try  {
                                 for (i = 0; i < response.length; i++) {
                                     tmp_start_date = new Date(response[i]['event']['start_at']);
-                                    tmp_start_date = new Date(tmp_start_date.getFullYear(), tmp_start_date.getMonth(), tmp_start_date.getDate(), tmp_start_date.getHours() - 1, tmp_start_date.getMinutes());
+//                                    tmp_start_date = new Date(tmp_start_date.getFullYear(), tmp_start_date.getMonth(), tmp_start_date.getDate(), tmp_start_date.getHours() - 1, tmp_start_date.getMinutes());
                                     response[i]['event']['start_at'] = tmp_start_date;
                                     tmp_end_date = new Date(response[i]['event']['end_at']);
-                                    tmp_end_date = new Date(tmp_end_date.getFullYear(), tmp_end_date.getMonth(), tmp_end_date.getDate(), tmp_end_date.getHours() - 1, tmp_end_date.getMinutes());
+//                                    tmp_end_date = new Date(tmp_end_date.getFullYear(), tmp_end_date.getMonth(), tmp_end_date.getDate(), tmp_end_date.getHours() - 1, tmp_end_date.getMinutes());
                                     response[i]['event']['end_at'] = tmp_end_date;
 
                                     diff_days = tmp_end_date.getDayOfYear() - tmp_start_date.getDayOfYear();
