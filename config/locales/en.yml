@@ -1,0 +1,102 @@
+en:
+  submit: 'Submit'
+  events: Events
+  mailing_list:
+    title: Mailing list
+  events_mailinglist_subscription_success: 'Login to mailing list was successful. Activation information has been sent to your e-mail.'
+  events_mailinglist_subscription_error: 'Sorry, login to mailing list failed, please try again later or let us know to info@progressbar.sk .'
+  general_mailinglist_subscription_success: 'Login to e-mail conference was successful. Activation information has been sent to your e-mail.'
+  general_mailinglist_subscription_error: 'Sorry, login to mailing list failed, please try again later or let us know to info@progressbar.sk .'
+  calendar:
+    title: 'Calendar'
+    full_schedule: 'Full schedule ›'
+    no_official_event: 'No program.'
+    explain_no_official_event: 'If you want to come visit us outside the official program, write to us at info@progressbar.sk and we welcome you.'
+    organize_action: "Organize action."
+    organize_action_explanation: "Send us an e-mail info@progressbar.sk, with specifying the date and type of event that you would be interested to organize."
+    organize_action_email_subject: "[progressbar] Organize event %{day}"
+    organize_action_email_body: "Ahoj, \n\rchcel by som u Vás %{day} zorganizovať akciu:\n\r\n\r== názov a bližší popis akcie == \n\r\n\rS pozdravom, \n\r == tvoje meno =="
+    week: 'week'
+    monday: 'Monday'
+    tuesday: 'Tuesday'
+    wednesday: 'Wdnesday'
+    thursday: 'Thursday'
+    friday: 'Friday'
+    saturday: 'Saturday'
+    sunday: 'Sunday'
+  blogs:
+    title: 'Blogs'
+    archive_posts: 'Archive posts ›'
+  inquiries:
+    new:
+      maps: Maps
+      contact_form: Contact form
+      foto_navigation: Foto navigation
+      interior: Interior
+  address:
+    title: 'Address'
+  top: 'Top'
+  license_note: 'Except where otherwise noted, content on this site is licensed under the following license: <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share-Alike License v3.0</a>.'
+  refinery:
+    search_form:
+      search_site_for: 'Search..'
+    header:
+      registration: 'Registration'
+      new_event: 'New event'
+      for_members: 'For members'
+    promo:
+      welcome_on_site: 'Welcome on site'
+      first_slovak_hackerspace: 'first slovak <a href="http://en.wikipedia.org/wiki/Hackerspace">hackerspace</a>'
+      we_are: '<strong>We are</strong> first physical space in <strong>Bratislava</strong> for meeting <strong>hackers</strong>, <br />digital <strong>artists</strong>, geeks, hardware <strong>wizards</strong> <br />and <strong>likeminded people</strong>.'
+      we_are_located: 'We are located in the center of <strong>Bratislava</strong> <br />at <strong>Cukrová 14</strong>, near the main bus station <strong>Mlynské Nivy</strong>.'
+      interesting_lectures: ''
+      we_try_to_by_open_and_free: 'Most of events organized at the hackerspace <br />are open for public and for free. You are welcome visit to us!'
+      what: 'What'
+      why: 'Why'
+      where: 'Where'
+      more: 'More'
+      join_to_us: 'Join to us'
+      or: or
+      support_us: 'support us!'
+  pages:
+    join:
+      member: Member
+      month: 'month'
+      students_discounts: 'for students <strong>50% discount</strong>'
+      opportunity_to_use_space_and_equipment: 'Opportunity to use space and equipment of hackerspace'
+      discounts_on_various_items_and_purchases: 'Discounts on various items and purchases'
+      discounts_on_international_conferences: 'Discounts on international conferences'
+      involvement_in_the_running_progressbar: 'Involvement in the running of Progressbar hackerspace'
+      access_to_nonpublic_material_information: 'Access to non-public materials and informations'
+      and_much_more: '..and even more'
+      create_registration: 'Register now'
+      supporter: Supporter
+      join_us_title: 'Join us and become a member or supporter of hackerspace.'
+      voluntary: 'Free'
+      no_commitments_and_obligations: 'No commitments and obligations'
+      any_type_height_and_form_of_aid: 'Any type, height and form of aid'
+      opportunity_to_become_an_active_member: 'Opportunity to become an active member'
+      optional_registration_between_the_sponsors_and_supporters: 'Optional <a href="/en/legal-stuff/sponsors">registration between the sponsors and supporters</a>'
+      feel_good: 'Good feeling ;-)'
+      more_information_and_other_options: '<a href="#todo" class="todo">More information and other options</a>'
+      account_number: 'Account number:'
+      for_payments_from_abroad: 'for payments from abroad'
+      for_membership_payment_enter_the_variable_as_a_symbol_of_their_membership_number: 'For membership payment, enter the variable as a symbol of their membership number.'
+      do_you_like_new_web: 'Do you like new web?'
+      support_web_development: 'Support web development!'
+  feedback: Feedback
+  share_with_friends: Share this page
+  projects:
+    title: 'Some ours active projects:'
+    owasp:
+      title: 'OWASP regular meetings'
+      desc: 'Lectures on web security, workshops and presentations OWASP projects.'
+    arduino:
+      title: 'Arduino hacking'
+      desc: 'Arduino is an open-source electronic prototype platform based on easy-to-use software and hardware.'
+    bitcoin:
+      title: 'Bitcoin - virtual currency'
+      desc: 'Bitcoin bitcoi bitco bitc bit bi b.'
+    videoarchive:
+      title: 'Video Archive'
+      desc: 'Video / audio records from some previous events in Progressbar.'

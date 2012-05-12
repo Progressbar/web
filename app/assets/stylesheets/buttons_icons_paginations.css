@@ -1,0 +1,84 @@
+
+#prevnext_nav {
+    clear: both;
+    display: block;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+#prevnext_nav .prev {
+    float: left;
+}
+
+#prevnext_nav .next {
+    float: right;
+}
+
+#prevnext_nav .third {
+    width: 40%;
+}
+
+a.il {
+    display: block;
+    width: 100px;
+    margin-right: 15px;
+    float: left;
+    text-align: center;
+}
+
+.button, .button:visited, .button:link,
+.pagination a, .pagination em, .pagination span
+{
+    background: #008000;
+    box-shadow: 0px 5px 15px #111;
+    display: inline-block;
+    padding: 5px 10px 6px;
+    border-bottom: solid 5px #006400;
+    color: #fff;
+    text-decoration: none;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.5);
+    position: relative;
+    cursor: pointer;
+}
+
+.button.disabled {
+    background: none;
+}
+
+.pagination em {
+    background-color: #cdcdcd;
+    cursor: default;
+    color: #222;
+    text-shadow: 0px -1px 1px #fff;
+}
+
+.pagination span {
+    background: transparent;
+    cursor: default;
+}
+
+.small.button, .small.button:visited { font-size: 11px; }
+
+.button, .button:visited, .medium.button, .medium.button:visited {
+    font-size: 13px;
+    line-height: 1;
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+}
+
+.large.button, .large.button:visited {
+    font-size: 15px;
+    padding: 10px 16px 11px;
+}
+
+a.button:hover {
+    background-color: #079A07;
+}
+
+a.button:active {
+    position: relative;
+    top: 3px;
+    border-bottom-width: 1px;
+}

@@ -1,0 +1,66 @@
+<% if @page %>
+  <% if @page == @records_page %>
+    <% content_for :body do %>
+      <%=raw @page.content_for(:body) %>
+      <table>
+        <% @records.each do |k, r|  %>
+          <tr>
+            <td class="title"><%= r[:title] %></td>
+            <td class="date">
+              <%= r[:date] %>
+            </td>
+            <td class="formats">
+              <% r[:format].each do |f, s| %>
+                <a href="<%= "#{r[:repository].first}/#{k}.#{f}" %>">
+                  <%= f %> -
+                  <%= s %>
+                </a>
+                <%= " / " %>
+              <% end %>
+            </td>
+          </tr>
+        <% end if @records %>
+      </table>
+    <% end %>
+    <% content_for :side_body do %>
+    <% end %>
+  <% end %>
+<% end %>
+<% if @page == @join_us_page %>
+  <% content_for :perex do %>
+    <%=raw @page.content_for(:perex) %>
+    <div class="clearfix">
+      <div class="join-box left-half">
+        <footer class="footer">
+          <%= render '/refinery/registrations/registrations/form' %>
+        </footer>
+      </div>
+      <div class="join-box right-half">
+        <footer class="footer">
+          <p>
+            <%= t('.account_number') %>
+            <%= Refinery::Setting.find_or_set(:site_bank_account, "2600121198/8330") %><br />
+            <abbr title="<%= t('.for_payments_from_abroad') %>">IBAN</abbr>:
+              <%= Refinery::Setting.find_or_set(:site_bank_iban, "SK1583300000002600121198") %><br />
+              BIC/SWIFT:
+              <%= Refinery::Setting.find_or_set(:site_bank_swift, "FIOZSKBAXXX") %>
+          </p>
+          <p>
+            Bitcoin: <%= Refinery::Setting.find_or_set(:site_bitcoin, "1pbarBA4zP1bbCRydBUxweQxVfsaAHqDo") %>
+
+          </p>
+          <p class="msg info note">
+            <img class="ui-icon ui-icon-info" src="/images/s.gif" alt="info icon">
+            <%= t('.for_membership_payment_enter_the_variable_as_a_symbol_of_their_membership_number') %>
+          </p>
+
+        </footer>
+      </div>
+    </div>
+    <hr />
+  <% end  %>
+<% end  %>
+<%
+  hide_sections ||= []
+  hide_sections << :body_content_title unless @page.content_for(:perex) and @page.content_for(:perex).empty?  %>
+<%= render '/refinery/content_page', :hide_sections => hide_sections %>

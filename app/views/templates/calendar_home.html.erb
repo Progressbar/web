@@ -1,0 +1,31 @@
+<% if @events_page %>
+<section id="calendar">
+    <header>
+      <h2><%= link_to(t('events'), @events_page.url) %>
+      </h2>
+    </header>
+    <div class="content">
+    <% if @event %>
+      <div class="event">
+        <h3><%= link_to @event.title, @event %></h3>
+        <section class="start_end">
+          <span class="start"><%= @event.start_at.strftime('%b %e, %Y %l:%M %p') %></span><span class="delim">&nbsp;|&nbsp;</span><span class="end"><%= @event.end_at.strftime('%b %e, %Y %l:%M %p') %></span>
+        </section>
+        <div class="description">
+          <%= simple_format(truncate strip_tags(@event.description), :length => 256) %>
+          <%= link_to('Prejsť na detail.', @events_page.url) %>
+        </div>
+      </div>
+    <% else %>
+      <p>Momentálne nieje v kalendári zaznamenaná žiadna oficiálna akcia.<p>
+    <% end %>
+      <hr />
+      <div id="new-action">
+        <a href="/akcie-a-organizacia" class="button large">Zorganizovať akciu</a>
+        <p class="note">
+        <a href="/akcie-a-organizacia#what">Bližšie informácie o možnostiach a podmienkach</a>.
+        </p>
+      </div>
+    </div>
+</section>
+<% end %>
