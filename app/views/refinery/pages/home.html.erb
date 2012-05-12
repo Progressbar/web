@@ -1,0 +1,7 @@
+<% content_for :body do %>
+  <%= render :template => '/templates/projects' %>
+  <%#*<hr />%>
+  <%#= render :template => '/templates/calendar_home' %>
+  <%#= render :template => '/templates/blog_home' %>
+<% end %>
+<%= render '/refinery/content_page', :hide_sections => [:body_content_title] %>

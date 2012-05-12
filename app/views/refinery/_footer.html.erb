@@ -1,0 +1,67 @@
+<section id="follow-us">
+  <header>
+    <h3><%= t('follow_us.title') %></h3>
+  </header>
+  <div class="content clearfix">
+    <p>
+      <a href="<%= Refinery::Setting.find_or_set(:site_twitter, 'http://twitter.com/progressbarsk') %>"><img alt="Twitter" src="/s.gif" class="sprites sprite-icon-twitter-32" /></a>
+      <a href="<%= Refinery::Setting.find_or_set(:site_facebook, 'http://www.facebook.com/progressbar') %>"><img alt="Facebook" src="/s.gif" class="sprites sprite-icon-facebook-32" /></a>
+      <a href="https://foursquare.com/venue/<%= Refinery::Setting.find_or_set(:site_foursquare_id, '7713190') %>"><img alt="Foursquare" src="/s.gif" class="sprites sprite-icon-foursquare-32" /></a>
+      <a href="<%= Refinery::Setting.find_or_set(:site_soup, 'http://soup.progressbar.sk/') %>"><img alt="Foursquare" src="/s.gif" class="sprites sprite-icon-soup-32" /></a>
+      <a href="<%= Refinery::Setting.find_or_set(:site_github, 'https://github.com/Progressbar') %>" >
+        <img alt="Github" src="/s.gif" class="sprites sprite-icon-github-32" />
+      </a>
+       <a href="<%= Refinery::Setting.find_or_set(:site_kyberia, 'https://kyberia.sk/progressbar.sk') %>" >
+        <img alt="Kyberia" src="/s.gif" class="sprites sprite-icon-kyberia-32" title="kyberia" />
+      </a>
+    </p>
+    <div id="feedback"></div>
+  </div>
+</section>
+<section id="mailing-list">
+  <header>
+    <h3><%= t('mailing_list.title') %></h3>
+  </header>
+  <div class="content">
+    <%= render "/refinery/mailinglists/mailinglists/form" %>
+  </div>
+</section>
+<section id="address" >
+  <header>
+    <h3 class="hidden"><%= t('address.title') %></h3>
+  </header>
+  <div class="content">
+    <address class="vcard">
+      <a class="url fn org " href="http://www.progressbar.sk/"><%= Refinery::Setting.find_or_set(:site_name, 'Progressbar Hackerspace') %></a>,
+      <a class="email" href="mailto:<%= Refinery::Setting.find_or_set(:site_email, 'info@progressbar.sk') %>"><%= Refinery::Setting.find_or_set(:site_email, 'info@progressbar.sk') %></a>,
+      <span class="adr">
+        <span class="street-address">Cukrová 14</span>,
+        <span>
+          <span class="locality">Bratislava</span>,
+          <span class="postal-code">811 08</span>,
+        </span>
+        <span class="country-name">Slovakia</span>
+      </span>
+      <span class="delim">&nbsp;|&nbsp;</span>
+      <span class="geo">
+        GPS:
+        <abbr class="latitude" title="48.14853">N 48° 8' 54.707"</abbr>
+        <abbr class="longitude" title="17.119582">E 17° 7' 10.495"</abbr>
+      </span>
+    </address>
+
+  </div>
+</section>
+<div id="license">
+  <%= raw t('license_note') %>
+</div>
+<div id="copy">
+  <%= t('.copyright', :year => Time.now.year,
+    :site_name => Refinery::Core.site_name) %>,
+  <%#= link_to(@colophon_page.title, @colophon_page) %>
+</div>
+<nav id='bottom-menu' class='menu clearfix'>
+  <%= link_to(@blog_page.title, @blog_page.url) %> <span class="delim">&nbsp;|&nbsp;</span>
+  <%= link_to(@contact_page.title, @contact_page.url) %> <span class="delim">&nbsp;|&nbsp;</span>
+  <a href="#"><%= t('top') %>  &uarr;</a>
+</nav>

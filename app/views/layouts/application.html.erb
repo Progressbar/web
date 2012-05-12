@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<%= render '/refinery/html_tag' %>
+<%= render '/refinery/head' %>
+<body>
+  <div id="page_container">
+    <div id="header-wrapper">
+      <header id="header" class="clearfix">
+        <%= render '/refinery/header' -%>
+      </header>
+    </div>
+    <div id="page-wrapper">
+      <section id="page" class="clearfix" data-pjax-container="true">
+        <%= yield %>
+      </section>
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer" class="clearfix">
+        <%= render '/refinery/footer' -%>
+      </footer>
+    </div>
+  </div>
+  <%= render '/refinery/javascripts' %>
+</body>
+</html>

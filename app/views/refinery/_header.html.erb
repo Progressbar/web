@@ -1,0 +1,24 @@
+<div id="hgroup">
+  <% if home_page? %>
+    <h1 id="logo"><span class="ir"><%= Refinery::Core.site_name %></span></h1>
+  <% else %>
+    <strong id="logo">
+      <%= link_to Refinery::Core.site_name, refinery.root_path, :class => 'ir' %>
+    </strong>
+  <% end %>
+</div>
+<div id="nav-holder">
+  <nav id="member-lang">
+<%#= link_to t('.new_event'), '/akcie-a-organizacia/' %><span class="delim">&nbsp;|&nbsp;</span>
+<%= link_to t('.registration'), '/registrations' %><span class="delim">&nbsp;|&nbsp;</span>
+    <%= link_to t('.for_members'), '/refinery/'  %><span class="delim">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+    <%= link_to_if(!is_lang?('sk'), 'Slovenčina', '/') %><span class="delim">&nbsp;|&nbsp;</span>
+    <%= link_to_if(!is_lang?('en'), 'English', '/en') %>
+    <%#= url_for(:locale => 'en') %>
+  </nav>
+<%#= render :partial => '/shared/search_form' %>
+  <%= render(:partial => "/refinery/menu", :locals => {
+      :dom_id => 'menu',
+      :css => 'menu'
+    }) %>
+</div>

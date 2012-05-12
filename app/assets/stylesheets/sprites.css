@@ -1,0 +1,134 @@
+
+.sprites {
+    background-image: url(/assets/design/icons/sprites4-32.png);
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+
+a .sprites {
+    margin-right: 6px;
+}
+
+img.sprites {
+    vertical-align: middle;
+}
+
+.sprite-icon-foursquare-32 {
+    height               : 32px;
+    width                : 32px;
+    background-position  : -0px -32px;
+}
+
+.sprite-icon-foursquare-32:hover {
+    background-position  : -0px 0px;
+}
+
+.sprite-icon-github-32 {
+    height               : 32px;
+    width                : 32px;
+    background-position  : -32px -32px;
+}
+
+.sprite-icon-github-32:hover {
+    background-position  : -32px 0px;
+}
+
+.sprite-icon-soup-32 {
+    height               : 32px;
+    width                : 32px;
+    background-position  : -64px -32px;
+}
+
+.sprite-icon-soup-32:hover {
+    background-position  : -64px 0px;
+}
+
+.sprite-icon-ics-32 {
+    height               : 32px;
+    width                : 32px;
+    background-position  : -96px -32px;
+}
+
+.sprite-icon-ics-32:hover {
+    background-position  : -96px 0px;
+}
+
+.sprite-icon-slideshare-32 {
+    background-position  : -160px -32px;
+    height               : 32px;
+    width                : 32px;
+}
+
+.sprite-icon-slideshare-32:hover {
+    background-position  : -160px 0px;
+}
+
+.sprite-icon-rss-32 {
+    background-position  : -128px -32px;
+    height               : 32px;
+    width                : 32px;
+}
+
+.sprite-icon-rss-32:hover {
+    background-position  : -128px 0px;
+}
+
+.sprite-icon-youtube-32 {
+    height               : 32px;
+    width                : 32px;
+    background-position  : -192px -32px;
+}
+
+.sprite-icon-youtube-32:hover {
+    background-position  : -192px 0px;
+}
+
+.sprite-icon-twitter-32 {
+    height               : 32px;
+    width                : 32px;
+    background-position  : -224px -32px;
+}
+
+.sprite-icon-twitter-32:hover {
+    background-position  : -224px 0px;
+}
+
+.sprite-icon-flickr-32 {
+    height               : 32px;
+    width                : 32px;
+    background-position  : -256px -32px;
+}
+
+.sprite-icon-flickr-32:hover {
+    background-position  : -256px 0px;
+}
+
+.sprite-icon-kyberia-32 {
+    height               : 32px;
+    width                : 32px;
+    background-position  : -288px -32px;
+}
+
+.sprite-icon-kyberia-32:hover {
+    background-position  : -288px 0px;
+}
+
+.sprite-icon-facebook-32 {
+    height               : 32px;
+    width                : 32px;
+    background-position  : -320px -32px;
+}
+
+.sprite-icon-facebook-32:hover {
+    background-position  : -320px 0px;
+}
+
+.sprite-icon-email-32 {
+    height               : 32px;
+    width                : 32px;
+    background-position  : -352px -32px;
+}
+
+.sprite-icon-email-32:hover {
+    background-position  : -352px 0px;
+}
