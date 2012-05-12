@@ -1,8 +1,0 @@
-<%= form_tag search_url, :method => 'GET', :id => 'search-form' do %>
-<%= search_field_tag :query, {}, {:type => 'search',
-                     :placeholder => t('.search_site_for'),
-                     :class => 'text search',
-                     :required => 'required',
-                     :value => (params[:query] if params[:query])} %>
-<input type="image" title="<%= t('submit') %>" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABWUlEQVQoz2P4//8/A7kYTGTll8KwPRDvAuJXQHwDiOcAsSiSPByjay4C4v/pOUVvouNTDsSnZJ4E8n8B8Wsg1sWnGST5Ny4p44KismqipLSsHRC7mVvZNWbkFn/LzCu5hFNzalZ+L1DBb119ozCgJhaYAiBbOCAkcjnIRUCshVVzUnrOrrTswrdAxRzoNgSGRmaCNMcnZ4Zj1RydkLoS5GxsgZOYlt0F0uwfHOGBVbOTq2cUSAHQ6RuBNA+SIgOg2IfkjLxHIC9g1QyUEAoKi9oA9dtzIJ4PxFuA+A/U0N9A2g9nVAENMLRzdO1JTMu5DlT8BRhlz4HeOQ706yWooaBoC8QVzyADJIHYF4gTgDgSiB3llVR8YpPSzyEZEIJVMzYMNIBJQUnFKzYx/SySAX5EaUYywANmADAA5xKtGWaAjLyim7O791RgKrQnSTPUAEYglgcZBNIHAJe9h3IBtxzQAAAAAElFTkSuQmCC" class="search-button" alt="Submit button">
-<% end %>
