@@ -1,0 +1,14 @@
+<%= t('.greeting') %>,<br/>
+<br/>
+<%= t('.you_recieved_new_mailinglist') %><br/>
+<br/>
+<%= t('.mailinglist_starts') %><br/>
+<br/>
+<%= t('.email', :default => t('activerecord.attributes.mailinglist.email')) %>: <%= @mailinglist.email %><br/>
+<br/>
+<%= t('.mailinglist_ends') %><br/>
+<br/>
+<%= t('.closing_line') %>,<br/>
+<%= Refinery::Core.site_name %><br/>
+<br/>
+<%= t('.ps_html') %>

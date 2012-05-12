@@ -1,0 +1,49 @@
+<%= form_for [refinery, :fees_admin, @fee] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+    :object => @fee,
+    :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :transaction -%>
+    <%= f.select :transaction_id, @transactions %>
+  </div>
+  <div class='field clearfix' >
+    <div  style="overflow-y: auto; max-height: 15em; padding-left: 0px; margin: 0px;">
+      <%= f.label :user -%>
+      <% @users.each_with_index do |u, i| %>
+        <%= f.radio_button :user_id, u.id %>&nbsp;<%= f.label :"user_id_#{u.id}", u.identifications, :class => 'stripped' -%>
+        <%=raw i > 0 && i % 3 == 0  ? "<br />" : '&nbsp;&nbsp;&nbsp;' %>
+      <% end %>
+    </div>
+  </div>
+
+
+  <div class='field'>
+    <%= f.label :amount -%>
+    <%= f.text_field :amount, :size => 10 -%> <%= f.text_field :currency, :size => 4 -%>
+  </div>
+  <div class="clearfix">
+    <div class='field'  style="width: 8em; float: left;">
+      <%= f.label :month -%>
+      <% months = Date::MONTHNAMES.collect { |m| [m, Date::MONTHNAMES.index(m)] unless m.nil? }.compact %>
+      <%= f.select :month, months, :default => Date.current.month %>
+    </div>
+
+    <div class='field' style="width: 8em; float: left;">
+      <%= f.label :year -%>
+      <% years = Range.new(Date.current.year - 1, Date.current.year + 1) %>
+      <%= f.select :year, years, :default => Date.current.year %>
+    </div>
+  </div>
+
+  <div class='field'>
+    <%= f.label :message -%>
+    <%= f.text_area :message, :rows => 3, :class => ' widest' %>
+
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+    :continue_editing => false,
+    :delete_title => t('delete', :scope => 'refinery.fees.admin.fees.fee'),
+    :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @fee.currency) %>
+<% end -%>

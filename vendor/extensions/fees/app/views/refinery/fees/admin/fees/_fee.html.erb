@@ -1,0 +1,10 @@
+<tr class="fee record <%= cycle('on', 'on-hover') %>" id="<%= dom_id(fee) -%>">
+  <%#*<td>%>
+    <%#= "#{fee.user.username}" %>
+  <%#*</td>%>
+  <td class="month"><%= Date::MONTHNAMES[fee.month] %></td>
+  <td class="year" ><%= fee.year %></td>
+  <td class="amount">
+    <%= fee.sum_amount %>&nbsp;<%= fee.currency %>
+  </td>
+</tr>

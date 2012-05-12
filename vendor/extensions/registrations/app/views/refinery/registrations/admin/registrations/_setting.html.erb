@@ -1,0 +1,4 @@
+<li>
+  <%= link_to "Edit #{setting.name.gsub('_', ' ')}",
+          refinery.edit_admin_setting_path(setting.name.to_sym, :dialog => true)%>
+</li>

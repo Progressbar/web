@@ -1,0 +1,30 @@
+en:
+  refinery:
+    plugins:
+      fees:
+        title: Fees
+    fees:
+      admin:
+        fees:
+          actions:
+            create_new: Add New Fee
+            reorder: Reorder Fees
+            reorder_done: Done Reordering Fees
+            my_fees: My Fees
+          records:
+            title: Fees
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Fees yet.
+          fee:
+            edit: Edit this fee
+            delete: Remove this fee forever
+  activerecord:
+    attributes:
+      'refinery/fees/fee':
+        user: User
+        transaction: Transaction
+        amount: Amount
+        currency: Currency
+        month: Month
+        year: Year
+        message: Message

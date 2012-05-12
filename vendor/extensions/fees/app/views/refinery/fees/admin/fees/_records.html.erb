@@ -1,0 +1,34 @@
+<div class='pagination_container'>
+  <h2>Fees from <%= current_refinery_user.username %>. UID: <%= current_refinery_user.progressbar_uid %></h2>
+  <% if @my_fees.any? %>
+    <%= render 'fees', :fees => @my_fees %>
+  <% else %>
+    <p>
+      <%= t('.no_items_yet') %>
+    </p>
+  <% end %>
+</div>
+<div class='pagination_container'>
+  <h2>Fees from all</h2>
+  <% if @all_fees.any? %>
+    <%= render 'fees', :fees => @all_fees %>
+  <% else %>
+    <p>
+      <%= t('.no_items_yet') %>
+    </p>
+  <% end %>
+</div>
+<style>
+  .fees td, .fees th {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .fees .year {
+    text-align: center;
+  }
+
+  .fees .amount {
+    text-align: right;
+  }
+</style>

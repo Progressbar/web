@@ -1,0 +1,11 @@
+<ul>
+  <% if current_refinery_user.has_role?(:superuser)  %>
+    <li <%= "class='selected'" if params[:action] == "index" %>>
+      <%= link_to t('.my_fees'), refinery.fees_admin_fees_path %>
+    </li>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_fees_admin_fee_path,
+      :class => "add_icon" %>
+  </li>
+  <% end %>
+</ul>

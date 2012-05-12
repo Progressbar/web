@@ -1,0 +1,36 @@
+<div id='records'>
+  <h2><%= t('.mailinglist') %></h2>
+  <table id='mailinglist' class='inquiry'>
+      <tr>
+        <td>
+          <strong>
+            <%= t('.email', :default => t('activerecord.attributes.mailinglist.email')) %>
+          </strong>
+        </td>
+        <td>
+          <%= @mailinglist.email %>
+        </td>
+      </tr>
+  </table>
+</div>
+<div id='actions'>
+  <h2><%= t('.details')%></h2>
+  <p>
+    <strong><%= t('.age') %>:</strong> <%= time_ago_in_words(@mailinglist.created_at) %>
+  </p>
+  <h2><%= t('.actions') %></h2>
+  <ul>
+    <li>
+      <%= link_to t('.back_to_all_mailinglists'), refinery.url_for(:action => 'index'),
+                   :class => "back_icon" %>
+    </li>
+    <li>
+      <%= link_to t('delete', :scope => 'refinery.mailinglists.admin.mailinglists'),
+                  refinery.mailinglists_admin_mailinglist_path(@mailinglist),
+                  :class => 'delete_icon no-tooltip confirm-delete',
+                  :title => t('delete', :scope => 'refinery.mailinglists.admin.mailinglists'),
+                  :'data-confirm' => t('message', :scope => 'refinery.admin.delete', :title => @mailinglist.name),
+                  :'data-method' => "delete" %>
+    </li>
+  </ul>
+</div>

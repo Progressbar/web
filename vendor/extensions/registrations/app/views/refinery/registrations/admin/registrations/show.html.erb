@@ -1,0 +1,63 @@
+<div id='records'>
+  <h2><%= t('.registration') %></h2>
+  <table id='registration' class='inquiry'>
+    <tr>
+      <td>
+        <strong>
+          <%= t('.username', :default => t('activerecord.attributes.registration.username')) %>
+        </strong>
+      </td>
+      <td>
+        <%= @registration.username %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>
+          <%= t('.email', :default => t('activerecord.attributes.registration.email')) %>
+        </strong>
+      </td>
+      <td>
+        <%= @registration.email %>
+      </td>
+    </tr>
+    <tr>
+      <td valign='top'>
+        <strong>
+          <%= t('.message', :default => t('activerecord.attributes.registration.message')) %>
+        </strong>
+      </td>
+      <td>
+        <p style='margin-top: 0px'>
+          <% @registration.message.to_s.gsub("\r\n\r\n", "\r\n").split("\r\n").each_with_index do |sentence, index| %>
+            <%=raw "</p><p>" unless index == 0 %>
+            <%= sentence %>
+          <% end %>
+        </p>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id='actions'>
+  <h2><%= t('.details')%></h2>
+  <p>
+    <strong><%= t('.age') %>:</strong> <%= time_ago_in_words(@registration.created_at) %>
+  </p>
+  <h2><%= t('.actions') %></h2>
+  <ul>
+    <li>
+      <%= link_to t('.back_to_all_registrations'), refinery.url_for(:action => 'index'),
+        :class => "back_icon" %>
+    </li>
+    <% if current_refinery_user.has_role?(:superuser) %>
+      <li>
+        <%= link_to t('delete', :scope => 'refinery.registrations.admin.registrations'),
+          refinery.registrations_admin_registration_path(@registration),
+          :class => 'delete_icon no-tooltip confirm-delete',
+          :title => t('delete', :scope => 'refinery.registrations.admin.registrations'),
+          :'data-confirm' => t('message', :scope => 'refinery.admin.delete', :title => @registration.name),
+          :'data-method' => "delete" %>
+      </li>
+    <% end %>
+  </ul>
+</div>
