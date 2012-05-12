@@ -1,0 +1,37 @@
+en:
+  refinery:
+    plugins:
+      transactions:
+        title: Transactions
+    transactions:
+      admin:
+        transactions:
+          actions:
+            create_new: Add New Transaction
+            all: All
+            income: Income
+            outcome: Outcome
+            create_new_income_transaction: Create New Income Transaction
+            create_new_outcome_transaction: Create New Outcome Transaction
+          records:
+            title: Transactions
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Transactions yet.
+          transaction:
+            edit: Edit this transaction
+            delete: Remove this transaction forever
+      transactions:
+        show:
+          other: Other Transactions
+  activerecord:
+    attributes:
+      'refinery/transactions/transaction':
+        realized_at: Realized at
+        type: Type
+        amount: Amount
+        currency: Currency
+        message: Message
+        stamp: Stamp
+        vs: VS
+        from_account: From Account
+        to_account: To Account

@@ -1,0 +1,30 @@
+<div id='actions'>
+  <ul>
+    <% if ::Refinery::Registrations::Admin::RegistrationsController.searchable? %>
+      <li>
+        <%= render '/refinery/admin/search', :url => refinery.registrations_admin_registrations_path %>
+      </li>
+    <% end %>
+    <li <%= "class='selected'" if params[:action] == "index" and @registrations_state == 'unmoderated' %>>
+      <%= link_to t('.inbox'), refinery.registrations_admin_registrations_path %>
+    </li>
+    <li <%= "class='selected'" if params[:action] == "approved" %>>
+      <%= link_to t('.approved'), refinery.approved_registrations_admin_registrations_path %>
+    </li>
+    <li <%= "class='selected'" if params[:action] == "rejected" %>>
+      <%= link_to t('.rejected'), refinery.rejected_registrations_admin_registrations_path %>
+    </li>
+    <% if current_refinery_user.has_role?(:superuser)  %>
+    <li>
+      <%= link_to t('.update_notified'),
+                    refinery.edit_registrations_admin_setting_path(:registration_notification_recipients, :dialog => true, :height => 300),
+                    :class => "user_comment_icon" %>
+    </li>
+    <li>
+      <%= link_to t('.edit_confirmation_email'),
+                  refinery.edit_registrations_admin_setting_path(:registration_confirmation_body, :dialog => true),
+                  :class => "edit_email_icon" %>
+    </li>
+    <% end %>
+  </ul>
+</div>

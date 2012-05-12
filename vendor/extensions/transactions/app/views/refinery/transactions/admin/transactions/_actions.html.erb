@@ -1,0 +1,36 @@
+<ul>
+  <% # @todo : aktualne toto nefunguje preto somto zakomentoval %>
+  <%# if ::Refinery::Transactions::Admin::TransactionsController.searchable? %>
+    <%#*<li>%>
+      <%#= render '/refinery/admin/search', :url => refinery.transactions_admin_transactions_path %>
+    <%#*</li>%>
+  <%# end %>
+  <li <%= "class='selected'" if params[:action] == "index" and !searching? %>>
+    <%= link_to t('.all'),
+                 refinery.transactions_admin_transactions_path
+               %>
+  </li>
+  <li <%= "class='selected'" if params[:action] == "income" %>>
+    <%= link_to t('.income'),
+                 refinery.income_transactions_admin_transactions_path
+               %>
+  </li>
+  <li <%= "class='selected'" if params[:action] == "outcome" %>>
+    <%= link_to t('.outcome'),
+                 refinery.outcome_transactions_admin_transactions_path
+               %>
+  </li>
+  <% if current_refinery_user.has_role?(:superuser)  %>
+  <li>
+    <%= link_to t('.create_new_outcome_transaction'),
+                 "#{refinery.new_transactions_admin_transaction_path}?type=outcome",
+                 :class => "add_icon"
+               %>
+  </li>
+  <li>
+    <%= link_to t('.create_new_income_transaction'),
+      "#{refinery.new_transactions_admin_transaction_path}?type=income",
+                 :class => "add_icon" %>
+  </li>
+  <% end %>
+</ul>

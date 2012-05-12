@@ -1,0 +1,3 @@
+<%= strip_tags(Refinery::Registrations::Setting.confirmation_body.gsub("%name%", @registration.name)) %>
+
+<%= strip_tags(Refinery::Registrations::Setting.email_footer) %>

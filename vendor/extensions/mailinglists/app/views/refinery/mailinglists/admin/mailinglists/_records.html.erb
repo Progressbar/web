@@ -1,0 +1,40 @@
+<% if searching? %>
+  <h2><%= t('results_for', :scope => 'refinery.admin.search', :query => params[:search]) %></h2>
+
+  <% if @mailinglists.any? %>
+    <ul>
+      <li>
+        <span class='title'>
+          E-mail:
+          <span class="preview">General - Events</span>
+        </span>
+      </li>
+      <%= render :partial => 'mailinglist', :collection => @mailinglists %>
+    </ul>
+  <% else %>
+    <p><%= t('no_results', :scope => 'refinery.admin.search') %>
+    </p>
+  <% end %>
+<% else %>
+  <% if @grouped_mailinglists.any? -%>
+    <% @grouped_mailinglists.each do |container| %>
+      <h3><%= l((mailinglist_group = container.last).first.created_at, :format => :short) %></h3>
+      <ul>
+        <li>
+          <span class='title'>
+            E-mail:
+            <span class="preview">General - Events</span>
+          </span>
+          <span class='actions'>
+      <%# sem pride globalne ovladanie %>
+          </span>
+        </li>
+        <%= render :partial => 'mailinglist', :collection => mailinglist_group %>
+      </ul>
+    <% end %>
+  <% else -%>
+    <p>
+      <strong><%= t('no_mailinglists', :scope => 'refinery.mailinglists.admin.mailinglists.index') %></strong>
+    </p>
+  <% end -%>
+<% end %>

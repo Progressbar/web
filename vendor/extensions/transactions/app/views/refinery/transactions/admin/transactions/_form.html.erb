@@ -1,0 +1,64 @@
+<h2>Realized <%= params[:type].to_s %> transaction</h2>
+<%= form_for [refinery, :transactions_admin, @transaction] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+    :object => @transaction,
+    :include_object_name => true %>
+
+<% if params[:type]
+   @transaction[:primary_type] = params[:type].to_s
+   @transaction[params[:type].to_s == 'outcome' ? :from_account : :to_account] = Refinery::Setting.find_or_set(:site_bank_account, '2600121198/8330')
+end %>
+
+  <div class="clearfix">
+  <%#*<div class="hemisquare">%>
+    <% if params[:type].to_s == 'income' %>
+      <div class='field'>
+        <%= f.label :from_account -%>
+        <%= f.text_field :from_account -%>
+        <%= f.hidden_field :to_account -%>
+      </div>
+    <% else %>
+      <div class='field'>
+        <%= f.label :to_account -%>
+        <%= f.text_field :to_account -%>
+        <%= f.hidden_field :from_account -%>
+      </div>
+    <% end %>
+
+    <div class='field'>
+      <%= f.label :amount -%>
+      <%= f.text_field :amount  -%> <%= f.text_field :currency, :size => 4 -%>
+    </div>
+
+  <%#*</div>%>
+  <%#*<div class="hemisquare right-side">%>
+    <div class='field'>
+      <%= f.label :vs -%>
+      <%= f.number_field :vs  -%>
+
+    </div>
+
+    <div class='field'>
+      <%= f.label :realized_at -%>
+      <%= f.text_field :realized_at, :value => Time.now.to_s -%>
+
+    </div>
+
+    <div class='field'>
+
+      <%= f.hidden_field :primary_type %>
+
+    </div>
+  <%#*</div>%>
+  </div>
+  <div class='field'>
+    <%= f.label :message -%>
+    <%= f.text_area :message, :rows => 8, :class => 'widest' -%>
+  </div>
+
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+    :continue_editing => false,
+    :delete_title => t('delete', :scope => 'refinery.transactions.admin.transactions.transaction'),
+    :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @transaction.realized_at) %>
+<% end -%>

@@ -1,0 +1,1 @@
+<%= simple_format(strip_tags(Refinery::Mailinglists::Setting.confirmation_body.gsub("%name%", @mailinglist.name))) %>

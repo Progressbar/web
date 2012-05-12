@@ -1,0 +1,16 @@
+<%= will_paginate @transactions if Refinery::Transactions::Admin::TransactionsController.pageable? %>
+
+<table class="transactions">
+  <thead>
+    <tr>
+      <th style="width: 50%;">Title</th>
+      <th style="width: 15%;">Date</th>
+      <th style="width: 10%; text-align: center">Amount</th>
+      <%= raw '<th style="width: 10%;"></th>' if current_refinery_user.has_role?(:superuser) %>
+
+    </tr>
+  </thead>
+  <tbody>
+  <%= render :partial => 'transaction', :collection => @transactions %>
+  </tbody>
+</table>

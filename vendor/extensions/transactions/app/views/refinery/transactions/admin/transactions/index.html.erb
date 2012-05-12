@@ -1,0 +1,9 @@
+<section id='records'>
+  <% unless searching? %>
+    <h2><%= params[:action] == 'index' ? 'All' : params[:action].to_s.capitalize %> transactions</h2>
+  <% end %>
+  <%= render 'records' %>
+</section>
+<aside id='actions'>
+  <%= render 'actions' %>
+</aside>

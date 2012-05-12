@@ -1,0 +1,35 @@
+<%= form_for [refinery, :registrations, @registration] do |f| %>
+  <%= render '/refinery/admin/error_messages',
+    :object => @registration,
+    :include_object_name => true  %>
+
+  <div class='field username_field string_field'>
+    <%= f.label :username, t('.your_name'), :class => 'placeholder-fallback required' %>
+    <%= f.text_field :username, :placeholder => t('.your_name'), :required => 'required', :class => 'required text' %>
+  </div>
+
+  <div class='field email_field string_field'>
+    <%= f.label :email, t('.email'), :class => 'placeholder-fallback required' %>
+    <%= f.email_field :email, :placeholder => t('.email'), :required => 'required', :class => 'required email text' %>
+  </div>
+
+  <div class='field message_field text_field'>
+    <%= f.label :message, t('.personal_info'), :class => 'placeholder-fallback required' %>
+    <%= f.text_area :message, :placeholder => t('.personal_info'), :required => 'required', :class => 'required' %>
+  </div>
+
+  <div class='actions'>
+    <%= f.submit t('.send_registration') %>
+  </div>
+
+  <%# unless @registration.errors.blank? %>
+  <%#*<div class="form-error">%>
+  <%# @registration.errors.each do |elm, msg| %>
+  <%#*<p>%>
+  <%#= t(elm.to_s)  %>
+  <%#= msg %>
+  <%#*</p>%>
+  <%# end %>
+  <%#*</div>%>
+  <%# end %>
+<% end %>
