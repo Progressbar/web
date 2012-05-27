@@ -232,6 +232,7 @@ ActiveRecord::Schema.define(:version => 20120509004240) do
     t.string   "custom_type"
     t.datetime "realized_at",                                                   :null => false
     t.text     "message"
+    t.text     "raw"
     t.string   "stamp"
     t.datetime "created_at",                                                    :null => false
     t.datetime "updated_at",                                                    :null => false

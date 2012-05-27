@@ -14,7 +14,7 @@ Date.prototype.getDayOfYear = function() {
 }
 
 $(function() {
-   if (!Modernizr.input.placeholder) {
+    if (!Modernizr.input.placeholder) {
         $('html').addClass('no-placeholder');
     }
 
@@ -28,9 +28,11 @@ $(function() {
         return false;
     });
 
-    $('a.lightbox').fancybox({
-        'titlePosition': 'inside'
-    });
+    if (typeof $.fancybox === 'function') {
+        $('a.lightbox').fancybox({
+            'titlePosition': 'inside'
+        });
+    }
 
     var myCalendar = kCalendar($('#jquery-ui-calendar-holder'));
 });
