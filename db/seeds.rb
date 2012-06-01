@@ -24,3 +24,8 @@ Refinery::Transactions::Engine.load_seed
 
 # Added by Refinery CMS Fees extension
 Refinery::Fees::Engine.load_seed
+
+Refinery::Calendar::Engine.load_seed
+
+# Added by Refinery CMS Venues extension
+Refinery::Calendar::Engine.load_seed
