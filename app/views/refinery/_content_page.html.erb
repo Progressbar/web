@@ -1,14 +1,14 @@
-<!--
 <% flash.each do |m, k| %>
   <div class="flash <%= m %>" >
     <%= k %>
   </div>
 <% end %>
+<!--
 <div id="perex-wrapper">
   <div id="perex">
-  <% perex = @page.content_for(:perex) %>
-  <%= raw "<h1>#{@page.title}</h1>" if !perex or perex.empty? %>
-  <%= raw "<div>#{perex}</div>" unless !perex or perex.empty? %>
+<%# perex = @page.content_for(:perex) %>
+<%#= raw "<h1>#{@page.title}</h1>" if !perex or perex.empty? %>
+<%#= raw "<div>#{perex}</div>" unless !perex or perex.empty? %>
   </div>
 </div>
 -->
