@@ -7,7 +7,21 @@ module Refinery
     def import_settings
 
       settings = {
-        :site_email => "info@progressbar.sk" ,
+        :site_email => "info@progressbar.sk",
+        :site_twitter_link => 'http://twitter.com/progressbarsk',
+        :site_facebook_link => 'http://www.facebook.com/progressbar',
+        :site_foursquare_link => 'https://foursquare.com/venue/7713190',
+        :site_github_link => 'https://github.com/Progressbar',
+        :site_kyberia_link => 'https://kyberia.sk/id/5459247',
+        :site_soup_link => 'http://soup.progressbar.sk/',
+        :site_location_street => 'Cukrová 14',
+        :site_location_city => 'Bratislava',
+        :site_location_postal_code => '811 08',
+        :site_location_country => 'Slovakia',
+        :site_location_latitude_title => '48.14853',
+        :site_location_latitude => 'N 48° 8\' 54.707"',
+        :site_location_longitude_title => '17.119582',
+        :site_location_longitude => 'E 17° 7\' 10.495"',
         :general_mailing_list_url => 'http://lists.progressbar.sk/mailman/listinfo/general-discussion' ,
         :general_mailing_list_subscribe_url => 'http://lists.progressbar.sk/mailman/subscribe/general-discussion' ,
         :general_mailing_list_unsubscribe_url => 'http://lists.progressbar.sk/mailman/options/general-discussion' ,
@@ -17,11 +31,11 @@ module Refinery
         :site_bank_account => '2600121198/8330' ,
         :site_bank_iban => 'SK1583300000002600121198' ,
         :site_bank_swift => 'FIOZSKBAXXX' ,
-        :site_bitcoin => '18qKmRKFTGzdEW5GiBnwmCdLN54813ceN3'
+        :site_bitcoin => '18qKmRKFTGzdEW5GiBnwmCdLN54813ceN3' # 1pbarBA4zP1bbCRydBUxweQxVfsaAHqDo
       }
 
       settings.each {|k, v|
-        Refinery::Setting.find_or_set(k, v)
+        Refinery::Setting.set(k, v)
         puts "#{k} : #{v}"
       }
       

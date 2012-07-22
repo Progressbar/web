@@ -9,7 +9,6 @@ UID (variabilný symbol pri platbe členského): <%= @user.progressbar_uid.to_s 
 Nastavenie hesla: <%= @new_password_url %>
 
 Zároveň by ti mal prísť potvrdzujúci email o prihlásenií do emailovej konferencie Progressbaru.
-Archív konferencie: <%= Refinery::Setting.find_or_set(:general_mailing_list_url,
-  'http://lists.progressbar.sk/mailman/listinfo/general-discussion') %>
+Archív konferencie: <%= Refinery::Setting.get(:general_mailing_list_url) %>
 
 <%= strip_tags(Refinery::Registrations::Setting.email_footer) %>

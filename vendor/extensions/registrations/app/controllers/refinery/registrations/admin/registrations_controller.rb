@@ -121,9 +121,7 @@ module Refinery
           if subscriber.nil? or !subscriber[:general]
             begin
               response = Net::HTTP.post_form(
-                URI.parse(Refinery::Setting.find_or_set(
-                    :general_mailing_list_subscribe_url,
-                    'http://lists.progressbar.sk/mailman/subscribe/general-discussion')
+                URI.parse(Refinery::Setting.get(:general_mailing_list_subscribe_url)
                 ), {'email' => email})
 
               if subscriber.nil?

@@ -6,7 +6,7 @@
 
 <% if params[:type]
    @transaction[:primary_type] = params[:type].to_s
-   @transaction[params[:type].to_s == 'outcome' ? :from_account : :to_account] = Refinery::Setting.find_or_set(:site_bank_account, '2600121198/8330')
+   @transaction[params[:type].to_s == 'outcome' ? :from_account : :to_account] = Refinery::Setting.get(:site_bank_account)
 end %>
 
   <div class="clearfix">
