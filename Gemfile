@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem 'rails', '~> 3.2.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -46,7 +46,9 @@ gem 'jquery-rails'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 # Refinery CMS
-gem 'refinerycms', '~> 2.0.3' #, :path => 'vendor/refinerycms', :branch => '2-0-stable'
+# gem 'refinerycms', '~> 2.0.3' #, :path => 'vendor/refinerycms', :branch => '2-0-stable'
+gem 'refinerycms', :path => 'vendor/refinerycms', :branch => 'master'
+# gem 'refinerycms', :git => 'git://github.com/resolve/refinerycms.git', :branch => 'master'
 
 # Specify additional Refinery CMS Extensions here (all optional):
 gem 'refinerycms-i18n', '~> 2.0.0'
@@ -62,4 +64,4 @@ gem 'refinerycms-fees', :path => 'vendor/extensions'
 gem 'refinerycms-calendar'
 # gem 'refinerycms-calendar', :path => 'vendor', :branch => 'pb-2'
 #gem 'refinerycms-calendar', :path => 'vendor', :branch => 'fb_graph'
-gem 'fb_graph'
+#gem 'fb_graph'
