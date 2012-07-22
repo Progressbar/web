@@ -84,3 +84,4 @@ config/environments/*
 config/environments/development.rb
 *.sublime-project
 *.sublime-workspace
+public/images/content/*
