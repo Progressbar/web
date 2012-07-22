@@ -39,14 +39,14 @@
         <footer class="footer">
           <p>
             <%= t('.account_number') %>
-            <%= Refinery::Setting.find_or_set(:site_bank_account, "2600121198/8330") %><br />
+            <%= Refinery::Setting.get(:site_bank_account) %><br />
             <abbr title="<%= t('.for_payments_from_abroad') %>">IBAN</abbr>:
-              <%= Refinery::Setting.find_or_set(:site_bank_iban, "SK1583300000002600121198") %><br />
+              <%= Refinery::Setting.get(:site_bank_iban) %><br />
               BIC/SWIFT:
-              <%= Refinery::Setting.find_or_set(:site_bank_swift, "FIOZSKBAXXX") %>
+              <%= Refinery::Setting.get(:site_bank_swift) %>
           </p>
           <p>
-            Bitcoin: <%= Refinery::Setting.find_or_set(:site_bitcoin, "1pbarBA4zP1bbCRydBUxweQxVfsaAHqDo") %>
+            Bitcoin: <%= Refinery::Setting.get(:site_bitcoin) %>
 
           </p>
           <p class="msg info note">

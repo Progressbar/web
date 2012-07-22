@@ -41,7 +41,7 @@ module Refinery
           if @mailinglist[:general]
             if subscriber[:general]
               subscriber.update_attributes(:general => false)
-              redirect_to Refinery::Setting.find_or_set(:general_mailing_list_unsubscribe_url, 'http://lists.progressbar.sk/mailman/options/general-discussion')
+              redirect_to Refinery::Setting.get(:general_mailing_list_unsubscribe_url)
             else
               subscribed_general = self.subscribe_to_general
               subscriber.update_attributes(:general => true) if subscribed_general
@@ -49,7 +49,7 @@ module Refinery
           elsif @mailinglist[:events]
             if subscriber[:events]
               subscriber.update_attributes(:events => false)
-              redirect_to Refinery::Setting.find_or_set(:events_mailing_list_unsubscribe_url, 'http://lists.progressbar.sk/mailman/options/events')
+              redirect_to Refinery::Setting.get(:events_mailing_list_unsubscribe_url)
             else
               subscribed_events = self.subscribe_to_events
               subscriber.update_attributes(:events => true) if subscribed_events
@@ -69,11 +69,11 @@ module Refinery
       protected
 
       def subscribe_to_general
-        self.subscribe(Refinery::Setting.find_or_set(:general_mailing_list_subscribe_url, 'http://lists.progressbar.sk/mailman/subscribe/general-discussion'))
+        self.subscribe(Refinery::Setting.get(:general_mailing_list_subscribe_url))
       end
 
       def subscribe_to_events
-        self.subscribe(Refinery::Setting.find_or_set(:events_mailing_list_subscribe_url, 'http://lists.progressbar.sk/mailman/subscribe/events'))
+        self.subscribe(Refinery::Setting.get(:events_mailing_list_subscribe_url))
       end
 
       def subscribe(url)
@@ -82,7 +82,7 @@ module Refinery
         rescue => e
           logger.warn "There was an error subscribe email (#{@mailinglist.email}) to mailinglist (#{url}). \n#{e.message}\n"
         end
-        
+
         response && response.code == 200
       end
 
