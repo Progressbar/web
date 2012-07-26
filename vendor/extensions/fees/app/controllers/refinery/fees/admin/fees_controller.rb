@@ -20,7 +20,6 @@ module Refinery
           @fee = Fee.find_by_id(params[:id])
         end
 
-
         def users_transactions
           @users = ::Refinery::User.where('progressbar_uid IS NOT NULL')
           @transactions = {}
@@ -31,19 +30,21 @@ module Refinery
         end
 
         protected
+
         def merge_transactions
 
           transactions = ::Refinery::Transactions::Transaction.income
+          transactions = transactions.select('id, vs, amount, currency, realized_at, stamp')
           transactions = transactions.where('id NOT IN (SELECT t2.transaction_id FROM refinery_fees AS t2)')
           transactions = transactions.where('amount > 0')
-          transactions = transactions.where('vs IS NOT NULL')
-          transactions = transactions.select('id, vs, amount, currency, realized_at, stamp')
+          transactions = transactions.where('vs IS NOT NULL')          
           transactions = transactions.limit(100)
 
           transactions.each do |t|
-            u = ::Refinery::User.where(:progressbar_uid => t.vs).first
-            d = Date.parse("#{t.realized_at}")
+            u = ::Refinery::User.find_by_progressbar_uid(t.vs.to_i)            
             if u
+              d = Date.parse("#{t.realized_at}")
+
               Fee.create(
                 :transaction_id => t.id,
                 :user_id => u.id,
