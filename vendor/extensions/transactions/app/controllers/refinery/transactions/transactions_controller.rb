@@ -6,22 +6,31 @@ module Refinery
         render :text => ''
       end
 
+      # /transactions/create/
+      # ?transaction[stamp]=fd8445c030f2780287cf63209ba4b028
+      # &transaction[amount]=20,00
+      # &transaction[vs]=10840
+      # &transaction[message]=PAVOLLUPTAK
+      # &transaction[from_account]=000700-0000001337/001
+      # &transaction[month]=02
+      # &transaction[year]=12
+      # &transaction[currency]=EUR"
+      # :from_account, :to_account, :vs, :amount, :currency, :realized_at, :message, :raw, :stamp, :primary_type, :custom_type
       def create
-        response = nil
-#          {'status' => false}
-        #    fp = params[:fee]
-        #    fp[:user] = User.find_by_progressbar_uid(fp[:vs].to_i)
-        #
-        #    fee = Fee.new(fp)
-        #
-        #    if fee.valid?
-        #      response['status'] = fee.save!
-        #    else
-        #      response['errors'] = fee.errors
-        #    end
+        response = {'status' => false}
+        ptrans = params[:transaction]
+   
+        trans = Transaction.new(ptrans)
+    
+        if trans.valid?
+          response['status'] = trans.save!
+        else
+          response['errors'] = trans.errors
+        end
 
-        render :text => 1
+        render :text => response.to_json
       end
+      
     end
   end
 end
