@@ -24,8 +24,8 @@ module Refinery
         subscribed_general = false
         subscribed_events = false
         if subscriber.nil? and @mailinglist.valid?
-          subscribed_general = self.subscribe_to_general if @mailinglist.general
-          subscribed_events = self.subscribe_to_events if @mailinglist.events
+          subscribed_general = subscribe(subscriber, 'general') if @mailinglist.general
+          subscribed_events = subscribe(subscriber, 'events') if @mailinglist.events
 
           if subscribed_general or subscribed_events
             if @mailinglist.save
@@ -40,19 +40,15 @@ module Refinery
           # otherwise we try subscribe or unsubscribe him from what they want
           if @mailinglist[:general]
             if subscriber[:general]
-              subscriber.update_attributes(:general => false)
-              redirect_to Refinery::Setting.get(:general_mailing_list_unsubscribe_url)
+              unsubscribe(subscriber, 'general')
             else
-              subscribed_general = self.subscribe_to_general
-              subscriber.update_attributes(:general => true) if subscribed_general
+              subscribed_general = subscribe(subscriber, 'general')
             end
           elsif @mailinglist[:events]
             if subscriber[:events]
-              subscriber.update_attributes(:events => false)
-              redirect_to Refinery::Setting.get(:events_mailing_list_unsubscribe_url)
+              unsubscribe(subscriber, 'events')
             else
-              subscribed_events = self.subscribe_to_events
-              subscriber.update_attributes(:events => true) if subscribed_events
+              subscribed_events = subscribe(subscriber, 'events')
             end
           end
         end
@@ -68,15 +64,17 @@ module Refinery
 
       protected
 
-      def subscribe_to_general
-        self.subscribe(Refinery::Setting.get(:general_mailing_list_subscribe_url))
+      def unsubscribe(subscriber, mailinglist)
+        subscriber.update_attributes(mailinglist.to_sym => false)
+        redirect_to Refinery::Setting.get(":#{mailinglist}_mailing_list_unsubscribe_url".to_sym)
       end
 
-      def subscribe_to_events
-        self.subscribe(Refinery::Setting.get(:events_mailing_list_subscribe_url))
+      def subscribe(subscriber, mailinglist)
+        subscriber.update_attributes(mailinglist.to_sym => true)
+        self.send_subscribe_request(Refinery::Setting.get(":#{mailinglist}_mailing_list_subscribe_url".to_sym)
       end
 
-      def subscribe(url)
+      def send_subscribe_request(url)
         begin
           response = Net::HTTP.post_form(URI.parse(url), {'email' => @mailinglist.email})
         rescue => e
