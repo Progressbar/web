@@ -9,7 +9,7 @@ gem 'mysql2'
 
 group :development, :test do
   gem 'sqlite3'
-#  gem 'refinerycms-testing'
+  gem 'refinerycms-testing'
   gem "letter_opener"
   gem 'thin'
 end
@@ -47,12 +47,12 @@ gem 'jquery-rails'
 
 # Refinery CMS
 # gem 'refinerycms', '~> 2.0.3' #, :path => 'vendor/refinerycms', :branch => '2-0-stable'
-gem 'refinerycms', :path => 'vendor/refinerycms', :branch => 'master'
+gem 'refinerycms', :path => 'vendor/refinerycms', :branch => '2-0-stable'
 # gem 'refinerycms', :git => 'git://github.com/resolve/refinerycms.git', :branch => 'master'
 
 # Specify additional Refinery CMS Extensions here (all optional):
 gem 'refinerycms-i18n', '~> 2.0.0'
-gem 'refinerycms-blog', '~> 2.0.0'
+gem 'refinerycms-blog', :path => 'vendor/refinerycms-blog', :branch => '2-0-stable'
 gem 'refinerycms-inquiries', '~> 2.0.0'
 #  gem 'refinerycms-search', '~> 2.0.0'
 #  gem 'refinerycms-page-images', '~> 2.0.0'
