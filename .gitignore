@@ -80,8 +80,7 @@ capybara-*html
 .rvmrc
 .rvmrc.*
 
-config/environments/*
-config/environments/development.rb
+config/environments/production.rb
 *.sublime-project
 *.sublime-workspace
 public/images/content/*
