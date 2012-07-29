@@ -5,6 +5,9 @@ module Refinery
       self.table_name = 'refinery_transactions'
       self.per_page = 100
 
+      INCOME_TRANSACTION_TYPE = 'income'
+      OUTCOME_TRANSACTION_TYPE = 'outcome'
+
       attr_accessible :from_account, :to_account, :vs, :amount, :currency, :realized_at, :message, :raw, :stamp, :primary_type, :custom_type
 
       acts_as_indexed :fields => [:message, :from_account, :to_account]
@@ -16,15 +19,13 @@ module Refinery
 
       default_scope :order => 'realized_at DESC'
 
-      scope :income, :conditions => {:primary_type => 'income'}
-      scope :outcome, :conditions => {:primary_type => 'outcome'}
-
-      before_save :set_primary_type
+      scope :income, :conditions => {:primary_type => INCOME_TRANSACTION_TYPE}
+      scope :outcome, :conditions => {:primary_type => OUTCOME_TRANSACTION_TYPE}
 
       has_many :fees
 
       def primary_types
-        ['income', 'outcome']
+        [INCOME_TRANSACTION_TYPE, OUTCOME_TRANSACTION_TYPE]
       end
 
       def custom_types
@@ -33,23 +34,12 @@ module Refinery
 
       def title
         case self.primary_type
-        when 'income'
+        when INCOME_TRANSACTION_TYPE
           "Income from #{self.from_account.truncate(10)}"
-        when 'outcome'
+        when OUTCOME_TRANSACTION_TYPE
           "Payment to #{self.to_account}"
         end
       end
-
-      def secondary_type
-      end
-
-      protected
-
-
-      def set_primary_type
-        self[:primary_type] = (self[:amount].to_i > 0 ? 'income' : 'outcome') if self[:primary_type].nil?
-      end     
-      
 
     end
   end
