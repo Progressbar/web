@@ -41,7 +41,7 @@ module Refinery
           transactions = transactions.where('id NOT IN (SELECT t2.transaction_id FROM refinery_fees AS t2)')
           transactions = transactions.where('amount > 0')
           transactions = transactions.where('vs IS NOT NULL')          
-          transactions = transactions.limit(100)
+          # transactions = transactions.limit(100)
 
           transactions.each do |t|
             u = ::Refinery::User.find_by_progressbar_uid(t.vs.to_i)            
