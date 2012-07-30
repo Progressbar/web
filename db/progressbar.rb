@@ -8,8 +8,9 @@ module Refinery
 
       settings = {
         :site_email => "info@progressbar.sk",
-        :site_twitter_link => 'http://twitter.com/progressbarsk',
-        :site_facebook_link => 'http://www.facebook.com/progressbar',
+        :site_twitter => '@progressbarsk',
+        :site_twitter_link => 'https://twitter.com/progressbarsk',
+        :site_facebook_link => 'https://www.facebook.com/progressbar',
         :site_foursquare_link => 'https://foursquare.com/venue/7713190',
         :site_github_link => 'https://github.com/Progressbar',
         :site_kyberia_link => 'https://kyberia.sk/id/5459247',
