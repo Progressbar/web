@@ -7,8 +7,8 @@ module Refinery
     def import_settings
 
       settings = {
-        :site_email => "info@progressbar.sk",
-        :site_twitter => '@progressbarsk',
+        :site_email => 'info@progressbar.sk',
+        :site_twitter => 'progressbarsk',
         :site_twitter_link => 'https://twitter.com/progressbarsk',
         :site_facebook_link => 'https://www.facebook.com/progressbar',
         :site_foursquare_link => 'https://foursquare.com/venue/7713190',
@@ -36,7 +36,7 @@ module Refinery
       }
 
       settings.each {|k, v|
-        Refinery::Setting.set(k, v)
+        Refinery::Setting.set(k, v.to_s)
         puts "#{k} : #{v}"
       }
       
