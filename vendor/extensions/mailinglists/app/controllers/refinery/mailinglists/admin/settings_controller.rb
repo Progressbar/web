@@ -13,6 +13,24 @@ module Refinery
         after_filter :save_subject_for_confirmation?, :only => [:create, :update]
         around_filter :rewrite_flash?, :only => [:create, :update]
 
+        def edit
+          @setting = Refinery::Setting.find(params[:id])
+        end
+
+        def update
+          @setting = Refinery::Setting.find(params[:id])
+
+          if @setting.update_attributes(params[:setting])
+            flash[:notice] = t('refinery.crudify.updated', :what => @setting.name.gsub("mailinglist_", "").titleize)
+
+            unless request.xhr? or from_dialog?
+              redirect_back_or_default(refinery.mailinglists_admin_mailinglists_path)
+            else
+              render :text => "<script type='text/javascript'>parent.window.location = '#{refinery.mailinglists_admin_mailinglists_path}';</script>"
+            end
+          end
+        end
+
       protected
         def rewrite_flash?
           yield
