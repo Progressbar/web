@@ -23,7 +23,7 @@ module Refinery
         # if subscriber not exits we create new and subcribe him where he want
         subscribed_general = false
         subscribed_events = false
-        if subscriber.nil?
+        if subscriber.nil? and @mailinglist.valid?
           subscribed_general = subscribe(@mailinglist, 'general') if @mailinglist[:general]
           subscribed_events = subscribe(@mailinglist, 'events') if @mailinglist[:events]
 
