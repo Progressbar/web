@@ -8,7 +8,6 @@ module Refinery
       acts_as_indexed :fields => [:username, :email, :message]
 
       alias_attribute :name, :username
-      alias_attribute :message, :personal_info
 
       validates :username, :presence => true, :length => { :in => 6..32 }
       validates :email, :presence => true, :uniqueness => true, :length => { :in => 6..64 }
