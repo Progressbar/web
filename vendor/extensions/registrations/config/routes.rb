@@ -9,21 +9,9 @@ Refinery::Core::Engine.routes.append do
   end
 
   # Admin routes
-  namespace :transactions, :path => '' do
-    namespace :admin, :path => 'refinery' do
-      resources :transactions do
-        collection do
-          get :income
-          get :outcome
-        end
-      end
-    end
-  end
-
-  # Admin routes
   namespace :registrations, :path => '' do
-    namespace :admin, :path => 'refinery' do
-      resources :registrations do
+    namespace :admin, :path => 'refinery/registrations' do
+      resources :registrations, :path => '' do
         collection do
           get :approved
           get :rejected
@@ -38,4 +26,3 @@ Refinery::Core::Engine.routes.append do
     end
   end
 end
-
