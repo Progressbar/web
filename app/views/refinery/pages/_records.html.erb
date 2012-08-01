@@ -1,0 +1,24 @@
+<% content_for :body do %>
+  <%=raw @page.content_for(:body) %>
+  <table>
+    <% @records.each do |k, r|  %>
+      <tr>
+        <td class="title"><%= r[:title] %></td>
+        <td class="date">
+          <%= r[:date] %>
+        </td>
+        <td class="formats">
+          <% r[:format].each do |f, s| %>
+            <a href="<%= "#{r[:repository].first}/#{k}.#{f}" %>">
+              <%= f %> -
+              <%= s %>
+            </a>
+            <%= " / " %>
+          <% end %>
+        </td>
+      </tr>
+    <% end if @records %>
+  </table>
+<% end %>
+<% content_for :side_body do %>
+<% end %>
