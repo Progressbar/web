@@ -2,7 +2,7 @@ module Refinery
   module Registrations
     class RegistrationsController < ::ApplicationController
 
-      before_filter :find_page, :only => [:create, :new]
+      before_filter :find_page, :only => [:create, :index]
 
       def index
         @registration = Registration.new
@@ -34,7 +34,7 @@ module Refinery
 
           redirect_to refinery.thank_you_registrations_registrations_path
         else
-          render :action => 'new'
+          render :action => 'index'
         end
       end
 
