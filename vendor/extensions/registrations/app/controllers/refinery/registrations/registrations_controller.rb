@@ -34,14 +34,14 @@ module Refinery
 
           redirect_to refinery.thank_you_registrations_registrations_path
         else
-          render :action => 'index'
+         render :action => 'index'
         end
       end
 
     protected
 
       def find_page
-        @page = Refinery::Page.find_by_link_url('/join-us', :include => [:parts])
+        @page = Refinery::Page.find_by_id(11, :include => [:parts])
       end
 
     end
