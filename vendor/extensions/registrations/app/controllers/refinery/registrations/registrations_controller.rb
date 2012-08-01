@@ -5,15 +5,11 @@ module Refinery
       before_filter :find_page, :only => [:create, :new]
 
       def index
-        redirect_to :action => "new"
+        @registration = Registration.new
       end
 
       def thank_you
-        @page = Refinery::Page.find_by_link_url("/registrations/thank_you", :include => [:parts])
-      end
-
-      def new
-        @registration = Registration.new
+        @page = Refinery::Page.find_by_link_url("/join-us/thank_you", :include => [:parts])
       end
 
       def create
@@ -45,7 +41,7 @@ module Refinery
     protected
 
       def find_page
-        @page = Refinery::Page.find_by_link_url('/registrations/new', :include => [:parts])
+        @page = Refinery::Page.find_by_link_url('/join-us', :include => [:parts])
       end
 
     end

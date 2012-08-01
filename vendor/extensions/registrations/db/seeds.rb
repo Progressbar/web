@@ -9,15 +9,15 @@ end
 
 if defined?(::Refinery::Page)
   page = ::Refinery::Page.create(
-    :title => "Registrations",
-    :link_url => "/registrations/new",
+    :title => "Join Us",
+    # :link_url => "/join-us",
     :deletable => false,
     :show_in_menu => false,
-    :menu_match => "^/registrations(\/|\/.+?|)$"
+    :menu_match => "^/join-us(\/|\/.+?|)$"
   )
   thank_you_page = page.children.create(
     :title => "Thank You",
-    :link_url => "/registrations/thank_you",
+    :link_url => "/join-us/thank_you",
     :deletable => false,
     :show_in_menu => false
   )

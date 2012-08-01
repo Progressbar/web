@@ -1,7 +1,7 @@
 Refinery::Core::Engine.routes.append do
   # Frontend routes
   namespace :registrations do
-    resources :registrations, :path => '', :only => [:new, :create] do
+    resources :registrations, :path => 'join-us', :only => [:index, :create] do
       collection do
         get :thank_you
       end
