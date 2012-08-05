@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/parndt/refinerycms-i18n.git
-  revision: 22646143c6e4ce43e4480cef8aa94ede22f761c9
+  revision: 0463d01834614e328e7d4d0b6fef003641d3b667
   branch: master
   specs:
     refinerycms-i18n (2.1.0.dev)
@@ -138,7 +138,7 @@ GEM
     arel (3.0.2)
     awesome_nested_set (2.1.3)
       activerecord (>= 3.0.0)
-    babosa (0.3.7)
+    babosa (0.3.8)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
     capybara (1.1.2)
@@ -176,9 +176,9 @@ GEM
     factory_girl_rails (1.7.0)
       factory_girl (~> 2.6.0)
       railties (>= 3.0.0)
-    ffi (1.1.3)
+    ffi (1.1.4)
     filters_spam (0.3)
-    friendly_id (4.0.7)
+    friendly_id (4.0.8)
     globalize3 (0.2.0)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
@@ -280,7 +280,7 @@ GEM
       polyglot (>= 0.3.1)
     truncate_html (0.5.5)
     tzinfo (0.3.33)
-    uglifier (1.2.6)
+    uglifier (1.2.7)
       execjs (>= 0.3.0)
       multi_json (~> 1.3)
     warden (1.1.1)
