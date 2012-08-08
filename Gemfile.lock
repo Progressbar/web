@@ -1,9 +1,10 @@
 GIT
   remote: git://github.com/parndt/refinerycms-i18n.git
-  revision: 0463d01834614e328e7d4d0b6fef003641d3b667
+  revision: 2a6d35554421d4e0a2ebeba6eb291bcd0ade9291
   branch: master
   specs:
     refinerycms-i18n (2.1.0.dev)
+      rails-i18n (~> 0.6.5)
       refinerycms-core (~> 2.0)
       routing-filter (~> 0.3.0)
 
@@ -148,7 +149,7 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (~> 2.0)
       xpath (~> 0.1.4)
-    childprocess (0.3.4)
+    childprocess (0.3.5)
       ffi (~> 1.0, >= 1.0.6)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -190,7 +191,7 @@ GEM
       railties (>= 3.2.0, < 5.0)
       thor (~> 0.14)
     json (1.7.4)
-    launchy (2.1.1)
+    launchy (2.1.2)
       addressable (~> 2.3)
     letter_opener (0.0.2)
       launchy
@@ -224,6 +225,8 @@ GEM
       activesupport (= 3.2.7)
       bundler (~> 1.0)
       railties (= 3.2.7)
+    rails-i18n (0.6.5)
+      i18n (~> 0.5)
     rails_autolink (1.0.9)
       rails (~> 3.1)
     railties (3.2.7)
