@@ -68,37 +68,6 @@ sk:
       join_to_us: 'Pridaj sa k nám'
       or: alebo
       support_us: 'nás podpor!'
-  pages:
-    join:
-      member: Člen
-      month: 'mesiac'
-      students_discounts: 'pre študentov <strong>50% zľava</strong>'
-      opportunity_to_use_space_and_equipment: 'Možnosť využívať priestor a zariadenie hackerspacu'
-      discounts_on_various_items_and_purchases: 'Zľavy na rôzne predmety a nákupy'
-      discounts_on_international_conferences: 'Zľavy na medzinárodné konferencie'
-      involvement_in_the_running_progressbar: 'Spolurozhodovanie o chode Progressbaru'
-      access_to_nonpublic_material_information: 'Prístup k neverejným materiálom a informáciám'
-      and_much_more: '..a mnoho viac'
-      your_name: 'Tvoje meno'
-      email: 'E-mail'
-      personal_info: 'Niečo o sebe'
-      create_registration: 'Registrovať sa hneď'
-      supporter: Podporovateľ
-      join_us_title: 'Pridaj sa k nám a staň sa členom alebo podporovateľom hackerspacu.'
-      voluntary: 'Dobrovoľné'
-      no_commitments_and_obligations: 'Žiadne záväzky a povinnosti'
-      any_type_height_and_form_of_aid: 'Ľubovolný typ, výška a forma podpory'
-      opportunity_to_become_an_active_member: 'Možnosť stať sa aktívnym členom'
-      optional_registration_between_the_sponsors_and_supporters: 'Voliteľný <a href="/oficiality/sponzori">zápis medzi sponzorov a podporovateľov</a>'
-      feel_good: 'Dobrý pocit ;-)'
-      more_information_and_other_options: '<a href="#todo" class="todo">Viac informácií a daľšie možnosti</a>'
-      account_number: 'Číslo účtu:'
-      for_payments_from_abroad: 'pre platby zo zahraničia'
-      for_membership_payment_enter_the_variable_as_a_symbol_of_their_membership_number: 'V prípade členskej platby uvedte ako variabilný symbol svoje členské číslo.'
-      do_you_like_new_web: 'Páči sa ti nový web?'
-      support_web_development: 'Podpor jeho vývoj!'
-  feedback: Spätná väzba
-  share_with_friends: Zdieľaj túto stránku
   projects:
     title: 'Aktívne sa venujeme a podielame napriklad na projektoch:'
     owasp:
@@ -113,3 +82,9 @@ sk:
     videoarchive:
       title: 'Záznamy z prednášok'
       desc: 'Video / audio záznamy z niektorých predchádzajúcich akcií v Progressbare'
+  more_information_and_other_options: '<a href="#todo" class="todo">Viac informácií a daľšie možnosti</a>'
+  account_number: 'Číslo účtu:'
+  for_payments_from_abroad: 'pre platby zo zahraničia'
+  for_membership_payment_enter_the_variable_as_a_symbol_of_their_membership_number: 'V prípade členskej platby uvedte ako variabilný symbol svoje členské číslo.'
+  feedback: Spätná väzba
+  share_with_friends: Zdieľaj túto stránku

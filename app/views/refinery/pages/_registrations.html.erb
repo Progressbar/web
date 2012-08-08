@@ -1,5 +1,7 @@
 <% content_for :perex do %>
+
 	<%=raw @page.content_for(:perex) %>
+
 	<div class="clearfix">
 	  <div class="join-box left-half">
 	    <footer class="footer">
@@ -9,9 +11,9 @@
 	  <div class="join-box right-half">
 	    <footer class="footer">
 	      <p>
-	        <%= t('.account_number') %>
+	        <%= t('account_number') %>
 	        <%= Refinery::Setting.get(:site_bank_account) %><br />
-	        <abbr title="<%= t('.for_payments_from_abroad') %>">IBAN</abbr>:
+	        <abbr title="<%= t('for_payments_from_abroad') %>">IBAN</abbr>:
 	          <%= Refinery::Setting.get(:site_bank_iban) %><br />
 	          BIC/SWIFT:
 	          <%= Refinery::Setting.get(:site_bank_swift) %>
@@ -22,7 +24,7 @@
 	      </p>
 	      <p class="msg info note">
 	        <img class="ui-icon ui-icon-info" src="/images/s.gif" alt="info icon">
-	        <%= t('.for_membership_payment_enter_the_variable_as_a_symbol_of_their_membership_number') %>
+	        <%= t('for_membership_payment_enter_the_variable_as_a_symbol_of_their_membership_number') %>
 	      </p>
 
 	    </footer>
