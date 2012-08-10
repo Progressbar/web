@@ -90,37 +90,6 @@ ActiveRecord::Schema.define(:version => 20120808120543) do
   add_index "refinery_blog_posts", ["id"], :name => "index_refinery_blog_posts_on_id"
   add_index "refinery_blog_posts", ["slug"], :name => "index_refinery_blog_posts_on_slug"
 
-  create_table "refinery_calendar_core_calendars", :force => true do |t|
-    t.string   "app"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "refinery_calendar_events", :force => true do |t|
-    t.string   "title"
-    t.date     "from"
-    t.date     "to"
-    t.string   "registration_link"
-    t.string   "excerpt"
-    t.text     "description"
-    t.integer  "position"
-    t.boolean  "featured"
-    t.string   "slug"
-    t.integer  "venue_id"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
-  end
-
-  create_table "refinery_calendar_venues", :force => true do |t|
-    t.string   "name"
-    t.string   "address"
-    t.string   "url"
-    t.string   "phone"
-    t.integer  "position"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "refinery_fees", :force => true do |t|
     t.integer  "user_id",                                                         :null => false
     t.integer  "transaction_id",                                                  :null => false

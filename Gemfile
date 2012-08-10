@@ -56,7 +56,7 @@ gem 'refinerycms-settings', :git => 'git://github.com/parndt/refinerycms-setting
 gem 'refinerycms-i18n', :git => 'git://github.com/parndt/refinerycms-i18n.git', :branch => 'master'
 gem 'refinerycms-blog', :path => 'vendor/refinerycms-blog', :branch => 'master'
 gem 'refinerycms-inquiries', :path => 'vendor/refinerycms-inquiries', :branch => 'master'
-gem 'refinerycms-calendar', :path => 'vendor', :branch => '2-1-experimental'
+# gem 'refinerycms-calendar', :path => 'vendor', :branch => '2-1-experimental'
 # gem 'refinerycms-inquiries', '~> 2.0.0'
 #  gem 'refinerycms-search', '~> 2.0.0'
 #  gem 'refinerycms-page-images', '~> 2.0.0'
