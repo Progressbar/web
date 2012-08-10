@@ -11,6 +11,9 @@ group :development, :test do
   gem 'sqlite3'
   gem 'refinerycms-testing'
   gem "letter_opener"
+  gem 'guard-rspec'
+  gem 'guard-spork'
+  gem 'spork'
   gem 'thin'
 end
 
