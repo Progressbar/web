@@ -18,11 +18,6 @@ GIT
       refinerycms-core (~> 2.1.0.dev)
 
 PATH
-  remote: vendor
-  specs:
-    refinerycms-calendar (2.0.0)
-
-PATH
   remote: vendor/extensions
   specs:
     refinerycms-fees (1.0)
@@ -158,7 +153,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.3.3)
-    daemons (1.1.8)
+    daemons (1.1.9)
     database_cleaner (0.7.2)
     devise (2.0.4)
       bcrypt-ruby (~> 3.0)
@@ -304,7 +299,6 @@ DEPENDENCIES
   rails (~> 3.2.3)
   refinerycms!
   refinerycms-blog!
-  refinerycms-calendar!
   refinerycms-fees!
   refinerycms-i18n!
   refinerycms-inquiries!
