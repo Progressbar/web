@@ -15,9 +15,6 @@ Refinery::Inquiries::Engine.load_seed
 # Added by Refinery CMS Blog engine
 Refinery::Blog::Engine.load_seed
 
-# Added by Refinery CMS Venues extension
-Refinery::Calendar::Engine.load_seed
-
 Refinery::Mailinglists::Engine.load_seed
 
 Refinery::Registrations::Engine.load_seed
