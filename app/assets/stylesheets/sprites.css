@@ -132,3 +132,28 @@ img.sprites {
 .sprite-icon-email-32:hover {
     background-position  : -352px 0px;
 }
+
+
+.flags-sprites {
+    background-image     : url(/assets/design/icons/sk-en_flags.png);
+    background-color     : transparent;
+    background-repeat    : no-repeat;
+    height               : 11px;
+    width                : 16px;
+ }
+
+ a .sprite-icon-en {
+    background-position  : 0px 0px;
+ }
+
+ .sprite-icon-en {
+    background-position  : 0px -11px;
+ }
+ 
+ a .sprite-icon-sk {
+    background-position  : -16px 0px;
+ }
+
+ .sprite-icon-sk {
+    background-position  : -16px -11px;
+ }
