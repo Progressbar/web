@@ -384,9 +384,8 @@ button { width: auto; overflow: visible; }
     padding-top: 10px;
 }
 
-#member-lang {
+#lang {
     float: right;
-    position: relative;
 }
 
 #menu {
@@ -394,10 +393,6 @@ button { width: auto; overflow: visible; }
     text-transform: uppercase;
     position: relative;
     bottom: -1px;
-}
-
-#menu ul {
-
 }
 
 #menu li {

@@ -8,14 +8,9 @@
   <% end %>
 </div>
 <div id="nav-holder">
-  <nav id="member-lang">
-<%#= link_to t('.new_event'), '/akcie-a-organizacia/' %><span class="delim">&nbsp;|&nbsp;</span>
-<%= link_to t('.registration'), '/pridaj-sa' %><span class="delim">&nbsp;|&nbsp;</span>
-    <%= link_to t('.for_members'), '/refinery/'  %><span class="delim">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-    
+  <nav id="lang">
     <%= link_to_if(!is_lang?('sk'), '<img class="flags-sprites sprite-icon-sk" src="/s.gif" alt="Slovenčina" >'.html_safe, '/', :title => 'Slovenská verzia') %><span class="delim">&nbsp;&nbsp;</span>
     <%= link_to_if(!is_lang?('en'), '<img class="flags-sprites sprite-icon-en" src="/s.gif" alt="English" >'.html_safe, '/en', :title => 'English version') %>
-
   </nav>
 <%#= render :partial => '/shared/search_form' %>
   <%= render(:partial => "/refinery/menu", :locals => {
