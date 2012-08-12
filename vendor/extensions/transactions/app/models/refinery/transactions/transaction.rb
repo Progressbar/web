@@ -15,7 +15,9 @@ module Refinery
       validates :primary_type, :presence => true
       validates :amount, :presence => true
       validates :realized_at, :presence => true
-      validates :stamp, :presence => true
+      # validates :stamp, :presence => true
+
+      before_save :generate_stamp
 
       default_scope :order => 'realized_at DESC'
 
@@ -40,7 +42,18 @@ module Refinery
           "Payment to #{self.to_account}"
         end
       end
+    
+     protected
 
+       def generate_stamp
+        if self[:stamp].blank?
+          stamp_data = ''
+          [:from_account, :to_account, :vs, :amount, :currency, :realized_at, :message, :raw].each do |attr|
+            stamp_data += self[attr].to_s
+          end
+          self[:stamp] = Digest::MD5.hexdigest(stamp_data)
+        end
+       end
     end
   end
 end
