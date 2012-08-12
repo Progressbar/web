@@ -15,7 +15,7 @@ module Refinery
       validates :primary_type, :presence => true
       validates :amount, :presence => true
       validates :realized_at, :presence => true
-      # validates :stamp, :presence => true
+      validates :stamp, :uniqueness => true
 
       before_save :generate_stamp
 

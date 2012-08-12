@@ -9,7 +9,7 @@ module Refinery
 
     has_many :plugins, :class_name => "UserPlugin", :order => "position ASC", :dependent => :destroy
 
-    has_many :refinery_fees
+    has_many :fees, :class_name => '::Refinery::Fees::Fee'
 
     friendly_id :username
 

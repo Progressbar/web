@@ -4,8 +4,8 @@
       <%= transaction.title %>
       <%= ", #{transaction.message.truncate(32)} " unless transaction.message.nil? %>
     </span>
-    <% unless transaction.secondary_type.nil? %>
-    <span class="type" style="float: right"><%= transaction.secondary_type %>&nbsp;</span>
+    <% unless transaction.custom_type.nil? %>
+    <span class="type" style="float: right"><%= transaction.custom_type %>&nbsp;</span>
     <% end %>
   </td>
   <td><%= transaction.realized_at %></td>

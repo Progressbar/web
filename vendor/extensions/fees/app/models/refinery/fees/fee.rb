@@ -19,9 +19,12 @@ module Refinery
       validates :month, :presence => true, :numericality => { :only_integer => true }
       validates :year, :presence => true, :numericality => { :only_integer => true }
 
+      validates :stamp, :uniqueness => true
+
       validates_associated :user
       validates_associated :transaction
 
+      before_save :generate_stamp
       before_save :generate_stamp
 
       self.per_page = 36
