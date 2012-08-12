@@ -388,6 +388,14 @@ button { width: auto; overflow: visible; }
     float: right;
 }
 
+#lang a {
+    opacity: 0.6;
+}
+
+#lang a:hover {
+    opacity: 1;
+}
+
 #menu {
     clear: both;
     text-transform: uppercase;
@@ -542,6 +550,11 @@ h3 a, h4 a {
 
 p a:link {
     text-decoration: underline;
+}
+
+#feedback {
+    height: 60px;
+    margin-bottom: 42px;
 }
 
 #copy {
