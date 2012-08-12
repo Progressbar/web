@@ -37,7 +37,7 @@ module Progressbar
       :CONTACT_THANK_YOU_PAGE_ID => 5,
       :CONTACT_PRIVACY_PAGE_ID => 6,
       :BLOG_PAGE_ID => 7,
-      :JOIN_US_PAGE_ID => 11,
+      :JOIN_US_PAGE_ID => 10,
 #      :CALENDAR_PAGE_ID => 14,
 #      :COLOPHON_PAGE_ID => 15,
 #      :WIKI_PAGE_ID => 20,

@@ -75,11 +75,11 @@ module Refinery
           :title => { :sk => 'Úvod', :en => 'Home'},
           :menu_position => 1
         },
-        :events => {
-          :title => { :sk => 'Kalendár', :en => 'Calendar'},
-          :attributes => {:deletable => false, :show_in_menu => true},
-          :menu_position => 10
-        },
+#        :events => {
+#          :title => { :sk => 'Kalendár', :en => 'Calendar'},
+#          :attributes => {:deletable => false, :show_in_menu => true},
+#          :menu_position => 10
+#        },
         :blog => {
           :title => { :sk => 'Blog', :en => 'Blog'},
           :attributes => {:deletable => false, :show_in_menu => true},
@@ -126,7 +126,7 @@ module Refinery
           :attributes => {:deletable => false, :show_in_menu => false}
         },
         :join_us => {
-          :title => { :sk => 'Pridaj sa', :en => 'Join us'},
+          :title => { :sk => 'Pridaj sa', :en => 'Join Us'},
           :attributes => {:deletable => false, :show_in_menu => false}
         },
         :colophon => {
@@ -155,10 +155,24 @@ module Refinery
         }
       }
 
+      def find_page_by_id_or_title (id, title)
+        page = Page.find_by_id(id)
+        current_locale = ::I18n.locale
+
+        I18n.frontend_locales.each do |lang|
+          ::I18n.locale = lang
+          page = Page.find_by_title(title[lang]) unless page
+        end
+
+        ::I18n.locale = current_locale
+
+        page
+      end
+
       pages.each do |psym, p|
         id = "#{psym}_page_id".upcase.to_sym
-        page = Page.find_by_id(ids[id])
-        page = Page.find_by_title(p[:title][::I18n.locale]) unless page
+        page = find_page_by_id_or_title(ids[id], p[:title])
+
         attributes = {:deletable => false, :show_in_menu => true}
         attributes = attributes.merge(p[:attributes]) if p[:attributes]
 

@@ -12,8 +12,8 @@ if defined?(::Refinery::Page)
     :title => "Join Us",
     # :link_url => "/join-us",
     :deletable => false,
-    :show_in_menu => false,
-    :menu_match => "^/join-us(\/|\/.+?|)$"
+    :show_in_menu => false
+    # :menu_match => "^/join-us(\/|\/.+?|)$"
   )
   thank_you_page = page.children.create(
     :title => "Thank You",
