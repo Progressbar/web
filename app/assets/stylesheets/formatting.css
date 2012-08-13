@@ -370,7 +370,7 @@ button { width: auto; overflow: visible; }
     width: 370px;
     padding: 0px;
     margin: 0px;
-    position: relative;
+    overflow: hidden;
 }
 
 #logo a, #logo strong {
