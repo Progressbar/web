@@ -3,8 +3,9 @@
 
 module Refinery
 
-  class PbImport
-    def import_settings
+  module PbImport
+
+    def self.import_settings
 
       settings = {
         :site_email => 'info@progressbar.sk',
@@ -42,7 +43,7 @@ module Refinery
       
     end
 
-    def import_users
+    def self.import_users
 
       users = [
         {:username => 'admin', :email => 'info@progressbar.sk'}
@@ -67,7 +68,21 @@ module Refinery
 
     end
 
-    def import_pages
+    def self.find_page_by_id_or_title (id, title)
+      page = Page.find_by_id(id)
+      current_locale = ::I18n.locale
+
+      I18n.frontend_locales.each do |lang|
+        ::I18n.locale = lang
+        page = Page.find_by_title(title[lang]) unless page
+      end
+
+      ::I18n.locale = current_locale
+
+      page
+    end
+
+    def self.import_pages
 
       ids = Progressbar::Application::PAGES
       pages = {
@@ -155,20 +170,6 @@ module Refinery
         }
       }
 
-      def find_page_by_id_or_title (id, title)
-        page = Page.find_by_id(id)
-        current_locale = ::I18n.locale
-
-        I18n.frontend_locales.each do |lang|
-          ::I18n.locale = lang
-          page = Page.find_by_title(title[lang]) unless page
-        end
-
-        ::I18n.locale = current_locale
-
-        page
-      end
-
       pages.each do |psym, p|
         id = "#{psym}_page_id".upcase.to_sym
         page = find_page_by_id_or_title(ids[id], p[:title])
@@ -237,13 +238,11 @@ module Refinery
 
   end
 
-  pb = PbImport.new
-
   puts 'import/update settings'
-  pb.import_settings
+  PbImport.import_settings
   puts 'import/update users'
-  pb.import_users
+  PbImport.import_users
   puts 'import/update pages'
-  pb.import_pages
+  PbImport.import_pages
 
 end
