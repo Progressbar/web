@@ -35,32 +35,6 @@
     <%= render "/refinery/mailinglists/mailinglists/form" %>
   </div>
 </section>
-<section id="address" >
-  <header>
-    <h3 class="hidden"><%= t('address.title') %></h3>
-  </header>
-  <div class="content">
-    <address class="vcard">
-      <a class="url fn org " href="http://www.progressbar.sk/"><%= Refinery::Core.site_name %></a>,
-      <a class="email" href="mailto:<%= Refinery::Setting.get(:site_email) %>"><%= Refinery::Setting.get(:site_email) %></a>,
-      <span class="adr">
-        <span class="street-address"><%= Refinery::Setting.get(:site_location_street) %></span>,
-        <span>
-          <span class="locality"><%= Refinery::Setting.get(:site_location_city) %></span>,
-          <span class="postal-code"><%= Refinery::Setting.get(:site_location_postal_code) %></span>,
-        </span>
-        <span class="country-name"><%= Refinery::Setting.get(:site_location_country) %></span>
-      </span>
-      <span class="delim">&nbsp;|&nbsp;</span>
-      <span class="geo">
-        GPS:
-        <abbr class="latitude" title="<%= Refinery::Setting.get(:site_location_latitude_title) %>"><%= Refinery::Setting.get(:site_location_latitude) %></abbr>
-        <abbr class="longitude" title="<%= Refinery::Setting.get(:site_location_longitude_title) %>"><%= Refinery::Setting.get(:site_location_longitude) %></abbr>
-      </span>
-    </address>
-
-  </div>
-</section>
 <div id="license">
   <%= raw t('license_note') %>
 </div>
@@ -70,7 +44,7 @@
   <%#= link_to(@colophon_page.title, @colophon_page) %>
 </div>
 <nav id='bottom-menu' class='menu clearfix'>
-  <%= link_to(@blog_page.title, @blog_page.url) %> <span class="delim">&nbsp;|&nbsp;</span>
+  <%= link_to(@home_page.title, @home_page.url) %> <span class="delim">&nbsp;|&nbsp;</span>
   <%= link_to(@contact_page.title, @contact_page.url) %> <span class="delim">&nbsp;|&nbsp;</span>
   <a href="#"><%= t('top') %>  &uarr;</a>
 </nav>
