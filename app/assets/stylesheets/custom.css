@@ -299,12 +299,11 @@
     margin-bottom: 16px;
 }
 
-section#address {
+#license {
     width: 100%;
     clear:both;
-    padding: 16px 0px;
+    padding-top: 16px;
     margin-bottom: 16px;
-    text-align: center;
 }
 
 #fancybox-content {
