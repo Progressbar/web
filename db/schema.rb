@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120808120543) do
+ActiveRecord::Schema.define(:version => 20120814120445) do
 
   create_table "refinery_blog_categories", :force => true do |t|
     t.string   "title"
@@ -89,6 +89,14 @@ ActiveRecord::Schema.define(:version => 20120808120543) do
   add_index "refinery_blog_posts", ["access_count"], :name => "index_refinery_blog_posts_on_access_count"
   add_index "refinery_blog_posts", ["id"], :name => "index_refinery_blog_posts_on_id"
   add_index "refinery_blog_posts", ["slug"], :name => "index_refinery_blog_posts_on_slug"
+
+  create_table "refinery_door_statuses", :force => true do |t|
+    t.boolean  "is_open"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "refinery_door_statuses", ["id"], :name => "index_refinery_door_statuses_on_id"
 
   create_table "refinery_fees", :force => true do |t|
     t.integer  "user_id",                                                         :null => false

@@ -20,6 +20,10 @@ GIT
 PATH
   remote: vendor/extensions
   specs:
+    refinerycms-door_statuses (1.0)
+      acts_as_indexed (~> 0.7)
+      refinerycms-core (~> 2.1.0.dev)
+      refinerycms-settings (~> 2.1.0.dev)
     refinerycms-fees (1.0)
     refinerycms-mailinglists (1.0)
     refinerycms-registrations (1.0)
@@ -319,6 +323,7 @@ DEPENDENCIES
   rails (~> 3.2.3)
   refinerycms!
   refinerycms-blog!
+  refinerycms-door_statuses!
   refinerycms-fees!
   refinerycms-i18n!
   refinerycms-inquiries!

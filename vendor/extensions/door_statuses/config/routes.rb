@@ -1,6 +1,7 @@
 Refinery::Core::Engine.routes.draw do
   
-    get '/api/door_status/update' => 'DoorStatuses::DoorStatuses#update'
+    get '/api/door-status' => 'DoorStatuses::DoorStatuses#index'
+    get '/api/door-status/new' => 'DoorStatuses::DoorStatuses#new'
 
 end
 

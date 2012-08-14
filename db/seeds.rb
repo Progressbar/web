@@ -24,3 +24,5 @@ Refinery::Transactions::Engine.load_seed
 
 # Added by Refinery CMS Fees extension
 Refinery::Fees::Engine.load_seed
+
+Refinery::DoorStatuses::Engine.load_seed

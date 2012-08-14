@@ -1,13 +1,21 @@
 module Refinery
   module DoorStatuses
-    class DoorStatusesController < ::ApplicationController
+    class DoorStatusesController < ::ApiController
 
-      def update
-        @door_status = DoorStatus.new(params[:door_status])
+      def index
+      	render :json => DoorStatus.last
+      end
 
-        updated = @door_status.save ? true : false
+      def new
+      	created = false
 
-        render :json => {:updated => 'xxxxxx'}
+      	if params[:door_status].present?
+	        @door_status = DoorStatus.new(params[:door_status])
+
+	        created = @door_status.save ? true : false
+  	    end
+
+        render :json => {:created => created}
       end
 
     end
