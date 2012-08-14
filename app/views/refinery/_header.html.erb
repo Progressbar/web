@@ -7,6 +7,10 @@
     </strong>
   <% end %>
 </div>
+<div id="door-status">
+<%= link_to(is_open? ? 'is open' : 'is closed', 'http://stats.progressbar.sk/#door-status', :class => (is_open? ? 'open' : 'closed')) %>
+
+</div>
 <div id="nav-holder">
   <nav id="lang">
     <%= link_to_if(!is_lang?('sk'), '<img class="flags-sprites sprite-icon-sk" src="/s.gif" alt="Slovenčina" >'.html_safe, '/', :title => 'Slovenská verzia') %><span class="delim">&nbsp;&nbsp;</span>

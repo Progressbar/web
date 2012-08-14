@@ -355,6 +355,10 @@ button { width: auto; overflow: visible; }
     border-bottom: solid 1px #444;
 }
 
+#header {
+    position: relative;
+}
+
 #header #hgroup {
     float: left;
     width: 40%;
@@ -382,6 +386,19 @@ button { width: auto; overflow: visible; }
 
 #nav-holder {
     padding-top: 10px;
+}
+
+#door-status {
+    position: absolute;
+    top: 0px;
+    /* left: 16px; */
+    left: 47%;
+    line-height: 32px;
+}
+
+#door-status .open {
+    color: #079A07;
+    font-weight: bold;
 }
 
 #lang {
