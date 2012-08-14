@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
   end
 
   def door_status
-    @door_status = Refinery::DoorStatuses::DoorStatus.last
+    @door_status = ::Refinery::DoorStatuses::DoorStatus.last
   end
 
   # for canonical url
