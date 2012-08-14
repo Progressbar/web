@@ -105,20 +105,20 @@ module Refinery
           :attributes => {:deletable => false, :show_in_menu => true},
           :menu_position => 40
         },
+        :gallery => {
+          :title => { :sk => 'Galéria', :en => 'Gallery'},
+          :attributes => {:deletable => false, :show_in_menu => true},
+          :menu_position => 50
+        },
         :statutes => {
           :title => { :sk => 'Stanovy', :en => 'Statutes'},
           :attributes => {:deletable => false, :show_in_menu => true},
-          :menu_position => 50
+          :menu_position => 60
         },
         :sponsors => {
           :title => { :sk => 'Sponzori', :en => 'Sponsors'},
           :attributes => {:deletable => false, :show_in_menu => true},
-          :menu_position => 60
-        },
-        :media => {
-          :title => { :sk => 'Médiá', :en => 'Media'},
-          :attributes => {:deletable => false, :show_in_menu => true},
-          :menu_position => 80
+          :menu_position => 70
         },
         :wiki => {
           :title => { :sk => 'Wiki', :en => 'Wiki'},
