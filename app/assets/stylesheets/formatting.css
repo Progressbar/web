@@ -399,6 +399,7 @@ button { width: auto; overflow: visible; }
 #door-status .open {
     color: #079A07;
     font-weight: bold;
+    text-shadow: 0px 0px 3px darkgreen;
 }
 
 #lang {

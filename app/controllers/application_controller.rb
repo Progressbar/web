@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  before_filter :default_pages, :mailing_list
+  before_filter :default_pages, :mailing_list, :door_status
 
   layout proc{ |c| c.request.xhr? ? false : "application" }
 
@@ -35,6 +35,9 @@ class ApplicationController < ActionController::Base
 
   end
 
+  def door_status
+    @door_status = Refinery::DoorStatuses::DoorStatus.last
+  end
 
   # for canonical url
   def canonical?
