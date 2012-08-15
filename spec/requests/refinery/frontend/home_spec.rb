@@ -28,11 +28,14 @@ module Refinery
         end
       end
 
-      it "should have top navigation links" do
-        within "#nav-holder" do
-          page.should have_selector("a[href='/pridaj-sa']") # Registration page
-          page.should have_selector("a[href='/refinery/']") # Member section
+      it "should have navigation links" do
+        within "#lang" do
           page.should have_selector("a[href='/en']") # English version
+        end
+
+        within "#membership-actions" do
+          page.should have_selector("a[href='/refinery/users/login']") # Login
+          page.should have_selector("a[href='/pridaj-sa']") # Registration
         end
       end
 
