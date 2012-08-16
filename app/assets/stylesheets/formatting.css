@@ -575,6 +575,10 @@ p a:link {
     margin-bottom: 42px;
 }
 
+#membership-actions {
+    font-size: 16px;
+}
+
 #copy {
     clear: both;
     float: left;
