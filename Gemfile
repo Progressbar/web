@@ -52,6 +52,7 @@ gem 'jquery-rails'
 # gem 'refinerycms', '~> 2.0.3' #, :path => 'vendor/refinerycms', :branch => '2-0-stable'
 gem 'refinerycms', :path => 'vendor/refinerycms', :branch => 'master'
 # gem 'refinerycms', :git => 'git://github.com/resolve/refinerycms.git', :branch => 'master'
+# gem 'refinerycms-settings', :path => '/home/web-data/work/nethemba/refinerycms-settings'
 gem 'refinerycms-settings', :git => 'git://github.com/parndt/refinerycms-settings.git', :branch => 'master'
 
 # Specify additional Refinery CMS Extensions here (all optional):
