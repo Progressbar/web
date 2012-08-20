@@ -29,11 +29,10 @@ a.il {
 .button, .button:visited, .button:link,
 .pagination a, .pagination em, .pagination span
 {
-    background: #008000;
+    background: #6F6F6F;
     box-shadow: 0px 5px 15px #111;
     display: inline-block;
     padding: 5px 10px 6px;
-    border-bottom: solid 5px #006400;
     color: #fff;
     text-decoration: none;
     -moz-border-radius: 5px;
@@ -74,7 +73,7 @@ a.il {
 }
 
 a.button:hover {
-    background-color: #079A07;
+
 }
 
 a.button:active {

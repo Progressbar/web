@@ -279,7 +279,19 @@
     font-size: 16px;
     font-weight: lighter;
     margin-left: 32px;
+    background: #009000;
+    border-bottom: solid 5px #006400;
 }
+
+#promo-action .button:hover {
+    background-color: #079A07;
+}
+
+
+#promo-action .button:active {
+    border-bottom-width: 1px;
+}
+
 
 #content-wrapper section footer {
     vertical-align: middle;
@@ -291,7 +303,7 @@
 }
 
 #calendar ul {
-    padding-lgieft: 0px;
+    padding-left: 0px;
     margin-left: 0px;
 }
 
