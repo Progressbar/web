@@ -91,12 +91,10 @@ ActiveRecord::Schema.define(:version => 20120814120445) do
   add_index "refinery_blog_posts", ["slug"], :name => "index_refinery_blog_posts_on_slug"
 
   create_table "refinery_door_statuses", :force => true do |t|
-    t.boolean  "is_open"
+    t.boolean  "is_open",    :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  add_index "refinery_door_statuses", ["id"], :name => "index_refinery_door_statuses_on_id"
 
   create_table "refinery_fees", :force => true do |t|
     t.integer  "user_id",                                                         :null => false
