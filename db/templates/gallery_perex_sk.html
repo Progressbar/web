@@ -1,0 +1,32 @@
+<nav id="gallery-nav">
+  <h2>
+    <a href="#gallery-media" class="active" onclick="return toggleSection(this);">
+      Logo &amp; Média
+    </a>
+    <span class="delim">&nbsp;|&nbsp;</span>
+    <a href="#gallery-actions" onclick="return toggleSection(this);">
+     Akcie 
+    </a>
+    <span class="delim">&nbsp;|&nbsp;</span>
+    <a href="#gallery-projects" onclick="return toggleSection(this);">
+      Projekty 
+    </a>
+    <span class="delim">&nbsp;|&nbsp;</span>
+    <a href="#gallery-place" onclick="return toggleSection(this);">
+      Priestory
+    </a>
+  </h2>
+</nav>
+<script>
+
+function toggleSection(link) {
+  var elm = $(link);
+  $('.section').removeClass('active');
+  $('#gallery-nav a').removeClass('active');
+  $(elm.attr('href')).addClass('active');
+  elm.addClass('active');
+
+  return false;
+}
+
+</script>
