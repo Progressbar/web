@@ -503,18 +503,6 @@ span.day {
     float: left;
 }
 
-#gallery-nav a.active {
-    color: #fff;
-    cursor: text;
-}
-
-#gallery-content .section {
-    display: none;
-}
-
-#gallery-content .section.active {
-    display: block;
-}
 
 @media only screen and (min-device-width: 920px) {
     .promo-item {
