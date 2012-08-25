@@ -54,7 +54,7 @@ module Refinery
         unless u
           p = (Rails.env.production?) ? (0...32).map{ ('a'..'z').to_a[rand(26)] }.join : 'nbusr123'
           u = User.create(user.merge({:password => p, :password_confirmation => p}))
-          puts "User \"#{user[:username]}\" with email\"#{user[:email]}\" was created."
+          puts "User \"#{user[:username]}\" with email \"#{user[:email]}\" was created."
         end
 
         u.add_role(:superuser)
