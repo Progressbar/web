@@ -247,25 +247,6 @@
     background-position: -2880px 0px;
 }
 
-#calendar h3 em {
-    font-size: small;
-}
-
-#calendar .categories {
-    float: right;
-}
-
-#calendar .title {
-    clear: both;
-    display: block;
-    padding: 5px 0px;
-}
-
-#blog_posts .blog_post .posted_at {
-    margin: 0px;
-    display: inline;
-}
-
 #promo-action {
     float: left;
     height: 110px;
@@ -287,11 +268,9 @@
     background-color: #079A07;
 }
 
-
 #promo-action .button:active {
     border-bottom-width: 1px;
 }
-
 
 #content-wrapper section footer {
     vertical-align: middle;
@@ -300,15 +279,6 @@
 
 #new_inquiry {
     clear: both;
-}
-
-#calendar ul {
-    padding-left: 0px;
-    margin-left: 0px;
-}
-
-#calendar li {
-    margin-bottom: 16px;
 }
 
 #license {
@@ -328,17 +298,6 @@
     text-decoration: none;
 }
 
-.vevent {
-    list-style: none;
-    padding-left: 0px;
-    margin-left: 0px;
-}
-
-span.day {
-    display: inline-block;
-    min-width: 60px;
-}
-
 .tabs img {
     max-width: 100%;
 }
@@ -351,10 +310,6 @@ span.day {
 
 .logo-preview.white {
     background: #fff;
-}
-
-.join-box {
-/*    font-size: 116%;*/
 }
 
 .join-box .content {
@@ -403,7 +358,6 @@ span.day {
     margin-top: 16px;
 }
 
-
 #member-description {
     padding-top: 8px;
     width: 640px;
@@ -427,82 +381,10 @@ span.day {
     padding: 20px;
 }
 
-.ui-datepicker-week-end {
-    opacity: 0.8;
-}
-
-.ui-datepicker-event .ui-state-default {
-    background: #fff;
-}
-
-.ui-datepicker-event  .ui-state-active{
-    background: #000;
-}
-
 .sidebar_module {
     padding-bottom: 8px;
     margin-bottom: 8px;
 }
-
-.individual_event {
-    padding: 8px;
-    margin-bottom: 16px;
-}
-
-.individual_event h1 {
-    margin: 0 0 8px;
-    padding: 0;
-}
-
-.events .individual_event:last-child {
-    margin-bottom: 0px;
-}
-
-.individual_event .event_image {
-    float: left;
-    margin: 0 8px 0 0;
-    min-height: 150px;
-    min-width: 150px;
-}
-
-#featured_events {
-    border: solid 1px #404040;
-    margin-bottom: 32px;
-    background: #121212;
-}
-
-.event h3 {
-    margin-bottom: 8px;
-    padding-top: 4px;
-}
-
-.event .desc {
-    min-height: 90px;
-    margin-left: 160px;
-}
-
-.event .start_end {
-    line-height: 2.4em;
-    font-style: italic;
-    margin-left: 160px;
-}
-
-#share_this_event {
-    padding-top: 16px;
-    margin-bottom: 32px;
-    clear: both;
-    margin-left: 160px;
-}
-
-.archives {
-    clear: both;
-}
-
-.archives ul {
-    width: 30%;
-    float: left;
-}
-
 
 @media only screen and (min-device-width: 920px) {
     .promo-item {
