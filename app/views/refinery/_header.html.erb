@@ -14,8 +14,8 @@
 <% end %>
 <div id="nav-holder">
   <nav id="lang">
-    <%= link_to_if(!is_lang?('sk'), '<img class="flags-sprites sprite-icon-sk" src="/s.gif" alt="Slovenčina" >'.html_safe, '/', :title => 'Slovenská verzia') %><span class="delim">&nbsp;&nbsp;</span>
-    <%= link_to_if(!is_lang?('en'), '<img class="flags-sprites sprite-icon-en" src="/s.gif" alt="English" >'.html_safe, '/en', :title => 'English version') %>
+    <%= link_to('<img class="flags-sprites sprite-icon-sk" src="/s.gif" alt="Slovenčina" >'.html_safe, '/', :title => 'Slovenská verzia') if is_lang?('en') %>
+    <%= link_to('<img class="flags-sprites sprite-icon-en" src="/s.gif" alt="English" >'.html_safe, '/en/', :title => 'English version') if is_lang?('sk') %>
   </nav>
 <%#= render :partial => '/shared/search_form' %>
   <%= render(:partial => "/refinery/menu", :locals => {
