@@ -34,5 +34,4 @@ $(function() {
         });
     }
 
-    var myCalendar = kCalendar($('#jquery-ui-calendar-holder'));
 });

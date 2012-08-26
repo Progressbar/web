@@ -11,6 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery-ui
 // require jquery-ui-1.8.16.custom.min.js
 //= require jquery.fancybox-1.3.4.pack.js
 // require jquery.mousewheel-3.0.4.pack.js
