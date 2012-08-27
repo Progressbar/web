@@ -66,6 +66,24 @@ module Refinery
 
       end
 
+      # one test user
+      if Rails.env.development?
+        test_users = [
+          {:username => 'jurko', :email => 'jurko@progressbar.sk'}
+        ]
+
+        test_users.each do |user|
+          u = User.find_by_email(user[:email])
+          unless u
+            p = (Rails.env.production?) ? (0...32).map{ ('a'..'z').to_a[rand(26)] }.join : 'jurko'
+            u = User.create(user.merge({:password => p, :password_confirmation => p}))
+            puts "User \"#{user[:username]}\" with email \"#{user[:email]}\" was created."
+          end
+
+          u.add_role(:refinery)
+        end
+      end
+
     end
 
     def self.find_page_by_id_or_title (id, title)
@@ -90,11 +108,11 @@ module Refinery
           :title => { :sk => 'Úvod', :en => 'Home'},
           :menu_position => 1
         },
-#        :events => {
-#          :title => { :sk => 'Kalendár', :en => 'Calendar'},
-#          :attributes => {:deletable => false, :show_in_menu => true},
-#          :menu_position => 10
-#        },
+        :calendar => {
+          :title => { :sk => 'Kalendár', :en => 'Calendar'},
+          :attributes => {:deletable => false, :show_in_menu => true},
+          :menu_position => 10
+        },
         :blog => {
           :title => { :sk => 'Blog', :en => 'Blog'},
           :attributes => {:deletable => false, :show_in_menu => true},
@@ -157,7 +175,7 @@ module Refinery
           :attributes => {:deletable => false, :show_in_menu => false}
         },
         :about => {
-          :title => { :sk => 'O nás', :en => 'About us'},
+          :title => { :sk => 'O nás', :en => 'About Us'},
           :attributes => {:deletable => false, :show_in_menu => false}
         },
         :join_us => {
