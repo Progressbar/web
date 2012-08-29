@@ -1,23 +1,4 @@
 
-#prevnext_nav {
-    clear: both;
-    display: block;
-    margin-bottom: 32px;
-    text-align: center;
-}
-
-#prevnext_nav .prev {
-    float: left;
-}
-
-#prevnext_nav .next {
-    float: right;
-}
-
-#prevnext_nav .third {
-    width: 40%;
-}
-
 a.il {
     display: block;
     width: 100px;
@@ -45,6 +26,25 @@ a.il {
 
 .button.disabled {
     background: none;
+}
+
+.pagination span {
+    box-shadow: none;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.pagination a, .pagination em {
+    text-align: center;
+    min-width: 14px;
+}
+
+.pagination a:link {
+    color: #ccc;
+}
+
+.pagination a:hover {
+    color: #fff !important;
 }
 
 .pagination em {
