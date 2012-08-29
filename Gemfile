@@ -70,7 +70,7 @@ gem 'refinerycms-registrations', :path => 'vendor/extensions'
 gem 'refinerycms-transactions', :path => 'vendor/extensions'
 gem 'refinerycms-fees', :path => 'vendor/extensions'
 
-# gem 'refinerycms-calendar', :path => 'vendor', :branch => 'pb-2'
+gem 'refinerycms-calendar', :path => 'vendor/refinerycms-calendar'
 #gem 'refinerycms-calendar', :path => 'vendor', :branch => 'fb_graph'
 #gem 'fb_graph'
 

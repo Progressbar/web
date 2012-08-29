@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120814120445) do
+ActiveRecord::Schema.define(:version => 20120824210646) do
 
   create_table "refinery_blog_categories", :force => true do |t|
     t.string   "title"
@@ -89,6 +89,64 @@ ActiveRecord::Schema.define(:version => 20120814120445) do
   add_index "refinery_blog_posts", ["access_count"], :name => "index_refinery_blog_posts_on_access_count"
   add_index "refinery_blog_posts", ["id"], :name => "index_refinery_blog_posts_on_id"
   add_index "refinery_blog_posts", ["slug"], :name => "index_refinery_blog_posts_on_slug"
+
+  create_table "refinery_calendar_categories", :force => true do |t|
+    t.string   "title",      :null => false
+    t.string   "slug",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "refinery_calendar_categories", ["slug"], :name => "index_refinery_calendar_categories_on_slug", :unique => true
+
+  create_table "refinery_calendar_categories_calendar_events", :force => true do |t|
+    t.integer "calendar_category_id", :null => false
+    t.integer "calendar_event_id",    :null => false
+  end
+
+  create_table "refinery_calendar_events", :force => true do |t|
+    t.string   "name",                                                               :null => false
+    t.text     "description"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.string   "slug",                                                               :null => false
+    t.boolean  "featured",                                        :default => false, :null => false
+    t.decimal  "ticket_price",      :precision => 8, :scale => 2
+    t.string   "ticket_link"
+    t.string   "registration_link"
+    t.integer  "location_id"
+    t.integer  "image_id"
+    t.integer  "user_id",                                                            :null => false
+    t.datetime "published_at",                                                       :null => false
+    t.boolean  "draft",                                           :default => false, :null => false
+    t.datetime "created_at",                                                         :null => false
+    t.datetime "updated_at",                                                         :null => false
+  end
+
+  add_index "refinery_calendar_events", ["name"], :name => "index_refinery_calendar_events_on_name"
+  add_index "refinery_calendar_events", ["slug"], :name => "index_refinery_calendar_events_on_slug", :unique => true
+
+  create_table "refinery_calendar_places", :force => true do |t|
+    t.string   "name",             :null => false
+    t.string   "slug"
+    t.text     "description"
+    t.string   "url"
+    t.integer  "image_id"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "address_country"
+    t.string   "address_locality"
+    t.string   "address_region"
+    t.string   "postal_code"
+    t.string   "street_address"
+    t.string   "latitude"
+    t.string   "longitude"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "refinery_calendar_places", ["name"], :name => "index_refinery_calendar_places_on_name"
+  add_index "refinery_calendar_places", ["slug"], :name => "index_refinery_calendar_places_on_slug", :unique => true
 
   create_table "refinery_door_statuses", :force => true do |t|
     t.boolean  "is_open",    :null => false
