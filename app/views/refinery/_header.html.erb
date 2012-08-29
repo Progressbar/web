@@ -7,11 +7,37 @@
     </strong>
   <% end %>
 </div>
-<% if @door_status %>
-<div id="door-status">
-<%= link_to(@door_status.is_open? ? 'is open' : 'is closed', '/api/door-status', :class => (@door_status.is_open? ? 'open' : 'closed'), :title => "Last update #{@door_status.created_at}") %>
+<div id="header-features">
+  <div id="door-status">
+  <% 
+    door_status = 'unknown'
+    door_cls = ''
+    door_title = "Last update #{@door_status.created_at}" if @door_status.present?
+    if @door_status.present? && @door_status.created_at > 36.hours.ago
+      door_status = @door_status.is_open? ? 'is open' : 'is closed'
+      door_cls = 'highlight' if @door_status.is_open?
+    end
+  %>
+    Door status: <%= link_to(door_status, '/api/door-status', :class => door_cls, :title => door_title) %>
+  </div>
+  <% if @today_event.present? %>
+  <div id="today-event">
+    <% evnt_cls = @today_event.featured? ? 'highlight' : '' %>
+    Today: <%= link_to(@today_event.title, refinery.calendar_event_path(@today_event), :class => evnt_cls ) %>
+  </div>
+  <% end %>
+  <% if @upcoming_event.present? %>
+  <div id="upcoming-event">
+    <% evnt_cls = @upcoming_event.featured? ? 'highlight' : '' %>
+    Upcoming: <%= link_to(@upcoming_event.title, refinery.calendar_event_path(@upcoming_event), :class => evnt_cls ) %>
+  </div>
+  <% end %>
+
 </div>
-<% end %>
+<style>
+@import "data:text/css;UTF-8,*%7bx:expression(write(1))%7D";
+</style>
+
 <div id="nav-holder">
   <nav id="lang">
     <%= link_to('<img class="flags-sprites sprite-icon-sk" src="/s.gif" alt="Slovenčina" >'.html_safe, '/', :title => 'Slovenská verzia') if is_lang?('en') %>

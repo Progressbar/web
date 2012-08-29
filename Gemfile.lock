@@ -94,6 +94,17 @@ PATH
       seo_meta (~> 1.3.0)
 
 PATH
+  remote: vendor/refinerycms-calendar
+  specs:
+    refinerycms-calendar (2.0.0)
+      acts-as-taggable-on
+      filters_spam (~> 0.2)
+      rails_autolink (~> 1.0.7)
+      refinerycms-core (~> 2.1.0.dev)
+      refinerycms-settings (~> 2.1.0.dev)
+      seo_meta (~> 1.3.0)
+
+PATH
   remote: vendor/refinerycms-inquiries
   specs:
     refinerycms-inquiries (2.1.0.dev)
@@ -136,7 +147,7 @@ GEM
     acts_as_indexed (0.7.8)
     addressable (2.3.2)
     arel (3.0.2)
-    awesome_nested_set (2.1.3)
+    awesome_nested_set (2.1.4)
       activerecord (>= 3.0.0)
     babosa (0.3.8)
     bcrypt-ruby (3.0.1)
@@ -323,6 +334,7 @@ DEPENDENCIES
   rails (~> 3.2.3)
   refinerycms!
   refinerycms-blog!
+  refinerycms-calendar!
   refinerycms-door_statuses!
   refinerycms-fees!
   refinerycms-i18n!

@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  before_filter :default_pages, :mailing_list, :door_status
+  before_filter :default_pages, :mailing_list, :header_features
 
   layout proc{ |c| c.request.xhr? ? false : "application" }
 
@@ -35,8 +35,10 @@ class ApplicationController < ActionController::Base
 
   end
 
-  def door_status
+  def header_features
     @door_status = ::Refinery::DoorStatuses::DoorStatus.last
+    @today_event = #::Refinery::Calendar::Event.live.today.order('featured DESC').first
+    @upcoming_event = ::Refinery::Calendar::Event.live.upcoming.first
   end
 
   # for canonical url

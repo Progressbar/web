@@ -26,3 +26,6 @@ Refinery::Transactions::Engine.load_seed
 Refinery::Fees::Engine.load_seed
 
 Refinery::DoorStatuses::Engine.load_seed
+
+# Added by Refinery CMS Venues extension
+Refinery::Calendar::Engine.load_seed
