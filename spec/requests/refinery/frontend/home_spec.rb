@@ -21,23 +21,25 @@ module Refinery
         end
       end
 
-      it "should introduce progressbar" do
-        within "#promo-content" do
-          # Vitajte na stránkach prvého slovenského <br /> <a href="http://en.wikipedia.org/wiki/Hackerspace">hackerspace</a> <strong>progressbar.sk</strong>.
-          page.should have_content('Vitajte na stránkach prvého slovenského') 
-        end
-      end
+     it "should introduce progressbar" do
+       within "#promo-content" do
+         # Vitajte na stránkach prvého slovenského <br /> <a href="http://en.wikipedia.org/wiki/Hackerspace">hackerspace</a> <strong>progressbar.sk</strong>.
+         page.should have_content('Vitajte na stránkach prvého slovenského') 
+       end
+     end
 
-      it "should have navigation links" do
+      it "should have language switch link to english version" do
         within "#lang" do
-          page.should have_selector("a[href='/en']") # English version
-        end
-
-        within "#membership-actions" do
-          page.should have_selector("a[href='/refinery/users/login']") # Login
-          page.should have_selector("a[href='/pridaj-sa']") # Registration
-        end
+          page.should have_selector('a[href="/en/"]') # English version 
+        end 
       end
+      
+      it "should have registration link" do
+       within "#membership-actions" do
+         page.should have_selector('a[href="/refinery/users/login"]') # Login
+         page.should have_selector('a[href="/pridaj-sa"]') # Registration
+       end
+     end
 
     end
 
