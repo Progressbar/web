@@ -1,0 +1,16 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>'>
+  <span class='title'>
+    <%= link_to subscriber.name, refinery.mailinglists_admin_subscriber_path(subscriber) %>
+    <span class="preview"><%= subscriber.general.to_s %> - <%= subscriber.events.to_s %></span>
+  </span>
+  <span class='actions'>
+    <%= link_to refinery_icon_tag('delete.png'), refinery.mailinglists_admin_subscriber_path(subscriber),
+                :class => "cancel confirm-delete",
+                :title => t('admin.subscribers.delete'),
+                :'data-confirm' => t('shared.admin.delete.message', :title => subscriber.name),
+                :'data-method' => "delete" if current_refinery_user.has_role?(:superuser) -%>
+
+    <%= link_to refinery_icon_tag('zoom.png'), refinery.mailinglists_admin_subscriber_path(subscriber),
+                :title => t('.read_subscriber') -%>
+  </span>
+</li>

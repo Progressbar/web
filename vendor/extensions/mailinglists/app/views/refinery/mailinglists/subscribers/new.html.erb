@@ -1,5 +1,5 @@
 <% content_for :body do %>
-  <div class='mailinglists'>
+  <div class="subscribers">
     <%=raw @page.content_for(Refinery::Pages.default_parts.first.to_sym) %>
     <%= render 'form' %>
   </div>

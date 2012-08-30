@@ -112,7 +112,7 @@ module Refinery
         end
 
         def subscribe_to_mailinglist(email)
-          subscriber = Refinery::Mailinglists::Mailinglist.find_by_email(email)
+          subscriber = Refinery::Mailinglists::Subscriber.find_by_email(email)
           subscribed = false
           if subscriber.nil? or !subscriber[:general]
             response = Net::HTTP.post_form(
@@ -120,7 +120,7 @@ module Refinery
               ), {'email' => email})
 
             if subscriber.nil?
-              Refinery::Mailinglists::Mailinglist.create({:email => email, :general => true})
+              Refinery::Mailinglists::Subscriber.create({:email => email, :general => true})
             else
               subscriber.update_attributes({:general => true})
             end

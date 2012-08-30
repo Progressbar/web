@@ -1,7 +1,7 @@
-<%= form_for [refinery, :mailinglists, @mailinglist] do |f| %>
-  <% unless @mailinglist.errors.blank? %>
+<%= form_for [refinery, :mailinglists, @subscriber] do |f| %>
+  <% unless @subscriber.errors.blank? %>
     <div class="form-error">
-      <% @mailinglist.errors.each do |elm, msg| %>
+      <% @subscriber.errors.each do |elm, msg| %>
         <p><%= t(elm.to_s) %> <%= msg %></p>
       <% end %>
     </div>

@@ -2,41 +2,41 @@ require 'net/http'
 
 module Refinery
   module Mailinglists
-    class MailinglistsController < ::ApplicationController
+    class SubscribersController < ::ApplicationController
       before_filter :find_page, :only => [:create, :new]
 
       def index
-        redirect_to :action => "new"
+        redirect_to :action => 'new'
       end
 
       def thank_you
-        @page = Refinery::Page.find_by_link_url("/mailinglists/thank_you", :include => [:parts])
+        @page = Refinery::Page.find_by_link_url('/mailinglists/thank_you', :include => [:parts])
       end
 
       def new
-        @mailinglist = Mailinglist.new
+        @subscriber = Subscriber.new
       end
 
       def create
-        @mailinglist = Mailinglist.new(params[:mailinglist])
-        subscriber = Mailinglist.find_by_email(@mailinglist[:email])
+        @subscriber = Subscriber.new(params[:subscriber])
+        subscriber = Subscriber.find_by_email(@subscriber[:email])
         # if subscriber not exits we create new and subcribe him where he want
         subscribed_general = false
         subscribed_events = false
-        if subscriber.nil? and @mailinglist.valid?
-          subscribed_general = subscribe(@mailinglist, 'general') if @mailinglist[:general]
-          subscribed_events = subscribe(@mailinglist, 'events') if @mailinglist[:events]
+        if subscriber.nil? and @subscriber.valid?
+          subscribed_general = subscribe(@subscriber, 'general') if @subscriber[:general]
+          subscribed_events = subscribe(@subscriber, 'events') if @subscriber[:events]
 
-          Mailer.notification(@mailinglist, request).deliver if (subscribed_general or subscribed_events)
+          Mailer.notification(@subscriber, request).deliver if (subscribed_general or subscribed_events)
         else
           # otherwise we try subscribe or unsubscribe him from what he want
-          if @mailinglist[:general]
+          if @subscriber[:general]
             if subscriber[:general]
               unsubscribe(subscriber, 'general') and return
             else
               subscribed_general = subscribe(subscriber, 'general')
             end
-          elsif @mailinglist[:events]
+          elsif @subscriber[:events]
             if subscriber[:events]
               unsubscribe(subscriber, 'events') and return
             else
@@ -47,13 +47,13 @@ module Refinery
 
         if subscribed_events or subscribed_general
           flash[:success] = 'Subscription success.'
-          redirect_to refinery.thank_you_mailinglists_mailinglists_path
+          redirect_to refinery.thank_you_mailinglists_subscribers_path
         else
           raise 'Something is bad.'
         end
 
         rescue
-          logger.warn "There was an error with email (#{@mailinglist.email}). \n#{$!.message}\n"
+          logger.warn "There was an error with email (#{@subscriber.email}). \n#{$!.message}\n"
           flash[:error] = "Houston we have a problem. If problem persist please contact us on email: #{Refinery::Setting.get(:site_email)} ."
           render :action => 'new'
       end
@@ -74,10 +74,10 @@ module Refinery
       def send_subscribe_request(url)
         response = false
         begin
-          request = Net::HTTP.post_form(URI.parse(url), {'email' => @mailinglist.email})
+          request = Net::HTTP.post_form(URI.parse(url), {'email' => @subscriber.email})
           response = true
         rescue => e
-          logger.warn "There was an error subscribe email (#{@mailinglist.email}) to mailinglist (#{url}). \n#{e.message}\n"
+          logger.warn "There was an error subscribe email (#{@subscriber.email}) to mailinglist (#{url}). \n#{e.message}\n"
         end
 
         response

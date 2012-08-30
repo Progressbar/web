@@ -18,26 +18,26 @@ module Refinery
 
     context "as anonymous user visiting homepage" do
       before {
-        Refinery::Mailinglists::Mailinglist.delete_all
+        Refinery::Mailinglists::Subscriber.delete_all
       }
 
       it "should have mailing list form" do
         visit '/'
 
         page.should have_content('E-mailová konferencia')
-        page.should have_selector("input[name='mailinglist[email]']")
-        page.should have_selector("input[name='mailinglist[general]']")
-        page.should have_selector("input[name='mailinglist[events]']")
+        page.should have_selector("input[name='subscriber[email]']")
+        page.should have_selector("input[name='subscriber[general]']")
+        page.should have_selector("input[name='subscriber[events]']")
       end
 
       it "should register email to events mailinglist" do
         visit '/'
-        fill_in "mailinglist[email]", :with => @first_email
+        fill_in "subscriber[email]", :with => @first_email
         click_button 'Sign in'
         page.should have_content('Thank You')
         
-        Refinery::Mailinglists::Mailinglist.count().should == 1
-        entry = Refinery::Mailinglists::Mailinglist.find_by_email(@first_email)
+        Refinery::Mailinglists::Subscriber.count().should == 1
+        entry = Refinery::Mailinglists::Subscriber.find_by_email(@first_email)
         entry.email.should == @first_email
         entry.events.should == true
         entry.general.should == false
@@ -46,7 +46,7 @@ module Refinery
 #      it "should register email to general mailinglist" do
 #        visit '/'
 #
-#        fill_in "mailinglist[email]", :with => "lorem@ipsum.sk"
+#        fill_in "subscriber[email]", :with => "lorem@ipsum.sk"
 #
 #        click_button 'Sign in'
 #        page.should have_content('Thank You') 

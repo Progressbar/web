@@ -1,7 +1,8 @@
 class CreateMailinglists < ActiveRecord::Migration
 
   def self.up
-    create_table :refinery_mailinglists do |t|
+
+    create_table ::Refinery::Mailinglists::Subscriber.table_name do |t|
       t.string :email
       t.boolean :general, :default => false
       t.boolean :events, :default => true
@@ -9,7 +10,8 @@ class CreateMailinglists < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :refinery_mailinglists, :id
+    add_index ::Refinery::Mailinglists::Subscriber.table_name, :id
+    add_index ::Refinery::Mailinglists::Subscriber.table_name, :email, :unique => true
 
     if (seed = Rails.root.join('db', 'seeds', 'mailinglists.rb')).exist?
       load(seed)
@@ -25,7 +27,7 @@ class CreateMailinglists < ActiveRecord::Migration
       ::Refinery::Page.delete_all({:link_url => "/mailinglists"})
     end
 
-    drop_table :refinery_mailinglists
+    drop_table ::Refinery::Mailinglists::Subscriber.table_name
   end
 
 end
