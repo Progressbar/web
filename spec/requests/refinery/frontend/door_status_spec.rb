@@ -10,15 +10,15 @@ module Refinery
     context "on homepage" do
 
       before { 
-        
+        DoorStatuses::DoorStatus.delete_all
       }
 
       it "should not display door status when none data are in the table" do
-        DoorStatuses::DoorStatus.delete_all
-
         visit '/' 
-        
-        page.should_not have_selector("#door-status")
+
+        within "#door-status" do
+          page.should have_content('unknown') 
+        end
       end
 
       it "should update the door status to open" do
