@@ -29,9 +29,9 @@ class ApplicationController < ActionController::Base
   end
 
   def mailing_list
-    p = params[:mailinglist] ? params[:mailinglist] : {}
-    p[:events] = true unless params[:mailinglist]
-    @mailinglist = ::Refinery::Mailinglists::Mailinglist.new
+    p = params[:subscriber] ? params[:subscriber] : {}
+    p[:events] = true unless params[:subscriber]
+    @subscriber = ::Refinery::Mailinglists::Subscriber.new
 
   end
 

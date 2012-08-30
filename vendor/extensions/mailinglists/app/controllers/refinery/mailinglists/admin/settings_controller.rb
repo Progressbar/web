@@ -6,7 +6,7 @@ module Refinery
         crudify :'refinery/setting',
                 :title_attribute => 'name',
                 :order => 'name ASC',
-                :redirect_to_url => 'refinery.mailinglists_admin_mailinglists_path'
+                :redirect_to_url => 'refinery.mailinglists_admin_subscribers_path'
 
         before_filter :redirect_back_to_mailinglists?, :only => [:index]
         before_filter :set_url_override?, :only => [:edit, :update]
@@ -24,9 +24,9 @@ module Refinery
             flash[:notice] = t('refinery.crudify.updated', :what => @setting.name.gsub("mailinglist_", "").titleize)
 
             unless request.xhr? or from_dialog?
-              redirect_back_or_default(refinery.mailinglists_admin_mailinglists_path)
+              redirect_back_or_default(refinery.mailinglists_admin_subscribers_path)
             else
-              render :text => "<script type='text/javascript'>parent.window.location = '#{refinery.mailinglists_admin_mailinglists_path}';</script>"
+              render :text => "<script type='text/javascript'>parent.window.location = '#{refinery.mailinglists_admin_subscribers_path}';</script>"
             end
           end
         end
@@ -43,7 +43,7 @@ module Refinery
         end
 
         def redirect_back_to_mailinglists?
-          redirect_to refinery.mailinglists_admin_mailinglists_path
+          redirect_to refinery.mailinglists_admin_subscribers_path
         end
 
         def set_url_override?

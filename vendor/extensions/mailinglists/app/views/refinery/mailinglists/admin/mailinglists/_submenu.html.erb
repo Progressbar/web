@@ -1,12 +1,12 @@
 <div id='actions'>
   <ul>
-    <% if ::Refinery::Mailinglists::Admin::MailinglistsController.searchable? %>
+    <% if ::Refinery::Mailinglists::Admin::SubscribersController.searchable? %>
       <li>
-        <%= render '/refinery/admin/search', :url => refinery.mailinglists_admin_mailinglists_path %>
+        <%= render '/refinery/admin/search', :url => refinery.mailinglists_admin_subscribers_path %>
       </li>
     <% end %>
     <li <%= "class='selected'" if params[:action] == "index" %>>
-      <%= link_to t('.inbox'), refinery.mailinglists_admin_mailinglists_path, :class => "email_icon" %>
+      <%= link_to t('.inbox'), refinery.mailinglists_admin_subscribers_path, :class => "email_icon" %>
     </li>
     <% if current_refinery_user.has_role?(:superuser)  %>
       <li>

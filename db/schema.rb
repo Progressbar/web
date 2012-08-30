@@ -124,7 +124,9 @@ ActiveRecord::Schema.define(:version => 20120824210646) do
   end
 
   add_index "refinery_calendar_events", ["name"], :name => "index_refinery_calendar_events_on_name"
+  add_index "refinery_calendar_events", ["published_at"], :name => "index_refinery_calendar_events_on_published_at"
   add_index "refinery_calendar_events", ["slug"], :name => "index_refinery_calendar_events_on_slug", :unique => true
+  add_index "refinery_calendar_events", ["start_date"], :name => "index_refinery_calendar_events_on_start_date"
 
   create_table "refinery_calendar_places", :force => true do |t|
     t.string   "name",             :null => false
@@ -193,7 +195,7 @@ ActiveRecord::Schema.define(:version => 20120824210646) do
 
   add_index "refinery_inquiries_inquiries", ["id"], :name => "index_refinery_inquiries_inquiries_on_id"
 
-  create_table "refinery_mailinglists", :force => true do |t|
+  create_table "refinery_mailinglists_subscribers", :force => true do |t|
     t.string   "email"
     t.boolean  "general",    :default => false
     t.boolean  "events",     :default => true
@@ -201,7 +203,8 @@ ActiveRecord::Schema.define(:version => 20120824210646) do
     t.datetime "updated_at",                    :null => false
   end
 
-  add_index "refinery_mailinglists", ["id"], :name => "index_refinery_mailinglists_on_id"
+  add_index "refinery_mailinglists_subscribers", ["email"], :name => "index_refinery_mailinglists_subscribers_on_email", :unique => true
+  add_index "refinery_mailinglists_subscribers", ["id"], :name => "index_refinery_mailinglists_subscribers_on_id"
 
   create_table "refinery_page_part_translations", :force => true do |t|
     t.integer  "refinery_page_part_id"

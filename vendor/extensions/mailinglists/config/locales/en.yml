@@ -5,7 +5,7 @@ en:
         title: Mailinglists
         description: Provides a contact form and stores mailinglists
     mailinglists:
-      mailinglists:
+      subscribers:
         form:
           title: Mailing list
           general_type: 'General discussion'
@@ -16,9 +16,9 @@ en:
           info_logout: 'To unsubscribe from the mailing list re-enter your e-mail.'
       admin:
         mailinglists:
-          delete: Remove this mailinglist forever
-          mailinglist:
-            read_mailinglist: Show detail
+          delete: Remove this subscriber forever
+          subscriber:
+            read_subscribertion: Show detail
             delete: Delete
             said: said
             mark_as_spam: Mark as spam
@@ -29,17 +29,17 @@ en:
             update_notified: Update who gets notified
             edit_confirmation_email: Edit confirmation email
           index:
-            no_mailinglists: You have not received any mailinglists subsctiption yet.
+            no_subscribers: You have not received any mailinglists subsctiption yet.
           spam:
             no_spam: Hooray! You don't have any spam.
           show:
             details: Details
             age: Age
             actions: Actions
-            back_to_all_mailinglists: Back to all mailinglists
+            back_to_all_subscribers: Back to all subscribers
             spam: Spam
             spam_yes: 'yes'
-            mailinglist: Mailinglist
+            subscriber: Subscriber
             to: To
             from: From
             click_to_email: Click to email this address
@@ -49,7 +49,7 @@ en:
         settings:
           notification_recipients_form:
             settings_value_name: Send notifications to
-            explanation: Every time someone contacts you on your website, Refinery sends out an email to say there is a new mailinglist.
+            explanation: Every time someone make subscribtion on your website, Refinery sends out an email to say there is a new subscriber.
             hint: When a new email is submitted, Refinery will send an email notification to you.
             example: "Enter your email address(es) like: jack@work.com, jill@office.com"
           confirmation_email_form:
@@ -59,24 +59,24 @@ en:
             click_to_edit_subject: Click here to edit the subject
             explanation: Every time someone contacts you on your website, Refinery sends out an email to confirm the mailinglist with the person who made it.
             below_edit_email_sent: Below you can edit the email that is sent out.
-            the_customer_making_mailinglist: The customer making the mailinglist
+            the_customer_making_subscribtion: The customer making the subscribtion
             message: Message
             note: "Note: place the text %name% where you'd like the customer's name to appear in the email"
       mailer:
         notification:
           greeting: Hi there
-          you_recieved_new_mailinglist: You just received a new mailinglist subscription on your website.
-          mailinglist_starts: --- mailinglist starts ---
-          mailinglist_ends: --- mailinglist ends ---
+          you_recieved_new_subscriber: You just received a new mailinglist subscription on your website.
+          subscriber_starts: --- subscriber starts ---
+          subscriber_ends: --- subscriber ends ---
           from: From
           email: Email
           phone: Phone
           message: Message
           closing_line: Kind Regards
-          ps_html: P.S. All your mailinglists are stored in the "Mailinglists" section of Refinery should you ever want to view it later there.
+          ps_html: P.S. All your subscribers are stored in the "Mailinglists" section of Refinery should you ever want to view it later there.
   activerecord:
     models:
-      mailinglist: Mailinglist
+      subscriber: Subscriber
     attributes:
-      mailinglist:
+      subscriber:
         email: Email

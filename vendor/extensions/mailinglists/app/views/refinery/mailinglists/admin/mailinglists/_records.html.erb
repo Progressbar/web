@@ -1,7 +1,7 @@
 <% if searching? %>
   <h2><%= t('results_for', :scope => 'refinery.admin.search', :query => params[:search]) %></h2>
 
-  <% if @mailinglists.any? %>
+  <% if @subscribers.any? %>
     <ul>
       <li>
         <span class='title'>
@@ -9,16 +9,16 @@
           <span class="preview">General - Events</span>
         </span>
       </li>
-      <%= render :partial => 'mailinglist', :collection => @mailinglists %>
+      <%= render :partial => 'mailinglist', :collection => @subscribers %>
     </ul>
   <% else %>
     <p><%= t('no_results', :scope => 'refinery.admin.search') %>
     </p>
   <% end %>
 <% else %>
-  <% if @grouped_mailinglists.any? -%>
-    <% @grouped_mailinglists.each do |container| %>
-      <h3><%= l((mailinglist_group = container.last).first.created_at, :format => :short) %></h3>
+  <% if @grouped_subscribers.any? -%>
+    <% @grouped_subscribers.each do |container| %>
+      <h3><%= l((subscriber_group = container.last).first.created_at, :format => :short) %></h3>
       <ul>
         <li>
           <span class='title'>
@@ -29,12 +29,12 @@
       <%# sem pride globalne ovladanie %>
           </span>
         </li>
-        <%= render :partial => 'mailinglist', :collection => mailinglist_group %>
+        <%= render :partial => 'subscriber', :collection => subscriber_group %>
       </ul>
     <% end %>
   <% else -%>
     <p>
-      <strong><%= t('no_mailinglists', :scope => 'refinery.mailinglists.admin.mailinglists.index') %></strong>
+      <strong><%= t('no_subscribers', :scope => 'refinery.mailinglists.admin.subscribers.index') %></strong>
     </p>
   <% end -%>
 <% end %>

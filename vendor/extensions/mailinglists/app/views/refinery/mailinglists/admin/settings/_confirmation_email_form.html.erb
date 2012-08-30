@@ -6,13 +6,13 @@
   <p>
     <%= t('.below_edit_email_sent') %>
   </p>
-  <table id='mailinglist'>
+  <table id='subscriber'>
     <tr>
       <td>
         <label class='stripped'><%= t('.to') %></label>
       </td>
       <td>
-        <%= t('.the_customer_making_mailinglist') %>
+        <%= t('.the_customer_making_subscribtion') %>
       </td>
     </tr>
     <tr>
@@ -46,6 +46,6 @@
 
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => false,
-             :cancel_url => refinery.mailinglists_admin_mailinglists_url,
+             :cancel_url => refinery.mailinglists_admin_subscribers_url,
              :hide_delete => true %>
 <% end %>

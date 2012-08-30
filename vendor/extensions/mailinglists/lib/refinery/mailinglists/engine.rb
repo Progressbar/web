@@ -9,10 +9,10 @@ module Refinery
       initializer "register refinerycms_mailinglists plugin" do
         Refinery::Plugin.register do |plugin|
           plugin.name = "mailinglists"
-          plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.mailinglists_admin_mailinglists_path }
+          plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.mailinglists_admin_subscribers_path }
           plugin.pathname = root
           plugin.activity = {
-            :class_name => :'refinery/mailinglists/mailinglist',
+            :class_name => :'refinery/mailinglists/subscriber',
             :title => 'email'
           }
           plugin.always_allow_access = false
