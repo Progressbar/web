@@ -10,6 +10,8 @@ gem 'mysql2'
 group :development, :test do
   gem 'sqlite3'
   gem 'refinerycms-testing'
+  gem 'poltergeist'
+  gem 'webmock'
   gem "letter_opener"
   gem 'guard-rspec'
   gem 'guard-spork'
