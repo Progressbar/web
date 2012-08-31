@@ -26,6 +26,8 @@ def setup_environment
 
   # set javascript driver for capybara
   Capybara.javascript_driver = :poltergeist
+
+  WebMock.disable_net_connect!
 end
 
 def each_run

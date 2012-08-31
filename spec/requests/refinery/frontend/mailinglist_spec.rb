@@ -2,8 +2,6 @@
 
 require "spec_helper"
 
-WebMock.disable_net_connect!
-
 module Refinery
 
   describe "Mailing list subscription" do
