@@ -322,7 +322,7 @@ button { width: auto; overflow: visible; }
     margin-bottom: 16px;
 }
 
-.flash.notice {
+.flash.notice, .flash.info {
     background: #789;
 }
 
