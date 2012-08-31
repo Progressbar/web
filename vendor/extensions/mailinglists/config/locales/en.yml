@@ -15,12 +15,11 @@ en:
           info_privacy: 'E-mail address will be kept only for the purpose of the conference and will not be provided to third parties.'
           info_logout: 'To unsubscribe from the mailing list re-enter your e-mail.'
       admin:
-        mailinglists:
+        subscribers:
           delete: Remove this subscriber forever
           subscriber:
-            read_subscribertion: Show detail
             delete: Delete
-            said: said
+            confirm_delete_subscriber: "Really you want delete this subscriber (this don't him unsubscribe, just remove from db) ?"
             mark_as_spam: Mark as spam
             mark_as_ham: Move to inbox
           submenu:

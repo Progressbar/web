@@ -11,9 +11,7 @@ Refinery::Core::Engine.routes.append do
   # Admin routes
   namespace :mailinglists, :path => '' do
     namespace :admin, :path => 'refinery/mailinglists' do
-      resources :subscribers, :path => '' 
-      resources :settings
+      resources :subscribers, :path => '', :only => [:index, :destroy]
     end
   end
 end
-

@@ -5,6 +5,8 @@
 <%= t('.subscriber_starts') %><br/>
 <br/>
 <%= t('.email', :default => t('activerecord.attributes.subscriber.email')) %>: <%= @subscriber.email %><br/>
+<%= t('.general', :default => t('activerecord.attributes.subscriber.general')) %>: <%= @subscriber.general.to_s %><br/>
+<%= t('.events', :default => t('activerecord.attributes.subscriber.events')) %>: <%= @subscriber.events.to_s %><br/>
 <br/>
 <%= t('.subscriber_ends') %><br/>
 <br/>
