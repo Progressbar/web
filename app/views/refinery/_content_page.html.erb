@@ -1,6 +1,6 @@
 <% flash.each do |m, k| %>
   <div class="flash <%= m %>" >
-    <%= k %>
+    <%= k.html_safe %>
   </div>
 <% end %>
 <% hide_sections = [:body_content_title] %>

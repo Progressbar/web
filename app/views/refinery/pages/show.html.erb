@@ -1,6 +1,6 @@
 <% if @page %>
-  <%= render '/refinery/pages/records.html.erb' if @page == @records_page %>
-  <%= render '/refinery/pages/registrations.html.erb' if @page == @join_us_page %>
+  <%= render '/refinery/pages/records' if @page == @records_page %>
+  <%= render '/refinery/pages/registrations' if @page == @join_us_page %>
 <% end  %>
 <%
   hide_sections ||= []

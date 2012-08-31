@@ -34,6 +34,7 @@ module Refinery
 
           redirect_to refinery.thank_you_registrations_registrations_path
         else
+         flash[:error] = "You are probably a member or we have another your registration yet. <br >Please contact us on email: <b>#{Refinery::Setting.get(:site_email)}</b> for solving your issue individualy. Thanks!"
          render :action => 'index'
         end
       end
@@ -41,7 +42,7 @@ module Refinery
     protected
 
       def find_page
-        @page = Refinery::Page.find_by_id(11, :include => [:parts])
+        @page = Refinery::Page.find("join-us", :include => [:parts])
       end
 
     end
