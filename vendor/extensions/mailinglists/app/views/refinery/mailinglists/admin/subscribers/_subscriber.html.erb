@@ -1,6 +1,6 @@
 <li class='clearfix record <%= cycle("on", "on-hover") %>'>
   <span class='title'>
-    <%= link_to subscriber.name, refinery.mailinglists_admin_subscriber_path(subscriber) %>
+    <%= subscriber.name %>
     <span class="preview"><%= subscriber.general.to_s %> - <%= subscriber.events.to_s %></span>
   </span>
   <span class='actions'>
