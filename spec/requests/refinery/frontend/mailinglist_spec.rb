@@ -30,7 +30,7 @@ module Refinery
         page.should have_selector("input[name='subscriber[events]']")
       end
 
-      it "should register email to events mailinglist" do
+      it "should subscribe email to events mailinglist" do
         visit '/'
         fill_in "subscriber[email]", :with => @first_email
         click_button 'Sign in'
@@ -43,14 +43,52 @@ module Refinery
         entry.general.should == false
       end
 
-#      it "should register email to general mailinglist" do
-#        visit '/'
-#
-#        fill_in "subscriber[email]", :with => "lorem@ipsum.sk"
-#
-#        click_button 'Sign in'
-#        page.should have_content('Thank You') 
-#      end
+      it "should subscribe exists email to general mailinglist" do
+        FactoryGirl.create(:mailinglists_subscriber, :email => @first_email)
+        visit '/'
+
+        fill_in "subscriber[email]", :with => @first_email
+        check "subscriber[general]"
+
+        click_button 'Sign in'
+        page.should have_content('Thank You') 
+
+        Refinery::Mailinglists::Subscriber.count().should == 1
+        entry = Refinery::Mailinglists::Subscriber.find_by_email(@first_email)
+        entry.events.should == true
+        entry.general.should == true
+      end
+
+      it "should unsubscribe exists email from events mailinglist" do
+        FactoryGirl.create(:mailinglists_subscriber, :email => @first_email)
+        visit '/'
+
+        fill_in "subscriber[email]", :with => @first_email
+
+        click_button 'Sign in'
+        current_url.should match(Refinery::Setting.get(:events_mailing_list_unsubscribe_url))
+        
+        Refinery::Mailinglists::Subscriber.count().should == 1
+        entry = Refinery::Mailinglists::Subscriber.find_by_email(@first_email)
+        entry.events.should == false
+        entry.general.should == false
+      end
+
+      it "should unsubscribe exists email from general mailinglist" do
+        FactoryGirl.create(:mailinglists_subscriber, :email => @first_email, :general => true, :events => false)
+        visit '/'
+
+        fill_in "subscriber[email]", :with => @first_email
+        check "subscriber[general]"
+
+        click_button 'Sign in'
+        current_url.should match(Refinery::Setting.get(:general_mailing_list_unsubscribe_url))
+        
+        Refinery::Mailinglists::Subscriber.count().should == 1
+        entry = Refinery::Mailinglists::Subscriber.find_by_email(@first_email)
+        entry.events.should == false
+        entry.general.should == false
+      end
     end
 
   end
