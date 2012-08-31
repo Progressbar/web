@@ -10,10 +10,10 @@ module Refinery
 
       # Add some validation here if you want to validate the user's input
       # We have validated the first string field for you.
-      validates :email, :presence => true, 
-                        :uniqueness => true, 
-                        :length => { :in => 6..64 }, 
-                        :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }    
+      validates :email, :presence => true,
+                        :uniqueness => true,
+                        :length => { :in => 6..64 },
+                        :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
     end
   end
 end

@@ -10,10 +10,10 @@ module Refinery
       alias_attribute :name, :username
 
       validates :username, :presence => true, :length => { :in => 6..32 }
-      validates :email, :presence => true, 
-                        :uniqueness => true, 
-                        :length => { :in => 6..64 }, 
-                        :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
+      validates :email, :presence => true,
+                        :uniqueness => true,
+                        :length => { :in => 6..64 },
+                        :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
       validates :message, :presence => true, :length => { :in => 6..512 }
       validates :state, :presence => true, :format => { :with => /unmoderated|approved|rejected/ }
 
