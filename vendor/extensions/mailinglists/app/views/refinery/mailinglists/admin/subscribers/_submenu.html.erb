@@ -8,12 +8,5 @@
     <li <%= "class='selected'" if params[:action] == "index" %>>
       <%= link_to t('.inbox'), refinery.mailinglists_admin_subscribers_path, :class => "email_icon" %>
     </li>
-    <% if current_refinery_user.has_role?(:superuser)  %>
-      <li>
-        <%= link_to t('.update_notified'),
-          refinery.edit_mailinglists_admin_setting_path(:mailinglist_notification_recipients, :dialog => true, :height => 300),
-          :class => "user_comment_icon" %>
-      </li>
-    <% end %>
   </ul>
 </div>
