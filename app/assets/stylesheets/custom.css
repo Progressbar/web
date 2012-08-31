@@ -327,11 +327,11 @@
     font-size: 114.5%;
 }
 
-.join-box ul {
+.join-box .content ul {
     margin-left: 0px;
 }
 
-.join-box li {
+.join-box .content li {
     list-style: none;
     padding-left: 32px;
     margin-bottom: 6px;
