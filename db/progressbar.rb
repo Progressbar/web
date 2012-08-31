@@ -129,24 +129,24 @@ module Refinery
           :menu_position => 50
         },
         :gallery_actions => {
-          :title => { :sk => 'Galéria - Akcie', :en => 'Gallery - Actions'},
-          :attributes => {:deletable => false, :show_in_menu => false},
-          :menu_position => 52
+          :title => { :sk => 'Akcie', :en => 'Actions'},
+          :attributes => {:deletable => false, :show_in_menu => false, :parent_id => 14},
+          :menu_position => nil
         },
         :gallery_projects => {
-          :title => { :sk => 'Galéria - Projekty', :en => 'Gallery - Projects'},
-          :attributes => {:deletable => false, :show_in_menu => false},
-          :menu_position => 54
+          :title => { :sk => 'Projekty', :en => 'Projects'},
+          :attributes => {:deletable => false, :show_in_menu => false, :parent_id => 14},
+          :menu_position => nil
         },
         :gallery_place => {
-          :title => { :sk => 'Galéria - Priestor', :en => 'Gallery - Place'},
-          :attributes => {:deletable => false, :show_in_menu => false},
-          :menu_position => 56
+          :title => { :sk => 'Priestor', :en => 'Place'},
+          :attributes => {:deletable => false, :show_in_menu => false, :parent_id => 14},
+          :menu_position => nil
         },
         :gallery_map => {
-          :title => { :sk => 'Galéria - Mapa', :en => 'Gallery - Map'},
-          :attributes => {:deletable => false, :show_in_menu => false},
-          :menu_position => 58
+          :title => { :sk => 'Mapa', :en => 'Map'},
+          :attributes => {:deletable => false, :show_in_menu => false, :parent_id => 14},
+          :menu_position => nil
         },
         :statutes => {
           :title => { :sk => 'Stanovy', :en => 'Statutes'},
@@ -214,6 +214,8 @@ module Refinery
 
         attributes = {:deletable => false, :show_in_menu => true}
         attributes = attributes.merge(p[:attributes]) if p[:attributes]
+
+        p attributes
 
         page_created = false
         unless page
