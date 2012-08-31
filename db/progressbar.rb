@@ -153,8 +153,8 @@ module Refinery
           :attributes => {:deletable => false, :show_in_menu => true},
           :menu_position => 60
         },
-        :sponsors => {
-          :title => { :sk => 'Sponzori', :en => 'Sponsors'},
+        :links => {
+          :title => { :sk => 'Odkazy', :en => 'Links'},
           :attributes => {:deletable => false, :show_in_menu => true},
           :menu_position => 70
         },
@@ -196,6 +196,14 @@ module Refinery
         },
         :bitcoin => {
           :title => { :sk => 'Bitcoin', :en => 'Bitcoin'},
+          :attributes => {:deletable => false, :show_in_menu => false}
+        },
+        :samy_kamkar_in_bratislava => {
+          :title => { :sk => 'samy kamkar in bratislava', :en => 'samy kamkar in bratislava'},
+          :attributes => {:deletable => true, :show_in_menu => false}
+        },
+        :my_favourite_android_apps_what_other_great_apps_are_you_using => {
+          :title => { :sk => 'my favourite android apps what other great apps are you using', :en => 'my favourite android apps what other great apps are you using'},
           :attributes => {:deletable => false, :show_in_menu => false}
         }
       }
