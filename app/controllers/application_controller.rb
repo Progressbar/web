@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
 
   def header_features
     @door_status = ::Refinery::DoorStatuses::DoorStatus.last
-    @today_event = #::Refinery::Calendar::Event.live.today.order('featured DESC').first
+    @today_event = ::Refinery::Calendar::Event.live.today.order('featured DESC').first
     @upcoming_event = ::Refinery::Calendar::Event.live.upcoming.first
   end
 
