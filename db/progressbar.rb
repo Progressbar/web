@@ -306,12 +306,12 @@ module Refinery
 
   end
 
-#  puts 'import/update settings'
-#  PbImport.import_settings
-#  puts 'import/update users'
-#  PbImport.import_users
-#  puts 'import/update pages'
-#  PbImport.import_pages
+  puts 'import/update settings'
+  PbImport.import_settings
+  puts 'import/update users'
+  PbImport.import_users
+  puts 'import/update pages'
+  PbImport.import_pages
   puts 'import/update calendar defaults'
   PbImport.put_defaults_for_calendar
 end
