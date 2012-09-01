@@ -67,7 +67,7 @@ module Refinery
       end
 
       # one test user
-      if Rails.env.development?
+      if Rails.env.development? and 1 == 2
         test_users = [
           {:username => 'jurko', :email => 'jurko@progressbar.sk'}
         ]
@@ -214,8 +214,6 @@ module Refinery
 
         attributes = {:deletable => false, :show_in_menu => true}
         attributes = attributes.merge(p[:attributes]) if p[:attributes]
-
-        p attributes
 
         page_created = false
         unless page
