@@ -9,6 +9,7 @@ module Refinery
 
       settings = {
         :site_email => 'info@progressbar.sk',
+        :site_phone => '',
         :site_twitter => 'progressbarsk',
         :site_twitter_link => 'https://twitter.com/progressbarsk',
         :site_facebook_link => 'https://www.facebook.com/progressbar',
@@ -84,6 +85,35 @@ module Refinery
         end
       end
 
+    end
+
+    def self.put_defaults_for_calendar
+      if ::Refinery::Calendar::Place.find_by_name('ProgressBar Hackerspace').blank?
+        place = ::Refinery::Calendar::Place.create({
+          :name => 'ProgressBar Hackerspace',
+          :description => 'Fyzický priestor v Bratislave pre stretávanie hackerov, digitálnych umelcov, geekov, hardvérových mágov
+  a podobne zmýšľajúcich ľudí.', 
+          :url => 'https://www.progressbar.sk/',
+          :phone => Refinery::Setting.get(:site_phone), 
+          :email => Refinery::Setting.get(:site_email),
+          :address_country => 'Slovensko', 
+          :address_locality => Refinery::Setting.get(:site_location_city), 
+          :postal_code => Refinery::Setting.get(:site_postal_code), 
+          :street_address => Refinery::Setting.get(:site_street_address),
+          :latitude => Refinery::Setting.get(:site_location_latitude_title), 
+          :longitude => Refinery::Setting.get(:site_location_longitude_title)
+        })
+        
+        place.save!
+      else
+        p 'place existuje ??'
+      end
+
+      ['meetings', 'party and performance', 'other', 'lectures and workshops'].each do |category|
+        Refinery::Calendar::Category.create({
+          :title => category
+        }) unless Refinery::Calendar::Category.find_by_title(category).present?
+      end
     end
 
     def self.find_page_by_id_or_title (id, title)
@@ -276,11 +306,12 @@ module Refinery
 
   end
 
-  puts 'import/update settings'
-  PbImport.import_settings
-  puts 'import/update users'
-  PbImport.import_users
-  puts 'import/update pages'
-  PbImport.import_pages
-
+#  puts 'import/update settings'
+#  PbImport.import_settings
+#  puts 'import/update users'
+#  PbImport.import_users
+#  puts 'import/update pages'
+#  PbImport.import_pages
+  puts 'import/update calendar defaults'
+  PbImport.put_defaults_for_calendar
 end

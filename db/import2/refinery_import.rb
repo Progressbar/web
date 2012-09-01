@@ -14,6 +14,18 @@ module Refinery
       set_table_name 'blog_comments'
     end
 
+    class CalendarEvent < OldBase
+      set_table_name 'events'
+    end
+
+    class CalendarCategory < OldBase
+      set_table_name 'event_categories'
+    end
+
+    class CalendarCategorization < OldBase
+      set_table_name 'event_categorizations'
+    end
+
     def self.truncate_blog_posts
       ::ActiveRecord::Base.connection.execute("TRUNCATE refinery_blog_posts") 
       ::ActiveRecord::Base.connection.execute("TRUNCATE refinery_blog_post_translations") 
@@ -21,6 +33,13 @@ module Refinery
 
     def self.truncate_blog_comments
       ::ActiveRecord::Base.connection.execute("TRUNCATE refinery_blog_comments")
+    end
+
+    def self.truncate_events
+      ::ActiveRecord::Base.connection.execute("TRUNCATE refinery_calendar_categories_calendar_events")
+      ::ActiveRecord::Base.connection.execute("TRUNCATE refinery_calendar_categories")
+      ::ActiveRecord::Base.connection.execute("TRUNCATE refinery_calendar_places")
+      ::ActiveRecord::Base.connection.execute("TRUNCATE refinery_calendar_events")
     end
 
     def self.import_blog_posts
@@ -73,6 +92,37 @@ module Refinery
         end
 
         puts 'blogs comments finished'
+
+        rescue
+          puts "error: #{$!}"
+    end
+
+    def self.import_events
+
+        puts 'events start'
+        ::I18n.locale = :sk
+        ::Refinery::Import::CalendarEvent.all(:order => 'id ASC').each do |event|
+            e = ::Refinery::Calendar::Event.create({
+              :title => event[:title],
+              :description => event[:description],
+              :start_date => event[:start_at],
+              :end_date => event[:end_at],
+              :featured => event[:featured].present? ? event[:featured] : false,
+              :location_id => 1,
+              :user_id => event[:user_id].present? ? event[:user_id] : 1,
+              :image_id => event[:image_id],
+              :published_at => event[:published_at].present? ? event[:published_at] : Time.now,
+              :draft => false
+            })
+
+            e[:created_at] = event[:created_at]
+            e[:updated_at] = event[:updated_at]
+            #e[:published_at] = event[:published_at]
+
+            e.save!
+        end
+
+        puts 'events finished'
 
         rescue
           puts "error: #{$!}"
