@@ -99,11 +99,6 @@ ActiveRecord::Schema.define(:version => 20120824210646) do
 
   add_index "refinery_calendar_categories", ["slug"], :name => "index_refinery_calendar_categories_on_slug", :unique => true
 
-  create_table "refinery_calendar_events_categorization", :force => true do |t|
-    t.integer "calendar_category_id", :null => false
-    t.integer "calendar_event_id",    :null => false
-  end
-
   create_table "refinery_calendar_events", :force => true do |t|
     t.string   "name",                                                               :null => false
     t.text     "description"
@@ -127,6 +122,11 @@ ActiveRecord::Schema.define(:version => 20120824210646) do
   add_index "refinery_calendar_events", ["published_at"], :name => "index_refinery_calendar_events_on_published_at"
   add_index "refinery_calendar_events", ["slug"], :name => "index_refinery_calendar_events_on_slug", :unique => true
   add_index "refinery_calendar_events", ["start_date"], :name => "index_refinery_calendar_events_on_start_date"
+
+  create_table "refinery_calendar_events_categorization", :force => true do |t|
+    t.integer "calendar_category_id", :null => false
+    t.integer "calendar_event_id",    :null => false
+  end
 
   create_table "refinery_calendar_places", :force => true do |t|
     t.string   "name",             :null => false
