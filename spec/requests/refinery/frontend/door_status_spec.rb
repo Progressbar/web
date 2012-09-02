@@ -22,7 +22,7 @@ module Refinery
       end
 
       it "should update the door status to open" do
-        visit '/api/door-status/new?door_status[is_open]=true'
+        visit '/api/door-status/new?door_status[is_open]=true&secret_token=secret'
         page.should have_content('{"created":true}')
 
         visit '/'
@@ -33,7 +33,7 @@ module Refinery
       end
 
       it "should update the door status to open" do
-        visit '/api/door-status/new?door_status[is_open]=false'
+        visit '/api/door-status/new?door_status[is_open]=false&secret_token=secret'
         page.should have_content('{"created":true}')
 
         visit '/'
@@ -45,8 +45,15 @@ module Refinery
 
       # empty data
       it "should not update the door status" do
-        visit 'http://localhost:3000/api/door-status/new?door_status'
+        visit 'http://localhost:3000/api/door-status/new?door_status&secret_token=secret'
         page.should have_content('{"created":false}')
+      end
+
+      # empty or wrong secret token
+      it "should return 404" do
+        visit 'http://localhost:3000/api/door-status/new'
+
+        page.should have_content('not found')
       end
     end
 
