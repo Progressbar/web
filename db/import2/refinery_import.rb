@@ -36,7 +36,7 @@ module Refinery
     end
 
     def self.truncate_events
-      ::ActiveRecord::Base.connection.execute("TRUNCATE refinery_calendar_categories_calendar_events")
+      ::ActiveRecord::Base.connection.execute("TRUNCATE refinery_calendar_events_categorization")
       ::ActiveRecord::Base.connection.execute("TRUNCATE refinery_calendar_categories")
       ::ActiveRecord::Base.connection.execute("TRUNCATE refinery_calendar_places")
       ::ActiveRecord::Base.connection.execute("TRUNCATE refinery_calendar_events")

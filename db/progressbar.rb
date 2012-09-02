@@ -96,10 +96,10 @@ module Refinery
           :url => 'https://www.progressbar.sk/',
           :phone => Refinery::Setting.get(:site_phone), 
           :email => Refinery::Setting.get(:site_email),
-          :address_country => 'Slovensko', 
+          :address_country => Refinery::Setting.get(:site_location_country), 
           :address_locality => Refinery::Setting.get(:site_location_city), 
-          :postal_code => Refinery::Setting.get(:site_postal_code), 
-          :street_address => Refinery::Setting.get(:site_street_address),
+          :postal_code => Refinery::Setting.get(:site_location_postal_code), 
+          :street_address => Refinery::Setting.get(:site_location_street),
           :latitude => Refinery::Setting.get(:site_location_latitude_title), 
           :longitude => Refinery::Setting.get(:site_location_longitude_title)
         })
