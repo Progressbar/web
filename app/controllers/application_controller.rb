@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
 #    sign_in(::Refinery::User.find(268)) if Rails.env.development? #member
   end
 
-  def header_features
+  def init_features
     @door_status = ::Refinery::DoorStatuses::DoorStatus.last
     @today_event = ::Refinery::Calendar::Event.live.today.order('featured DESC').first
     @upcoming_event = ::Refinery::Calendar::Event.live.upcoming.first
