@@ -92,7 +92,7 @@ en:
     videoarchive:
       title: 'Video Archive'
       desc: 'Video / audio records from some previous events in Progressbar.'
-  more_information_and_other_options: '<a href="#todo" class="todo">More information and other options</a>'
+  more_information_and_other_options: 'More informations'
   account_number: 'Account number:'
   for_payments_from_abroad: 'for payments from abroad'
   for_membership_payment_enter_the_variable_as_a_symbol_of_their_membership_number: 'For membership payment, enter the variable as a symbol of their membership number.'
