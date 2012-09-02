@@ -11,7 +11,7 @@
  *= require_self
  *= require sprites.css
  *= require buttons_icons_paginations.css
- *= require fancybox.css
+ * require fancybox.css
  *= require formatting.css
  *= require custom.css
 */

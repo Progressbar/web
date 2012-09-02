@@ -82,7 +82,7 @@ sk:
     videoarchive:
       title: 'Záznamy z prednášok'
       desc: 'Video / audio záznamy z niektorých predchádzajúcich akcií v Progressbare'
-  more_information_and_other_options: '<a href="#todo" class="todo">Viac informácií a daľšie možnosti</a>'
+  more_information_and_other_options: 'Viac informacii'
   account_number: 'Číslo účtu:'
   for_payments_from_abroad: 'pre platby zo zahraničia'
   for_membership_payment_enter_the_variable_as_a_symbol_of_their_membership_number: 'V prípade členskej platby uvedte ako variabilný symbol svoje členské číslo.'
