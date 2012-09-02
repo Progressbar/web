@@ -1,10 +1,6 @@
 module Refinery
   module Transactions
-    class TransactionsController < ::ApplicationController
-
-      def index
-        render :text => ''
-      end
+    class TransactionsController < ::ApiController
 
       # /transactions/create/
       # ?transaction[stamp]=fd8445c030f2780287cf63209ba4b028
@@ -21,11 +17,14 @@ module Refinery
         ptrans = params[:transaction]
    
         trans = Transaction.new(ptrans)
-    
-        if trans.valid?
-          response['status'] = trans.save!
+        if params[:help].present?
+          response['accessible_attributes'] = trans._accessible_attributes
         else
-          response['errors'] = trans.errors
+          if trans.valid?
+            response['status'] = trans.save!
+          else
+            response['errors'] = trans.errors
+          end
         end
 
         render :text => response.to_json

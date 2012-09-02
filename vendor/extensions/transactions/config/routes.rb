@@ -1,12 +1,8 @@
 Refinery::Core::Engine.routes.append do
 
   # Frontend routes
-  get '/transactions/create' => 'transactions::transactions#create'
-
-  namespace :transactions do
-    resources :transactions, :path => '', :only => [:index, :create]
-  end
-
+  get '/api/transaction/new' => 'transactions::transactions#create'
+  
 
   # Admin routes
   namespace :transactions, :path => '' do
