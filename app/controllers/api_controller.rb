@@ -7,6 +7,11 @@ class ApiController < ::ApplicationController
 
     # todo implement token validation
     def check_rights
-      params[:secret_token].present? && params[:secret_token] == 'secret'
+      disabled_ip_addressess = [] # for index & update new delete create
+      allowed_ip_addressess = [] # for update new delete create
+		error_404 unless params[:secret_token].present? &&
+			params[:secret_token] == 'secret' &&
+      disabled_ip_addressess.empty? &&
+			allowed_ip_addressess.empty?
     end
 end
