@@ -1,7 +1,7 @@
 <section id="follow-us">
-  <header>
+  <div class="header">
     <h3><%= t('follow_us.title') %></h3>
-  </header>
+  </div>
   <div class="content clearfix">
     <p>
       <a href="<%= Refinery::Setting.get(:site_twitter_link) %>"><img alt="Twitter" src="/s.gif" class="sprites sprite-icon-twitter-32" /></a>
@@ -18,19 +18,19 @@
     <div id="feedback" ></div>
     <div id="membership-actions">
       <a href="/refinery/users/login">
-        <img src="/assets/design/icons/member.png" style="vertical-align: middle">&nbsp;
+        <img alt="Login" src="/assets/design/icons/member.png" style="vertical-align: middle">&nbsp;
         Prihlásenie - členská sekcia</a>
       <a href="/pridaj-sa">&nbsp;
-        <img src="/assets/design/icons/arrow-2.png" style="vertical-align: middle">&nbsp;
-        Registrácia
+        <img alt="Registration" src="/assets/design/icons/arrow-2.png" style="vertical-align: middle">&nbsp;
+        Staň sa členom
       </a>
     </div>    
   </div>
 </section>
 <section id="mailing-list">
-  <header>
+  <div class="header">
     <h3><%= t('mailing_list.title') %></h3>
-  </header>
+  </div>
   <div class="content">
     <%= render "/refinery/mailinglists/subscribers/form" %>
   </div>
