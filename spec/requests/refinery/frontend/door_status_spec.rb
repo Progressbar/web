@@ -20,7 +20,9 @@ module Refinery
           page.should have_content('unknown') 
         end
       end
+    end
 
+    context "with valid token and params" do
       it "should update the door status to open" do
         visit '/api/door-status/new?door_status[is_open]=true&secret_token=secret'
         page.should have_content('{"created":true}')
@@ -32,7 +34,7 @@ module Refinery
         end
       end
 
-      it "should update the door status to open" do
+      it "should update the door status to closed" do
         visit '/api/door-status/new?door_status[is_open]=false&secret_token=secret'
         page.should have_content('{"created":true}')
 
@@ -42,7 +44,9 @@ module Refinery
           page.should have_content('is closed') 
         end
       end
+    end
 
+    context "with invalid token or missing params" do
       # empty data
       it "should not update the door status" do
         visit 'http://localhost:3000/api/door-status/new?door_status&secret_token=secret'
@@ -53,7 +57,7 @@ module Refinery
       it "should return 404" do
         visit 'http://localhost:3000/api/door-status/new'
 
-        page.should have_content('not found')
+        page.should have_content('The page you requested was not found.')
       end
     end
 
