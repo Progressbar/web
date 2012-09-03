@@ -72,9 +72,7 @@ a.il {
     padding: 10px 16px 11px;
 }
 
-a.button:hover {
-
-}
+a.button:hover { }
 
 a.button:active {
     position: relative;
