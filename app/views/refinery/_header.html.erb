@@ -1,4 +1,5 @@
 <div id="hgroup">
+
   <% if home_page? %>
     <h1 id="logo"><span class="ir"><%= Refinery::Core.site_name %></span></h1>
   <% else %>
@@ -6,8 +7,13 @@
       <%= link_to Refinery::Core.site_name, refinery.root_path, :class => 'ir' %>
     </strong>
   <% end %>
+
 </div>
 <div id="header-features">
+  <nav id="lang">
+    <%= link_to('<img class="flags-sprites sprite-icon-sk" src="/s.gif" alt="Slovenčina" >'.html_safe, '/', :title => 'Slovenská verzia') if is_lang?('en') %>
+    <%= link_to('<img class="flags-sprites sprite-icon-en" src="/s.gif" alt="English" >'.html_safe, '/en/', :title => 'English version') if is_lang?('sk') %>
+  </nav>
   <div id="door-status">
   <% 
     door_status = 'unknown'
@@ -35,14 +41,10 @@
 
 </div>
 
-<div id="nav-holder">
-  <nav id="lang">
-    <%= link_to('<img class="flags-sprites sprite-icon-sk" src="/s.gif" alt="Slovenčina" >'.html_safe, '/', :title => 'Slovenská verzia') if is_lang?('en') %>
-    <%= link_to('<img class="flags-sprites sprite-icon-en" src="/s.gif" alt="English" >'.html_safe, '/en/', :title => 'English version') if is_lang?('sk') %>
-  </nav>
-<%#= render :partial => '/shared/search_form' %>
+<div id="nav-holder" class="clear"> 
+  <%#= render :partial => '/shared/search_form' %>
   <%= render(:partial => "/refinery/menu", :locals => {
       :dom_id => 'menu',
-      :css => 'menu'
+      :css => 'menu clearfix'
     }) %>
 </div>
