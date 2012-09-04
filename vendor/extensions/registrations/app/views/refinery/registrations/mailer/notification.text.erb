@@ -1,0 +1,13 @@
+Ahoj,
+nová registrácia:
+
+--- registration_start ---
+
+Username: <%= @registration.username %>
+E-mail: <%= @registration.email %>
+Message:
+<%= @registration.message %>
+
+--- registration_ends ---
+
+<%= Refinery::Registrations::Setting.email_footer %>

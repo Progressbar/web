@@ -53,10 +53,21 @@ module Refinery
         end
 
         def email_footer
-          footer = "S pozdravom,\n\nProgressbar tím\n #{Refinery::Setting.get(:site_email)}\nhttps://www.progressbar.sk"
-          footer << " | #{Refinery::Setting.get(:site_twitter_link)}"
-          footer << " | #{Refinery::Setting.get(:site_facebook_link)}"
-          Refinery::Setting.find_or_set(:registration_email_footer, footer)
+          footer = ::I18n.t('best_regards')
+          footer += "\n#{Refinery::Core.site_name}\n"
+          footer += "\n#{Refinery::Setting.get(:site_email)} | #{Refinery::Setting.get(:site_url)}"
+          footer += "\n#{Refinery::Setting.get(:site_twitter_link)} | #{Refinery::Setting.get(:site_facebook_link)}"
+          footer
+        end
+
+        def email_footer_html
+          footer = ::I18n.t('best_regards')
+          footer += "<br>#{Refinery::Core.site_name}<br>"
+          footer += "<br>#{Refinery::Setting.get(:site_email)}"
+          footer += "<br>#{Refinery::Setting.get(:site_url)}"
+          footer += " | #{Refinery::Setting.get(:site_twitter_link)}"
+          footer += " | #{Refinery::Setting.get(:site_facebook_link)}"
+          footer
         end
       end
     end
