@@ -19,13 +19,6 @@ sk:
   you_might_be_interested: 'Mohlo by vás zaujímať'
   calendar:
     title: 'Kalendár'
-    full_schedule: 'Celý rozvrh ›'
-    no_official_event: 'Žiaden oficiálny program.'
-    explain_no_official_event: 'Ak nás chceš prísť navštíviť mimo oficiálny program, napíš nám na info@progressbar.sk a radi ťa uvítame.'
-    organize_action: "Zorganizuj akciu."
-    organize_action_explanation: "Pošli nám e-mail na info@progressbar.sk, kde upresníš dátum a typ akcie, ktorú by si mal záujem usporiadať."
-    organize_action_email_subject: "[progressbar] Organizácia akcie %{day}"
-    organize_action_email_body: "Ahoj, \n\rchcel by som u Vás %{day} zorganizovať akciu:\n\r\n\r== názov a bližší popis akcie == \n\r\n\rS pozdravom, \n\r == tvoje meno =="
     week: 'týždeň'
     monday: 'Pondelok'
     tuesday: 'Utorok'

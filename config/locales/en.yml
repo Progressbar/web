@@ -9,13 +9,6 @@ en:
   general_mailinglist_subscription_error: 'Sorry, login to mailing list failed, please try again later or let us know to info@progressbar.sk .'
   calendar:
     title: 'Calendar'
-    full_schedule: 'Full schedule ›'
-    no_official_event: 'No program.'
-    explain_no_official_event: 'If you want to come visit us outside the official program, write to us at info@progressbar.sk and we welcome you.'
-    organize_action: "Organize action."
-    organize_action_explanation: "Send us an e-mail info@progressbar.sk, with specifying the date and type of event that you would be interested to organize."
-    organize_action_email_subject: "[progressbar] Organize event %{day}"
-    organize_action_email_body: "Ahoj, \n\rchcel by som u Vás %{day} zorganizovať akciu:\n\r\n\r== názov a bližší popis akcie == \n\r\n\rS pozdravom, \n\r == tvoje meno =="
     week: 'week'
     monday: 'Monday'
     tuesday: 'Tuesday'
