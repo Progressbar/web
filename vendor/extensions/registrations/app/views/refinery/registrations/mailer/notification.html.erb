@@ -1,13 +1,13 @@
-Ahoj,\r\n
-nová registrácia:\r\n
-\r\n
---- registration_start ---\r\n
-\r\n
-Username: <%= @registration.username %>\r\n
-E-mail: <%= @registration.email %>\r\n
-Message:\r\n
-<%= @registration.message %>\r\n
-\r\n
---- registration_ends ---\r\n
-\r\n
+Ahoj,<br>
+nová registrácia:<br>
+<br>
+--- registration_start ---<br>
+<br>
+Username: <%= @registration.username %><br>
+E-mail: <%= @registration.email %><br>
+Message:<br>
+<%= @registration.message %><br>
+<br>
+--- registration_ends ---<br>
+<br>
 <%= strip_tags(Refinery::Registrations::Setting.email_footer) %>

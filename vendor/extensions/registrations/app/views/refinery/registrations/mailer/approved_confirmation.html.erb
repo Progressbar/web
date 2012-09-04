@@ -1,16 +1,16 @@
-Gratulujeme!\r\n
-Tvoja registrácia za člena ProgressBar Hackerspace (aka Progressbaru) bola schválená.\r\n
-\r\n
-Identifikačné údaje:\r\n
-\r\n
-Username: <%= @user.username %>\r\n
-E-mail: <%= @user.email %>\r\n
-UID (variabilný symbol pri platbe členského): <%= @user.progressbar_uid.to_s %>\r\n
-Nastavenie hesla: <%= @new_password_url %>\r\n
-\r\n
+Gratulujeme!<br>
+Tvoja registrácia za člena ProgressBar Hackerspace (aka Progressbaru) bola schválená.<br>
+<br>
+Identifikačné údaje:<br>
+<br>
+Username: <%= @user.username %><br>
+E-mail: <%= @user.email %><br>
+UID (variabilný symbol pri platbe členského): <%= @user.progressbar_uid.to_s %><br>
+Nastavenie hesla: <%= @new_password_url %><br>
+<br>
 <% if @subscribed_to_mailinglist %>
-Zároveň by ti mal prísť potvrdzujúci email o prihlásenií do emailovej konferencie Progressbaru.\r\n
-Archív konferencie: <%= Refinery::Setting.get(:general_mailing_list_url) %>\r\n
+Zároveň by ti mal prísť potvrdzujúci email o prihlásenií do emailovej konferencie Progressbaru.<br>
+Archív konferencie: <%= Refinery::Setting.get(:general_mailing_list_url) %><br>
 <% end %>
-\r\n
+<br>
 <%= strip_tags(Refinery::Registrations::Setting.email_footer) %>
