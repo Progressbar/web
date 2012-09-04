@@ -34,7 +34,7 @@ module Refinery
         :site_bank_account => '2600121198/8330' ,
         :site_bank_iban => 'SK1583300000002600121198' ,
         :site_bank_swift => 'FIOZSKBAXXX' ,
-        :site_bitcoin => '18qKmRKFTGzdEW5GiBnwmCdLN54813ceN3' # 1pbarBA4zP1bbCRydBUxweQxVfsaAHqDo
+        :site_bitcoin => '1pbarBA4zP1bbCRydBUxweQxVfsaAHqDo' # 1pbarBA4zP1bbCRydBUxweQxVfsaAHqDo
       }
 
       settings.each {|k, v|
