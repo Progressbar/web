@@ -1,0 +1,27 @@
+sk:
+  refinery:
+    plugins:
+      registrations:
+        title: Registrations
+        description: Provides a registration form and stores registrations
+    registration:
+      some_error_happen_on_registration_html: 'Nastal problém pri spracovaní tvojej registrácie. <br >Skontroluj nižšie odosielané údaje a skús znova, alebo nás pre pomoc kontaktuj na e-mail: <b>%{contact_email}</b>.'
+    registrations:
+      registrations:
+        form:
+          your_name: 'Tvoje meno'
+          email: 'E-mail'
+          personal_info: 'Niečo o tebe'
+          send_registration: Odoslať registráciu
+  activerecord:
+    errors:
+      models:
+        refinery/registrations/registration:
+          member_exists_html: 'Uživateľ s týmto e-mailom už existuje. <br >Kontaktuj nás prosím na e-mail: <b>%{contact_email}</b> pre&nbsp;vyriešenie problému individuálne. <br>Vďaka!'
+    models:
+      registration: Registrácia
+    attributes:
+      registration:
+        username: Meno
+        email: E-mail
+        message: Správa

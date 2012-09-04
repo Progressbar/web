@@ -14,6 +14,8 @@ module Refinery
                         :uniqueness => true,
                         :length => { :in => 6..64 },
                         :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+
+      validate :member_with_email_exists?
       validates :message, :presence => true, :length => { :in => 6..512 }
       validates :state, :presence => true, :format => { :with => /unmoderated|approved|rejected/ }
 
@@ -40,6 +42,16 @@ module Refinery
       def unmoderated?
         self.state == 'unmoderated'
       end
+
+      private 
+
+        def member_with_email_exists?
+          errors.add(:base, ::I18n.t(:member_exists_html,
+                      :scope => "activerecord.errors.models.refinery/registrations/registration",
+                      :contact_email => Refinery::Setting.get(:site_email)).html_safe) if ::Refinery::User.find_by_email(email).present?
+        end
     end
+
   end
 end
+

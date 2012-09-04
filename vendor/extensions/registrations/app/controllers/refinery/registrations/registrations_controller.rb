@@ -34,7 +34,9 @@ module Refinery
 
           redirect_to refinery.thank_you_registrations_registrations_path
         else
-         flash[:error] = "You are probably a member or we have another your registration yet. <br >Please contact us on email: <b>#{Refinery::Setting.get(:site_email)}</b> for solving your issue individualy. Thanks!"
+          flash[:error] = t('some_error_happen_on_registration_html',
+            :scope => 'refinery.registration',
+            :contact_email => Refinery::Setting.get(:site_email))
          render :action => 'index'
         end
       end

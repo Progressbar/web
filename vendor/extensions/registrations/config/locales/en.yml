@@ -3,7 +3,9 @@ en:
     plugins:
       registrations:
         title: Registrations
-        description: Provides a contact form and stores registrations
+        description: Provides a registration form and stores registrations
+    registration:
+      some_error_happen_on_registration_html: 'Some error happen on your registration. <br>Please check your submission and try again, or contact us on email: <b>%{contact_email}</b> for help.'
     registrations:
       registrations:
         form:
@@ -76,6 +78,10 @@ en:
           closing_line: Kind Regards
           ps_html: P.S. All your registrations are stored in the "Registrations" section of Refinery should you ever want to view it later there.
   activerecord:
+    errors:
+      models:
+        refinery/registrations/registration:
+          member_exists_html: 'Member with this email exists yet. <br >Please contact us on e-mail: <b>%{contact_email}</b> for solving your issue individually. <br>Thanks!'
     models:
       registration: Registration
     attributes:
