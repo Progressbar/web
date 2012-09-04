@@ -40,34 +40,6 @@ sk:
             phone: Telefón
             date: Dátum
             message: Správa
-        settings:
-          notification_recipients_form:
-            settings_value_name: Poslať upozornenie pre
-            explanation: Zakaždým, keď Vás niekto kontaktuje cez vaše webové stránky, Refinery odošle e-mail s upozornením na nový door status.
-            hint: Keď je odoslaný nový door status, Refinery odošle upozornenie na Váš e-mail.
-            example: "Zadajte e-mailovú adresu(y) ako: jack@work.com, jill@office.com"
-          confirmation_email_form:
-            to: Komu
-            from: Od
-            subject: Predmet
-            click_to_edit_subject: Kliknite tu ak chcete upraviť predmet
-            explanation: Zakaždým, keď Vás niekto kontaktuje cez vaše webové stránky, Refinery odošle e-mail s potvrdením o prijatí odosielateľovi door status.
-            below_edit_email_sent: Nižšie môžete upraviť e-mail, ktorý je odosielaný.
-            the_customer_making_door_status: Klient robiť door status
-            message: Správa
-            note: "Poznámka: umiestniťe text %name%, pre určenie pozície mena klienta v e-maile"
-      mailer:
-        notification:
-          greeting: Ahoj
-          you_recieved_new_door_status: Práve ste obdržali nový door status na vašej webové stránke.
-          door_status_starts: --- door status začiatok ---
-          door_status_ends: --- door status koniec ---
-          from: Od
-          email: E-mail
-          phone: Telefón
-          message: Správa
-          closing_line: S pozdravom
-          ps_html: P.S. Všetky vaše door statuses sú uložené v "Door Statuses" sekcii v Refinery, ak by ste ich chceli zobraziť neskôr.
   activerecord:
     models:
       door_status: Door Status
