@@ -10,6 +10,7 @@ module Refinery
       settings = {
         :site_email => 'info@progressbar.sk',
         :site_phone => '02/32603287',
+        :site_url => 'https://www.progressbar.sk',
         :site_twitter => 'progressbarsk',
         :site_twitter_link => 'https://twitter.com/progressbarsk',
         :site_facebook_link => 'https://www.facebook.com/progressbar',
