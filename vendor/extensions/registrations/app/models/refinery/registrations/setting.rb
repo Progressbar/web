@@ -46,12 +46,6 @@ module Refinery
           )
         end
 
-        def rejected_confirmation_body
-          Refinery::Setting.find_or_set(:registration_rejected_confirmation_body,
-            "Sorry,\n\nYour registration was rejected."
-          )
-        end
-
         def email_footer
           footer = ::I18n.t('best_regards')
           footer += "\n\n#{Refinery::Core.site_name}"
