@@ -54,20 +54,14 @@ module Refinery
 
         def email_footer
           footer = ::I18n.t('best_regards')
-          footer += "\n#{Refinery::Core.site_name}\n"
+          footer += "\n\n#{Refinery::Core.site_name}"
           footer += "\n#{Refinery::Setting.get(:site_email)} | #{Refinery::Setting.get(:site_url)}"
           footer += "\n#{Refinery::Setting.get(:site_twitter_link)} | #{Refinery::Setting.get(:site_facebook_link)}"
           footer
         end
 
         def email_footer_html
-          footer = ::I18n.t('best_regards')
-          footer += "<br>#{Refinery::Core.site_name}<br>"
-          footer += "<br>#{Refinery::Setting.get(:site_email)}"
-          footer += "<br>#{Refinery::Setting.get(:site_url)}"
-          footer += " | #{Refinery::Setting.get(:site_twitter_link)}"
-          footer += " | #{Refinery::Setting.get(:site_facebook_link)}"
-          footer
+          self.email_footer.gsub(/\n/, '<br>').html_safe
         end
       end
     end

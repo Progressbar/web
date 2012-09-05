@@ -1,13 +1,13 @@
-Ahoj,<br>
-nová registrácia:<br>
+<%= t('.greeting') %>,<br>
+<%= t('.you_recieved_new_registration') %>:<br>
 <br>
---- registration_start ---<br>
+<%= t('.registration_starts') %><br>
 <br>
-Username: <%= @registration.username %><br>
-E-mail: <%= @registration.email %><br>
-Message:<br>
+<%= t('.username', :default => t('activerecord.attributes.registration.username')) %>: <%= @registration.username %><br>
+<%= t('.email', :default => t('activerecord.attributes.registration.email')) %>: <%= @registration.email %><br>
+<%= t('.message', :default => t('activerecord.attributes.registration.message')) %>:<br>
 <%= @registration.message %><br>
 <br>
---- registration_ends ---<br>
+<%= t('.registration_ends') %><br>
 <br>
-<%= Refinery::Registrations::Setting.email_footer %>
+<%= Refinery::Registrations::Setting.email_footer_html %>

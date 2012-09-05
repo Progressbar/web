@@ -13,6 +13,12 @@ sk:
           email: 'E-mail'
           personal_info: 'Niečo o tebe'
           send_registration: Odoslať registráciu
+      mailer:
+        notification:
+          greeting: Ahoj
+          you_recieved_new_registration: práve si obdržal novú registráciu
+          registration_starts: --- začiatok registrácie ---
+          registration_ends: --- koniec registrácie ---
   activerecord:
     errors:
       models:

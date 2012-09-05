@@ -68,15 +68,9 @@ en:
       mailer:
         notification:
           greeting: Hi there
-          you_recieved_new_registration: You just received a new registration on your website.
+          you_recieved_new_registration: You just received a new registration
           registration_starts: --- registration starts ---
           registration_ends: --- registration ends ---
-          from: From
-          email: Email
-          phone: Phone
-          message: Message
-          closing_line: Kind Regards
-          ps_html: P.S. All your registrations are stored in the "Registrations" section of Refinery should you ever want to view it later there.
   activerecord:
     errors:
       models:
