@@ -11,14 +11,17 @@ gem 'rack-rewrite'
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'letter_opener'
+  gem 'thin'
+end
+
+group :test do
+  gem 'webmock'
   gem 'refinerycms-testing'
   gem 'poltergeist'
-  gem 'webmock'
-  gem "letter_opener"
   gem 'guard-rspec'
   gem 'guard-spork'
   gem 'spork'
-  gem 'thin'
 end
 
 gem 'nokogiri'
