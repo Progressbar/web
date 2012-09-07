@@ -1,22 +1,7 @@
 sk:
   submit: 'Odoslať'
-  events: Najbližšia akcia
-  mailing_list:
-    title: 'E-mailová konferencia'
-  events_mailinglist_subscription_success: 'Prihlásenie do e-mailovej konferencie prebehlo úspešne a na Váš e-mail boli zaslané aktivačné údaje.'
-  events_mailinglist_subscription_error: 'Prihlásenie do e-mailovej konferencie zlyhalo, prosím skuste to neskôr alebo nám o tom dajte vediet na info@progressbar.sk.'
-  general_mailinglist_subscription_success: 'Prihlásenie do e-mailovej konferencie prebehlo úspešne a na Váš e-mail boli zaslané aktivačné údaje.'
-  general_mailinglist_subscription_error: 'Prihlásenie do e-mailovej konferencie zlyhalo, prosím skuste to neskôr alebo nám o tom dajte vediet na info@progressbar.sk.'
   follow_us:
-    title: 'Sledujte nás'
-    find_bug: 'Našiel si chybu, alebo Ti chýba nejaká funkčnosť?'
-    send_patch: 'Napíš nám, alebo pošli opravu!'
-    send_email: 'Svoje pripomienky a nápady nám môžete poslať i na e-mail:'
-    twitter_recommend: 'Daj o nás vedieť.'
-    twitter_recommend2: 'Odporuč nás.'
-    facebook_like: 'Lajkuj.'
-    foursquare_todo: 'Pridaj do zoznamu.'
-  you_might_be_interested: 'Mohlo by vás zaujímať'
+    title: 'Follow us'
   calendar:
     title: 'Kalendár'
     week: 'týždeň'
@@ -27,9 +12,6 @@ sk:
     friday: 'Piatok'
     saturday: 'Sobota'
     sunday: 'Nedeľa'
-  blogs:
-    title: 'Blogy'
-    archive_posts: 'Staršie príspevky ›'
   inquiries:
     new:
       maps: Mapy
@@ -80,6 +62,7 @@ sk:
   for_payments_from_abroad: 'pre platby zo zahraničia'
   for_membership_payment_enter_the_variable_as_a_symbol_of_their_membership_number: 'V prípade členskej platby uvedte ako variabilný symbol svoje členské číslo.'
   feedback: Spätná väzba
-  share_with_friends: Zdieľaj túto stránku
+  share_with_friends: Zdieľaj túto stránkusl
   best_regards: 'S pozdravom,'
-  team: tím
+  login_member_section: Prihlásenie - členská sekcia
+  become_member: Staň sa členom

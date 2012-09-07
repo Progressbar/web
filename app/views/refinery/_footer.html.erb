@@ -19,17 +19,18 @@
     <div id="membership-actions">
       <a href="/refinery/users/login">
         <img alt="Login" src="/assets/design/icons/member.png" style="vertical-align: middle">&nbsp;
-        Prihlásenie - členská sekcia</a>
+        <%= t('login_member_section') %>
+        </a>
       <a href="/pridaj-sa">&nbsp;
-        <img alt="Registration" src="/assets/design/icons/arrow-2.png" style="vertical-align: middle">&nbsp;
-        Staň sa členom
+        <img alt="Registration" src="/assets/design/icons/arrow-2.png" style="vertical-align: middle">&nbsp;        
+        <%= t('become_member') %>
       </a>
     </div>    
   </div>
 </section>
 <section id="mailing-list">
   <div class="header">
-    <h3><%= t('mailing_list.title') %></h3>
+    <h3><%= t('title', :scope => 'refinery.mailinglists.subscribers.form') %></h3>
   </div>
   <div class="content">
     <%= render "/refinery/mailinglists/subscribers/form" %>
