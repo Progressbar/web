@@ -21,10 +21,10 @@
         <img alt="Login" src="/assets/design/icons/member.png" style="vertical-align: middle">&nbsp;
         <%= t('login_member_section') %>
         </a>
-      <a href="/pridaj-sa">&nbsp;
-        <img alt="Registration" src="/assets/design/icons/arrow-2.png" style="vertical-align: middle">&nbsp;        
+      <%= link_to '/pridaj-sa' do %>
+        &nbsp;<img alt="Registration" src="/assets/design/icons/arrow-2.png" style="vertical-align: middle">&nbsp;        
         <%= t('become_member') %>
-      </a>
+      <% end %>
     </div>    
   </div>
 </section>
