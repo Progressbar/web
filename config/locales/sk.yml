@@ -25,31 +25,18 @@ sk:
   refinery:
     search_form:
       search_site_for: 'Hľadaj..'
-    header:
-      registration: 'Registrácia'
-      new_event: 'Nová udalosť'
-      for_members: 'Pre členov'
     promo:
-      welcome_on_site: 'Vitajte na stránkach'
-      first_slovak_hackerspace: 'prvého slovenského <a href="http://en.wikipedia.org/wiki/Hackerspace">hackerspace</a>'
-      we_are: '<strong>Sme</strong> prvým fyzickým priestorom v <strong>Bratislave</strong> pre stretávanie <strong>hackerov</strong>, <br />digitálnych <strong>umelcov</strong>, geekov, hardvérových <strong>mágov</strong> <br />a <strong>podobne</strong> zmýšľajúcich <strong>ľudí</strong>.'
-      we_are_located: 'Nachádzame sa v centre <strong>Bratislavy</strong> <br />na <strong>Cukrovej 14</strong>, blízko medickej záhrady <br />a autobusovej stanice <strong>Mlynské Nivy</strong>.'
-      interesting_lectures: 'Pravidelne sa u nás konajú zaujímavé prednášky, <br />workshopy a stretnutia rôznych komunít.'
-      we_try_to_by_open_and_free: 'Snažíme sa byť maximálne otvorení a vítame nových aktívnych členov, <br />prídite na jednu z našich stretávok alebo akcií. <br />Väčšina akcií Progressbaru je zadarmo.'
       what: 'Čo'
       why: 'Prečo'
       where: 'Kde'
       more: 'Viac'
-      join_to_us: 'Pridaj sa k nám'
-      or: alebo
-      support_us: 'nás podpor!'
   projects:
-    title: 'Aktívne sa venujeme a podielame napriklad na projektoch:'
+    title: 'Aktívne sa venujeme a podielame napríklad na projektoch:'
     owasp:
       title: 'OWASP pravidelné stretnutia'
       desc: 'Prezentácie o webovej bezpečnosti, pracovné stretnutia a predstavovanie OWASP projektov.'
     arduino:
-      title: 'Arduino hacking'
+      title: 'Hardware/Arduino hacking'
       desc: 'Arduino je open-source elektronická prototypová platforma založená na ľahko použiteľnom software a hardware.'
     bitcoin:
       title: 'Bitcoin - virtuálna mena'

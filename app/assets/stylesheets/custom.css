@@ -262,6 +262,8 @@
     margin-left: 32px;
     background: #009000;
     border-bottom: solid 5px #006400;
+    min-width: 180px;
+    text-align: center;
 }
 
 #promo-action .button:hover {

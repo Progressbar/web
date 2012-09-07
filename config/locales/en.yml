@@ -1,7 +1,7 @@
 en:
   submit: 'Submit'
   follow_us:
-    title: 'Sledujte nás'
+    title: 'Follow us'
   calendar:
     title: 'Calendar'
     week: 'week'
@@ -25,55 +25,22 @@ en:
   refinery:
     search_form:
       search_site_for: 'Search..'
-    header:
-      registration: 'Registration'
-      new_event: 'New event'
-      for_members: 'For members'
     promo:
-      welcome_on_site: 'Welcome on site'
-      first_slovak_hackerspace: 'first slovak <a href="http://en.wikipedia.org/wiki/Hackerspace">hackerspace</a>'
-      we_are: '<strong>We are</strong> first physical space in <strong>Bratislava</strong> for meeting <strong>hackers</strong>, <br />digital <strong>artists</strong>, geeks, hardware <strong>wizards</strong> <br />and <strong>likeminded people</strong>.'
-      we_are_located: 'We are located in the center of <strong>Bratislava</strong> <br />at <strong>Cukrová 14</strong>, near the main bus station <strong>Mlynské Nivy</strong>.'
-      interesting_lectures: ''
-      we_try_to_by_open_and_free: 'Most of events organized at the hackerspace <br />are open for public and for free. You are welcome visit to us!'
       what: 'What'
       why: 'Why'
       where: 'Where'
       more: 'More'
-      join_to_us: 'Join to us'
-      or: or
-      support_us: 'support us!'
-  pages:
-    join:
-      member: Member
-      month: 'month'
-      students_discounts: 'for students <strong>50% discount</strong>'
-      opportunity_to_use_space_and_equipment: 'Opportunity to use space and equipment of hackerspace'
-      discounts_on_various_items_and_purchases: 'Discounts on various items and purchases'
-      discounts_on_international_conferences: 'Discounts on international conferences'
-      involvement_in_the_running_progressbar: 'Involvement in the running of Progressbar hackerspace'
-      access_to_nonpublic_material_information: 'Access to non-public materials and informations'
-      and_much_more: '..and even more'
-      create_registration: 'Register now'
-      supporter: Supporter
-      join_us_title: 'Join us and become a member or supporter of hackerspace.'
-      voluntary: 'Free'
-      no_commitments_and_obligations: 'No commitments and obligations'
-      any_type_height_and_form_of_aid: 'Any type, height and form of aid'
-      opportunity_to_become_an_active_member: 'Opportunity to become an active member'
-      optional_registration_between_the_sponsors_and_supporters: 'Optional <a href="/en/legal-stuff/sponsors">registration between the sponsors and supporters</a>'
-      feel_good: 'Good feeling ;-)'
   projects:
     title: 'Some ours active projects:'
     owasp:
       title: 'OWASP regular meetings'
       desc: 'Lectures on web security, workshops and presentations OWASP projects.'
     arduino:
-      title: 'Arduino hacking'
+      title: 'Hardware/Arduino hacking'
       desc: 'Arduino is an open-source electronic prototype platform based on easy-to-use software and hardware.'
     bitcoin:
-      title: 'Bitcoin - virtual currency'
-      desc: 'Bitcoin bitcoi bitco bitc bit bi b.'
+      title: 'Bitcoin'
+      desc: 'Bitcoin virtual currency available anywhere with internet connection.'
     videoarchive:
       title: 'Video Archive'
       desc: 'Video / audio records from some previous events in Progressbar.'
