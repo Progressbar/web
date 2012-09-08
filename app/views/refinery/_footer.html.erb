@@ -45,7 +45,7 @@
   <%#= link_to(@colophon_page.title, @colophon_page) %>
 </div>
 <nav id='bottom-menu' class='menu clearfix'>
-  <%= link_to(@home_page.title, @home_page.url) %> <span class="delim">&nbsp;|&nbsp;</span>
-  <%= link_to(@contact_page.title, @contact_page.url) %> <span class="delim">&nbsp;|&nbsp;</span>
+  <%= link_to(@home_page.title, @home_page.url, :accesskey => 1) %> <span class="delim">&nbsp;|&nbsp;</span>
+  <%= link_to(@contact_page.title, @contact_page.url, :accesskey => 3) %> <span class="delim">&nbsp;|&nbsp;</span>
   <a href="#"><%= t('top') %>  &uarr;</a>
 </nav>
