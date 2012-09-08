@@ -79,3 +79,17 @@ a.button:active {
     top: 3px;
     border-bottom-width: 1px;
 }
+
+.ui-icon { display: block; text-indent: -999em; overflow: hidden; 
+    background-repeat: no-repeat; width: 16px; 
+    height: 16px; 
+    background-image: url(/assets/design/ui-icons_bbbbbb_256x240.png);
+}
+
+.ui-icon-info { background-position: -16px -144px; }
+
+.msg .ui-icon {
+    position: absolute;
+    left: 0px;
+    top: 1px;
+}

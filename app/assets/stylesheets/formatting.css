@@ -317,12 +317,6 @@ button { width: auto; overflow: visible; }
     padding-left: 20px;
 }
 
-.msg .ui-icon {
-    position: absolute;
-    left: 0px;
-    top: 1px;
-}
-
 .flash {
     padding: 16px;
     margin-bottom: 16px;
