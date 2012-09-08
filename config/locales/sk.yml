@@ -1,7 +1,7 @@
 sk:
   submit: 'Odoslať'
   follow_us:
-    title: 'Follow us'
+    title: 'Sledujte nás'
   calendar:
     title: 'Kalendár'
     week: 'týždeň'
@@ -49,7 +49,6 @@ sk:
   for_payments_from_abroad: 'pre platby zo zahraničia'
   for_membership_payment_enter_the_variable_as_a_symbol_of_their_membership_number: 'V prípade členskej platby uvedte ako variabilný symbol svoje členské číslo.'
   feedback: Spätná väzba
-  share_with_friends: Zdieľaj túto stránkusl
   best_regards: 'S pozdravom,'
-  login_member_section: Prihlásenie - členská sekcia
+  login_member_section: Členská sekcia
   become_member: Staň sa členom
