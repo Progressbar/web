@@ -76,7 +76,6 @@
 
 #promo {
     position: relative;
-    clear: both;
 }
 
 #promo-content {
@@ -147,6 +146,8 @@
     text-shadow: 0px 1px 0px #ccc;
 }
 
+.js .promo-item { display: none; position: absolute; }
+
 .promo-item {
     background: #000;
     overflow: hidden;
@@ -156,11 +157,6 @@
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 3px;
-}
-
-.js .promo-item {
-/*    display: none;*/
-/*    position: absolute;*/
 }
 
 .promo-text {
@@ -179,8 +175,9 @@
 }
 
 .promo-item-2 .promo-text {
-    bottom: 310px;
+    bottom: 280px;
     left: 0px;
+    top: 0px;
     width: 100%;
 }
 
@@ -193,7 +190,7 @@
 .promo-item-4 .promo-text {
     bottom: 50px;
     left: 225px;
-    width: 540px;
+    width: 520px;
     font-size: 17px;
 }
 
