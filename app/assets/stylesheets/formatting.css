@@ -272,20 +272,6 @@ button { width: auto; overflow: visible; }
     text-align: justify;
 }
 
-.left-half {
-    float: left;
-    width: 48.5%;
-}
-
-.right-half {
-    float: right;
-    width: 48.5%;
-}
-
-#body .left-half, #body .right-half {
-    width: 47.5%;
-}
-
 .center {
     text-align: center;
 }
@@ -340,18 +326,6 @@ button { width: auto; overflow: visible; }
 
 /* layout */
 
-.outer-cover {
-    width: 992px;
-    text-align: center;
-    margin: auto;
-}
-
-#header, #page, #footer {
-    width: 960px;
-    margin: 0px auto;
-    text-align: left;
-}
-
 #header-wrapper {
     border-bottom: solid 1px #444;
 }
@@ -377,12 +351,6 @@ button { width: auto; overflow: visible; }
     text-decoration: none;
     height: 100%;
     width: 100%;
-}
-
-#header-features {
-    float: right;
-    width: 300px;
-    padding: 10px 0px;
 }
 
 a.highlight:link, a.highlight:visited,
@@ -518,21 +486,6 @@ menu li .selected:hover {
     min-height: 25em;
 }
 
-#body {
-    clear: left;
-    float: left;
-    width: 628px;
-}
-
-.no_side_body #body {
-    width: 100%;
-}
-
-#side_body {
-    float: right;
-    width: 300px;
-}
-
 #page ul, #page ol, #page form {
     margin-bottom: 20px;
 }
@@ -546,10 +499,6 @@ menu li .selected:hover {
     padding-top: 32px;
     padding-bottom: 32px;
     border-top: solid 1px #222;
-}
-
-#footer section {
-    width: 464px;
 }
 
 h3 a, h4 a {
