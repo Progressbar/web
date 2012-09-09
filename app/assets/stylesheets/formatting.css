@@ -324,14 +324,8 @@ button { width: auto; overflow: visible; }
     color: #873e49;
 }
 
-/* layout */
-
 #header-wrapper {
     border-bottom: solid 1px #444;
-}
-
-#hgroup {
-    float: left;
 }
 
 #logo {

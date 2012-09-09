@@ -293,6 +293,10 @@
     width: 960px;
 }
 
+#hgroup {
+    float: left;
+}
+
 #footer section {
     width: 464px;
 }
