@@ -1,6 +1,6 @@
 GIT
-  remote: git://github.com/parndt/refinerycms-i18n.git
-  revision: 2a6d35554421d4e0a2ebeba6eb291bcd0ade9291
+  remote: git://github.com/refinery/refinerycms-i18n.git
+  revision: e9b8f961d0b6016012476cdc24219dfc236e39c0
   branch: master
   specs:
     refinerycms-i18n (2.1.0.dev)
@@ -9,8 +9,8 @@ GIT
       routing-filter (~> 0.3.0)
 
 GIT
-  remote: git://github.com/parndt/refinerycms-settings.git
-  revision: 37e592a43dcd2ed24a11f678cd1e3fc76fa9cf75
+  remote: git://github.com/refinery/refinerycms-settings.git
+  revision: 78649385fd3209d2cde9edefe80a775d6d15f90c
   branch: master
   specs:
     refinerycms-settings (2.1.0.dev)
@@ -174,7 +174,7 @@ GEM
     dragonfly (0.9.12)
       rack
     erubis (2.7.0)
-    eventmachine (0.12.10)
+    eventmachine (1.0.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
     factory_girl (2.6.4)

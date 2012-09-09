@@ -58,19 +58,14 @@ gem 'jquery-rails'
 # Refinery CMS
 # gem 'refinerycms', '~> 2.0.3' #, :path => 'vendor/refinerycms', :branch => '2-0-stable'
 gem 'refinerycms', :path => 'vendor/refinerycms', :branch => 'master'
-# gem 'refinerycms', :git => 'git://github.com/resolve/refinerycms.git', :branch => 'master'
-# gem 'refinerycms-settings', :path => '/home/web-data/work/nethemba/refinerycms-settings'
-gem 'refinerycms-settings', :git => 'git://github.com/parndt/refinerycms-settings.git', :branch => 'master'
+# gem 'refinerycms', :git => 'git://github.com/refinery/refinerycms.git', :branch => 'master'
+gem 'refinerycms-settings', :git => 'git://github.com/refinery/refinerycms-settings.git', :branch => 'master'
 
 # Specify additional Refinery CMS Extensions here (all optional):
 # gem 'refinerycms-i18n', '~> 2.0.0'
-gem 'refinerycms-i18n', :git => 'git://github.com/parndt/refinerycms-i18n.git', :branch => 'master'
+gem 'refinerycms-i18n', :git => 'git://github.com/refinery/refinerycms-i18n.git', :branch => 'master'
 gem 'refinerycms-blog', :path => 'vendor/refinerycms-blog', :branch => 'master'
 gem 'refinerycms-inquiries', :path => 'vendor/refinerycms-inquiries', :branch => 'master'
-# gem 'refinerycms-calendar', :path => 'vendor', :branch => '2-1-experimental'
-# gem 'refinerycms-inquiries', '~> 2.0.0'
-#  gem 'refinerycms-search', '~> 2.0.0'
-#  gem 'refinerycms-page-images', '~> 2.0.0'
 gem 'refinerycms-mailinglists', :path => 'vendor/extensions'
 
 gem 'refinerycms-registrations', :path => 'vendor/extensions'
@@ -78,7 +73,4 @@ gem 'refinerycms-transactions', :path => 'vendor/extensions'
 gem 'refinerycms-fees', :path => 'vendor/extensions'
 
 gem 'refinerycms-calendar', :path => 'vendor/refinerycms-calendar'
-#gem 'refinerycms-calendar', :path => 'vendor', :branch => 'fb_graph'
-#gem 'fb_graph'
-
 gem 'refinerycms-door_statuses', :path => 'vendor/extensions'
