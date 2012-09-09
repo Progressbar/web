@@ -4,19 +4,25 @@
 <body>
   <div id="page_container">
     <div id="header-wrapper">
-      <header id="header" class="clearfix">
-        <%= render '/refinery/header' -%>
-      </header>
+      <div class="outer-cover">
+        <header id="header" class="clearfix">
+          <%= render '/refinery/header' -%>
+        </header>
+      </div>
     </div>
     <div id="page-wrapper">
-      <section id="page" class="clearfix" data-pjax-container="true">
-        <%= yield %>
-      </section>
+      <div class="outer-cover">
+        <section id="page" class="clearfix">
+          <%= yield %>
+        </section>
+      </div>
     </div>
     <div id="footer-wrapper">
-      <footer id="footer" class="clearfix">
-        <%= render '/refinery/footer' -%>
-      </footer>
+      <div class="outer-cover">
+        <footer id="footer" class="clearfix">
+          <%= render '/refinery/footer' -%>
+        </footer>
+      </div>
     </div>
   </div>
   <%= render '/refinery/javascripts' %>

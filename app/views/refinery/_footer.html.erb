@@ -15,7 +15,6 @@
         <img alt="Kyberia" src="/s.gif" class="sprites sprite-icon-kyberia-32" title="kyberia" />
       </a>
     </p>
-    <div id="feedback" ></div>
     <div id="membership-actions">
       <a href="/refinery/users/login">
         <img alt="Login" src="/assets/design/icons/member.png" style="vertical-align: middle">&nbsp;
@@ -26,6 +25,7 @@
         <%= t('become_member') %>
       <% end %>
     </div>    
+    <div id="feedback" ></div>
   </div>
 </section>
 <section id="mailing-list">
@@ -42,7 +42,7 @@
 <div id="copy">
   <%= t('.copyright', :year => Time.now.year,
     :site_name => Refinery::Core.site_name) %>,
-  <%= link_to(@colophon_page.title, @colophon_page) %>
+  <%= link_to(@colophon_page.title, '/colophon') %>
 </div>
 <nav id='bottom-menu' class='menu clearfix'>
   <%= link_to(@home_page.title, @home_page.url, :accesskey => 1) %> <span class="delim">&nbsp;|&nbsp;</span>
