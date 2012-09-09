@@ -39,7 +39,7 @@ module Progressbar
       :BLOG_PAGE_ID => 7,
       :JOIN_US_PAGE_ID => 10,
 #      :CALENDAR_PAGE_ID => 14,
-#      :COLOPHON_PAGE_ID => 15,
+      :COLOPHON_PAGE_ID => 22,
 #      :WIKI_PAGE_ID => 20,
 #      :RECORDS_PAGE_ID => 22
     }

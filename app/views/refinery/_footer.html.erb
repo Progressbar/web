@@ -42,7 +42,7 @@
 <div id="copy">
   <%= t('.copyright', :year => Time.now.year,
     :site_name => Refinery::Core.site_name) %>,
-  <%#= link_to(@colophon_page.title, @colophon_page) %>
+  <%= link_to(@colophon_page.title, @colophon_page) %>
 </div>
 <nav id='bottom-menu' class='menu clearfix'>
   <%= link_to(@home_page.title, @home_page.url, :accesskey => 1) %> <span class="delim">&nbsp;|&nbsp;</span>
