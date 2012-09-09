@@ -16,18 +16,23 @@ module Refinery
         response = {'status' => false}
         ptrans = params[:transaction]
    
-        trans = Transaction.new(ptrans)
-        if params[:help].present?
-          response['accessible_attributes'] = trans._accessible_attributes
-        else
-          if trans.valid?
-            response['status'] = trans.save!
+        begin
+          trans = Transaction.new(ptrans)
+          if params[:help].present?
+            response['accessible_attributes'] = trans._accessible_attributes
           else
-            response['errors'] = trans.errors
+            if trans.valid?
+              response['status'] = trans.save!
+            else
+              response['errors'] = trans.errors
+            end
           end
+        rescue
+          response = $!
         end
 
         render :text => response.to_json
+        # render :text => ptrans
       end
       
     end

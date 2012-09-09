@@ -38,9 +38,9 @@ module Refinery
       def title
         case self.primary_type
         when INCOME_TRANSACTION_TYPE
-          "Income from #{self.from_account.truncate(10)}"
+          "Income from #{self.from_account.truncate(10) if self.from_account.present?}"
         when OUTCOME_TRANSACTION_TYPE
-          "Payment to #{self.to_account}"
+          "Payment to #{self.to_account if self.to_account.present?}"
         end
       end
     

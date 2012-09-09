@@ -1,6 +1,7 @@
 <tr class=" record <%= cycle('on', 'on-hover') %> <%= "transaction-#{transaction.primary_type}" %>" id="<%= dom_id(transaction) -%>">
   <td class="title">
     <span>
+      <%= transaction.stamp %>-t-
       <%= transaction.title %>
       <%= ", #{transaction.message.truncate(32)} " unless transaction.message.nil? %>
     </span>
@@ -15,8 +16,7 @@
   <% if current_refinery_user.has_role?(:superuser)  %>
     <td style="text-align: center">
       <%#= link_to refinery_icon_tag("application_go.png"), refinery.transactions_transaction_path(transaction),
-        :title => t('.view_live_html'),
-        :target => "_blank" %>
+        :title => t('.view_live_html') %>
 
       <%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_transactions_admin_transaction_path(transaction),
         :title => t('.edit') %>

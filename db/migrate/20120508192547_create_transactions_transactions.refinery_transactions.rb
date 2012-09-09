@@ -1,4 +1,3 @@
-# This migration comes from refinery_transactions (originally 1)
 class CreateTransactionsTransactions < ActiveRecord::Migration
 
   def up
@@ -15,10 +14,12 @@ class CreateTransactionsTransactions < ActiveRecord::Migration
       t.text :message
       t.text :raw
 
-      t.string :stamp
+      t.string :stamp, :null => false
 
       t.timestamps
     end
+
+    add_index :refinery_transactions, :stamp, :unique => true
 
   end
 
