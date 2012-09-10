@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120824210646) do
+ActiveRecord::Schema.define(:version => 20120910012516) do
 
   create_table "refinery_blog_categories", :force => true do |t|
     t.string   "title"
@@ -164,7 +164,7 @@ ActiveRecord::Schema.define(:version => 20120824210646) do
     t.integer  "month",                                                           :null => false
     t.integer  "year",                                                            :null => false
     t.string   "stamp",                                                           :null => false
-    t.text     "message",                                                         :null => false
+    t.text     "message",                                      :default => "",    :null => false
     t.datetime "created_at",                                                      :null => false
     t.datetime "updated_at",                                                      :null => false
   end
@@ -179,7 +179,6 @@ ActiveRecord::Schema.define(:version => 20120824210646) do
     t.integer  "image_width"
     t.integer  "image_height"
     t.string   "image_uid"
-    t.string   "image_ext"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
@@ -324,7 +323,7 @@ ActiveRecord::Schema.define(:version => 20120824210646) do
     t.integer  "vs"
     t.string   "custom_type"
     t.datetime "realized_at",                                                   :null => false
-    t.text     "message",                                                       :null => false
+    t.text     "message",                                    :default => "",    :null => false
     t.text     "raw"
     t.string   "stamp",                                                         :null => false
     t.datetime "created_at",                                                    :null => false
