@@ -18,7 +18,7 @@ moderator_plugins = {
 }
 
 active_member_plugins = {
-  'calendar' => 80,
+  'refinerycms_calendar' => 80,
   'refinerycms_blog' => 90,
   'transactions' => 100,
   'refinery_images' => 110,
