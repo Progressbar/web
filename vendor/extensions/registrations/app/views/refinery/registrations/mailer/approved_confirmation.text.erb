@@ -1,3 +1,5 @@
+(see below for english version)
+
 Gratulujeme!
 Tvoja registrácia za člena ProgressBar HackerSpace (aka Progressbaru) bola schválená.
 
@@ -12,6 +14,14 @@ Nastavenie hesla: <%= @new_password_url %>
 Zároveň by ti mal prísť potvrdzujúci email o prihlásenií do emailovej konferencie Progressbaru.
 Archív konferencie: <%= Refinery::Setting.get(:general_mailing_list_url) %>
 <% end %>
+
+Čo dalej?
+Ako nový člen vo svojom členskom profile, ktorí je prístupný po nastavení hesla a prihlásení na adrese
+https://www.progressbar.sk/refinery/ máš prístup k prehľadu členských príspevkov.
+Časom po získaní našej dôvery (obvykle po osobnom stretnutí v Progressbare a prijatí členského za 2 mesiace)
+ti pribudnú dalšie možnosti, ako pridávať priamo udalosti do kalendára, články na blog, editácia na wiki a podobne.
+Medzi tým radi privítame tvoje nápady, pripomienky a kritiku na emailovej konferencii general-discussion@progressbar.sk 
+a tešíme sa na stretnutie v ProgressBare.
 
 <%= '-' * 80 %>
 
@@ -30,5 +40,10 @@ You probably also get notification email about subscription to our general maili
 Conference archvive: <%= Refinery::Setting.get(:general_mailing_list_url) %>
 <% end %>
 
+What next?
+As new member you can see in your member profile, whis is available after password setup and login at https://www.progressbar.sk/refinery/, list of member fees.
+After time, when You get our confidence, (usually after personal meeting in Progressbar and member fee payment for 2 months) You will get more options, such as facility add events to calendar, posts on blog, editation on wiki etc.
+Between that time you can send your ideas, notices and critique on mailinglist general-discussion@progressbar.sk and 
+we will be glad to see you in ProgressBar.
 
 <%= Refinery::Registrations::Setting.email_footer %>

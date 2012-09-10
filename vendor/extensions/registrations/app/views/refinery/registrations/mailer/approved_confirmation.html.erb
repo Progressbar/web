@@ -5,7 +5,7 @@ Identifikačné údaje:<br>
 <br>
 Username: <%= @user.username %><br>
 E-mail: <%= @user.email %><br>
-UID (variabilný symbol pri platbe členského): <%= @user.progressbar_uid.to_s %><br>
+UID (variabilný symbol pri platbe členského): <b><%= @user.progressbar_uid.to_s %></b><br>
 Nastavenie hesla: <%= @new_password_url %><br>
 <br>
 <% if @subscribed_to_mailinglist %>
@@ -13,4 +13,40 @@ Zároveň by ti mal prísť potvrdzujúci email o prihlásenií do emailovej kon
 Archív konferencie: <%= Refinery::Setting.get(:general_mailing_list_url) %><br>
 <% end %>
 <br>
+<b>Čo dalej?</b><br>
+<p>
+Ako nový člen vo svojom členskom profile, ktorí je prístupný po nastavení hesla a prihlásení na adrese
+https://www.progressbar.sk/refinery/ máš prístup k prehľadu členských príspevkov.<br>
+Časom po získaní našej dôvery (obvykle po osobnom stretnutí v Progressbare a prijatí členského za 2 mesiace)
+ti pribudnú dalšie možnosti, ako pridávať priamo udalosti do kalendára, články na blog, editácia na wiki a podobne.
+Medzi tým radi privítame tvoje nápady, pripomienky a kritiku na emailovej konferencii general-discussion@progressbar.sk 
+a <b>tešíme sa na stretnutie v ProgressBare</b>.
+</p>
+<br>
+<%= '-' * 80 %>
+<br>
+Congratz!<br>
+Your registration for membership on ProgressBar HackerSpace was approved.<br>
+<br>
+Identification data:<br>
+<br>
+Username: <%= @user.username %><br>
+E-mail: <%= @user.email %><br>
+UID (for membership fee): <b><%= @user.progressbar_uid.to_s %></b><br>
+Password setting: <%= @new_password_url %><br>
+<br>
+<% if @subscribed_to_mailinglist %>
+You probably also get notification email about subscription to our general mailing list.<br>
+Conference archvive: <%= Refinery::Setting.get(:general_mailing_list_url) %><br>
+<% end %>
+<br>
+<b>What next?</b><br>
+<p>
+As new member you can see in your member profile, whis is available after password setup and login at https://www.progressbar.sk/refinery/, list of member fees. <br>
+After time, when You get our confidence, (usually after personal meeting in Progressbar and member fee payment for 2 months) You will get more options, such as facility add events to calendar, posts on blog, editation on wiki etc.
+Between that time you can send your ideas, notices and critique on mailinglist general-discussion@progressbar.sk and 
+we will be glad to see you in ProgressBar.
+</p>
+<br>
+
 <%= Refinery::Registrations::Setting.email_footer_html %>
