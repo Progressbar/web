@@ -10,17 +10,18 @@ class CreateFeesFees < ActiveRecord::Migration
       t.integer :month, :null => false
       t.integer :year, :null => false
       t.string :stamp, :null => false
-      t.text :message
+      t.text :message, :null => false, :default => ''
 
       t.timestamps
     end
 
     add_index :refinery_fees, :stamp, :unique => true
+    add_index :refinery_fees, [:user_id, :month, :transaction_id], :unique => true
   end
 
   def down
     if defined?(::Refinery::UserPlugin)
-      ::Refinery::UserPlugin.destroy_all({:name => "progressbar-fees"})
+      ::Refinery::UserPlugin.destroy_all({:name => "refinerycms-fees"})
     end
 
     drop_table :refinery_fees
