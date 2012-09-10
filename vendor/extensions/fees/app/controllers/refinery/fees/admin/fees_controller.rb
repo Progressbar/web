@@ -3,7 +3,7 @@ module Refinery
     module Admin
       class FeesController < ::Refinery::AdminController
 
-        before_filter :users_transactions
+        before_filter :users_transactions, :only => [:new, :create, :update]
 
         crudify :'refinery/fees/fee', :xhr_paging => true
 
@@ -23,6 +23,12 @@ module Refinery
           @fee = Fee.find_by_id(params[:id])
         end
 
+        def merge
+          render :text => 'jurko'
+        end
+
+        protected
+
         def users_transactions
           @users = ::Refinery::User.where('progressbar_uid IS NOT NULL')
           @transactions = {}
@@ -31,8 +37,6 @@ module Refinery
             @transactions["vs: #{t.vs} -- #{t.message.gsub(/\n/, ' ').truncate(MAX_MESSAGE_LENGTH)} - #{t.from_account} - #{t.realized_at} - #{t.amount} #{t.currency}"] = t.id
           }
         end
-
-        protected
 
         def merge_transactions
 

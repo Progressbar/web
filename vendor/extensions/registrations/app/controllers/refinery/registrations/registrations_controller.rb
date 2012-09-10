@@ -16,13 +16,11 @@ module Refinery
         @registration = Registration.new(params[:registration])
 
         if @registration.save
-          p 'xxx'*80
           begin
-            p 'yyy'*80
             Mailer.notification(@registration, request).deliver
             Mailer.confirmation(@registration, request).deliver
           rescue => e
-              logger.warn "There was an error delivering the registration notification/confirmation:\n#{e.message}\n"
+            logger.warn "There was an error delivering the registration notification/confirmation:\n#{e.message}\n"
           end
           
           redirect_to refinery.thank_you_registrations_registrations_path
