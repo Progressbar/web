@@ -164,12 +164,13 @@ ActiveRecord::Schema.define(:version => 20120824210646) do
     t.integer  "month",                                                           :null => false
     t.integer  "year",                                                            :null => false
     t.string   "stamp",                                                           :null => false
-    t.text     "message"
+    t.text     "message",                                                         :null => false
     t.datetime "created_at",                                                      :null => false
     t.datetime "updated_at",                                                      :null => false
   end
 
   add_index "refinery_fees", ["stamp"], :name => "index_refinery_fees_on_stamp", :unique => true
+  add_index "refinery_fees", ["user_id", "month", "transaction_id"], :name => "index_refinery_fees_on_user_id_and_month_and_transaction_id", :unique => true
 
   create_table "refinery_images", :force => true do |t|
     t.string   "image_mime_type"
@@ -316,19 +317,21 @@ ActiveRecord::Schema.define(:version => 20120824210646) do
 
   create_table "refinery_transactions", :force => true do |t|
     t.string   "primary_type",                                                  :null => false
-    t.string   "from_account"
-    t.string   "to_account"
+    t.string   "from_account",                               :default => "",    :null => false
+    t.string   "to_account",                                 :default => "",    :null => false
     t.decimal  "amount",       :precision => 8, :scale => 2,                    :null => false
     t.string   "currency",                                   :default => "eur", :null => false
     t.integer  "vs"
     t.string   "custom_type"
     t.datetime "realized_at",                                                   :null => false
-    t.text     "message"
+    t.text     "message",                                                       :null => false
     t.text     "raw"
-    t.string   "stamp"
+    t.string   "stamp",                                                         :null => false
     t.datetime "created_at",                                                    :null => false
     t.datetime "updated_at",                                                    :null => false
   end
+
+  add_index "refinery_transactions", ["stamp"], :name => "index_refinery_transactions_on_stamp", :unique => true
 
   create_table "refinery_user_plugins", :force => true do |t|
     t.integer "user_id"
@@ -369,10 +372,11 @@ ActiveRecord::Schema.define(:version => 20120824210646) do
     t.string   "progressbar_jabber"
     t.string   "progressbar_icq"
     t.string   "progressbar_mobile"
+    t.string   "slug"
   end
 
   add_index "refinery_users", ["id"], :name => "index_refinery_users_on_id"
-  add_index "refinery_users", ["progressbar_uid"], :name => "index_refinery_users_on_progressbar_uid", :unique => true
+  add_index "refinery_users", ["slug"], :name => "index_refinery_users_on_slug"
 
   create_table "seo_meta", :force => true do |t|
     t.integer  "seo_meta_id"
