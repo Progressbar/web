@@ -12,35 +12,36 @@ module Refinery
       # &transaction[year]=12
       # &transaction[currency]=EUR"
       # :from_account, :to_account, :vs, :amount, :currency, :realized_at, :message, :raw, :stamp, :primary_type, :custom_type
+
+
+      def help
+        render :json => {'transaction' => Transaction.new._accessible_attributes[:default].to_a}
+      end
+
       def create
         response = {'status' => false}
         ptrans = params[:transaction]
-        ptrans[:realized_at] = Date.parse(ptrans[:realized_at]) if ptrans[:realized_at].present?
+        ptrans[:realized_at] = Date.parse(ptrans[:realized_at].to_s) rescue nil
 
         begin
           trans = Transaction.new(ptrans)
-          if params[:help].present?
-            response['accessible_attributes'] = trans._accessible_attributes
+          if trans.valid?
+            response['status'] = trans.save!
+            match_fee(trans) if trans[:vs].present?
           else
-            if trans.valid?
-              response['status'] = trans.save!
-              merge_fee(trans) if trans[:vs].present?
-            else
-              response['errors'] = trans.errors
-            end
+            response['errors'] = trans.errors
           end
         rescue
           response = $!
         end
 
-        render :text => response.to_json
-        # render :text => ptrans
+        render :json => response.to_json
       end
 
       private
       
       # localhost:3000/en/api/transaction/new?&transaction[primary_type]=income&transaction[amount]=100&transaction[realized_at]=yesterday&transaction[to_account]=progressbar
-      def merge_fee(transaction)
+      def match_fee(transaction)
         user = ::Refinery::User.find_by_progressbar_uid(transaction.vs.to_i)
 
         if user
@@ -56,6 +57,9 @@ module Refinery
             :year => date.year.to_i
           )
         end
+
+        rescue => e
+          logger.warn "There was an error matching fee with transaction #{transaction.id}.\n#{e.message}\n"
       end
       
     end
