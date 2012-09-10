@@ -64,7 +64,8 @@ module Refinery
               user.add_role(:refinery)
 
               user.send(:generate_reset_password_token!)               
-
+              add_plugins_to(user)
+              
               @registration.approve!
               subscribed_to_mailinglist = subscribe_to_mailinglist(@registration.email)
               Mailer.approved_confirmation(@registration, request, user, subscribed_to_mailinglist).deliver
@@ -134,7 +135,6 @@ module Refinery
             return subscribed
         end
 
-
         def render_registrations
           if request.xhr?
             render :text => render_to_string(:partial => 'registrations', :layout => false).html_safe, :layout => 'refinery/flash'
@@ -145,6 +145,68 @@ module Refinery
 
         def generate_password
           (0...20).map{ ('a'..'z').to_a[rand(26)] }.join
+        end
+
+        def add_plugins_to(user)
+          refinery_plugins = {
+            'refinery_core' => 0,
+            'refinery_dialogs' => 0,
+            'refinery_i18n' => 0
+          }
+
+          superuser_plugins = {
+            'refinerycms_inquiries' => 50,
+            'registrations' => 60,
+            'mailinglists' => 70
+          }
+
+          moderator_plugins = {
+            'refinery_dashboard' => 10,
+            'refinery_pages' => 20,
+            'refinery_settings' => 30,
+            'refinery_users' => 40
+          }
+
+          active_member_plugins = {
+            'refinerycms_calendar' => 80,
+            'refinerycms_blog' => 90,
+            'transactions' => 100,
+            'refinery_images' => 110,
+            'refinery_files' => 120
+          }
+
+          member_plugins = {
+            'fees' => 130
+          }
+
+          user.plugins = []
+
+          if user.has_role?(:refinery)
+            refinery_plugins.each {|name, position|
+              user.plugins.create(:name => name, :position => position)
+            }
+          end
+
+          if user.has_role?(:moderator)
+            moderator_plugins.each {|name, position|
+              user.plugins.create(:name => name, :position => position)
+            }
+          end
+
+          if user.has_role?(:active_member) or user.has_role?(:moderator)
+            active_member_plugins.each {|name, position|
+              user.plugins.create(:name => name, :position => position)
+            }
+          end
+
+          if user.has_role?(:member) or user.has_role?(:active_member) or user.has_role?(:moderator)
+            member_plugins.each {|name, position|
+              user.plugins.create(:name => name, :position => position)
+            }
+          end
+
+          user.save
+
         end
 
       end
