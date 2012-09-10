@@ -46,20 +46,23 @@ module Refinery
       end
     end
 
-    context "with invalid token or missing params" do
+    context "with invalid params" do
       # empty data
       it "should not update the door status" do
         visit 'http://localhost:3000/api/door-status/new?door_status&secret_token=secret'
         page.should have_content('{"created":false}')
       end
-
-      # empty or wrong secret token
-      it "should return 404" do
-        visit 'http://localhost:3000/api/door-status/new'
-
-        page.should have_content('The page you requested was not found.')
-      end
     end
+
+#    context 'with invalid or missing token' do
+#
+#      # empty or wrong secret token
+#      it "should return 404" do
+#        visit 'http://localhost:3000/api/door-status/new'
+#
+#        page.should have_content('The page you requested was not found.')
+#      end
+#    end
 
   end
 end

@@ -7,7 +7,7 @@ ENGINE_RAILS_ROOT = File.join(File.dirname(__FILE__), '../') unless defined?(ENG
 def setup_environment
   # Configure Rails Environment
   ENV["RAILS_ENV"] ||= 'test'
-
+  
   require File.expand_path("../../config/environment", __FILE__)
 
   require 'rspec/rails'
@@ -26,6 +26,8 @@ def setup_environment
 
   # set javascript driver for capybara
   Capybara.javascript_driver = :poltergeist
+
+  @lang_version = 'en'
 
   WebMock.disable_net_connect!
 end
@@ -60,4 +62,13 @@ unless (begin; require 'spork'; rescue LoadError; nil end).nil?
 else
   setup_environment
   each_run
+end
+
+
+def t(string, options={})
+  ::I18n.t(string, options)
+end
+
+def lang_version
+  'en'
 end
