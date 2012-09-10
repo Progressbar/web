@@ -17,15 +17,6 @@ class ProgressbarExtendedFields < ActiveRecord::Migration
     add_column :refinery_users, :progressbar_jabber, :string
     add_column :refinery_users, :progressbar_icq, :string
     add_column :refinery_users, :progressbar_mobile, :string
-
-    add_index :refinery_users, [:progressbar_uid], :unique => true
-#    add_column :events, :user_id, :integer
-#    add_column :events, :duration_hour, :integer
-#    add_column :events, :duration_minute, :integer
-#    add_column :events, :all_day, :boolean
-#    add_column :events, :repeating, :boolean
-#    add_column :events, :recurrence, :text
-
   end
 
   def self.down
@@ -45,12 +36,5 @@ class ProgressbarExtendedFields < ActiveRecord::Migration
     remove_column :refinery_users, :progressbar_jabber
     remove_column :refinery_users, :progressbar_icq
     remove_column :refinery_users, :progressbar_mobile
-
-#    remove_column :events, :user_id
-#    remove_column :events, :duration_hour
-#    remove_column :events, :duration_minute
-#    remove_column :events, :all_day
-#    remove_column :events, :repeating
-#    remove_column :events, :recurrence
   end
 end
