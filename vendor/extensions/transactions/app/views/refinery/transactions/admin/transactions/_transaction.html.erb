@@ -1,7 +1,7 @@
 <tr class=" record <%= cycle('on', 'on-hover') %> <%= "transaction-#{transaction.primary_type}" %>" id="<%= dom_id(transaction) -%>">
   <td class="title">
     <span>
-      <%= transaction.stamp %>-t-
+      <%#= transaction.stamp %>
       <%= transaction.title %>
       <%= ", #{transaction.message.truncate(32)} " unless transaction.message.nil? %>
     </span>

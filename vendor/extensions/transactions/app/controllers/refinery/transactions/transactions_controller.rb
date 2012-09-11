@@ -19,20 +19,24 @@ module Refinery
       end
 
       def create
+        ::I18n.locale = :en
+        
         response = {'status' => false}
-        ptrans = params[:transaction]
-        ptrans[:realized_at] = Date.parse(ptrans[:realized_at].to_s) rescue nil
+        if params[:transaction].present?
+          ptrans = params[:transaction]
+          ptrans[:realized_at] = Date.parse(ptrans[:realized_at].to_s) rescue nil
 
-        begin
-          trans = Transaction.new(ptrans)
-          if trans.valid?
-            response['status'] = trans.save!
-            match_fee(trans) if trans[:vs].present?
-          else
-            response['errors'] = trans.errors
+          begin
+            trans = Transaction.new(ptrans)
+            if trans.valid?
+              response['status'] = trans.save!
+              match_fee(trans) if trans[:vs].present?
+            else
+              response['errors'] = trans.errors
+            end
+          rescue
+            response = $!
           end
-        rescue
-          response = $!
         end
 
         render :json => response.to_json
