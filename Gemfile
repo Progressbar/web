@@ -24,7 +24,9 @@ group :test do
   gem 'spork'
 end
 
+gem 'faraday'
 gem 'nokogiri'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
