@@ -52,3 +52,6 @@ sk:
   best_regards: 'S pozdravom,'
   login_member_section: Členská sekcia
   become_member: Staň sa členom
+  in_en: 'v anglickom jazyku'
+  in_sk: 'v slovenskom jazyku'
+  blog_post_realeased_in_html: 'Článok vyšiel %{in_lang}.'

@@ -52,3 +52,6 @@ en:
   best_regards: 'Best regards,'
   login_member_section: Members section
   become_member: Become member
+  in_en: 'in english language'
+  in_sk: 'in slovak language'
+  blog_post_realeased_in_html: 'Post was pusblished %{in_lang}.'
