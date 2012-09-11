@@ -1,3 +1,5 @@
+require 'faraday'
+
 module Refinery
   module Import
 
@@ -24,6 +26,10 @@ module Refinery
 
     class CalendarCategorization < OldBase
       set_table_name 'event_categorizations'
+    end
+
+    class Transaction < OldBase
+      set_table_name 'fees'
     end
 
     def self.truncate_blog_posts
@@ -126,6 +132,43 @@ module Refinery
 
         rescue
           puts "error: #{$!}"
+    end
+
+
+    def self.import_fees_as_transaction
+      conn = Faraday.new(url: 'http://localhost:3000') do |f| # , proxy: 'http://127.0.0.1:3128'
+        f.request  :url_encoded             # form-encode POST params
+        # f.response :logger                  # log requests to STDOUT
+        f.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+        f.headers = {
+          'Cookie' => '',
+          'User-Agent' => ''
+        }
+      end
+
+
+      ::Refinery::Import::Transaction.all.each do |fee|
+        if fee.vs.present? or fee.user_id.present? 
+          transaction = {
+            :primary_type => 'income',
+            :from_account => fee.from_account,
+            :to_account => '2600121198/8330',
+            :vs => fee.vs || fee.user_id || nil,
+            :amount => fee.amount,
+            :currency => fee.currency,
+            :realized_at => fee.created_at,
+            :message => fee.message,
+            :stamp => fee.stamp
+            #,
+            # :custom_type => 'fee' if fee.user_id.present?
+          }
+          
+          conn.post '/api/transaction/new', { 
+            :transaction => transaction
+          }
+
+        end
+      end
     end
   end
 
