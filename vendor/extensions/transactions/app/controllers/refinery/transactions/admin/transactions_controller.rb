@@ -6,6 +6,12 @@ module Refinery
         crudify :'refinery/transactions/transaction',
           :title_attribute => 'realized_at', :xhr_paging => true
 
+        def unpaired
+          @transactions = ::Refinery::Transactions::Transaction.unpaired
+
+          render :action => 'unpaired'
+        end
+
         def income
           search_all_transactions if searching?
           paginate_all_transactions

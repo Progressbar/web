@@ -20,6 +20,11 @@
                  refinery.outcome_transactions_admin_transactions_path
                %>
   </li>
+  <li <%= "class='selected'" if params[:action] == "unpaired" %>>
+    <%= link_to t('.unpaired'),
+                 refinery.unpaired_transactions_admin_transactions_path
+               %>
+  </li>
   <% if current_refinery_user.has_role?(:superuser)  %>
   <li>
     <%= link_to t('.create_new_outcome_transaction'),

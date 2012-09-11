@@ -11,6 +11,7 @@ en:
             all: All
             income: Income
             outcome: Outcome
+            unpaired: Unpaired
             create_new_income_transaction: Create New Income Transaction
             create_new_outcome_transaction: Create New Outcome Transaction
           records:

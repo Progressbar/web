@@ -35,6 +35,11 @@ module Refinery
         ['fee', 'donation', 'rent']
       end
 
+      def self.unpaired
+        sql = 'SELECT t1.* FROM refinery_transactions AS t1 LEFT JOIN refinery_fees AS t2 ON t1.id = t2.transaction_id WHERE t2.id IS NULL'
+        ::ActiveRecord::Base.connection.execute(sql)
+      end
+
       def title
         case self.primary_type
         when INCOME_TRANSACTION_TYPE

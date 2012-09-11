@@ -11,6 +11,7 @@ Refinery::Core::Engine.routes.append do
         collection do
           get :income
           get :outcome
+          get :unpaired
         end
       end
     end
