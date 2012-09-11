@@ -32,7 +32,7 @@ module Refinery
         def users_transactions
           @users = ::Refinery::User.where('progressbar_uid IS NOT NULL')
           @transactions = {}
-          ::Refinery::Transactions::Transaction.income.limit(LIMIT).order('realized_at DESC').each {
+          ::Refinery::Transactions::Transaction.unpaired.limit(LIMIT).order('realized_at DESC').each {
             |t|
             @transactions["vs: #{t.vs} -- #{t.message.gsub(/\n/, ' ').truncate(MAX_MESSAGE_LENGTH)} - #{t.from_account} - #{t.realized_at} - #{t.amount} #{t.currency}"] = t.id
           }

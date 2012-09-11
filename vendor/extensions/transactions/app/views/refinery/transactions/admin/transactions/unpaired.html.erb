@@ -1,29 +1,9 @@
-<h1><%= @transactions.count %></h1>
-<table class="transactions">
-  <thead>
-    <tr>
-      <th style="width: 50%;">Title</th>
-      <th style="width: 15%;">Date</th>
-      <th style="width: 10%; text-align: center">Amount</th>
-      <%= raw '<th style="width: 10%;">-t-</th>' if current_refinery_user.has_role?(:superuser) %>
-    </tr>
-  </thead>
-  <tbody>
-<% @transactions.each do |transaction| %>
-<tr class=" record <%= cycle('on', 'on-hover') %>" %>" id="<%= dom_id(transaction) -%>">
-  <td class="title">
-    <span>
-      <%#= transaction.stamp %>
-      <%= transaction.title %>
-      <%= ", #{transaction.message.truncate(32)} " unless transaction.message.nil? %>
-    </span>
-    <% unless transaction.custom_type.nil? %>
-    <span class="type" style="float: right"><%= transaction.custom_type %>&nbsp;</span>
-    <% end %>
-  </td>
-  <td><%= transaction.realized_at %></td>  
-</tr>
-<% end %>
-
-  </tbody>
-</table>
+<section id='records'>
+  <% unless searching? %>
+    <h2><%= params[:action] == 'index' ? 'All' : params[:action].to_s.capitalize %> transactions</h2>
+  <% end %>
+  <%= render 'records' %>
+</section>
+<aside id='actions'>
+  <%= render 'actions' %>
+</aside>

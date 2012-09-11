@@ -25,7 +25,7 @@ module Refinery
       scope :income, :conditions => {:primary_type => INCOME_TRANSACTION_TYPE}
       scope :outcome, :conditions => {:primary_type => OUTCOME_TRANSACTION_TYPE}
 
-      has_many :fees
+      has_many :fees, :class_name => '::Refinery::Fees::Fee'
 
       def primary_types
         [INCOME_TRANSACTION_TYPE, OUTCOME_TRANSACTION_TYPE]
@@ -36,8 +36,10 @@ module Refinery
       end
 
       def self.unpaired
-        sql = 'SELECT t1.* FROM refinery_transactions AS t1 LEFT JOIN refinery_fees AS t2 ON t1.id = t2.transaction_id WHERE t2.id IS NULL'
-        ::ActiveRecord::Base.connection.execute(sql)
+        #sql = 'SELECT t1.* FROM refinery_transactions AS t1 
+        #LEFT JOIN refinery_fees AS t2 ON t1.id = t2.transaction_id WHERE t2.id IS NULL'
+
+        joins('LEFT JOIN refinery_fees ON refinery_fees.transaction_id = refinery_transactions.id').where('refinery_fees.id IS NULL')        
       end
 
       def title

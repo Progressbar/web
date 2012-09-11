@@ -7,9 +7,16 @@ module Refinery
           :title_attribute => 'realized_at', :xhr_paging => true
 
         def unpaired
-          @transactions = ::Refinery::Transactions::Transaction.unpaired
+          search_all_transactions if searching?
+          paginate_all_transactions
 
-          render :action => 'unpaired'
+          @transactions = @transactions.unpaired
+
+          if request.xhr?
+            render :text => render_to_string(:partial => 'transactions', :layout => false).html_safe, :layout => 'refinery/flash'
+          else
+            render :action => 'unpaired'
+          end
         end
 
         def income
@@ -44,6 +51,15 @@ module Refinery
             render :action => 'index'
           end
         end
+
+#        # for customization and debug
+#        def update
+#          if @transaction.update_attributes(params[:transaction])
+#            redirect_to :back               
+#          else
+#            render :action => 'edit'            
+#          end
+#        end
 
       end
     end

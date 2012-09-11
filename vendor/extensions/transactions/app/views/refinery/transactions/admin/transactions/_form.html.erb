@@ -10,20 +10,23 @@
 end %>
 
   <div class="clearfix">
+  <div class='field'>
+    <%= f.select :primary_type, @transaction.primary_types %>
+  </div>
   <%#*<div class="hemisquare">%>
-    <% if params[:type].to_s == 'income' %>
+    <%# if params[:type].to_s == 'income' %>
       <div class='field'>
         <%= f.label :from_account -%>
         <%= f.text_field :from_account -%>
-        <%= f.hidden_field :to_account -%>
+        <%#= f.hidden_field :to_account -%>
       </div>
-    <% else %>
+    <%# else %>
       <div class='field'>
         <%= f.label :to_account -%>
         <%= f.text_field :to_account -%>
-        <%= f.hidden_field :from_account -%>
+        <%#= f.hidden_field :from_account -%>
       </div>
-    <% end %>
+    <%# end %>
 
     <div class='field'>
       <%= f.label :amount -%>
@@ -46,7 +49,7 @@ end %>
 
     <div class='field'>
 
-      <%= f.hidden_field :primary_type %>
+      <%# = f.hidden_field :primary_type %>
 
     </div>
   <%#*</div>%>
