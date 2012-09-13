@@ -30,7 +30,7 @@ module Refinery
             trans = Transaction.new(ptrans)
             if trans.valid?
               response['status'] = trans.save!
-              match_fee(trans) if trans[:vs].present?
+              match_fee(trans) if trans[:vs].present? && trans[:vs].to_i > 10165
             else
               response['errors'] = trans.errors
             end
@@ -50,6 +50,8 @@ module Refinery
 
         if user
           date = Date.parse("#{transaction.realized_at}")
+          month = params[:fee][:month] rescue date.month.to_i
+          year = params[:fee][:year] rescue date.year.to_i
 
           ::Refinery::Fees::Fee.create(
             :transaction_id => transaction.id,
@@ -58,8 +60,8 @@ module Refinery
             :message => transaction.message,
             :currency => transaction.currency,
             :stamp => transaction.stamp,
-            :month => date.month.to_i,
-            :year => date.year.to_i
+            :month => month,
+            :year => year
           )
 
           transaction[:custom_type] = 'fee'

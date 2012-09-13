@@ -23,16 +23,16 @@
     <%= f.text_field :amount, :size => 10 -%> <%= f.text_field :currency, :size => 4 -%>
   </div>
   <div class="clearfix">
-    <div class='field'  style="width: 8em; float: left;">
+    <div class='field' style="width: 10em; float: left;">
       <%= f.label :month -%>
       <% months = Date::MONTHNAMES.collect { |m| [m, Date::MONTHNAMES.index(m)] unless m.nil? }.compact %>
-      <%= f.select :month, months, :default => Date.current.month %>
+      <%= f.select :month, months, :prompt => 'Select month' %>
     </div>
 
-    <div class='field' style="width: 8em; float: left;">
+    <div class='field' style="width: 10em; float: left;">
       <%= f.label :year -%>
       <% years = Range.new(Date.current.year - 1, Date.current.year + 1) %>
-      <%= f.select :year, years, :default => Date.current.year %>
+      <%= f.select :year, years, :prompt => 'Select year' %>
     </div>
   </div>
 

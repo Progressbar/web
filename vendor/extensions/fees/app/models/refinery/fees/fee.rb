@@ -25,7 +25,7 @@ module Refinery
       validates_associated :transaction
 
       before_save :generate_stamp
-      before_save :generate_stamp
+      before_save :format_year
 
       self.per_page = 36
 
@@ -46,6 +46,11 @@ module Refinery
 
       def generate_stamp
         self[:stamp] = Digest::MD5.hexdigest("#{self[:transaction_id]}#{self[:user_id]}#{self[:month]}#{self[:year]}") if self[:stamp].nil?
+      end
+
+      # 11, 12 -> 2011, 2012
+      def format_year
+        self[:year] = self[:year].to_i + 2000 if self[:year].to_i < 2000
       end
     end
   end
