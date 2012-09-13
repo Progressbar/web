@@ -152,26 +152,29 @@ module Refinery
         primary_type = (fee.from_account == to_account) ? 'outcome' : 'income'
         custom_type = 'fee' if fee.user_id.present?
 
-        if fee.user_id.present? 
-          transaction = {
-            :primary_type => primary_type,
-            :from_account => fee.from_account,
-            :to_account => to_account,
-            :vs => fee.vs || fee.user_id || nil,
-            :amount => fee.amount,
-            :currency => fee.currency,
-            :realized_at => fee.created_at,
-            :message => fee.message,
-            :stamp => fee.stamp,
-            :custom_type => custom_type
-          }
-          
-          conn.post '/api/transaction/new', { 
-            :transaction => transaction
-          }
+        transaction = {
+          :primary_type => primary_type,
+          :from_account => fee.from_account,
+          :to_account => to_account,
+          :vs => fee.vs || fee.user_id || nil,
+          :amount => fee.amount,
+          :currency => fee.currency,
+          :realized_at => fee.created_at,
+          :message => fee.message,
+          :stamp => fee.stamp,
+          :custom_type => custom_type
+        }
 
-        end
+        conn.post '/api/transaction/new', {
+          :transaction => transaction,
+          :fee => {
+            :month => fee.month,
+            :year => fee.year
+          }
+        }
+
       end
+
     end
   end
 
