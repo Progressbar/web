@@ -1,7 +1,11 @@
+require 'acts_as_indexed'
+
 Refinery::User.class_eval do
   has_many :fees, :class_name => '::Refinery::Fees::Fee'
 
   before_save :generate_progressbar_uid, :if => :empty_progressbar_uid
+
+  acts_as_indexed :fields => [:username, :email, :progressbar_uid]
 
   def identifications
     trans = ::Refinery::Transactions::Transaction.income.where(:vs => self.progressbar_uid)
