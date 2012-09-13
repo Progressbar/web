@@ -55,11 +55,15 @@ module Refinery
             :transaction_id => transaction.id,
             :user_id => user.id,
             :amount => transaction.amount,
+            :message => transaction.message,
             :currency => transaction.currency,
             :stamp => transaction.stamp,
             :month => date.month.to_i,
             :year => date.year.to_i
           )
+
+          transaction[:custom_type] = 'fee'
+          transaction.save
         end
 
         rescue => e
