@@ -1,4 +1,4 @@
-class ApiController < ::ApplicationController
+class ApiController < ActionController::Base
   protect_from_forgery
 
   # before_filter :check_rights, :only => [:create, :update, :new, :delete]
