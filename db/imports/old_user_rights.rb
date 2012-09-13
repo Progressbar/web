@@ -40,6 +40,10 @@ banned_users = [267]
 
 ::Refinery::User.all.each {|user|
   user.plugins = []
+  user.roles = []
+  # user.remove_role(:moderator)
+  # user.remove_role(:superuser)
+  # user.remove_role(:refinery)
   unless user.id.in?(banned_users)
     user.add_role(:refinery)
     user.add_role(:superuser) if user.id.in?(superusers)
@@ -64,12 +68,10 @@ banned_users = [267]
 
     else
       user.add_role(:member)
-      unless ::Refinery::Fees::Fee.where(:user_id => user.id).empty?
-        user.add_role(:active_member)
+      if ::Refinery::Fees::Fee.where(:user_id => user.id).any? &&
+         ::Refinery::Fees::Fee.where(:user_id => user.id).sum(:amount).to_i > 30
 
-        if ::Refinery::Fees::Fee.where(:user_id => user.id).sum(:amount).to_i > 200
-          user.add_role(:moderator)
-        end
+        user.add_role(:active_member)
       end
     end
 

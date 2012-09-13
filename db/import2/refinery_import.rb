@@ -146,21 +146,24 @@ module Refinery
         }
       end
 
-
+      to_account = '2600121198/8330'
       ::Refinery::Import::Transaction.all.each do |fee|
-        if fee.vs.present? or fee.user_id.present? 
+        custom_type = ''
+        primary_type = (fee.from_account == to_account) ? 'outcome' : 'income'
+        custom_type = 'fee' if fee.user_id.present?
+
+        if fee.user_id.present? 
           transaction = {
-            :primary_type => 'income',
+            :primary_type => primary_type,
             :from_account => fee.from_account,
-            :to_account => '2600121198/8330',
+            :to_account => to_account,
             :vs => fee.vs || fee.user_id || nil,
             :amount => fee.amount,
             :currency => fee.currency,
             :realized_at => fee.created_at,
             :message => fee.message,
-            :stamp => fee.stamp
-            #,
-            # :custom_type => 'fee' if fee.user_id.present?
+            :stamp => fee.stamp,
+            :custom_type => custom_type
           }
           
           conn.post '/api/transaction/new', { 
