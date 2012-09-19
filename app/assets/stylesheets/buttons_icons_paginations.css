@@ -1,12 +1,4 @@
 
-a.il {
-    display: block;
-    width: 100px;
-    margin-right: 15px;
-    float: left;
-    text-align: center;
-}
-
 .button, .button:visited, .button:link,
 .pagination a, .pagination em, .pagination span
 {
@@ -58,8 +50,6 @@ a.il {
     background: transparent;
     cursor: default;
 }
-
-.small.button, .small.button:visited { font-size: 11px; }
 
 .button, .button:visited, .medium.button, .medium.button:visited {
     font-size: 13px;
