@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :default_pages, :init_features
 
-  layout proc{ |c| c.request.xhr? ? false : "application" }
+  layout proc{ |c| c.request.xhr? ? false : 'application' }
 
   private
 
@@ -35,9 +35,9 @@ class ApplicationController < ActionController::Base
 
     @registration = ::Refinery::Registrations::Registration.new
 
-    p = params[:subscriber] ? params[:subscriber] : {}
-    p[:events] = true unless params[:subscriber]
-    @subscriber = ::Refinery::Mailinglists::Subscriber.new(p)
+    subscriber = params[:subscriber] ? params[:subscriber] : {}
+    subscriber[:events] = true unless params[:subscriber]
+    @subscriber = ::Refinery::Mailinglists::Subscriber.new(subscriber)
   end
 
   # for canonical url

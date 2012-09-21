@@ -206,7 +206,6 @@ module Refinery
           end
 
           user.save
-
         end
 
       end
