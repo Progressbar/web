@@ -99,11 +99,16 @@ ActiveRecord::Schema.define(:version => 20120910012516) do
 
   add_index "refinery_calendar_categories", ["slug"], :name => "index_refinery_calendar_categories_on_slug", :unique => true
 
+  create_table "refinery_calendar_dates", :force => true do |t|
+    t.integer  "event_id",  :null => false
+    t.datetime "date_time", :null => false
+  end
+
   create_table "refinery_calendar_events", :force => true do |t|
     t.string   "name",                                                               :null => false
     t.text     "description"
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.datetime "start_date",                                                         :null => false
+    t.datetime "end_date",                                                           :null => false
     t.string   "slug",                                                               :null => false
     t.boolean  "featured",                                        :default => false, :null => false
     t.decimal  "ticket_price",      :precision => 8, :scale => 2
