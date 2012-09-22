@@ -148,6 +148,7 @@ ActiveRecord::Schema.define(:version => 20120910012516) do
     t.string   "street_address"
     t.string   "latitude"
     t.string   "longitude"
+    t.text     "embed_map_link"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end

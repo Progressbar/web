@@ -60,6 +60,12 @@
     position: relative;
 }
 
+#promo-nav .delim { display: none; }
+
+#promo-action {
+    height: 110px;
+}
+
 #promo-nav a {
     display: block;
     float: left;
@@ -240,13 +246,6 @@
 
 #copy {
     float: left;
-}
-
-#promo-nav,
-#promo-nav .delim { display: none; }
-
-#promo-action {
-    height: 110px;
 }
 
 .outer-cover {

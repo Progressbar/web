@@ -69,6 +69,8 @@ class CreateCalendar < ActiveRecord::Migration
       t.string :latitude
       t.string :longitude
 
+      t.text :embed_map_link
+
       t.timestamps
     end
 
