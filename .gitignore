@@ -26,6 +26,9 @@ public/themes/*
 public/javascripts/cache
 public/stylesheets/cache
 
+public/refinery/*
+public/assets/*
+
 # Vendor Cache
 vendor/cache
 
