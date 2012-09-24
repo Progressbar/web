@@ -13,5 +13,7 @@
 
   <%= render '/refinery/google_analytics' %>
 
-  <%#= javascript_include_tag 'modernizr-min' %>
+  <!--[if lt IE 9 ]>
+  <%= javascript_include_tag 'modernizr-min' %>
+  <![endif]-->
 </head>
