@@ -12,19 +12,22 @@
         <img alt="Github" src="/s.gif" class="sprites sprite-icon-github-32" />
       </a>
        <a href="<%= Refinery::Setting.get(:site_kyberia_link) %>" >
-        <img alt="Kyberia" src="/s.gif" class="sprites sprite-icon-kyberia-32" title="kyberia" />
+        <img alt="Kyberia" src="/s.gif" class="sprites sprite-icon-kyberia-32" />
+      </a>
+      <a href="<%= Refinery::Setting.get(:site_irc_link) %>" >
+        <img alt="IRC" src="/s.gif" class="sprites icon-irc"  />
       </a>
     </p>
     <div id="membership-actions">
       <a href="/refinery/users/login">
-        <img alt="Login" src="/assets/design/icons/member.png" style="vertical-align: middle">&nbsp;
+        <img src="/s.gif" class="icon-member">&nbsp;
         <%= t('login_member_section') %>
         </a>
       <%= link_to '/pridaj-sa' do %>
-        &nbsp;<img alt="Registration" src="/assets/design/icons/arrow-2.png" style="vertical-align: middle">&nbsp;        
+        &nbsp;<img src="/s.gif" class="icon-arrow-right">&nbsp;
         <%= t('become_member') %>
       <% end %>
-    </div>    
+    </div>
     <div id="feedback" ></div>
   </div>
 </section>
