@@ -18,6 +18,7 @@ module Refinery
         :site_github_link => 'https://github.com/Progressbar',
         :site_kyberia_link => 'https://kyberia.sk/id/5459247',
         :site_soup_link => 'http://soup.progressbar.sk/',
+        :site_irc_link => 'http://webchat.freenode.net/?nick=pbar337&amp;channels=progressbar&amp;prompt=1',
         :site_location_street => 'Cukrová 14',
         :site_location_city => 'Bratislava',
         :site_location_postal_code => '811 08',
@@ -42,7 +43,7 @@ module Refinery
         Refinery::Setting.set(k, v.to_s)
         puts "#{k} : #{v}"
       }
-      
+
     end
 
     def self.import_users
@@ -93,18 +94,18 @@ module Refinery
         place = ::Refinery::Calendar::Place.create({
           :name => 'ProgressBar Hackerspace',
           :description => 'Fyzický priestor v Bratislave pre stretávanie hackerov, digitálnych umelcov, geekov, hardvérových mágov
-  a podobne zmýšľajúcich ľudí.', 
+  a podobne zmýšľajúcich ľudí.',
           :url => 'https://www.progressbar.sk/',
-          :phone => Refinery::Setting.get(:site_phone), 
+          :phone => Refinery::Setting.get(:site_phone),
           :email => Refinery::Setting.get(:site_email),
-          :address_country => Refinery::Setting.get(:site_location_country), 
-          :address_locality => Refinery::Setting.get(:site_location_city), 
-          :postal_code => Refinery::Setting.get(:site_location_postal_code), 
+          :address_country => Refinery::Setting.get(:site_location_country),
+          :address_locality => Refinery::Setting.get(:site_location_city),
+          :postal_code => Refinery::Setting.get(:site_location_postal_code),
           :street_address => Refinery::Setting.get(:site_location_street),
-          :latitude => Refinery::Setting.get(:site_location_latitude_title), 
+          :latitude => Refinery::Setting.get(:site_location_latitude_title),
           :longitude => Refinery::Setting.get(:site_location_longitude_title)
         })
-        
+
         place.save!
       else
         p 'place existuje ??'
@@ -309,10 +310,10 @@ module Refinery
 
    puts 'import/update settings'
    PbImport.import_settings
-   puts 'import/update users'
-   PbImport.import_users
-  puts 'import/update pages'
-  PbImport.import_pages
-  puts 'import/update calendar defaults'
-  PbImport.put_defaults_for_calendar
+  # puts 'import/update users'
+  # PbImport.import_users
+  # puts 'import/update pages'
+  # PbImport.import_pages
+  # puts 'import/update calendar defaults'
+  # PbImport.put_defaults_for_calendar
 end
