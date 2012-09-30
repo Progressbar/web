@@ -17,12 +17,12 @@ module Refinery
 
         if @registration.save
           begin
-            Mailer.notification(@registration, request).deliver
+            Mailer.notification(@registration, request).deliver unless @registration.spam? # ignore spams
             Mailer.confirmation(@registration, request).deliver
           rescue => e
             logger.warn "There was an error delivering the registration notification/confirmation:\n#{e.message}\n"
           end
-          
+
           redirect_to refinery.thank_you_registrations_registrations_path
         else
           flash[:error] = t('some_error_happen_on_registration_html',

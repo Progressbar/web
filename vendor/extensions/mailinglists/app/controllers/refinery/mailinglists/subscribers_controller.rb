@@ -24,23 +24,31 @@ module Refinery
         subscribed_general = false
         subscribed_events = false
         if subscriber.nil? and @subscriber.valid?
-          subscribed_general = subscribe(@subscriber, 'general') if @subscriber[:general]
-          subscribed_events = subscribe(@subscriber, 'events') if @subscriber[:events]
+          if @subscriber.spam?
+            subscribed_events = true # ignore spam
+          else
+            subscribed_general = subscribe(@subscriber, 'general') if @subscriber[:general]
+            subscribed_events = subscribe(@subscriber, 'events') if @subscriber[:events]
 
-          Mailer.notification(@subscriber, request).deliver if (subscribed_general or subscribed_events)
+            Mailer.notification(@subscriber, request).deliver if (subscribed_general or subscribed_events)
+          end
         else
-          # otherwise we try subscribe or unsubscribe him from what he want
-          if @subscriber[:general]
-            if subscriber[:general]
-              unsubscribe(subscriber, 'general') and return
-            else
-              subscribed_general = subscribe(subscriber, 'general')
-            end
-          elsif @subscriber[:events]
-            if subscriber[:events]
-              unsubscribe(subscriber, 'events') and return
-            else
-              subscribed_events = subscribe(subscriber, 'events')
+          if @subscriber.spam?
+            subscribed_events = true # ignore spam
+          else
+            # otherwise we try subscribe or unsubscribe him from what he want
+            if @subscriber[:general]
+              if subscriber[:general]
+                unsubscribe(subscriber, 'general') and return
+              else
+                subscribed_general = subscribe(subscriber, 'general')
+              end
+            elsif @subscriber[:events]
+              if subscriber[:events]
+                unsubscribe(subscriber, 'events') and return
+              else
+                subscribed_events = subscribe(subscriber, 'events')
+              end
             end
           end
         end

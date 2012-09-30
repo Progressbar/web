@@ -23,6 +23,12 @@ module Refinery
       scope :approved, :conditions => {:state => 'approved'}
       scope :rejected, :conditions => {:state => 'rejected'}
 
+      filters_spam({
+        :message_field => :message,
+        :email_field => :email,
+        :author_field => :username
+      })
+
       def approve!
         self.update_attribute(:state, 'approved')
       end
@@ -43,7 +49,7 @@ module Refinery
         self.state == 'unmoderated'
       end
 
-      private 
+      private
 
         def member_with_email_exists?
           errors.add(:base, ::I18n.t(:member_exists_html,

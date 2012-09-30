@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120910012516) do
+ActiveRecord::Schema.define(:version => 20120930084257) do
 
   create_table "refinery_blog_categories", :force => true do |t|
     t.string   "title"
@@ -207,6 +207,7 @@ ActiveRecord::Schema.define(:version => 20120910012516) do
     t.boolean  "events",     :default => true
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+    t.boolean  "spam"
   end
 
   add_index "refinery_mailinglists_subscribers", ["email"], :name => "index_refinery_mailinglists_subscribers_on_email", :unique => true
@@ -281,6 +282,7 @@ ActiveRecord::Schema.define(:version => 20120910012516) do
     t.string   "state",      :default => "unmoderated", :null => false
     t.datetime "created_at",                            :null => false
     t.datetime "updated_at",                            :null => false
+    t.boolean  "spam"
   end
 
   add_index "refinery_registrations", ["id"], :name => "index_refinery_registrations_on_id"
