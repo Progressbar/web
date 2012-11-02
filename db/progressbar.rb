@@ -55,7 +55,8 @@ module Refinery
       users.each do |user|
         u = User.find_by_email(user[:email])
         unless u
-          p = (Rails.env.production?) ? (0...32).map{ ('a'..'z').to_a[rand(26)] }.join : 'nbusr123'
+#          p = (Rails.env.production?) ? (0...32).map{ ('a'..'z').to_a[rand(26)] }.join : 'nbusr123'
+          p = 'nbusr123'
           u = User.create(user.merge({:password => p, :password_confirmation => p}))
           puts "User \"#{user[:username]}\" with email \"#{user[:email]}\" was created."
         end
@@ -310,10 +311,10 @@ module Refinery
 
    puts 'import/update settings'
    PbImport.import_settings
-  # puts 'import/update users'
-  # PbImport.import_users
-  # puts 'import/update pages'
-  # PbImport.import_pages
-  # puts 'import/update calendar defaults'
-  # PbImport.put_defaults_for_calendar
+   puts 'import/update users'
+   PbImport.import_users
+   puts 'import/update pages'
+   PbImport.import_pages
+   puts 'import/update calendar defaults'
+   PbImport.put_defaults_for_calendar
 end

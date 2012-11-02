@@ -10,7 +10,7 @@ FactoryGirl.define do
     # start tomorrow on 18:00 until 22:00
     start_date Time.now.tomorrow.beginning_of_day + (60 * 60 * 18)
     end_date Time.now.tomorrow.beginning_of_day + (60 * 60 * 22)
-    
+
     factory :event_draft do
       draft true
     end
@@ -18,21 +18,26 @@ FactoryGirl.define do
 end
 
 def rand_date
-	
+
 end
 
-source_dates = (-50..400).to_a
-(1..500).each do |i|
-	
+source_dates = (-50..100).to_a
+(1..20).each do |i|
+
 	s_date = source_dates.sample.days.ago
 	e_date = s_date + (60 * 60 * 2)
   p_date = s_date - (60 * 60 * 24 * 128)
 
-	FactoryGirl.create(:event, 
+	FactoryGirl.create(:event,
 		:title => "UniqueTitleOne #{i} on #{p_date}",
 		:published_at => p_date,
-		:start_date => s_date,
-		:end_date => e_date
+    :dates => [
+      {
+        :date_time => s_date
+        }, {
+          :date_time => e_date
+        }
+    ]
 	)
 
 end

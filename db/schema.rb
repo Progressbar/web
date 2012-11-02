@@ -170,7 +170,7 @@ ActiveRecord::Schema.define(:version => 20120930084257) do
     t.integer  "month",                                                           :null => false
     t.integer  "year",                                                            :null => false
     t.string   "stamp",                                                           :null => false
-    t.text     "message",                                                         :null => false
+    t.text     "message",                                      :default => "",    :null => false
     t.datetime "created_at",                                                      :null => false
     t.datetime "updated_at",                                                      :null => false
   end
@@ -331,7 +331,7 @@ ActiveRecord::Schema.define(:version => 20120930084257) do
     t.integer  "vs"
     t.string   "custom_type"
     t.datetime "realized_at",                                                   :null => false
-    t.text     "message",                                                       :null => false
+    t.text     "message",                                    :default => "",    :null => false
     t.text     "raw"
     t.string   "stamp",                                                         :null => false
     t.datetime "created_at",                                                    :null => false
