@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+#gem 'rails', :path => 'vendor/rails/'
 gem 'rails', '~> 3.2.3'
 
 # Bundle edge Rails instead:
@@ -26,7 +27,6 @@ end
 
 gem 'faraday'
 gem 'nokogiri'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
