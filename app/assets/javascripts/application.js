@@ -10,9 +10,9 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
-//= require jquery-ui
-// require jquery-ui-1.8.16.custom.min.js
+//= require jquery-1.8.2.min.js
+// require jquery-ui
+//= require jquery-ui-1.8.16.custom.min.js
 // require jquery.fancybox-1.3.4.pack.js
 // require jquery.mousewheel-3.0.4.pack.js
 // require jquery.scrollTo-1.4.2-min.js
