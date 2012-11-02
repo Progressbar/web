@@ -20,8 +20,8 @@ module Refinery
 
       def create
         ::I18n.locale = :en
-        
-        response = {'status' => false}
+
+        response = { 'status' => false }
         if params[:transaction].present?
           ptrans = params[:transaction]
           ptrans[:realized_at] = Date.parse(ptrans[:realized_at].to_s) rescue nil
@@ -30,12 +30,12 @@ module Refinery
             trans = Transaction.new(ptrans)
             if trans.valid?
               response['status'] = trans.save!
-              match_fee(trans) if trans[:vs].present? && trans[:vs].to_i > 10165
+              match_fee(trans) if trans[:vs].present? && trans[:vs].to_i > 10165 # magic
             else
               response['errors'] = trans.errors
             end
           rescue
-            response = $!
+            response = $!.message
           end
         end
 
@@ -43,7 +43,7 @@ module Refinery
       end
 
       private
-      
+
       # localhost:3000/en/api/transaction/new?&transaction[primary_type]=income&transaction[amount]=100&transaction[realized_at]=yesterday&transaction[to_account]=progressbar
       def match_fee(transaction)
         user = ::Refinery::User.find_by_progressbar_uid(transaction.vs.to_i)
@@ -71,7 +71,7 @@ module Refinery
         rescue => e
           logger.warn "There was an error matching fee with transaction #{transaction.id}.\n#{e.message}\n"
       end
-      
+
     end
   end
 end
