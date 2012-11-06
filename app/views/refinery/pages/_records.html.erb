@@ -1,7 +1,8 @@
 <% content_for :body do %>
   <%=raw @page.content_for(:body) %>
   <table>
-    <% @records.each do |k, r|  %>
+    <% records = get_records %>
+    <% records.each do |k, r|  %>
       <tr>
         <td class="title"><%= r[:title] %></td>
         <td class="date">
@@ -17,7 +18,7 @@
           <% end %>
         </td>
       </tr>
-    <% end if @records %>
+    <% end unless records.nil? %>
   </table>
 <% end %>
 <% content_for :side_body do %>
