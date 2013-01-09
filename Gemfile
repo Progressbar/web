@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 3.2.3'
 
 # Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+# gem 'rails', :git => 'https://github.com/rails/rails.git'
 
 gem 'mysql2'
 gem 'rack-ssl', :require => 'rack/ssl'
@@ -60,12 +60,12 @@ gem 'jquery-rails'
 # Refinery CMS
 # gem 'refinerycms', '~> 2.0.3' #, :path => 'vendor/refinerycms', :branch => '2-0-stable'
 gem 'refinerycms', :path => 'vendor/refinerycms', :branch => 'master'
-# gem 'refinerycms', :git => 'git://github.com/refinery/refinerycms.git', :branch => 'master'
-gem 'refinerycms-settings', :git => 'git://github.com/refinery/refinerycms-settings.git', :branch => 'master'
+# gem 'refinerycms', :git => 'https://github.com/refinery/refinerycms.git', :branch => 'master'
+gem 'refinerycms-settings', :git => 'https://github.com/refinery/refinerycms-settings.git', :branch => 'master'
 
 # Specify additional Refinery CMS Extensions here (all optional):
 # gem 'refinerycms-i18n', '~> 2.0.0'
-gem 'refinerycms-i18n', :git => 'git://github.com/refinery/refinerycms-i18n.git', :branch => 'master'
+gem 'refinerycms-i18n', :git => 'https://github.com/refinery/refinerycms-i18n.git', :branch => 'master'
 gem 'refinerycms-blog', :path => 'vendor/refinerycms-blog', :branch => 'master'
 gem 'refinerycms-inquiries', :path => 'vendor/refinerycms-inquiries', :branch => 'master'
 gem 'refinerycms-mailinglists', :path => 'vendor/extensions'
