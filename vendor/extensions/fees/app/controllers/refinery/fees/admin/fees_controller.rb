@@ -7,14 +7,16 @@ module Refinery
 
         crudify :'refinery/fees/fee', :xhr_paging => true
 
-        LIMIT = 100
-        MAX_MESSAGE_LENGTH = 64
+        LIMIT_UNPAIRED = 100
+        TITLE_MAX_MESSAGE_LENGTH = 64
 
         def index
           @my_fees = Fee.mine(params[:page], current_refinery_user.id)
           @all_fees = Fee.from_all(params[:page])
-          
-          self.merge_transactions
+
+
+          @year_fees = ::Refinery::Fees::Fee.where(:year => 2012).order(:month, :user_id)
+          merge_transactions
 
           render(:partial => 'fees') if request.xhr?
         end
@@ -23,18 +25,14 @@ module Refinery
           @fee = Fee.find_by_id(params[:id])
         end
 
-        def merge
-          render :text => 'jurko'
-        end
-
         protected
 
         def users_transactions
           @users = ::Refinery::User.where('progressbar_uid IS NOT NULL')
           @transactions = {}
-          ::Refinery::Transactions::Transaction.unpaired.limit(LIMIT).order('realized_at DESC').each {
+          ::Refinery::Transactions::Transaction.unpaired.limit(LIMIT_UNPAIRED).order('realized_at DESC').each {
             |t|
-            @transactions["vs: #{t.vs} -- #{t.message.gsub(/\n/, ' ').truncate(MAX_MESSAGE_LENGTH)} - #{t.from_account} - #{t.realized_at} - #{t.amount} #{t.currency}"] = t.id
+            @transactions["vs: #{t.vs} -- #{t.message.gsub(/\n/, ' ').truncate(TITLE_MAX_MESSAGE_LENGTH)} - #{t.from_account} - #{t.realized_at} - #{t.amount} #{t.currency}"] = t.id
           }
         end
 
@@ -44,11 +42,11 @@ module Refinery
           transactions = transactions.select('id, vs, amount, currency, realized_at, stamp')
           transactions = transactions.where('id NOT IN (SELECT t2.transaction_id FROM refinery_fees AS t2)')
           transactions = transactions.where('amount > 0')
-          transactions = transactions.where('vs IS NOT NULL')          
+          transactions = transactions.where('vs IS NOT NULL')
           # transactions = transactions.limit(100)
 
           transactions.each do |t|
-            u = ::Refinery::User.find_by_progressbar_uid(t.vs.to_i)            
+            u = ::Refinery::User.find_by_progressbar_uid(t.vs.to_i)
             if u
               d = Date.parse("#{t.realized_at}")
 
