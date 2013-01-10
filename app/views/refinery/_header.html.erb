@@ -15,7 +15,7 @@
     <%= link_to('<img class="flags-sprites sprite-icon-en" src="/s.gif" alt="English" >'.html_safe, '/en/', :title => 'English version') if is_lang?('sk') %>
   </nav>
   <div id="door-status">
-  <% 
+  <%
     door_status = 'unknown'
     door_cls = ''
     door_title = "Last update #{@door_status.created_at}" if @door_status.present?
@@ -41,10 +41,11 @@
 
 </div>
 
-<div id="nav-holder" class="clear"> 
+<div id="nav-holder" class="clear">
   <%#= render :partial => '/shared/search_form' %>
-  <%= render(:partial => "/refinery/menu", :locals => {
+  <%#= render(:partial => "/refinery/menu", :locals => {
       :dom_id => 'menu',
       :css => 'menu clearfix'
     }) %>
+    <%= Refinery::Pages::MenuPresenter.new(refinery_menu_pages, self).to_html %>
 </div>
