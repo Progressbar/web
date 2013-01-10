@@ -1,4 +1,60 @@
 <div class='pagination_container'>
+    <h2>Fees by users and months</h2>
+  <table id="active_members_fees">
+    <thead>
+      <tr>
+        <th rowspan=2>User</th>
+        <th colspan=13>2012</th>
+      </tr>
+       <tr>
+        <% (1..12).each do |month| %>
+        <td><%= month %></td>
+        <% end %>
+      </tr>
+    </thead>
+  <% ::Refinery::User.active_members.each do |u| %>
+  <tr>
+    <th>
+       <%= link_to u.username,
+              refinery.edit_admin_user_path(u),
+              :title => t('edit', :scope => 'refinery.admin.users') if current_refinery_user.can_edit?(u) %>
+    </th>
+    <% sum = 0.0 %>
+    <% (1..12).each do |month| %>
+      <% m_f = u.fees.where(:year => 2012, :month => month).sum(:amount)  %>
+      <% sum += m_f %>
+      <td>
+        <%= m_f.to_i %>
+      </td>
+    <% end %>
+    <th class="right">
+      <%= sum.to_i %>
+    </th>
+  </tr>
+  <% end %>
+</table>
+
+<style>
+
+#active_members_fees td,
+#active_members_fees th {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#active_members_fees thead td {
+  text-align: center;
+}
+
+#active_members_fees tbody td {
+  text-align: right;
+}
+
+.right {
+  text-align: right;
+}
+</style>
+
   <h2>Fees from <%= current_refinery_user.username %>. UID: <%= current_refinery_user.progressbar_uid %></h2>
   <% if @my_fees.any? %>
     <%= render 'fees', :fees => @my_fees %>
@@ -9,6 +65,7 @@
   <% end %>
 </div>
 <div class='pagination_container'>
+
   <h2>Fees from all</h2>
   <% if @all_fees.any? %>
     <%= render 'fees', :fees => @all_fees %>
