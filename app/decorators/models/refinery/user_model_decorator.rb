@@ -6,6 +6,8 @@ Refinery::User.class_eval do
   before_save :generate_progressbar_uid, :if => :empty_progressbar_uid
 
   acts_as_indexed :fields => [:username, :email, :progressbar_uid]
+  MEMBER_ROLE_ID = 3
+  ACTIVE_MEMBER_ROLE_ID = 4
 
   def identifications
     trans = ::Refinery::Transactions::Transaction.income.where(:vs => self.progressbar_uid)
@@ -14,6 +16,14 @@ Refinery::User.class_eval do
       acc << t.from_account
     end
     "#{self.progressbar_uid} - #{self.username} - #{self.progressbar_screenname.to_s} - #{acc.uniq.join(' - ').to_s}"
+  end
+
+  def self.members
+    joins(:roles).where('refinery_roles_users.role_id = ?', MEMBER_ROLE_ID)
+  end
+
+  def self.active_members
+    joins(:roles).where('refinery_roles_users.role_id = ?', ACTIVE_MEMBER_ROLE_ID)
   end
 
   private
