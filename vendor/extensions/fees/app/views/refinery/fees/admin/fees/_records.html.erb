@@ -15,9 +15,9 @@
   <% ::Refinery::User.active_members.each do |u| %>
   <tr>
     <th>
-       <%= link_to u.username,
+       <%= link_to_if(current_refinery_user.can_edit?(u), u.username,
               refinery.edit_admin_user_path(u),
-              :title => t('edit', :scope => 'refinery.admin.users') if current_refinery_user.can_edit?(u) %>
+              :title => t('edit', :scope => 'refinery.admin.users')) %>
     </th>
     <% sum = 0.0 %>
     <% (1..12).each do |month| %>
