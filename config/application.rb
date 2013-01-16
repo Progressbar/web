@@ -40,6 +40,9 @@ module Progressbar
       :JOIN_US_PAGE_ID => 10,
 #      :CALENDAR_PAGE_ID => 14,
       :COLOPHON_PAGE_ID => 22,
+      #:OWASP_PAGE_ID => 23,
+      :HARDWARE_PAGE_ID => 24,
+      :BITCOIN_PAGE_ID => 25
 #      :WIKI_PAGE_ID => 20,
 #      :RECORDS_PAGE_ID => 22
     }

@@ -2,15 +2,12 @@
   <h3><%= t('projects.title') %></h3>
   <div class="project-wrapper">
     <article class="project">
-      <h4>
-        <a href="https://www.owasp.org/index.php/Slovakia">
-          <%= t('projects.owasp.title') %>
-        </a></h4>
+      <h4><%= link_to @owasp_page.title, @owasp_page.url %></h4>
       <div class="body">
-        <a href="https://www.owasp.org/index.php/Slovakia">
+        <%= link_to refinery.url_for @owasp_page.url do %>
           <img src="/assets/content/projects/owasp_logo2.jpeg.jpg" alt="OWASP" width="215" height="133" />
           <span class="img-bg"></span>
-        </a>
+        <% end %>
         <p>
           <%= t('projects.owasp.desc') %>
         </p>
@@ -19,27 +16,26 @@
   </div>
   <div class="project-wrapper">
     <article class="project">
-      <h4><a href="/hardware"><%= t('projects.arduino.title') %></a></h4>
+      <h4><%= link_to @hardware_page.title, @hardware_page.url %></h4>
       <div class="body">
-        <a href="/hardware">
+        <%= link_to refinery.url_for @hardware_page.url do %>
           <img src="/assets/content/projects/arduino-1-a.jpeg.jpg" alt="ARDUINO" width="215" height="133" />
           <span class="img-bg"></span>
-        </a>
+        <% end %>
         <p>
           <%= t('projects.arduino.desc') %>
         </p>
       </div>
-
     </article>
   </div>
   <div class="project-wrapper">
     <article class="project">
-      <h4><a href="/bitcoin"><%= t('projects.bitcoin.title') %></a></h4>
+      <h4><%= link_to @bitcoin_page.title, @bitcoin_page.url %></h4>
       <div class="body">
-        <a href="/bitcoin">
+        <%= link_to refinery.url_for @bitcoin_page.url do %>
           <img src="/assets/content/projects/bitcoin2.jpeg.jpg" alt="Bitcoin" width="215" height="133" />
           <span class="img-bg"></span>
-        </a>
+        <% end %>
         <p>
           <%= t('projects.bitcoin.desc') %>
         </p>
@@ -48,12 +44,12 @@
   </div>
   <div class="project-wrapper four">
     <article class="project">
-      <h4><a href="<%= url_for @records_page %>"><%= t('projects.videoarchive.title') %></a></h4>
+      <h4><%= link_to @records_page.title, @records_page.url %></h4>
       <div class="body">
-        <a href="<%= url_for @records_page %>">
+      <%= link_to refinery.url_for @records_page.url do %>
           <img src="/assets/content/projects/maciatko.jpeg" alt="Video archive ilustration" width="215" height="133" />
           <span class="img-bg"></span>
-        </a>
+        <% end %>
         <p>
           <%= t('projects.videoarchive.desc') %>
         </p>

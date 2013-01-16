@@ -15,17 +15,9 @@ class ApplicationController < ActionController::Base
     @contact_page = ::Refinery::Page.find_by_id(ids[:CONTACT_PAGE_ID])
     @join_us_page = ::Refinery::Page.find_by_id(ids[:JOIN_US_PAGE_ID])
     @records_page = ::Refinery::Page.find_by_path('/records')
-
-    # @blog_page = ::Refinery::Page.find_by_id(ids[:BLOG_PAGE_ID])
-    # @wiki_page = ::Refinery::Page.find_by_id(ids[:WIKI_PAGE_ID])
-    # @events_page = ::Refinery::Page.find_by_id(ids[:EVENTS_PAGE_ID])
-    # @projects_page = ::Refinery::Page.find_by_id(ids[:PROJECTS_PAGE_ID])
-    # @sponsors_page = ::Refinery::Page.find_by_id(ids[:SPONSORS_PAGE_ID])
-
-    # superuser
-#    sign_in(::Refinery::User.where(:email => 'info@progressbar.sk').first) if Rails.env.development?
-#    sign_in(::Refinery::User.find(3)) if Rails.env.development? #active member
-#    sign_in(::Refinery::User.find(268)) if Rails.env.development? #member
+    @owasp_page = ::Refinery::Page.find_by_title('owasp')
+    @hardware_page = ::Refinery::Page.find_by_id(ids[:HARDWARE_PAGE_ID])
+    @bitcoin_page = ::Refinery::Page.find_by_id(ids[:BITCOIN_PAGE_ID])
   end
 
   def init_features
@@ -42,6 +34,6 @@ class ApplicationController < ActionController::Base
 
   # for canonical url
   def canonical?
-    ::Refinery.i18n_enabled? && ::Refinery::I18n.default_frontend_locale != ::Refinery::I18n.current_frontend_locale
+    ::Refinery::I18n.default_frontend_locale != ::Refinery::I18n.current_frontend_locale
   end
 end
