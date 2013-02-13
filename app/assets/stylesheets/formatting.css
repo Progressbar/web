@@ -580,6 +580,8 @@ p a:link {
     margin-bottom: 0px;
 }
 
+.promo-item-1 .promo-text { }
+
 .promo-item-2 .promo-text {
     bottom: 280px;
     left: 0px;
@@ -588,9 +590,7 @@ p a:link {
 }
 
 .promo-item-3 .promo-text {
-    bottom: 70px;
-    left: 65px;
-    width: 460px;
+    width: 76%;
 }
 
 .promo-item-4 .promo-text {
