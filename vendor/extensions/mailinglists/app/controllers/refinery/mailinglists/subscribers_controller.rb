@@ -80,15 +80,16 @@ module Refinery
       end
 
       def send_subscribe_request(url)
-        response = false
-        begin
-          request = Net::HTTP.post_form(URI.parse(url), {'email' => @subscriber.email})
-          response = true
+        uri = URI.parse(url)
+        result = Net::HTTP.start(uri.host, use_ssl: uri.scheme == 'https', verify_mode: OpenSSL::SSL::VERIFY_NONE) do |http|
+          http.post(uri.request_uri, URI.encode_www_form({ 'email' => @subscriber.email }))
+        end
+          
+        return result.code_type == Net::HTTPOK
+
         rescue => e
           logger.warn "There was an error subscribe email (#{@subscriber.email}) to mailinglist (#{url}). \n#{e.message}\n"
-        end
-
-        response
+          false
       end
 
       def find_page
